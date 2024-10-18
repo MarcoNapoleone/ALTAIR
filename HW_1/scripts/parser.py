@@ -1,6 +1,5 @@
 import json
 import os
-import re
 import sys
 import datetime
 from lxml import etree
@@ -76,24 +75,28 @@ def parser(html, filename):
         # Extract footnotes
         footnotes = t.xpath(".//p[not(ancestor::*[contains(@class, 'ltx_tabular')])]")
         for f in footnotes:
-            table_data["footnotes"].append(etree.tostring(f, pretty_print=True).decode())
+            node_footnotes = f.xpath(".//node()")
+            par = ''.join(
+                e if isinstance(e, etree._ElementUnicodeResult)
+                else '' if e.tag in {'span', 'em', 'a'}
+                else etree.tostring(e, pretty_print=True).decode()
+                for e in node_footnotes
+            )
+            table_data["footnotes"].append(par)
 
         # Extract references
         references = references_dict.get(table_id, [])
         for r in references:
-            #if r is a string, add it to the references
             if isinstance(r, str):
                 table_data["references"].append(r)
             else:
                 ref_elements = r.xpath(".//node()")
-                par = ''
-                for e in ref_elements:
-                    if isinstance(e, etree._ElementUnicodeResult):
-                        par += e
-                    elif e.tag == 'span' or e.tag == 'em' or e.tag == 'a':
-                        par += ''
-                    else: par += etree.tostring(e, pretty_print=True).decode()
-
+                par = ''.join(
+                    e if isinstance(e, etree._ElementUnicodeResult)
+                    else '' if e.tag in {'span', 'em', 'a'}
+                    else etree.tostring(e, pretty_print=True).decode()
+                    for e in ref_elements
+                )
                 table_data["references"].append(par)
 
         # Add the extracted data to the json
