@@ -26,10 +26,10 @@ def get_ref_dict(root_html):
 
             if len(paragraph) > 0:
                 if ref_href in references_dict:
-                    references_dict[ref_href].append(etree.tostring(paragraph[0], pretty_print=True).decode())
+                    references_dict[ref_href].append(paragraph[0])
                 else:
                     # if the reference is not in the dictionary, add it
-                    references_dict[ref_href] = [etree.tostring(paragraph[0], pretty_print=True).decode()]
+                    references_dict[ref_href] = [paragraph[0]]
 
     return references_dict
 
@@ -52,28 +52,49 @@ def parser(html, filename):
         table_id = t.get('id')
 
         # initialize the table_data json
-        table_data["caption"] = []
-        table_data["table"] = []
+        table_data["caption"] = ''
+        table_data["table"] = ''
         table_data["footnotes"] = []
         table_data["references"] = []
 
         # Extract the table caption
-        caption_nodes = t.xpath(".//figcaption")
-        for c in caption_nodes:
-            table_data["caption"].append(etree.tostring(c, pretty_print=True).decode())
+        caption_nodes = t.xpath(".//figcaption//node()")
+
+        for node in caption_nodes:
+            if isinstance(node, etree._ElementUnicodeResult):
+                table_data["caption"] += node
+            elif node.tag == 'span':
+                table_data["caption"] += ''
+            else:
+                table_data["caption"] += etree.tostring(node, pretty_print=True).decode()
 
         # Extract the table content
         tables_html = t.xpath(".//*[contains(@class, 'ltx_tabular')]")  # Xpath to extract table
         for t_html in tables_html:
-            table_data["table"].append(etree.tostring(t_html, pretty_print=True).decode())
+            table_data["table"] += etree.tostring(t_html, pretty_print=True).decode()
 
-        # Extract footnotes (WIP)
-        footnotes = t.xpath(".//p")
+        # Extract footnotes
+        footnotes = t.xpath(".//p[not(ancestor::*[contains(@class, 'ltx_tabular')])]")
         for f in footnotes:
             table_data["footnotes"].append(etree.tostring(f, pretty_print=True).decode())
 
         # Extract references
-        table_data["references"] = references_dict.get(table_id, [])
+        references = references_dict.get(table_id, [])
+        for r in references:
+            #if r is a string, add it to the references
+            if isinstance(r, str):
+                table_data["references"].append(r)
+            else:
+                ref_elements = r.xpath(".//node()")
+                par = ''
+                for e in ref_elements:
+                    if isinstance(e, etree._ElementUnicodeResult):
+                        par += e
+                    elif e.tag == 'span' or e.tag == 'em' or e.tag == 'a':
+                        par += ''
+                    else: par += etree.tostring(e, pretty_print=True).decode()
+
+                table_data["references"].append(par)
 
         # Add the extracted data to the json
         data[table_id] = table_data
