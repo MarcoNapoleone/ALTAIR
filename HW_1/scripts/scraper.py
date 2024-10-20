@@ -38,8 +38,6 @@ def fetch_articles(query, start, k, batch_size=25):
         # Parse the HTML content
         root = etree.HTML(response.content)
 
-        with open('./logs/read.me', 'a') as file_logs:
-            file_logs.write(query + '\n')
 
         # Initialize a counter for successful downloads
         successful_downloads = 0
@@ -116,6 +114,9 @@ if __name__ == '__main__':
     # Ensure the sources directory exists
     if not os.path.exists('./sources'):
         os.makedirs('./sources')
+
+    with open('./logs/read.me', 'a') as file_logs:
+        file_logs.write(query + '\n')
 
     # Start downloading articles
     # The logfile is set to the query string with spaces replaced by underscores and datatime appended

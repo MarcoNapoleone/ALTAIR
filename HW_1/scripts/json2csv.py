@@ -14,8 +14,8 @@ def extract_data_from_json(file_path):
     for table_id, table_data in data.items():
         caption = table_data.get('caption', '')
         table = table_data.get('table', '')
-        footnotes = "; ".join(table_data.get('footnotes', []))
-        references = "; ".join(table_data.get('references', []))
+        footnotes = str(table_data.get('footnotes', ''))
+        references = str(table_data.get('references', ''))
 
         rows.append({
             'id': table_id,
