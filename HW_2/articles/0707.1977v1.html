@@ -1,0 +1,749 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>[0707.1977] MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING</title><meta property="og:description" content="We present a computer simulation, which is inspired by Penna model, to help understanding the effect of genetic coding tables on population dynamics. To represent populations we used real and artificial gene sequences …">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING">
+<meta name="twitter:image:src" content="https://ar5iv.labs.arxiv.org/assets/ar5iv_card.png">
+<meta name="twitter:image:alt" content="ar5iv logo">
+<meta property="og:title" content="MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING">
+<meta property="og:site_name" content="ar5iv">
+<meta property="og:image" content="https://ar5iv.labs.arxiv.org/assets/ar5iv_card.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ar5iv.labs.arxiv.org/html/0707.1977">
+
+<!--Generated on Tue Mar 19 11:39:31 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script>
+  function detectColorScheme(){
+    var theme="light";
+    var current_theme = localStorage.getItem("ar5iv_theme");
+    if(current_theme){
+      if(current_theme == "dark"){
+        theme = "dark";
+      } }
+    else if(!window.matchMedia) { return false; }
+    else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark"; }
+    if (theme=="dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light"); } }
+
+  detectColorScheme();
+
+  function toggleColorScheme(){
+    var current_theme = localStorage.getItem("ar5iv_theme");
+    if (current_theme) {
+      if (current_theme == "light") {
+        localStorage.setItem("ar5iv_theme", "dark"); }
+      else {
+        localStorage.setItem("ar5iv_theme", "light"); } }
+    else {
+        localStorage.setItem("ar5iv_theme", "dark"); }
+    detectColorScheme(); }
+</script>
+<link media="all" rel="stylesheet" href="/assets/ar5iv-fonts.0.8.0.min.css"><link media="all" rel="stylesheet" href="/assets/ar5iv.0.8.0.min.css"><link media="all" rel="stylesheet" href="/assets/ar5iv-site.0.2.2.css">
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document">
+<h1 class="ltx_title ltx_title_document">MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">E. Gultepe
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_address">Physics Department, Northeastern University, Boston, Massachusetts, 02115, USA
+</span></span></span>
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">M. L. Kurnaz
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_address">Department of Physics, Bogazici University, 34342
+Bebek Istanbul, Turkey
+</span>
+<span class="ltx_contact ltx_role_email"><a href="mailto:levent.kurnaz@boun.edu.tr">levent.kurnaz@boun.edu.tr</a>
+</span>Corresponding Author</span></span>
+</div>
+
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p id="id1.id1" class="ltx_p">We present a computer simulation, which is inspired by Penna model, to help understanding the effect of genetic coding tables on population dynamics. To represent populations we used real and artificial gene sequences in this model. We coded these sequences using different amino acid tables in Nature, the standard table as well as the tables which are used by mithocondria and some eukaryotes. Contrary to common belief we find that the standard code table which is used in most organisms in Nature, does not give the most resilient coding against point mutations.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>INTRODUCTION
+<br class="ltx_break">
+</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p id="S1.p1.1" class="ltx_p">Modeling population dynamics has been popular in physics community for a while mostly because complexity of the system bears the necessity of the statistical and computational tools. Physicists brought the models which can give rise to computational simulations together with <span id="S1.p1.1.1" class="ltx_text ltx_font_italic">looking for the simplest solution</span> approach into this subject. Among all others <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib1" title="" class="ltx_ref">1</a>, <a href="#bib.bib2" title="" class="ltx_ref">2</a>, <a href="#bib.bib3" title="" class="ltx_ref">3</a>, <a href="#bib.bib4" title="" class="ltx_ref">4</a>]</cite>, Penna model <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib5" title="" class="ltx_ref">5</a>]</cite> is the most extensive simulation scheme used in population dynamics. Simulations for population dynamics usually take many different factors of live into account. In real life it is very difficult to have only one of the aspects of life count where we neglect the effects of everything else. For example in real life you cannot say that the only cause for death is point mutations because then you have to keep the individuals in the system from dying of ”old age” or of malnutrition or of fighting amongst the members. In simulations it is much easier to ignore all these facts of life and concentrate only on one simple aspect. In this work we have neglected all the other aspects of life and concentrated only on the effect of point mutations on survivability of the individuals.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p id="S1.p2.1" class="ltx_p">Genetic information of all living organism (except some viruses) is stored in DNA. The segment of DNA which contains necessary information to produce a specific protein is called <span id="S1.p2.1.1" class="ltx_text ltx_font_italic">gene</span>. A real gene is composed of two different parts: a coding portion and a non-coding portion. The coding part, exon, is responsible for protein synthesis whereas the rest, intron, does not code a protein and the purpose of this part is not clearly understood yet.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p id="S1.p3.1" class="ltx_p">The information in DNA is coded by using four different types of monomers adenine (A), guanine (G), cytosine (C) and thymine(T). These monomers are the letters of the genetic alphabet and they construct 3-letters long words, <span id="S1.p3.1.1" class="ltx_text ltx_font_italic">codons</span>. Every codon on DNA codes an amino-acid during the protein synthesis. There are <math id="S1.p3.1.m1.1" class="ltx_Math" alttext="4^{3}" display="inline"><semantics id="S1.p3.1.m1.1a"><msup id="S1.p3.1.m1.1.1" xref="S1.p3.1.m1.1.1.cmml"><mn id="S1.p3.1.m1.1.1.2" xref="S1.p3.1.m1.1.1.2.cmml">4</mn><mn id="S1.p3.1.m1.1.1.3" xref="S1.p3.1.m1.1.1.3.cmml">3</mn></msup><annotation-xml encoding="MathML-Content" id="S1.p3.1.m1.1b"><apply id="S1.p3.1.m1.1.1.cmml" xref="S1.p3.1.m1.1.1"><csymbol cd="ambiguous" id="S1.p3.1.m1.1.1.1.cmml" xref="S1.p3.1.m1.1.1">superscript</csymbol><cn type="integer" id="S1.p3.1.m1.1.1.2.cmml" xref="S1.p3.1.m1.1.1.2">4</cn><cn type="integer" id="S1.p3.1.m1.1.1.3.cmml" xref="S1.p3.1.m1.1.1.3">3</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S1.p3.1.m1.1c">4^{3}</annotation></semantics></math>, 64 possible combination of codons available on DNA. However; in Nature there are only 20 amino acids available for protein coding and as a result there is no one-to-one codon-amino acid correspondence. The table which determines how the codons are mapped into the amino acids is called <span id="S1.p3.1.2" class="ltx_text ltx_font_italic">amino acid table</span> or <span id="S1.p3.1.3" class="ltx_text ltx_font_italic">genetic coding table</span>.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p id="S1.p4.1" class="ltx_p">For a long time it was believed that the amino acid table of Nature was universal, <span id="S1.p4.1.1" class="ltx_text ltx_font_italic">Standart Genetic Code</span> (SGC). However; we now know that there are few exceptions in codon usage which are confined to mitochondria and certain protozoa <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib6" title="" class="ltx_ref">6</a>]</cite>. In these particular tables the same number of amino acids is used, but some of these amino acids are coded by different codons. For example, in <span id="S1.p4.1.2" class="ltx_text ltx_font_italic">SGC</span> , the codon “AUA” codes Isoleucine, the codon “UGA” codes Stop, and the codons “AGA” and “AGG” code Arginine . However, in the table of <span id="S1.p4.1.3" class="ltx_text ltx_font_italic">Vertebrate Mitochondrial Code</span>, they code Methionine, Tryptophan, and Stop respectively <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib7" title="" class="ltx_ref">7</a>]</cite>.</p>
+</div>
+<div id="S1.p5" class="ltx_para">
+<p id="S1.p5.3" class="ltx_p">Recently, we have developed a Monte Carlo simulation model <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite> inspired by the Penna model to investigate the significance of the number of amino acids in population dynamics. In that model, each individual was represented by a human cytokine gene sequence and mutation was assumed to be the only cause of death by eliminating all other effects. In that study, it has been shown that for maximum tolerance against mutations, the number of amino acids which codes the genetic information, is bounded between <math id="S1.p5.1.m1.1" class="ltx_Math" alttext="20" display="inline"><semantics id="S1.p5.1.m1.1a"><mn id="S1.p5.1.m1.1.1" xref="S1.p5.1.m1.1.1.cmml">20</mn><annotation-xml encoding="MathML-Content" id="S1.p5.1.m1.1b"><cn type="integer" id="S1.p5.1.m1.1.1.cmml" xref="S1.p5.1.m1.1.1">20</cn></annotation-xml><annotation encoding="application/x-tex" id="S1.p5.1.m1.1c">20</annotation></semantics></math> to <math id="S1.p5.2.m2.1" class="ltx_Math" alttext="24" display="inline"><semantics id="S1.p5.2.m2.1a"><mn id="S1.p5.2.m2.1.1" xref="S1.p5.2.m2.1.1.cmml">24</mn><annotation-xml encoding="MathML-Content" id="S1.p5.2.m2.1b"><cn type="integer" id="S1.p5.2.m2.1.1.cmml" xref="S1.p5.2.m2.1.1">24</cn></annotation-xml><annotation encoding="application/x-tex" id="S1.p5.2.m2.1c">24</annotation></semantics></math>. The number of amino acids used in Nature, <math id="S1.p5.3.m3.1" class="ltx_Math" alttext="21" display="inline"><semantics id="S1.p5.3.m3.1a"><mn id="S1.p5.3.m3.1.1" xref="S1.p5.3.m3.1.1.cmml">21</mn><annotation-xml encoding="MathML-Content" id="S1.p5.3.m3.1b"><cn type="integer" id="S1.p5.3.m3.1.1.cmml" xref="S1.p5.3.m3.1.1">21</cn></annotation-xml><annotation encoding="application/x-tex" id="S1.p5.3.m3.1c">21</annotation></semantics></math> (20 amino acids plus the Stop codon), is in this optimum range.</p>
+</div>
+<div id="S1.p6" class="ltx_para">
+<p id="S1.p6.1" class="ltx_p">In this paper, we used the same model to investigate the endurance of different amino acid tables against point mutations neglecting any other causes of death.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>COMPUTATIONAL METHOD
+<br class="ltx_break">
+</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p id="S2.p1.1" class="ltx_p">In our model, an individual was represented by three different gene sequences. First, we have used a real gene from Nature <span id="S2.p1.1.1" class="ltx_text ltx_font_italic">human cytokine</span> (LD78 Homo sapiens blood lymphocyte gene on the DNA 17<sup id="S2.p1.1.2" class="ltx_sup"><span id="S2.p1.1.2.1" class="ltx_text ltx_font_italic">th</span></sup> chromosome) <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib9" title="" class="ltx_ref">9</a>]</cite> same as in the previous model. This gene is playing an important role in immune system of human body, hence any problem in generating this gene is lethal. Afterwards we used the same model on different mammalian genes, in this paper we also report the results for human ARNT gene (Homo sapiens aryl hydrocarbon receptor nuclear translocator, transcript variant 1, mRNA) as an example.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p id="S2.p2.1" class="ltx_p">Next, we have created an artificial human gene, the average human gene, which basically reflects the codon usage frequency found in Homo sapiens. This gene consists of 1000 nucleotides (frequency is taken as an integer value per one thousand nucleotides given in <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib10" title="" class="ltx_ref">10</a>]</cite>) in a randomly chosen sequence. This artificial gene is considered to represent the whole human genome. This assures that the results we have obtained are not specific to the human cytokine gene but for whole genome.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p id="S2.p3.1" class="ltx_p">For the sake of simplicity, we have not included reproduction and we also have neglected all other effects causing death, except mutation. Using this model, we have investigated the effects of mutations on the population size. A mutation in this model was taken as a change of one nucleotide in the gene. It can be either lethal or harmless depending on whether it causes a change in the amino acid chain or not. We kept all mutation rates equal like in the Jukes-Cantor mutation scheme <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib11" title="" class="ltx_ref">11</a>]</cite>.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p id="S2.p4.1" class="ltx_p">When a mutation takes place on the exon part, there are two possibilities: The changed codon either will code the same amino acid or it will code a different amino acid [Fig. <a href="#S2.F1" title="Figure 1 ‣ 2 COMPUTATIONAL METHOD ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>] since an amino acid can be coded by more than one codon. If the mutant codon still codes for the same amino acid, this mutation is taken to be harmless because at the end it will not affect the synthesized protein. However, if the mutant codon codes for a different amino acid, the protein cannot be produced and the individual would simply die.</p>
+</div>
+<figure id="S2.F1" class="ltx_figure"><img src="/html/0707.1977/assets/x1.png" id="S2.F1.g1" class="ltx_graphics ltx_img_landscape" width="423" height="272" alt="Refer to caption">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>A mutation on exon part may be either harmless or lethal depends on whether it change the coded amino acid.</figcaption>
+</figure>
+<div id="S2.p5" class="ltx_para">
+<p id="S2.p5.1" class="ltx_p">To be more explicit, the codons AAA and AAG code the same amino acid, “lysine”; hence if AAA turns into AAG as a result of a mutation the amino acid will not change and the protein can be constructed safely. However; if AAA turns into AGA, which codes the amino acid “arginine”, the amino acid chain will change and we assume that the protein can not build up, which means the represented organism will die. There can be a mutation which converts AAA to AAX where X <math id="S2.p5.1.m1.1" class="ltx_Math" alttext="\neq" display="inline"><semantics id="S2.p5.1.m1.1a"><mo id="S2.p5.1.m1.1.1" xref="S2.p5.1.m1.1.1.cmml">≠</mo><annotation-xml encoding="MathML-Content" id="S2.p5.1.m1.1b"><neq id="S2.p5.1.m1.1.1.cmml" xref="S2.p5.1.m1.1.1"></neq></annotation-xml><annotation encoding="application/x-tex" id="S2.p5.1.m1.1c">\neq</annotation></semantics></math> A, G, C, or T; then the individual dies automatically. As a model, we are looking at a simpler case where a mutation changes A to one of G, C, or T, but not X.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p id="S2.p6.3" class="ltx_p">Since reproduction is not included in the model, the population can only diminish. The decrease in population can be found by calculating the probability of a deleterious mutation. The probability of the mutation changing the amino acid depends on the codon; so one needs to find the probability of hitting each different codon type. First, the probability of hitting a codon type (<math id="S2.p6.1.m1.1" class="ltx_Math" alttext="P_{\alpha}" display="inline"><semantics id="S2.p6.1.m1.1a"><msub id="S2.p6.1.m1.1.1" xref="S2.p6.1.m1.1.1.cmml"><mi id="S2.p6.1.m1.1.1.2" xref="S2.p6.1.m1.1.1.2.cmml">P</mi><mi id="S2.p6.1.m1.1.1.3" xref="S2.p6.1.m1.1.1.3.cmml">α</mi></msub><annotation-xml encoding="MathML-Content" id="S2.p6.1.m1.1b"><apply id="S2.p6.1.m1.1.1.cmml" xref="S2.p6.1.m1.1.1"><csymbol cd="ambiguous" id="S2.p6.1.m1.1.1.1.cmml" xref="S2.p6.1.m1.1.1">subscript</csymbol><ci id="S2.p6.1.m1.1.1.2.cmml" xref="S2.p6.1.m1.1.1.2">𝑃</ci><ci id="S2.p6.1.m1.1.1.3.cmml" xref="S2.p6.1.m1.1.1.3">𝛼</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p6.1.m1.1c">P_{\alpha}</annotation></semantics></math>) is calculated as the ratio of the number of codons of that type in the gene (<math id="S2.p6.2.m2.1" class="ltx_Math" alttext="N_{\alpha}" display="inline"><semantics id="S2.p6.2.m2.1a"><msub id="S2.p6.2.m2.1.1" xref="S2.p6.2.m2.1.1.cmml"><mi id="S2.p6.2.m2.1.1.2" xref="S2.p6.2.m2.1.1.2.cmml">N</mi><mi id="S2.p6.2.m2.1.1.3" xref="S2.p6.2.m2.1.1.3.cmml">α</mi></msub><annotation-xml encoding="MathML-Content" id="S2.p6.2.m2.1b"><apply id="S2.p6.2.m2.1.1.cmml" xref="S2.p6.2.m2.1.1"><csymbol cd="ambiguous" id="S2.p6.2.m2.1.1.1.cmml" xref="S2.p6.2.m2.1.1">subscript</csymbol><ci id="S2.p6.2.m2.1.1.2.cmml" xref="S2.p6.2.m2.1.1.2">𝑁</ci><ci id="S2.p6.2.m2.1.1.3.cmml" xref="S2.p6.2.m2.1.1.3">𝛼</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p6.2.m2.1c">N_{\alpha}</annotation></semantics></math>) to total number of codons. Then we need to exclude the mutations that do not cause a change in the amino acid and calculate the probability of a change occurring in the amino acid caused by
+a change in one nucleotide (<math id="S2.p6.3.m3.1" class="ltx_math_unparsed" alttext="P(d/{\alpha}" display="inline"><semantics id="S2.p6.3.m3.1a"><mrow id="S2.p6.3.m3.1b"><mi id="S2.p6.3.m3.1.1">P</mi><mrow id="S2.p6.3.m3.1.2"><mo stretchy="false" id="S2.p6.3.m3.1.2.1">(</mo><mi id="S2.p6.3.m3.1.2.2">d</mi><mo id="S2.p6.3.m3.1.2.3">/</mo><mi id="S2.p6.3.m3.1.2.4">α</mi></mrow></mrow><annotation encoding="application/x-tex" id="S2.p6.3.m3.1c">P(d/{\alpha}</annotation></semantics></math>)).</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p id="S2.p7.1" class="ltx_p">We used only the exon (protein coding) part of the gene considering any mutations on the intron part is harmless. As a simple example, the human cytokine gene has a total length of 2068 nucleotides; 621 nucleotides in exon part and 1447 ones in intron. The probability of hitting the exon part of the gene is simply the ratio of the exon part to the total gene:</p>
+<table id="S2.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E1.m1.1" class="ltx_Math" alttext="P(hitting\&gt;exon)=\frac{621}{2068}=0.3032" display="block"><semantics id="S2.E1.m1.1a"><mrow id="S2.E1.m1.1.1" xref="S2.E1.m1.1.1.cmml"><mrow id="S2.E1.m1.1.1.1" xref="S2.E1.m1.1.1.1.cmml"><mi id="S2.E1.m1.1.1.1.3" xref="S2.E1.m1.1.1.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.2" xref="S2.E1.m1.1.1.1.2.cmml">​</mo><mrow id="S2.E1.m1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E1.m1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E1.m1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.cmml"><mi id="S2.E1.m1.1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.1.2.cmml">h</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.3" xref="S2.E1.m1.1.1.1.1.1.1.3.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1a" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.4" xref="S2.E1.m1.1.1.1.1.1.1.4.cmml">t</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1b" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.5" xref="S2.E1.m1.1.1.1.1.1.1.5.cmml">t</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1c" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.6" xref="S2.E1.m1.1.1.1.1.1.1.6.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1d" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.7" xref="S2.E1.m1.1.1.1.1.1.1.7.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1e" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.8" xref="S2.E1.m1.1.1.1.1.1.1.8.cmml">g</mi><mo lspace="0.220em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1f" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.9" xref="S2.E1.m1.1.1.1.1.1.1.9.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1g" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.10" xref="S2.E1.m1.1.1.1.1.1.1.10.cmml">x</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1h" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.11" xref="S2.E1.m1.1.1.1.1.1.1.11.cmml">o</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.1i" xref="S2.E1.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.1.1.1.12" xref="S2.E1.m1.1.1.1.1.1.1.12.cmml">n</mi></mrow><mo stretchy="false" id="S2.E1.m1.1.1.1.1.1.3" xref="S2.E1.m1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S2.E1.m1.1.1.3" xref="S2.E1.m1.1.1.3.cmml">=</mo><mfrac id="S2.E1.m1.1.1.4" xref="S2.E1.m1.1.1.4.cmml"><mn id="S2.E1.m1.1.1.4.2" xref="S2.E1.m1.1.1.4.2.cmml">621</mn><mn id="S2.E1.m1.1.1.4.3" xref="S2.E1.m1.1.1.4.3.cmml">2068</mn></mfrac><mo id="S2.E1.m1.1.1.5" xref="S2.E1.m1.1.1.5.cmml">=</mo><mn id="S2.E1.m1.1.1.6" xref="S2.E1.m1.1.1.6.cmml">0.3032</mn></mrow><annotation-xml encoding="MathML-Content" id="S2.E1.m1.1b"><apply id="S2.E1.m1.1.1.cmml" xref="S2.E1.m1.1.1"><and id="S2.E1.m1.1.1a.cmml" xref="S2.E1.m1.1.1"></and><apply id="S2.E1.m1.1.1b.cmml" xref="S2.E1.m1.1.1"><eq id="S2.E1.m1.1.1.3.cmml" xref="S2.E1.m1.1.1.3"></eq><apply id="S2.E1.m1.1.1.1.cmml" xref="S2.E1.m1.1.1.1"><times id="S2.E1.m1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1.2"></times><ci id="S2.E1.m1.1.1.1.3.cmml" xref="S2.E1.m1.1.1.1.3">𝑃</ci><apply id="S2.E1.m1.1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1"><times id="S2.E1.m1.1.1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1"></times><ci id="S2.E1.m1.1.1.1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1.1.1.1.2">ℎ</ci><ci id="S2.E1.m1.1.1.1.1.1.1.3.cmml" xref="S2.E1.m1.1.1.1.1.1.1.3">𝑖</ci><ci id="S2.E1.m1.1.1.1.1.1.1.4.cmml" xref="S2.E1.m1.1.1.1.1.1.1.4">𝑡</ci><ci id="S2.E1.m1.1.1.1.1.1.1.5.cmml" xref="S2.E1.m1.1.1.1.1.1.1.5">𝑡</ci><ci id="S2.E1.m1.1.1.1.1.1.1.6.cmml" xref="S2.E1.m1.1.1.1.1.1.1.6">𝑖</ci><ci id="S2.E1.m1.1.1.1.1.1.1.7.cmml" xref="S2.E1.m1.1.1.1.1.1.1.7">𝑛</ci><ci id="S2.E1.m1.1.1.1.1.1.1.8.cmml" xref="S2.E1.m1.1.1.1.1.1.1.8">𝑔</ci><ci id="S2.E1.m1.1.1.1.1.1.1.9.cmml" xref="S2.E1.m1.1.1.1.1.1.1.9">𝑒</ci><ci id="S2.E1.m1.1.1.1.1.1.1.10.cmml" xref="S2.E1.m1.1.1.1.1.1.1.10">𝑥</ci><ci id="S2.E1.m1.1.1.1.1.1.1.11.cmml" xref="S2.E1.m1.1.1.1.1.1.1.11">𝑜</ci><ci id="S2.E1.m1.1.1.1.1.1.1.12.cmml" xref="S2.E1.m1.1.1.1.1.1.1.12">𝑛</ci></apply></apply><apply id="S2.E1.m1.1.1.4.cmml" xref="S2.E1.m1.1.1.4"><divide id="S2.E1.m1.1.1.4.1.cmml" xref="S2.E1.m1.1.1.4"></divide><cn type="integer" id="S2.E1.m1.1.1.4.2.cmml" xref="S2.E1.m1.1.1.4.2">621</cn><cn type="integer" id="S2.E1.m1.1.1.4.3.cmml" xref="S2.E1.m1.1.1.4.3">2068</cn></apply></apply><apply id="S2.E1.m1.1.1c.cmml" xref="S2.E1.m1.1.1"><eq id="S2.E1.m1.1.1.5.cmml" xref="S2.E1.m1.1.1.5"></eq><share href="#S2.E1.m1.1.1.4.cmml" id="S2.E1.m1.1.1d.cmml" xref="S2.E1.m1.1.1"></share><cn type="float" id="S2.E1.m1.1.1.6.cmml" xref="S2.E1.m1.1.1.6">0.3032</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E1.m1.1c">P(hitting\&gt;exon)=\frac{621}{2068}=0.3032</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p8" class="ltx_para ltx_noindent">
+<p id="S2.p8.1" class="ltx_p">Hence; the probability of having a <span id="S2.p8.1.1" class="ltx_text ltx_font_italic">deleterious</span> mutation for all of the gene is simply a product of mutation probability and probability of hitting the exon part of gene. As the chances of hitting any part of the gene is a same, we can neglect the intron part in the simulation since this would only be a multiplicative constant in the problem. Therefore the probability of having a deleterious mutation for all of the human cytokine gene is simply:</p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<table id="S2.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E2.m1.2" class="ltx_Math" alttext="P(deleterious)\propto\sum_{\alpha=1}^{64}[P_{\alpha}P(d/\alpha)]=0.7729" display="block"><semantics id="S2.E2.m1.2a"><mrow id="S2.E2.m1.2.2" xref="S2.E2.m1.2.2.cmml"><mrow id="S2.E2.m1.1.1.1" xref="S2.E2.m1.1.1.1.cmml"><mi id="S2.E2.m1.1.1.1.3" xref="S2.E2.m1.1.1.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.2" xref="S2.E2.m1.1.1.1.2.cmml">​</mo><mrow id="S2.E2.m1.1.1.1.1.1" xref="S2.E2.m1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E2.m1.1.1.1.1.1.2" xref="S2.E2.m1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E2.m1.1.1.1.1.1.1" xref="S2.E2.m1.1.1.1.1.1.1.cmml"><mi id="S2.E2.m1.1.1.1.1.1.1.2" xref="S2.E2.m1.1.1.1.1.1.1.2.cmml">d</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.3" xref="S2.E2.m1.1.1.1.1.1.1.3.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1a" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.4" xref="S2.E2.m1.1.1.1.1.1.1.4.cmml">l</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1b" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.5" xref="S2.E2.m1.1.1.1.1.1.1.5.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1c" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.6" xref="S2.E2.m1.1.1.1.1.1.1.6.cmml">t</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1d" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.7" xref="S2.E2.m1.1.1.1.1.1.1.7.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1e" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.8" xref="S2.E2.m1.1.1.1.1.1.1.8.cmml">r</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1f" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.9" xref="S2.E2.m1.1.1.1.1.1.1.9.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1g" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.10" xref="S2.E2.m1.1.1.1.1.1.1.10.cmml">o</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1h" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.11" xref="S2.E2.m1.1.1.1.1.1.1.11.cmml">u</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.1.1.1.1.1.1.1i" xref="S2.E2.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E2.m1.1.1.1.1.1.1.12" xref="S2.E2.m1.1.1.1.1.1.1.12.cmml">s</mi></mrow><mo stretchy="false" id="S2.E2.m1.1.1.1.1.1.3" xref="S2.E2.m1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo rspace="0.111em" id="S2.E2.m1.2.2.4" xref="S2.E2.m1.2.2.4.cmml">∝</mo><mrow id="S2.E2.m1.2.2.2" xref="S2.E2.m1.2.2.2.cmml"><munderover id="S2.E2.m1.2.2.2.2" xref="S2.E2.m1.2.2.2.2.cmml"><mo movablelimits="false" rspace="0em" id="S2.E2.m1.2.2.2.2.2.2" xref="S2.E2.m1.2.2.2.2.2.2.cmml">∑</mo><mrow id="S2.E2.m1.2.2.2.2.2.3" xref="S2.E2.m1.2.2.2.2.2.3.cmml"><mi id="S2.E2.m1.2.2.2.2.2.3.2" xref="S2.E2.m1.2.2.2.2.2.3.2.cmml">α</mi><mo id="S2.E2.m1.2.2.2.2.2.3.1" xref="S2.E2.m1.2.2.2.2.2.3.1.cmml">=</mo><mn id="S2.E2.m1.2.2.2.2.2.3.3" xref="S2.E2.m1.2.2.2.2.2.3.3.cmml">1</mn></mrow><mn id="S2.E2.m1.2.2.2.2.3" xref="S2.E2.m1.2.2.2.2.3.cmml">64</mn></munderover><mrow id="S2.E2.m1.2.2.2.1.1" xref="S2.E2.m1.2.2.2.1.2.cmml"><mo stretchy="false" id="S2.E2.m1.2.2.2.1.1.2" xref="S2.E2.m1.2.2.2.1.2.1.cmml">[</mo><mrow id="S2.E2.m1.2.2.2.1.1.1" xref="S2.E2.m1.2.2.2.1.1.1.cmml"><msub id="S2.E2.m1.2.2.2.1.1.1.3" xref="S2.E2.m1.2.2.2.1.1.1.3.cmml"><mi id="S2.E2.m1.2.2.2.1.1.1.3.2" xref="S2.E2.m1.2.2.2.1.1.1.3.2.cmml">P</mi><mi id="S2.E2.m1.2.2.2.1.1.1.3.3" xref="S2.E2.m1.2.2.2.1.1.1.3.3.cmml">α</mi></msub><mo lspace="0em" rspace="0em" id="S2.E2.m1.2.2.2.1.1.1.2" xref="S2.E2.m1.2.2.2.1.1.1.2.cmml">​</mo><mi id="S2.E2.m1.2.2.2.1.1.1.4" xref="S2.E2.m1.2.2.2.1.1.1.4.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E2.m1.2.2.2.1.1.1.2a" xref="S2.E2.m1.2.2.2.1.1.1.2.cmml">​</mo><mrow id="S2.E2.m1.2.2.2.1.1.1.1.1" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E2.m1.2.2.2.1.1.1.1.1.2" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E2.m1.2.2.2.1.1.1.1.1.1" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.cmml"><mi id="S2.E2.m1.2.2.2.1.1.1.1.1.1.2" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.2.cmml">d</mi><mo id="S2.E2.m1.2.2.2.1.1.1.1.1.1.1" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.1.cmml">/</mo><mi id="S2.E2.m1.2.2.2.1.1.1.1.1.1.3" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.3.cmml">α</mi></mrow><mo stretchy="false" id="S2.E2.m1.2.2.2.1.1.1.1.1.3" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo stretchy="false" id="S2.E2.m1.2.2.2.1.1.3" xref="S2.E2.m1.2.2.2.1.2.1.cmml">]</mo></mrow></mrow><mo id="S2.E2.m1.2.2.5" xref="S2.E2.m1.2.2.5.cmml">=</mo><mn id="S2.E2.m1.2.2.6" xref="S2.E2.m1.2.2.6.cmml">0.7729</mn></mrow><annotation-xml encoding="MathML-Content" id="S2.E2.m1.2b"><apply id="S2.E2.m1.2.2.cmml" xref="S2.E2.m1.2.2"><and id="S2.E2.m1.2.2a.cmml" xref="S2.E2.m1.2.2"></and><apply id="S2.E2.m1.2.2b.cmml" xref="S2.E2.m1.2.2"><csymbol cd="latexml" id="S2.E2.m1.2.2.4.cmml" xref="S2.E2.m1.2.2.4">proportional-to</csymbol><apply id="S2.E2.m1.1.1.1.cmml" xref="S2.E2.m1.1.1.1"><times id="S2.E2.m1.1.1.1.2.cmml" xref="S2.E2.m1.1.1.1.2"></times><ci id="S2.E2.m1.1.1.1.3.cmml" xref="S2.E2.m1.1.1.1.3">𝑃</ci><apply id="S2.E2.m1.1.1.1.1.1.1.cmml" xref="S2.E2.m1.1.1.1.1.1"><times id="S2.E2.m1.1.1.1.1.1.1.1.cmml" xref="S2.E2.m1.1.1.1.1.1.1.1"></times><ci id="S2.E2.m1.1.1.1.1.1.1.2.cmml" xref="S2.E2.m1.1.1.1.1.1.1.2">𝑑</ci><ci id="S2.E2.m1.1.1.1.1.1.1.3.cmml" xref="S2.E2.m1.1.1.1.1.1.1.3">𝑒</ci><ci id="S2.E2.m1.1.1.1.1.1.1.4.cmml" xref="S2.E2.m1.1.1.1.1.1.1.4">𝑙</ci><ci id="S2.E2.m1.1.1.1.1.1.1.5.cmml" xref="S2.E2.m1.1.1.1.1.1.1.5">𝑒</ci><ci id="S2.E2.m1.1.1.1.1.1.1.6.cmml" xref="S2.E2.m1.1.1.1.1.1.1.6">𝑡</ci><ci id="S2.E2.m1.1.1.1.1.1.1.7.cmml" xref="S2.E2.m1.1.1.1.1.1.1.7">𝑒</ci><ci id="S2.E2.m1.1.1.1.1.1.1.8.cmml" xref="S2.E2.m1.1.1.1.1.1.1.8">𝑟</ci><ci id="S2.E2.m1.1.1.1.1.1.1.9.cmml" xref="S2.E2.m1.1.1.1.1.1.1.9">𝑖</ci><ci id="S2.E2.m1.1.1.1.1.1.1.10.cmml" xref="S2.E2.m1.1.1.1.1.1.1.10">𝑜</ci><ci id="S2.E2.m1.1.1.1.1.1.1.11.cmml" xref="S2.E2.m1.1.1.1.1.1.1.11">𝑢</ci><ci id="S2.E2.m1.1.1.1.1.1.1.12.cmml" xref="S2.E2.m1.1.1.1.1.1.1.12">𝑠</ci></apply></apply><apply id="S2.E2.m1.2.2.2.cmml" xref="S2.E2.m1.2.2.2"><apply id="S2.E2.m1.2.2.2.2.cmml" xref="S2.E2.m1.2.2.2.2"><csymbol cd="ambiguous" id="S2.E2.m1.2.2.2.2.1.cmml" xref="S2.E2.m1.2.2.2.2">superscript</csymbol><apply id="S2.E2.m1.2.2.2.2.2.cmml" xref="S2.E2.m1.2.2.2.2"><csymbol cd="ambiguous" id="S2.E2.m1.2.2.2.2.2.1.cmml" xref="S2.E2.m1.2.2.2.2">subscript</csymbol><sum id="S2.E2.m1.2.2.2.2.2.2.cmml" xref="S2.E2.m1.2.2.2.2.2.2"></sum><apply id="S2.E2.m1.2.2.2.2.2.3.cmml" xref="S2.E2.m1.2.2.2.2.2.3"><eq id="S2.E2.m1.2.2.2.2.2.3.1.cmml" xref="S2.E2.m1.2.2.2.2.2.3.1"></eq><ci id="S2.E2.m1.2.2.2.2.2.3.2.cmml" xref="S2.E2.m1.2.2.2.2.2.3.2">𝛼</ci><cn type="integer" id="S2.E2.m1.2.2.2.2.2.3.3.cmml" xref="S2.E2.m1.2.2.2.2.2.3.3">1</cn></apply></apply><cn type="integer" id="S2.E2.m1.2.2.2.2.3.cmml" xref="S2.E2.m1.2.2.2.2.3">64</cn></apply><apply id="S2.E2.m1.2.2.2.1.2.cmml" xref="S2.E2.m1.2.2.2.1.1"><csymbol cd="latexml" id="S2.E2.m1.2.2.2.1.2.1.cmml" xref="S2.E2.m1.2.2.2.1.1.2">delimited-[]</csymbol><apply id="S2.E2.m1.2.2.2.1.1.1.cmml" xref="S2.E2.m1.2.2.2.1.1.1"><times id="S2.E2.m1.2.2.2.1.1.1.2.cmml" xref="S2.E2.m1.2.2.2.1.1.1.2"></times><apply id="S2.E2.m1.2.2.2.1.1.1.3.cmml" xref="S2.E2.m1.2.2.2.1.1.1.3"><csymbol cd="ambiguous" id="S2.E2.m1.2.2.2.1.1.1.3.1.cmml" xref="S2.E2.m1.2.2.2.1.1.1.3">subscript</csymbol><ci id="S2.E2.m1.2.2.2.1.1.1.3.2.cmml" xref="S2.E2.m1.2.2.2.1.1.1.3.2">𝑃</ci><ci id="S2.E2.m1.2.2.2.1.1.1.3.3.cmml" xref="S2.E2.m1.2.2.2.1.1.1.3.3">𝛼</ci></apply><ci id="S2.E2.m1.2.2.2.1.1.1.4.cmml" xref="S2.E2.m1.2.2.2.1.1.1.4">𝑃</ci><apply id="S2.E2.m1.2.2.2.1.1.1.1.1.1.cmml" xref="S2.E2.m1.2.2.2.1.1.1.1.1"><divide id="S2.E2.m1.2.2.2.1.1.1.1.1.1.1.cmml" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.1"></divide><ci id="S2.E2.m1.2.2.2.1.1.1.1.1.1.2.cmml" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.2">𝑑</ci><ci id="S2.E2.m1.2.2.2.1.1.1.1.1.1.3.cmml" xref="S2.E2.m1.2.2.2.1.1.1.1.1.1.3">𝛼</ci></apply></apply></apply></apply></apply><apply id="S2.E2.m1.2.2c.cmml" xref="S2.E2.m1.2.2"><eq id="S2.E2.m1.2.2.5.cmml" xref="S2.E2.m1.2.2.5"></eq><share href="#S2.E2.m1.2.2.2.cmml" id="S2.E2.m1.2.2d.cmml" xref="S2.E2.m1.2.2"></share><cn type="float" id="S2.E2.m1.2.2.6.cmml" xref="S2.E2.m1.2.2.6">0.7729</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E2.m1.2c">P(deleterious)\propto\sum_{\alpha=1}^{64}[P_{\alpha}P(d/\alpha)]=0.7729</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p10" class="ltx_para ltx_noindent">
+<p id="S2.p10.1" class="ltx_p">The survival probability can be calculated by:</p>
+</div>
+<div id="S2.p11" class="ltx_para">
+<table id="S2.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E3.m1.2" class="ltx_Math" alttext="P(surviving)=1-P(deleterious)=0.2271" display="block"><semantics id="S2.E3.m1.2a"><mrow id="S2.E3.m1.2.2" xref="S2.E3.m1.2.2.cmml"><mrow id="S2.E3.m1.1.1.1" xref="S2.E3.m1.1.1.1.cmml"><mi id="S2.E3.m1.1.1.1.3" xref="S2.E3.m1.1.1.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.2" xref="S2.E3.m1.1.1.1.2.cmml">​</mo><mrow id="S2.E3.m1.1.1.1.1.1" xref="S2.E3.m1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E3.m1.1.1.1.1.1.2" xref="S2.E3.m1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E3.m1.1.1.1.1.1.1" xref="S2.E3.m1.1.1.1.1.1.1.cmml"><mi id="S2.E3.m1.1.1.1.1.1.1.2" xref="S2.E3.m1.1.1.1.1.1.1.2.cmml">s</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.3" xref="S2.E3.m1.1.1.1.1.1.1.3.cmml">u</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1a" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.4" xref="S2.E3.m1.1.1.1.1.1.1.4.cmml">r</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1b" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.5" xref="S2.E3.m1.1.1.1.1.1.1.5.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1c" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.6" xref="S2.E3.m1.1.1.1.1.1.1.6.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1d" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.7" xref="S2.E3.m1.1.1.1.1.1.1.7.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1e" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.8" xref="S2.E3.m1.1.1.1.1.1.1.8.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1f" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.9" xref="S2.E3.m1.1.1.1.1.1.1.9.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.1.1.1.1.1.1.1g" xref="S2.E3.m1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.1.1.1.1.1.1.10" xref="S2.E3.m1.1.1.1.1.1.1.10.cmml">g</mi></mrow><mo stretchy="false" id="S2.E3.m1.1.1.1.1.1.3" xref="S2.E3.m1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S2.E3.m1.2.2.4" xref="S2.E3.m1.2.2.4.cmml">=</mo><mrow id="S2.E3.m1.2.2.2" xref="S2.E3.m1.2.2.2.cmml"><mn id="S2.E3.m1.2.2.2.3" xref="S2.E3.m1.2.2.2.3.cmml">1</mn><mo id="S2.E3.m1.2.2.2.2" xref="S2.E3.m1.2.2.2.2.cmml">−</mo><mrow id="S2.E3.m1.2.2.2.1" xref="S2.E3.m1.2.2.2.1.cmml"><mi id="S2.E3.m1.2.2.2.1.3" xref="S2.E3.m1.2.2.2.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.2" xref="S2.E3.m1.2.2.2.1.2.cmml">​</mo><mrow id="S2.E3.m1.2.2.2.1.1.1" xref="S2.E3.m1.2.2.2.1.1.1.1.cmml"><mo stretchy="false" id="S2.E3.m1.2.2.2.1.1.1.2" xref="S2.E3.m1.2.2.2.1.1.1.1.cmml">(</mo><mrow id="S2.E3.m1.2.2.2.1.1.1.1" xref="S2.E3.m1.2.2.2.1.1.1.1.cmml"><mi id="S2.E3.m1.2.2.2.1.1.1.1.2" xref="S2.E3.m1.2.2.2.1.1.1.1.2.cmml">d</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.3" xref="S2.E3.m1.2.2.2.1.1.1.1.3.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1a" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.4" xref="S2.E3.m1.2.2.2.1.1.1.1.4.cmml">l</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1b" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.5" xref="S2.E3.m1.2.2.2.1.1.1.1.5.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1c" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.6" xref="S2.E3.m1.2.2.2.1.1.1.1.6.cmml">t</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1d" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.7" xref="S2.E3.m1.2.2.2.1.1.1.1.7.cmml">e</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1e" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.8" xref="S2.E3.m1.2.2.2.1.1.1.1.8.cmml">r</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1f" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.9" xref="S2.E3.m1.2.2.2.1.1.1.1.9.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1g" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.10" xref="S2.E3.m1.2.2.2.1.1.1.1.10.cmml">o</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1h" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.11" xref="S2.E3.m1.2.2.2.1.1.1.1.11.cmml">u</mi><mo lspace="0em" rspace="0em" id="S2.E3.m1.2.2.2.1.1.1.1.1i" xref="S2.E3.m1.2.2.2.1.1.1.1.1.cmml">​</mo><mi id="S2.E3.m1.2.2.2.1.1.1.1.12" xref="S2.E3.m1.2.2.2.1.1.1.1.12.cmml">s</mi></mrow><mo stretchy="false" id="S2.E3.m1.2.2.2.1.1.1.3" xref="S2.E3.m1.2.2.2.1.1.1.1.cmml">)</mo></mrow></mrow></mrow><mo id="S2.E3.m1.2.2.5" xref="S2.E3.m1.2.2.5.cmml">=</mo><mn id="S2.E3.m1.2.2.6" xref="S2.E3.m1.2.2.6.cmml">0.2271</mn></mrow><annotation-xml encoding="MathML-Content" id="S2.E3.m1.2b"><apply id="S2.E3.m1.2.2.cmml" xref="S2.E3.m1.2.2"><and id="S2.E3.m1.2.2a.cmml" xref="S2.E3.m1.2.2"></and><apply id="S2.E3.m1.2.2b.cmml" xref="S2.E3.m1.2.2"><eq id="S2.E3.m1.2.2.4.cmml" xref="S2.E3.m1.2.2.4"></eq><apply id="S2.E3.m1.1.1.1.cmml" xref="S2.E3.m1.1.1.1"><times id="S2.E3.m1.1.1.1.2.cmml" xref="S2.E3.m1.1.1.1.2"></times><ci id="S2.E3.m1.1.1.1.3.cmml" xref="S2.E3.m1.1.1.1.3">𝑃</ci><apply id="S2.E3.m1.1.1.1.1.1.1.cmml" xref="S2.E3.m1.1.1.1.1.1"><times id="S2.E3.m1.1.1.1.1.1.1.1.cmml" xref="S2.E3.m1.1.1.1.1.1.1.1"></times><ci id="S2.E3.m1.1.1.1.1.1.1.2.cmml" xref="S2.E3.m1.1.1.1.1.1.1.2">𝑠</ci><ci id="S2.E3.m1.1.1.1.1.1.1.3.cmml" xref="S2.E3.m1.1.1.1.1.1.1.3">𝑢</ci><ci id="S2.E3.m1.1.1.1.1.1.1.4.cmml" xref="S2.E3.m1.1.1.1.1.1.1.4">𝑟</ci><ci id="S2.E3.m1.1.1.1.1.1.1.5.cmml" xref="S2.E3.m1.1.1.1.1.1.1.5">𝑣</ci><ci id="S2.E3.m1.1.1.1.1.1.1.6.cmml" xref="S2.E3.m1.1.1.1.1.1.1.6">𝑖</ci><ci id="S2.E3.m1.1.1.1.1.1.1.7.cmml" xref="S2.E3.m1.1.1.1.1.1.1.7">𝑣</ci><ci id="S2.E3.m1.1.1.1.1.1.1.8.cmml" xref="S2.E3.m1.1.1.1.1.1.1.8">𝑖</ci><ci id="S2.E3.m1.1.1.1.1.1.1.9.cmml" xref="S2.E3.m1.1.1.1.1.1.1.9">𝑛</ci><ci id="S2.E3.m1.1.1.1.1.1.1.10.cmml" xref="S2.E3.m1.1.1.1.1.1.1.10">𝑔</ci></apply></apply><apply id="S2.E3.m1.2.2.2.cmml" xref="S2.E3.m1.2.2.2"><minus id="S2.E3.m1.2.2.2.2.cmml" xref="S2.E3.m1.2.2.2.2"></minus><cn type="integer" id="S2.E3.m1.2.2.2.3.cmml" xref="S2.E3.m1.2.2.2.3">1</cn><apply id="S2.E3.m1.2.2.2.1.cmml" xref="S2.E3.m1.2.2.2.1"><times id="S2.E3.m1.2.2.2.1.2.cmml" xref="S2.E3.m1.2.2.2.1.2"></times><ci id="S2.E3.m1.2.2.2.1.3.cmml" xref="S2.E3.m1.2.2.2.1.3">𝑃</ci><apply id="S2.E3.m1.2.2.2.1.1.1.1.cmml" xref="S2.E3.m1.2.2.2.1.1.1"><times id="S2.E3.m1.2.2.2.1.1.1.1.1.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.1"></times><ci id="S2.E3.m1.2.2.2.1.1.1.1.2.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.2">𝑑</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.3.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.3">𝑒</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.4.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.4">𝑙</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.5.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.5">𝑒</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.6.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.6">𝑡</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.7.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.7">𝑒</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.8.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.8">𝑟</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.9.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.9">𝑖</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.10.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.10">𝑜</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.11.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.11">𝑢</ci><ci id="S2.E3.m1.2.2.2.1.1.1.1.12.cmml" xref="S2.E3.m1.2.2.2.1.1.1.1.12">𝑠</ci></apply></apply></apply></apply><apply id="S2.E3.m1.2.2c.cmml" xref="S2.E3.m1.2.2"><eq id="S2.E3.m1.2.2.5.cmml" xref="S2.E3.m1.2.2.5"></eq><share href="#S2.E3.m1.2.2.2.cmml" id="S2.E3.m1.2.2d.cmml" xref="S2.E3.m1.2.2"></share><cn type="float" id="S2.E3.m1.2.2.6.cmml" xref="S2.E3.m1.2.2.6">0.2271</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E3.m1.2c">P(surviving)=1-P(deleterious)=0.2271</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p12" class="ltx_para">
+<p id="S2.p12.3" class="ltx_p">If we take an initial population of <math id="S2.p12.1.m1.1" class="ltx_Math" alttext="N_{0}" display="inline"><semantics id="S2.p12.1.m1.1a"><msub id="S2.p12.1.m1.1.1" xref="S2.p12.1.m1.1.1.cmml"><mi id="S2.p12.1.m1.1.1.2" xref="S2.p12.1.m1.1.1.2.cmml">N</mi><mn id="S2.p12.1.m1.1.1.3" xref="S2.p12.1.m1.1.1.3.cmml">0</mn></msub><annotation-xml encoding="MathML-Content" id="S2.p12.1.m1.1b"><apply id="S2.p12.1.m1.1.1.cmml" xref="S2.p12.1.m1.1.1"><csymbol cd="ambiguous" id="S2.p12.1.m1.1.1.1.cmml" xref="S2.p12.1.m1.1.1">subscript</csymbol><ci id="S2.p12.1.m1.1.1.2.cmml" xref="S2.p12.1.m1.1.1.2">𝑁</ci><cn type="integer" id="S2.p12.1.m1.1.1.3.cmml" xref="S2.p12.1.m1.1.1.3">0</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p12.1.m1.1c">N_{0}</annotation></semantics></math> genes (individuals), after <math id="S2.p12.2.m2.1" class="ltx_Math" alttext="n" display="inline"><semantics id="S2.p12.2.m2.1a"><mi id="S2.p12.2.m2.1.1" xref="S2.p12.2.m2.1.1.cmml">n</mi><annotation-xml encoding="MathML-Content" id="S2.p12.2.m2.1b"><ci id="S2.p12.2.m2.1.1.cmml" xref="S2.p12.2.m2.1.1">𝑛</ci></annotation-xml><annotation encoding="application/x-tex" id="S2.p12.2.m2.1c">n</annotation></semantics></math> number of mutations, to the first order, the number of surviving individuals (<math id="S2.p12.3.m3.1" class="ltx_Math" alttext="N_{n}" display="inline"><semantics id="S2.p12.3.m3.1a"><msub id="S2.p12.3.m3.1.1" xref="S2.p12.3.m3.1.1.cmml"><mi id="S2.p12.3.m3.1.1.2" xref="S2.p12.3.m3.1.1.2.cmml">N</mi><mi id="S2.p12.3.m3.1.1.3" xref="S2.p12.3.m3.1.1.3.cmml">n</mi></msub><annotation-xml encoding="MathML-Content" id="S2.p12.3.m3.1b"><apply id="S2.p12.3.m3.1.1.cmml" xref="S2.p12.3.m3.1.1"><csymbol cd="ambiguous" id="S2.p12.3.m3.1.1.1.cmml" xref="S2.p12.3.m3.1.1">subscript</csymbol><ci id="S2.p12.3.m3.1.1.2.cmml" xref="S2.p12.3.m3.1.1.2">𝑁</ci><ci id="S2.p12.3.m3.1.1.3.cmml" xref="S2.p12.3.m3.1.1.3">𝑛</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p12.3.m3.1c">N_{n}</annotation></semantics></math>) is given by:</p>
+</div>
+<div id="S2.p13" class="ltx_para">
+<table id="S2.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E4.m1.1" class="ltx_Math" alttext="N_{n}\approx N_{0}P(surviving)^{n}" display="block"><semantics id="S2.E4.m1.1a"><mrow id="S2.E4.m1.1.1" xref="S2.E4.m1.1.1.cmml"><msub id="S2.E4.m1.1.1.3" xref="S2.E4.m1.1.1.3.cmml"><mi id="S2.E4.m1.1.1.3.2" xref="S2.E4.m1.1.1.3.2.cmml">N</mi><mi id="S2.E4.m1.1.1.3.3" xref="S2.E4.m1.1.1.3.3.cmml">n</mi></msub><mo id="S2.E4.m1.1.1.2" xref="S2.E4.m1.1.1.2.cmml">≈</mo><mrow id="S2.E4.m1.1.1.1" xref="S2.E4.m1.1.1.1.cmml"><msub id="S2.E4.m1.1.1.1.3" xref="S2.E4.m1.1.1.1.3.cmml"><mi id="S2.E4.m1.1.1.1.3.2" xref="S2.E4.m1.1.1.1.3.2.cmml">N</mi><mn id="S2.E4.m1.1.1.1.3.3" xref="S2.E4.m1.1.1.1.3.3.cmml">0</mn></msub><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.2" xref="S2.E4.m1.1.1.1.2.cmml">​</mo><mi id="S2.E4.m1.1.1.1.4" xref="S2.E4.m1.1.1.1.4.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.2a" xref="S2.E4.m1.1.1.1.2.cmml">​</mo><msup id="S2.E4.m1.1.1.1.1" xref="S2.E4.m1.1.1.1.1.cmml"><mrow id="S2.E4.m1.1.1.1.1.1.1" xref="S2.E4.m1.1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E4.m1.1.1.1.1.1.1.2" xref="S2.E4.m1.1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E4.m1.1.1.1.1.1.1.1" xref="S2.E4.m1.1.1.1.1.1.1.1.cmml"><mi id="S2.E4.m1.1.1.1.1.1.1.1.2" xref="S2.E4.m1.1.1.1.1.1.1.1.2.cmml">s</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.3" xref="S2.E4.m1.1.1.1.1.1.1.1.3.cmml">u</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1a" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.4" xref="S2.E4.m1.1.1.1.1.1.1.1.4.cmml">r</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1b" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.5" xref="S2.E4.m1.1.1.1.1.1.1.1.5.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1c" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.6" xref="S2.E4.m1.1.1.1.1.1.1.1.6.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1d" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.7" xref="S2.E4.m1.1.1.1.1.1.1.1.7.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1e" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.8" xref="S2.E4.m1.1.1.1.1.1.1.1.8.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1f" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.9" xref="S2.E4.m1.1.1.1.1.1.1.1.9.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E4.m1.1.1.1.1.1.1.1.1g" xref="S2.E4.m1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E4.m1.1.1.1.1.1.1.1.10" xref="S2.E4.m1.1.1.1.1.1.1.1.10.cmml">g</mi></mrow><mo stretchy="false" id="S2.E4.m1.1.1.1.1.1.1.3" xref="S2.E4.m1.1.1.1.1.1.1.1.cmml">)</mo></mrow><mi id="S2.E4.m1.1.1.1.1.3" xref="S2.E4.m1.1.1.1.1.3.cmml">n</mi></msup></mrow></mrow><annotation-xml encoding="MathML-Content" id="S2.E4.m1.1b"><apply id="S2.E4.m1.1.1.cmml" xref="S2.E4.m1.1.1"><approx id="S2.E4.m1.1.1.2.cmml" xref="S2.E4.m1.1.1.2"></approx><apply id="S2.E4.m1.1.1.3.cmml" xref="S2.E4.m1.1.1.3"><csymbol cd="ambiguous" id="S2.E4.m1.1.1.3.1.cmml" xref="S2.E4.m1.1.1.3">subscript</csymbol><ci id="S2.E4.m1.1.1.3.2.cmml" xref="S2.E4.m1.1.1.3.2">𝑁</ci><ci id="S2.E4.m1.1.1.3.3.cmml" xref="S2.E4.m1.1.1.3.3">𝑛</ci></apply><apply id="S2.E4.m1.1.1.1.cmml" xref="S2.E4.m1.1.1.1"><times id="S2.E4.m1.1.1.1.2.cmml" xref="S2.E4.m1.1.1.1.2"></times><apply id="S2.E4.m1.1.1.1.3.cmml" xref="S2.E4.m1.1.1.1.3"><csymbol cd="ambiguous" id="S2.E4.m1.1.1.1.3.1.cmml" xref="S2.E4.m1.1.1.1.3">subscript</csymbol><ci id="S2.E4.m1.1.1.1.3.2.cmml" xref="S2.E4.m1.1.1.1.3.2">𝑁</ci><cn type="integer" id="S2.E4.m1.1.1.1.3.3.cmml" xref="S2.E4.m1.1.1.1.3.3">0</cn></apply><ci id="S2.E4.m1.1.1.1.4.cmml" xref="S2.E4.m1.1.1.1.4">𝑃</ci><apply id="S2.E4.m1.1.1.1.1.cmml" xref="S2.E4.m1.1.1.1.1"><csymbol cd="ambiguous" id="S2.E4.m1.1.1.1.1.2.cmml" xref="S2.E4.m1.1.1.1.1">superscript</csymbol><apply id="S2.E4.m1.1.1.1.1.1.1.1.cmml" xref="S2.E4.m1.1.1.1.1.1.1"><times id="S2.E4.m1.1.1.1.1.1.1.1.1.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.1"></times><ci id="S2.E4.m1.1.1.1.1.1.1.1.2.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.2">𝑠</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.3.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.3">𝑢</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.4.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.4">𝑟</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.5.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.5">𝑣</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.6.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.6">𝑖</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.7.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.7">𝑣</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.8.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.8">𝑖</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.9.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.9">𝑛</ci><ci id="S2.E4.m1.1.1.1.1.1.1.1.10.cmml" xref="S2.E4.m1.1.1.1.1.1.1.1.10">𝑔</ci></apply><ci id="S2.E4.m1.1.1.1.1.3.cmml" xref="S2.E4.m1.1.1.1.1.3">𝑛</ci></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E4.m1.1c">N_{n}\approx N_{0}P(surviving)^{n}</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p14" class="ltx_para ltx_noindent">
+<p id="S2.p14.1" class="ltx_p">Hence, we obtain the “probability of survival” with the slope of the number of surviving individuals versus time graph:</p>
+</div>
+<div id="S2.p15" class="ltx_para">
+<table id="S2.E5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E5.m1.1" class="ltx_Math" alttext="slope\approx ln[P(surviving)]=-1.4823" display="block"><semantics id="S2.E5.m1.1a"><mrow id="S2.E5.m1.1.1" xref="S2.E5.m1.1.1.cmml"><mrow id="S2.E5.m1.1.1.3" xref="S2.E5.m1.1.1.3.cmml"><mi id="S2.E5.m1.1.1.3.2" xref="S2.E5.m1.1.1.3.2.cmml">s</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.3.1" xref="S2.E5.m1.1.1.3.1.cmml">​</mo><mi id="S2.E5.m1.1.1.3.3" xref="S2.E5.m1.1.1.3.3.cmml">l</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.3.1a" xref="S2.E5.m1.1.1.3.1.cmml">​</mo><mi id="S2.E5.m1.1.1.3.4" xref="S2.E5.m1.1.1.3.4.cmml">o</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.3.1b" xref="S2.E5.m1.1.1.3.1.cmml">​</mo><mi id="S2.E5.m1.1.1.3.5" xref="S2.E5.m1.1.1.3.5.cmml">p</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.3.1c" xref="S2.E5.m1.1.1.3.1.cmml">​</mo><mi id="S2.E5.m1.1.1.3.6" xref="S2.E5.m1.1.1.3.6.cmml">e</mi></mrow><mo id="S2.E5.m1.1.1.4" xref="S2.E5.m1.1.1.4.cmml">≈</mo><mrow id="S2.E5.m1.1.1.1" xref="S2.E5.m1.1.1.1.cmml"><mi id="S2.E5.m1.1.1.1.3" xref="S2.E5.m1.1.1.1.3.cmml">l</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.2" xref="S2.E5.m1.1.1.1.2.cmml">​</mo><mi id="S2.E5.m1.1.1.1.4" xref="S2.E5.m1.1.1.1.4.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.2a" xref="S2.E5.m1.1.1.1.2.cmml">​</mo><mrow id="S2.E5.m1.1.1.1.1.1" xref="S2.E5.m1.1.1.1.1.2.cmml"><mo stretchy="false" id="S2.E5.m1.1.1.1.1.1.2" xref="S2.E5.m1.1.1.1.1.2.1.cmml">[</mo><mrow id="S2.E5.m1.1.1.1.1.1.1" xref="S2.E5.m1.1.1.1.1.1.1.cmml"><mi id="S2.E5.m1.1.1.1.1.1.1.3" xref="S2.E5.m1.1.1.1.1.1.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.2" xref="S2.E5.m1.1.1.1.1.1.1.2.cmml">​</mo><mrow id="S2.E5.m1.1.1.1.1.1.1.1.1" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S2.E5.m1.1.1.1.1.1.1.1.1.2" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E5.m1.1.1.1.1.1.1.1.1.1" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.cmml"><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.2" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.2.cmml">s</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.3" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.3.cmml">u</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1a" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.4" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.4.cmml">r</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1b" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.5" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.5.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1c" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.6" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.6.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1d" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.7" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.7.cmml">v</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1e" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.8" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.8.cmml">i</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1f" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.9" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.9.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1g" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S2.E5.m1.1.1.1.1.1.1.1.1.1.10" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.10.cmml">g</mi></mrow><mo stretchy="false" id="S2.E5.m1.1.1.1.1.1.1.1.1.3" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo stretchy="false" id="S2.E5.m1.1.1.1.1.1.3" xref="S2.E5.m1.1.1.1.1.2.1.cmml">]</mo></mrow></mrow><mo id="S2.E5.m1.1.1.5" xref="S2.E5.m1.1.1.5.cmml">=</mo><mrow id="S2.E5.m1.1.1.6" xref="S2.E5.m1.1.1.6.cmml"><mo id="S2.E5.m1.1.1.6a" xref="S2.E5.m1.1.1.6.cmml">−</mo><mn id="S2.E5.m1.1.1.6.2" xref="S2.E5.m1.1.1.6.2.cmml">1.4823</mn></mrow></mrow><annotation-xml encoding="MathML-Content" id="S2.E5.m1.1b"><apply id="S2.E5.m1.1.1.cmml" xref="S2.E5.m1.1.1"><and id="S2.E5.m1.1.1a.cmml" xref="S2.E5.m1.1.1"></and><apply id="S2.E5.m1.1.1b.cmml" xref="S2.E5.m1.1.1"><approx id="S2.E5.m1.1.1.4.cmml" xref="S2.E5.m1.1.1.4"></approx><apply id="S2.E5.m1.1.1.3.cmml" xref="S2.E5.m1.1.1.3"><times id="S2.E5.m1.1.1.3.1.cmml" xref="S2.E5.m1.1.1.3.1"></times><ci id="S2.E5.m1.1.1.3.2.cmml" xref="S2.E5.m1.1.1.3.2">𝑠</ci><ci id="S2.E5.m1.1.1.3.3.cmml" xref="S2.E5.m1.1.1.3.3">𝑙</ci><ci id="S2.E5.m1.1.1.3.4.cmml" xref="S2.E5.m1.1.1.3.4">𝑜</ci><ci id="S2.E5.m1.1.1.3.5.cmml" xref="S2.E5.m1.1.1.3.5">𝑝</ci><ci id="S2.E5.m1.1.1.3.6.cmml" xref="S2.E5.m1.1.1.3.6">𝑒</ci></apply><apply id="S2.E5.m1.1.1.1.cmml" xref="S2.E5.m1.1.1.1"><times id="S2.E5.m1.1.1.1.2.cmml" xref="S2.E5.m1.1.1.1.2"></times><ci id="S2.E5.m1.1.1.1.3.cmml" xref="S2.E5.m1.1.1.1.3">𝑙</ci><ci id="S2.E5.m1.1.1.1.4.cmml" xref="S2.E5.m1.1.1.1.4">𝑛</ci><apply id="S2.E5.m1.1.1.1.1.2.cmml" xref="S2.E5.m1.1.1.1.1.1"><csymbol cd="latexml" id="S2.E5.m1.1.1.1.1.2.1.cmml" xref="S2.E5.m1.1.1.1.1.1.2">delimited-[]</csymbol><apply id="S2.E5.m1.1.1.1.1.1.1.cmml" xref="S2.E5.m1.1.1.1.1.1.1"><times id="S2.E5.m1.1.1.1.1.1.1.2.cmml" xref="S2.E5.m1.1.1.1.1.1.1.2"></times><ci id="S2.E5.m1.1.1.1.1.1.1.3.cmml" xref="S2.E5.m1.1.1.1.1.1.1.3">𝑃</ci><apply id="S2.E5.m1.1.1.1.1.1.1.1.1.1.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1"><times id="S2.E5.m1.1.1.1.1.1.1.1.1.1.1.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.1"></times><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.2.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.2">𝑠</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.3.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.3">𝑢</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.4.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.4">𝑟</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.5.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.5">𝑣</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.6.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.6">𝑖</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.7.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.7">𝑣</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.8.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.8">𝑖</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.9.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.9">𝑛</ci><ci id="S2.E5.m1.1.1.1.1.1.1.1.1.1.10.cmml" xref="S2.E5.m1.1.1.1.1.1.1.1.1.1.10">𝑔</ci></apply></apply></apply></apply></apply><apply id="S2.E5.m1.1.1c.cmml" xref="S2.E5.m1.1.1"><eq id="S2.E5.m1.1.1.5.cmml" xref="S2.E5.m1.1.1.5"></eq><share href="#S2.E5.m1.1.1.1.cmml" id="S2.E5.m1.1.1d.cmml" xref="S2.E5.m1.1.1"></share><apply id="S2.E5.m1.1.1.6.cmml" xref="S2.E5.m1.1.1.6"><minus id="S2.E5.m1.1.1.6.1.cmml" xref="S2.E5.m1.1.1.6"></minus><cn type="float" id="S2.E5.m1.1.1.6.2.cmml" xref="S2.E5.m1.1.1.6.2">1.4823</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E5.m1.1c">slope\approx ln[P(surviving)]=-1.4823</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p16" class="ltx_para">
+<p id="S2.p16.1" class="ltx_p">Similarly the probability of survival can be calculated for all the genes separately. However in this calculation once we make a change in the gene sequence and if the individual survives, we forget about the change we have made and restart the process for the second mutation cycle with the original gene sequence. In Nature, if the individual survives, the second mutation cycle starts with the mutated gene sequence and not the original one. Therefore, to be able to get closer to Nature we have also written a simulation code which allows for the mutation in the gene sequence to be kept in the next mutation mutation cycle.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>SIMULATION
+<br class="ltx_break">
+</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p id="S3.p1.1" class="ltx_p">In this simulation, the population consists of individuals which are described by only one gene. Genes are represented by arrays which contain 0, 1, 2, and 3’s instead of the nucleotides Adenine (A), Guanine (G), Cytosine (C) and Thymine (Uracil (U)) respectively. A sign bit which shows if the gene has a deleterious mutation (1) or not (0) is also included in the array <cite class="ltx_cite ltx_citemacro_cite">[<a href="#bib.bib8" title="" class="ltx_ref">8</a>]</cite>.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p id="S3.p2.1" class="ltx_p">In every time step, all of the individuals undergo a random mutation. If the mutation is deleterious, i. e. if it changes the amino acid, the sign bit is changed to ‘1’, the individual is deleted from the population (death) and the time step is recorded. Otherwise, the sign bit is kept ‘0’ and the individual survives.</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p id="S3.p3.1" class="ltx_p">When the mutation cycle is finished, the number of surviving individuals in each time step is calculated. Since the probability of mutation is independent of the number of individuals, surviving individuals also give us the population size. Hence, we have an exponential population decay and the exponent depends on the probability of surviving (<math id="S3.p3.1.m1.1" class="ltx_Math" alttext="P(surviving)" display="inline"><semantics id="S3.p3.1.m1.1a"><mrow id="S3.p3.1.m1.1.1" xref="S3.p3.1.m1.1.1.cmml"><mi id="S3.p3.1.m1.1.1.3" xref="S3.p3.1.m1.1.1.3.cmml">P</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.2" xref="S3.p3.1.m1.1.1.2.cmml">​</mo><mrow id="S3.p3.1.m1.1.1.1.1" xref="S3.p3.1.m1.1.1.1.1.1.cmml"><mo stretchy="false" id="S3.p3.1.m1.1.1.1.1.2" xref="S3.p3.1.m1.1.1.1.1.1.cmml">(</mo><mrow id="S3.p3.1.m1.1.1.1.1.1" xref="S3.p3.1.m1.1.1.1.1.1.cmml"><mi id="S3.p3.1.m1.1.1.1.1.1.2" xref="S3.p3.1.m1.1.1.1.1.1.2.cmml">s</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.3" xref="S3.p3.1.m1.1.1.1.1.1.3.cmml">u</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1a" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.4" xref="S3.p3.1.m1.1.1.1.1.1.4.cmml">r</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1b" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.5" xref="S3.p3.1.m1.1.1.1.1.1.5.cmml">v</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1c" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.6" xref="S3.p3.1.m1.1.1.1.1.1.6.cmml">i</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1d" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.7" xref="S3.p3.1.m1.1.1.1.1.1.7.cmml">v</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1e" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.8" xref="S3.p3.1.m1.1.1.1.1.1.8.cmml">i</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1f" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.9" xref="S3.p3.1.m1.1.1.1.1.1.9.cmml">n</mi><mo lspace="0em" rspace="0em" id="S3.p3.1.m1.1.1.1.1.1.1g" xref="S3.p3.1.m1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.p3.1.m1.1.1.1.1.1.10" xref="S3.p3.1.m1.1.1.1.1.1.10.cmml">g</mi></mrow><mo stretchy="false" id="S3.p3.1.m1.1.1.1.1.3" xref="S3.p3.1.m1.1.1.1.1.1.cmml">)</mo></mrow></mrow><annotation-xml encoding="MathML-Content" id="S3.p3.1.m1.1b"><apply id="S3.p3.1.m1.1.1.cmml" xref="S3.p3.1.m1.1.1"><times id="S3.p3.1.m1.1.1.2.cmml" xref="S3.p3.1.m1.1.1.2"></times><ci id="S3.p3.1.m1.1.1.3.cmml" xref="S3.p3.1.m1.1.1.3">𝑃</ci><apply id="S3.p3.1.m1.1.1.1.1.1.cmml" xref="S3.p3.1.m1.1.1.1.1"><times id="S3.p3.1.m1.1.1.1.1.1.1.cmml" xref="S3.p3.1.m1.1.1.1.1.1.1"></times><ci id="S3.p3.1.m1.1.1.1.1.1.2.cmml" xref="S3.p3.1.m1.1.1.1.1.1.2">𝑠</ci><ci id="S3.p3.1.m1.1.1.1.1.1.3.cmml" xref="S3.p3.1.m1.1.1.1.1.1.3">𝑢</ci><ci id="S3.p3.1.m1.1.1.1.1.1.4.cmml" xref="S3.p3.1.m1.1.1.1.1.1.4">𝑟</ci><ci id="S3.p3.1.m1.1.1.1.1.1.5.cmml" xref="S3.p3.1.m1.1.1.1.1.1.5">𝑣</ci><ci id="S3.p3.1.m1.1.1.1.1.1.6.cmml" xref="S3.p3.1.m1.1.1.1.1.1.6">𝑖</ci><ci id="S3.p3.1.m1.1.1.1.1.1.7.cmml" xref="S3.p3.1.m1.1.1.1.1.1.7">𝑣</ci><ci id="S3.p3.1.m1.1.1.1.1.1.8.cmml" xref="S3.p3.1.m1.1.1.1.1.1.8">𝑖</ci><ci id="S3.p3.1.m1.1.1.1.1.1.9.cmml" xref="S3.p3.1.m1.1.1.1.1.1.9">𝑛</ci><ci id="S3.p3.1.m1.1.1.1.1.1.10.cmml" xref="S3.p3.1.m1.1.1.1.1.1.10">𝑔</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.p3.1.m1.1c">P(surviving)</annotation></semantics></math>). Logarithm of the population is fitted to a straight line and the slope of the line is calculated. All simulations are run for 10 times and probability of surviving is calculated according to the weighted average of these 10 runs.</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>RESULTS AND DISCUSSION
+<br class="ltx_break">
+</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p id="S4.p1.1" class="ltx_p">In this work, we have investigated the following amino acid tables in addition to <span id="S4.p1.1.1" class="ltx_text ltx_font_italic">SGC</span>:</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<ul id="S4.I1" class="ltx_itemize">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p id="S4.I1.i1.p1.1" class="ltx_p">Alternative Yeast Nuclear Code (AYNC),</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p id="S4.I1.i2.p1.1" class="ltx_p">Ascidian Mitochondrial Code (AMC),</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p id="S4.I1.i3.p1.1" class="ltx_p">Blepharisma Nuclear Code (BNC),</p>
+</div>
+</li>
+<li id="S4.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i4.p1" class="ltx_para">
+<p id="S4.I1.i4.p1.1" class="ltx_p">Ciliate, Dasycladacean and Hexamita Nuclear Code (CDHNC),</p>
+</div>
+</li>
+<li id="S4.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i5.p1" class="ltx_para">
+<p id="S4.I1.i5.p1.1" class="ltx_p">Echinoderm Mitochondrial Code (EMC),</p>
+</div>
+</li>
+<li id="S4.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i6.p1" class="ltx_para">
+<p id="S4.I1.i6.p1.1" class="ltx_p">Euplotid Nuclear Code (ENC),</p>
+</div>
+</li>
+<li id="S4.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i7.p1" class="ltx_para">
+<p id="S4.I1.i7.p1.1" class="ltx_p">Flatworm Mitochondrial Code (FMC),</p>
+</div>
+</li>
+<li id="S4.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i8.p1" class="ltx_para">
+<p id="S4.I1.i8.p1.1" class="ltx_p">Invertebrate Mitochondrial Code (IMC),</p>
+</div>
+</li>
+<li id="S4.I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i9.p1" class="ltx_para">
+<p id="S4.I1.i9.p1.1" class="ltx_p">Mold, Protozoan, and Coelenterate Mitochondrial Code and Mycoplasma/Spiroplasma Code (MSC),</p>
+</div>
+</li>
+<li id="S4.I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i10.p1" class="ltx_para">
+<p id="S4.I1.i10.p1.1" class="ltx_p">Vertebrate Mitochondrial Code (VMC), and</p>
+</div>
+</li>
+<li id="S4.I1.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i11.p1" class="ltx_para">
+<p id="S4.I1.i11.p1.1" class="ltx_p">Yeast Mitochondrial Code (YMC).</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p id="S4.p3.1" class="ltx_p">The results of our simulations, using two different human gene sequences, are given in Table <a href="#S4.T1" title="Table 1 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> and Table <a href="#S4.T2" title="Table 2 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>. We have selected these two genes as representatives, however, the same results have been obtained in many other human genes simulated. We have also used some genes from Mus Musculus (common house mouse) and Rattus (rat) where we have obtained similar results. As these detailed results are more appropriate for an evolutionary biology journal, we report only the representative results.</p>
+</div>
+<figure id="S4.T1" class="ltx_table">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 1: </span>Average slopes of the population decrease comparing different genetic code tables with human cytokine gene. Larger the magnitude of the slope is, the more the survival chance.</figcaption>
+<table id="S4.T1.13" class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T1.13.14.1" class="ltx_tr">
+<th id="S4.T1.13.14.1.1" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t">Code</th>
+<th id="S4.T1.13.14.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Simulation</th>
+<th id="S4.T1.13.14.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Calculation</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T1.1.1" class="ltx_tr">
+<td id="S4.T1.1.1.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">FMC</td>
+<td id="S4.T1.1.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.1.1.1.m1.1" class="ltx_Math" alttext="-1.4056\pm 0.0005" display="inline"><semantics id="S4.T1.1.1.1.m1.1a"><mrow id="S4.T1.1.1.1.m1.1.1" xref="S4.T1.1.1.1.m1.1.1.cmml"><mrow id="S4.T1.1.1.1.m1.1.1.2" xref="S4.T1.1.1.1.m1.1.1.2.cmml"><mo id="S4.T1.1.1.1.m1.1.1.2a" xref="S4.T1.1.1.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.1.1.1.m1.1.1.2.2" xref="S4.T1.1.1.1.m1.1.1.2.2.cmml">1.4056</mn></mrow><mo id="S4.T1.1.1.1.m1.1.1.1" xref="S4.T1.1.1.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.1.1.1.m1.1.1.3" xref="S4.T1.1.1.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.1.1.1.m1.1b"><apply id="S4.T1.1.1.1.m1.1.1.cmml" xref="S4.T1.1.1.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.1.1.1.m1.1.1.1.cmml" xref="S4.T1.1.1.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.1.1.1.m1.1.1.2.cmml" xref="S4.T1.1.1.1.m1.1.1.2"><minus id="S4.T1.1.1.1.m1.1.1.2.1.cmml" xref="S4.T1.1.1.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.1.1.1.m1.1.1.2.2.cmml" xref="S4.T1.1.1.1.m1.1.1.2.2">1.4056</cn></apply><cn type="float" id="S4.T1.1.1.1.m1.1.1.3.cmml" xref="S4.T1.1.1.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.1.1.1.m1.1c">-1.4056\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T1.1.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4053</td>
+</tr>
+<tr id="S4.T1.2.2" class="ltx_tr">
+<td id="S4.T1.2.2.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">EMC</td>
+<td id="S4.T1.2.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.2.2.1.m1.1" class="ltx_Math" alttext="-1.4164\pm 0.0005" display="inline"><semantics id="S4.T1.2.2.1.m1.1a"><mrow id="S4.T1.2.2.1.m1.1.1" xref="S4.T1.2.2.1.m1.1.1.cmml"><mrow id="S4.T1.2.2.1.m1.1.1.2" xref="S4.T1.2.2.1.m1.1.1.2.cmml"><mo id="S4.T1.2.2.1.m1.1.1.2a" xref="S4.T1.2.2.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.2.2.1.m1.1.1.2.2" xref="S4.T1.2.2.1.m1.1.1.2.2.cmml">1.4164</mn></mrow><mo id="S4.T1.2.2.1.m1.1.1.1" xref="S4.T1.2.2.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.2.2.1.m1.1.1.3" xref="S4.T1.2.2.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.2.2.1.m1.1b"><apply id="S4.T1.2.2.1.m1.1.1.cmml" xref="S4.T1.2.2.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.2.2.1.m1.1.1.1.cmml" xref="S4.T1.2.2.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.2.2.1.m1.1.1.2.cmml" xref="S4.T1.2.2.1.m1.1.1.2"><minus id="S4.T1.2.2.1.m1.1.1.2.1.cmml" xref="S4.T1.2.2.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.2.2.1.m1.1.1.2.2.cmml" xref="S4.T1.2.2.1.m1.1.1.2.2">1.4164</cn></apply><cn type="float" id="S4.T1.2.2.1.m1.1.1.3.cmml" xref="S4.T1.2.2.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.2.2.1.m1.1c">-1.4164\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T1.2.2.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4163</td>
+</tr>
+<tr id="S4.T1.3.3" class="ltx_tr">
+<td id="S4.T1.3.3.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">IMC</td>
+<td id="S4.T1.3.3.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.3.3.1.m1.1" class="ltx_Math" alttext="-1.4320\pm 0.0001" display="inline"><semantics id="S4.T1.3.3.1.m1.1a"><mrow id="S4.T1.3.3.1.m1.1.1" xref="S4.T1.3.3.1.m1.1.1.cmml"><mrow id="S4.T1.3.3.1.m1.1.1.2" xref="S4.T1.3.3.1.m1.1.1.2.cmml"><mo id="S4.T1.3.3.1.m1.1.1.2a" xref="S4.T1.3.3.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.3.3.1.m1.1.1.2.2" xref="S4.T1.3.3.1.m1.1.1.2.2.cmml">1.4320</mn></mrow><mo id="S4.T1.3.3.1.m1.1.1.1" xref="S4.T1.3.3.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.3.3.1.m1.1.1.3" xref="S4.T1.3.3.1.m1.1.1.3.cmml">0.0001</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.3.3.1.m1.1b"><apply id="S4.T1.3.3.1.m1.1.1.cmml" xref="S4.T1.3.3.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.3.3.1.m1.1.1.1.cmml" xref="S4.T1.3.3.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.3.3.1.m1.1.1.2.cmml" xref="S4.T1.3.3.1.m1.1.1.2"><minus id="S4.T1.3.3.1.m1.1.1.2.1.cmml" xref="S4.T1.3.3.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.3.3.1.m1.1.1.2.2.cmml" xref="S4.T1.3.3.1.m1.1.1.2.2">1.4320</cn></apply><cn type="float" id="S4.T1.3.3.1.m1.1.1.3.cmml" xref="S4.T1.3.3.1.m1.1.1.3">0.0001</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.3.3.1.m1.1c">-1.4320\pm 0.0001</annotation></semantics></math></td>
+<td id="S4.T1.3.3.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4319</td>
+</tr>
+<tr id="S4.T1.4.4" class="ltx_tr">
+<td id="S4.T1.4.4.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">ENC</td>
+<td id="S4.T1.4.4.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.4.4.1.m1.1" class="ltx_Math" alttext="-1.4415\pm 0.0005" display="inline"><semantics id="S4.T1.4.4.1.m1.1a"><mrow id="S4.T1.4.4.1.m1.1.1" xref="S4.T1.4.4.1.m1.1.1.cmml"><mrow id="S4.T1.4.4.1.m1.1.1.2" xref="S4.T1.4.4.1.m1.1.1.2.cmml"><mo id="S4.T1.4.4.1.m1.1.1.2a" xref="S4.T1.4.4.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.4.4.1.m1.1.1.2.2" xref="S4.T1.4.4.1.m1.1.1.2.2.cmml">1.4415</mn></mrow><mo id="S4.T1.4.4.1.m1.1.1.1" xref="S4.T1.4.4.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.4.4.1.m1.1.1.3" xref="S4.T1.4.4.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.4.4.1.m1.1b"><apply id="S4.T1.4.4.1.m1.1.1.cmml" xref="S4.T1.4.4.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.4.4.1.m1.1.1.1.cmml" xref="S4.T1.4.4.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.4.4.1.m1.1.1.2.cmml" xref="S4.T1.4.4.1.m1.1.1.2"><minus id="S4.T1.4.4.1.m1.1.1.2.1.cmml" xref="S4.T1.4.4.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.4.4.1.m1.1.1.2.2.cmml" xref="S4.T1.4.4.1.m1.1.1.2.2">1.4415</cn></apply><cn type="float" id="S4.T1.4.4.1.m1.1.1.3.cmml" xref="S4.T1.4.4.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.4.4.1.m1.1c">-1.4415\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T1.4.4.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4409</td>
+</tr>
+<tr id="S4.T1.5.5" class="ltx_tr">
+<td id="S4.T1.5.5.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">BNC</td>
+<td id="S4.T1.5.5.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.5.5.1.m1.1" class="ltx_Math" alttext="-1.4691\pm 0.0003" display="inline"><semantics id="S4.T1.5.5.1.m1.1a"><mrow id="S4.T1.5.5.1.m1.1.1" xref="S4.T1.5.5.1.m1.1.1.cmml"><mrow id="S4.T1.5.5.1.m1.1.1.2" xref="S4.T1.5.5.1.m1.1.1.2.cmml"><mo id="S4.T1.5.5.1.m1.1.1.2a" xref="S4.T1.5.5.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.5.5.1.m1.1.1.2.2" xref="S4.T1.5.5.1.m1.1.1.2.2.cmml">1.4691</mn></mrow><mo id="S4.T1.5.5.1.m1.1.1.1" xref="S4.T1.5.5.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.5.5.1.m1.1.1.3" xref="S4.T1.5.5.1.m1.1.1.3.cmml">0.0003</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.5.5.1.m1.1b"><apply id="S4.T1.5.5.1.m1.1.1.cmml" xref="S4.T1.5.5.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.5.5.1.m1.1.1.1.cmml" xref="S4.T1.5.5.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.5.5.1.m1.1.1.2.cmml" xref="S4.T1.5.5.1.m1.1.1.2"><minus id="S4.T1.5.5.1.m1.1.1.2.1.cmml" xref="S4.T1.5.5.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.5.5.1.m1.1.1.2.2.cmml" xref="S4.T1.5.5.1.m1.1.1.2.2">1.4691</cn></apply><cn type="float" id="S4.T1.5.5.1.m1.1.1.3.cmml" xref="S4.T1.5.5.1.m1.1.1.3">0.0003</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.5.5.1.m1.1c">-1.4691\pm 0.0003</annotation></semantics></math></td>
+<td id="S4.T1.5.5.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4685</td>
+</tr>
+<tr id="S4.T1.6.6" class="ltx_tr">
+<td id="S4.T1.6.6.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">MSC</td>
+<td id="S4.T1.6.6.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.6.6.1.m1.1" class="ltx_Math" alttext="-1.4759\pm 0.0003" display="inline"><semantics id="S4.T1.6.6.1.m1.1a"><mrow id="S4.T1.6.6.1.m1.1.1" xref="S4.T1.6.6.1.m1.1.1.cmml"><mrow id="S4.T1.6.6.1.m1.1.1.2" xref="S4.T1.6.6.1.m1.1.1.2.cmml"><mo id="S4.T1.6.6.1.m1.1.1.2a" xref="S4.T1.6.6.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.6.6.1.m1.1.1.2.2" xref="S4.T1.6.6.1.m1.1.1.2.2.cmml">1.4759</mn></mrow><mo id="S4.T1.6.6.1.m1.1.1.1" xref="S4.T1.6.6.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.6.6.1.m1.1.1.3" xref="S4.T1.6.6.1.m1.1.1.3.cmml">0.0003</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.6.6.1.m1.1b"><apply id="S4.T1.6.6.1.m1.1.1.cmml" xref="S4.T1.6.6.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.6.6.1.m1.1.1.1.cmml" xref="S4.T1.6.6.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.6.6.1.m1.1.1.2.cmml" xref="S4.T1.6.6.1.m1.1.1.2"><minus id="S4.T1.6.6.1.m1.1.1.2.1.cmml" xref="S4.T1.6.6.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.6.6.1.m1.1.1.2.2.cmml" xref="S4.T1.6.6.1.m1.1.1.2.2">1.4759</cn></apply><cn type="float" id="S4.T1.6.6.1.m1.1.1.3.cmml" xref="S4.T1.6.6.1.m1.1.1.3">0.0003</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.6.6.1.m1.1c">-1.4759\pm 0.0003</annotation></semantics></math></td>
+<td id="S4.T1.6.6.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4755</td>
+</tr>
+<tr id="S4.T1.7.7" class="ltx_tr">
+<td id="S4.T1.7.7.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">CDHNC</td>
+<td id="S4.T1.7.7.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.7.7.1.m1.1" class="ltx_Math" alttext="-1.4784\pm 0.0005" display="inline"><semantics id="S4.T1.7.7.1.m1.1a"><mrow id="S4.T1.7.7.1.m1.1.1" xref="S4.T1.7.7.1.m1.1.1.cmml"><mrow id="S4.T1.7.7.1.m1.1.1.2" xref="S4.T1.7.7.1.m1.1.1.2.cmml"><mo id="S4.T1.7.7.1.m1.1.1.2a" xref="S4.T1.7.7.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.7.7.1.m1.1.1.2.2" xref="S4.T1.7.7.1.m1.1.1.2.2.cmml">1.4784</mn></mrow><mo id="S4.T1.7.7.1.m1.1.1.1" xref="S4.T1.7.7.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.7.7.1.m1.1.1.3" xref="S4.T1.7.7.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.7.7.1.m1.1b"><apply id="S4.T1.7.7.1.m1.1.1.cmml" xref="S4.T1.7.7.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.7.7.1.m1.1.1.1.cmml" xref="S4.T1.7.7.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.7.7.1.m1.1.1.2.cmml" xref="S4.T1.7.7.1.m1.1.1.2"><minus id="S4.T1.7.7.1.m1.1.1.2.1.cmml" xref="S4.T1.7.7.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.7.7.1.m1.1.1.2.2.cmml" xref="S4.T1.7.7.1.m1.1.1.2.2">1.4784</cn></apply><cn type="float" id="S4.T1.7.7.1.m1.1.1.3.cmml" xref="S4.T1.7.7.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.7.7.1.m1.1c">-1.4784\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T1.7.7.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4779</td>
+</tr>
+<tr id="S4.T1.8.8" class="ltx_tr">
+<td id="S4.T1.8.8.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">AMC</td>
+<td id="S4.T1.8.8.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.8.8.1.m1.1" class="ltx_Math" alttext="-1.4784\pm 0.0005" display="inline"><semantics id="S4.T1.8.8.1.m1.1a"><mrow id="S4.T1.8.8.1.m1.1.1" xref="S4.T1.8.8.1.m1.1.1.cmml"><mrow id="S4.T1.8.8.1.m1.1.1.2" xref="S4.T1.8.8.1.m1.1.1.2.cmml"><mo id="S4.T1.8.8.1.m1.1.1.2a" xref="S4.T1.8.8.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.8.8.1.m1.1.1.2.2" xref="S4.T1.8.8.1.m1.1.1.2.2.cmml">1.4784</mn></mrow><mo id="S4.T1.8.8.1.m1.1.1.1" xref="S4.T1.8.8.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.8.8.1.m1.1.1.3" xref="S4.T1.8.8.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.8.8.1.m1.1b"><apply id="S4.T1.8.8.1.m1.1.1.cmml" xref="S4.T1.8.8.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.8.8.1.m1.1.1.1.cmml" xref="S4.T1.8.8.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.8.8.1.m1.1.1.2.cmml" xref="S4.T1.8.8.1.m1.1.1.2"><minus id="S4.T1.8.8.1.m1.1.1.2.1.cmml" xref="S4.T1.8.8.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.8.8.1.m1.1.1.2.2.cmml" xref="S4.T1.8.8.1.m1.1.1.2.2">1.4784</cn></apply><cn type="float" id="S4.T1.8.8.1.m1.1.1.3.cmml" xref="S4.T1.8.8.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.8.8.1.m1.1c">-1.4784\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T1.8.8.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4779</td>
+</tr>
+<tr id="S4.T1.10.10" class="ltx_tr">
+<td id="S4.T1.10.10.3" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><span id="S4.T1.10.10.3.1" class="ltx_text ltx_font_bold">SGC</span></td>
+<td id="S4.T1.9.9.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.9.9.1.m1.1" class="ltx_Math" alttext="\textbf{-1.4830}\pm\textbf{0.0005}" display="inline"><semantics id="S4.T1.9.9.1.m1.1a"><mrow id="S4.T1.9.9.1.m1.1.1" xref="S4.T1.9.9.1.m1.1.1.cmml"><mtext class="ltx_mathvariant_bold" id="S4.T1.9.9.1.m1.1.1.2" xref="S4.T1.9.9.1.m1.1.1.2a.cmml">-1.4830</mtext><mo id="S4.T1.9.9.1.m1.1.1.1" xref="S4.T1.9.9.1.m1.1.1.1.cmml">±</mo><mtext class="ltx_mathvariant_bold" id="S4.T1.9.9.1.m1.1.1.3" xref="S4.T1.9.9.1.m1.1.1.3a.cmml">0.0005</mtext></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.9.9.1.m1.1b"><apply id="S4.T1.9.9.1.m1.1.1.cmml" xref="S4.T1.9.9.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.9.9.1.m1.1.1.1.cmml" xref="S4.T1.9.9.1.m1.1.1.1">plus-or-minus</csymbol><ci id="S4.T1.9.9.1.m1.1.1.2a.cmml" xref="S4.T1.9.9.1.m1.1.1.2"><mtext class="ltx_mathvariant_bold" id="S4.T1.9.9.1.m1.1.1.2.cmml" xref="S4.T1.9.9.1.m1.1.1.2">-1.4830</mtext></ci><ci id="S4.T1.9.9.1.m1.1.1.3a.cmml" xref="S4.T1.9.9.1.m1.1.1.3"><mtext class="ltx_mathvariant_bold" id="S4.T1.9.9.1.m1.1.1.3.cmml" xref="S4.T1.9.9.1.m1.1.1.3">0.0005</mtext></ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.9.9.1.m1.1c">\textbf{-1.4830}\pm\textbf{0.0005}</annotation></semantics></math></td>
+<td id="S4.T1.10.10.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span id="S4.T1.10.10.2.1" class="ltx_text ltx_markedasmath ltx_font_bold">1.4826</span></td>
+</tr>
+<tr id="S4.T1.11.11" class="ltx_tr">
+<td id="S4.T1.11.11.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">VMC</td>
+<td id="S4.T1.11.11.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.11.11.1.m1.1" class="ltx_Math" alttext="-1.5020\pm 0.0001" display="inline"><semantics id="S4.T1.11.11.1.m1.1a"><mrow id="S4.T1.11.11.1.m1.1.1" xref="S4.T1.11.11.1.m1.1.1.cmml"><mrow id="S4.T1.11.11.1.m1.1.1.2" xref="S4.T1.11.11.1.m1.1.1.2.cmml"><mo id="S4.T1.11.11.1.m1.1.1.2a" xref="S4.T1.11.11.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.11.11.1.m1.1.1.2.2" xref="S4.T1.11.11.1.m1.1.1.2.2.cmml">1.5020</mn></mrow><mo id="S4.T1.11.11.1.m1.1.1.1" xref="S4.T1.11.11.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.11.11.1.m1.1.1.3" xref="S4.T1.11.11.1.m1.1.1.3.cmml">0.0001</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.11.11.1.m1.1b"><apply id="S4.T1.11.11.1.m1.1.1.cmml" xref="S4.T1.11.11.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.11.11.1.m1.1.1.1.cmml" xref="S4.T1.11.11.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.11.11.1.m1.1.1.2.cmml" xref="S4.T1.11.11.1.m1.1.1.2"><minus id="S4.T1.11.11.1.m1.1.1.2.1.cmml" xref="S4.T1.11.11.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.11.11.1.m1.1.1.2.2.cmml" xref="S4.T1.11.11.1.m1.1.1.2.2">1.5020</cn></apply><cn type="float" id="S4.T1.11.11.1.m1.1.1.3.cmml" xref="S4.T1.11.11.1.m1.1.1.3">0.0001</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.11.11.1.m1.1c">-1.5020\pm 0.0001</annotation></semantics></math></td>
+<td id="S4.T1.11.11.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.5017</td>
+</tr>
+<tr id="S4.T1.12.12" class="ltx_tr">
+<td id="S4.T1.12.12.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">YMC</td>
+<td id="S4.T1.12.12.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T1.12.12.1.m1.1" class="ltx_Math" alttext="-1.5677\pm 0.0007" display="inline"><semantics id="S4.T1.12.12.1.m1.1a"><mrow id="S4.T1.12.12.1.m1.1.1" xref="S4.T1.12.12.1.m1.1.1.cmml"><mrow id="S4.T1.12.12.1.m1.1.1.2" xref="S4.T1.12.12.1.m1.1.1.2.cmml"><mo id="S4.T1.12.12.1.m1.1.1.2a" xref="S4.T1.12.12.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.12.12.1.m1.1.1.2.2" xref="S4.T1.12.12.1.m1.1.1.2.2.cmml">1.5677</mn></mrow><mo id="S4.T1.12.12.1.m1.1.1.1" xref="S4.T1.12.12.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.12.12.1.m1.1.1.3" xref="S4.T1.12.12.1.m1.1.1.3.cmml">0.0007</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.12.12.1.m1.1b"><apply id="S4.T1.12.12.1.m1.1.1.cmml" xref="S4.T1.12.12.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.12.12.1.m1.1.1.1.cmml" xref="S4.T1.12.12.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.12.12.1.m1.1.1.2.cmml" xref="S4.T1.12.12.1.m1.1.1.2"><minus id="S4.T1.12.12.1.m1.1.1.2.1.cmml" xref="S4.T1.12.12.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.12.12.1.m1.1.1.2.2.cmml" xref="S4.T1.12.12.1.m1.1.1.2.2">1.5677</cn></apply><cn type="float" id="S4.T1.12.12.1.m1.1.1.3.cmml" xref="S4.T1.12.12.1.m1.1.1.3">0.0007</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.12.12.1.m1.1c">-1.5677\pm 0.0007</annotation></semantics></math></td>
+<td id="S4.T1.12.12.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.5638</td>
+</tr>
+<tr id="S4.T1.13.13" class="ltx_tr">
+<td id="S4.T1.13.13.2" class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">AYNC</td>
+<td id="S4.T1.13.13.1" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S4.T1.13.13.1.m1.1" class="ltx_Math" alttext="-1.5800\pm 0.0001" display="inline"><semantics id="S4.T1.13.13.1.m1.1a"><mrow id="S4.T1.13.13.1.m1.1.1" xref="S4.T1.13.13.1.m1.1.1.cmml"><mrow id="S4.T1.13.13.1.m1.1.1.2" xref="S4.T1.13.13.1.m1.1.1.2.cmml"><mo id="S4.T1.13.13.1.m1.1.1.2a" xref="S4.T1.13.13.1.m1.1.1.2.cmml">−</mo><mn id="S4.T1.13.13.1.m1.1.1.2.2" xref="S4.T1.13.13.1.m1.1.1.2.2.cmml">1.5800</mn></mrow><mo id="S4.T1.13.13.1.m1.1.1.1" xref="S4.T1.13.13.1.m1.1.1.1.cmml">±</mo><mn id="S4.T1.13.13.1.m1.1.1.3" xref="S4.T1.13.13.1.m1.1.1.3.cmml">0.0001</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.13.13.1.m1.1b"><apply id="S4.T1.13.13.1.m1.1.1.cmml" xref="S4.T1.13.13.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.13.13.1.m1.1.1.1.cmml" xref="S4.T1.13.13.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T1.13.13.1.m1.1.1.2.cmml" xref="S4.T1.13.13.1.m1.1.1.2"><minus id="S4.T1.13.13.1.m1.1.1.2.1.cmml" xref="S4.T1.13.13.1.m1.1.1.2"></minus><cn type="float" id="S4.T1.13.13.1.m1.1.1.2.2.cmml" xref="S4.T1.13.13.1.m1.1.1.2.2">1.5800</cn></apply><cn type="float" id="S4.T1.13.13.1.m1.1.1.3.cmml" xref="S4.T1.13.13.1.m1.1.1.3">0.0001</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.13.13.1.m1.1c">-1.5800\pm 0.0001</annotation></semantics></math></td>
+<td id="S4.T1.13.13.3" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1.5793</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<figure id="S4.T2" class="ltx_table">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 2: </span>Average slopes of the population decrease comparing different genetic code tables with human ARNT gene. Larger the magnitude of the slope is, the more the survival chance.</figcaption>
+<table id="S4.T2.13" class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T2.13.14.1" class="ltx_tr">
+<th id="S4.T2.13.14.1.1" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t">Code</th>
+<th id="S4.T2.13.14.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Simulation</th>
+<th id="S4.T2.13.14.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Calculation</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T2.1.1" class="ltx_tr">
+<td id="S4.T2.1.1.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">FMC</td>
+<td id="S4.T2.1.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.1.1.1.m1.1" class="ltx_Math" alttext="-1.4038\pm 0.0004" display="inline"><semantics id="S4.T2.1.1.1.m1.1a"><mrow id="S4.T2.1.1.1.m1.1.1" xref="S4.T2.1.1.1.m1.1.1.cmml"><mrow id="S4.T2.1.1.1.m1.1.1.2" xref="S4.T2.1.1.1.m1.1.1.2.cmml"><mo id="S4.T2.1.1.1.m1.1.1.2a" xref="S4.T2.1.1.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.1.1.1.m1.1.1.2.2" xref="S4.T2.1.1.1.m1.1.1.2.2.cmml">1.4038</mn></mrow><mo id="S4.T2.1.1.1.m1.1.1.1" xref="S4.T2.1.1.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.1.1.1.m1.1.1.3" xref="S4.T2.1.1.1.m1.1.1.3.cmml">0.0004</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.1.1.1.m1.1b"><apply id="S4.T2.1.1.1.m1.1.1.cmml" xref="S4.T2.1.1.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.1.1.1.m1.1.1.1.cmml" xref="S4.T2.1.1.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.1.1.1.m1.1.1.2.cmml" xref="S4.T2.1.1.1.m1.1.1.2"><minus id="S4.T2.1.1.1.m1.1.1.2.1.cmml" xref="S4.T2.1.1.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.1.1.1.m1.1.1.2.2.cmml" xref="S4.T2.1.1.1.m1.1.1.2.2">1.4038</cn></apply><cn type="float" id="S4.T2.1.1.1.m1.1.1.3.cmml" xref="S4.T2.1.1.1.m1.1.1.3">0.0004</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.1.1.1.m1.1c">-1.4038\pm 0.0004</annotation></semantics></math></td>
+<td id="S4.T2.1.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4036</td>
+</tr>
+<tr id="S4.T2.2.2" class="ltx_tr">
+<td id="S4.T2.2.2.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">EMC</td>
+<td id="S4.T2.2.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.2.2.1.m1.1" class="ltx_Math" alttext="-1.4101\pm 0.0007" display="inline"><semantics id="S4.T2.2.2.1.m1.1a"><mrow id="S4.T2.2.2.1.m1.1.1" xref="S4.T2.2.2.1.m1.1.1.cmml"><mrow id="S4.T2.2.2.1.m1.1.1.2" xref="S4.T2.2.2.1.m1.1.1.2.cmml"><mo id="S4.T2.2.2.1.m1.1.1.2a" xref="S4.T2.2.2.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.2.2.1.m1.1.1.2.2" xref="S4.T2.2.2.1.m1.1.1.2.2.cmml">1.4101</mn></mrow><mo id="S4.T2.2.2.1.m1.1.1.1" xref="S4.T2.2.2.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.2.2.1.m1.1.1.3" xref="S4.T2.2.2.1.m1.1.1.3.cmml">0.0007</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.2.2.1.m1.1b"><apply id="S4.T2.2.2.1.m1.1.1.cmml" xref="S4.T2.2.2.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.2.2.1.m1.1.1.1.cmml" xref="S4.T2.2.2.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.2.2.1.m1.1.1.2.cmml" xref="S4.T2.2.2.1.m1.1.1.2"><minus id="S4.T2.2.2.1.m1.1.1.2.1.cmml" xref="S4.T2.2.2.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.2.2.1.m1.1.1.2.2.cmml" xref="S4.T2.2.2.1.m1.1.1.2.2">1.4101</cn></apply><cn type="float" id="S4.T2.2.2.1.m1.1.1.3.cmml" xref="S4.T2.2.2.1.m1.1.1.3">0.0007</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.2.2.1.m1.1c">-1.4101\pm 0.0007</annotation></semantics></math></td>
+<td id="S4.T2.2.2.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4099</td>
+</tr>
+<tr id="S4.T2.3.3" class="ltx_tr">
+<td id="S4.T2.3.3.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">CDHNC</td>
+<td id="S4.T2.3.3.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.3.3.1.m1.1" class="ltx_Math" alttext="-1.4268\pm 0.0004" display="inline"><semantics id="S4.T2.3.3.1.m1.1a"><mrow id="S4.T2.3.3.1.m1.1.1" xref="S4.T2.3.3.1.m1.1.1.cmml"><mrow id="S4.T2.3.3.1.m1.1.1.2" xref="S4.T2.3.3.1.m1.1.1.2.cmml"><mo id="S4.T2.3.3.1.m1.1.1.2a" xref="S4.T2.3.3.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.3.3.1.m1.1.1.2.2" xref="S4.T2.3.3.1.m1.1.1.2.2.cmml">1.4268</mn></mrow><mo id="S4.T2.3.3.1.m1.1.1.1" xref="S4.T2.3.3.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.3.3.1.m1.1.1.3" xref="S4.T2.3.3.1.m1.1.1.3.cmml">0.0004</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.3.3.1.m1.1b"><apply id="S4.T2.3.3.1.m1.1.1.cmml" xref="S4.T2.3.3.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.3.3.1.m1.1.1.1.cmml" xref="S4.T2.3.3.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.3.3.1.m1.1.1.2.cmml" xref="S4.T2.3.3.1.m1.1.1.2"><minus id="S4.T2.3.3.1.m1.1.1.2.1.cmml" xref="S4.T2.3.3.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.3.3.1.m1.1.1.2.2.cmml" xref="S4.T2.3.3.1.m1.1.1.2.2">1.4268</cn></apply><cn type="float" id="S4.T2.3.3.1.m1.1.1.3.cmml" xref="S4.T2.3.3.1.m1.1.1.3">0.0004</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.3.3.1.m1.1c">-1.4268\pm 0.0004</annotation></semantics></math></td>
+<td id="S4.T2.3.3.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4268</td>
+</tr>
+<tr id="S4.T2.4.4" class="ltx_tr">
+<td id="S4.T2.4.4.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">IMC</td>
+<td id="S4.T2.4.4.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.4.4.1.m1.1" class="ltx_Math" alttext="-1.4288\pm 0.0004" display="inline"><semantics id="S4.T2.4.4.1.m1.1a"><mrow id="S4.T2.4.4.1.m1.1.1" xref="S4.T2.4.4.1.m1.1.1.cmml"><mrow id="S4.T2.4.4.1.m1.1.1.2" xref="S4.T2.4.4.1.m1.1.1.2.cmml"><mo id="S4.T2.4.4.1.m1.1.1.2a" xref="S4.T2.4.4.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.4.4.1.m1.1.1.2.2" xref="S4.T2.4.4.1.m1.1.1.2.2.cmml">1.4288</mn></mrow><mo id="S4.T2.4.4.1.m1.1.1.1" xref="S4.T2.4.4.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.4.4.1.m1.1.1.3" xref="S4.T2.4.4.1.m1.1.1.3.cmml">0.0004</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.4.4.1.m1.1b"><apply id="S4.T2.4.4.1.m1.1.1.cmml" xref="S4.T2.4.4.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.4.4.1.m1.1.1.1.cmml" xref="S4.T2.4.4.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.4.4.1.m1.1.1.2.cmml" xref="S4.T2.4.4.1.m1.1.1.2"><minus id="S4.T2.4.4.1.m1.1.1.2.1.cmml" xref="S4.T2.4.4.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.4.4.1.m1.1.1.2.2.cmml" xref="S4.T2.4.4.1.m1.1.1.2.2">1.4288</cn></apply><cn type="float" id="S4.T2.4.4.1.m1.1.1.3.cmml" xref="S4.T2.4.4.1.m1.1.1.3">0.0004</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.4.4.1.m1.1c">-1.4288\pm 0.0004</annotation></semantics></math></td>
+<td id="S4.T2.4.4.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4285</td>
+</tr>
+<tr id="S4.T2.5.5" class="ltx_tr">
+<td id="S4.T2.5.5.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">BNC</td>
+<td id="S4.T2.5.5.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.5.5.1.m1.1" class="ltx_Math" alttext="-1.4368\pm 0.0004" display="inline"><semantics id="S4.T2.5.5.1.m1.1a"><mrow id="S4.T2.5.5.1.m1.1.1" xref="S4.T2.5.5.1.m1.1.1.cmml"><mrow id="S4.T2.5.5.1.m1.1.1.2" xref="S4.T2.5.5.1.m1.1.1.2.cmml"><mo id="S4.T2.5.5.1.m1.1.1.2a" xref="S4.T2.5.5.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.5.5.1.m1.1.1.2.2" xref="S4.T2.5.5.1.m1.1.1.2.2.cmml">1.4368</mn></mrow><mo id="S4.T2.5.5.1.m1.1.1.1" xref="S4.T2.5.5.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.5.5.1.m1.1.1.3" xref="S4.T2.5.5.1.m1.1.1.3.cmml">0.0004</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.5.5.1.m1.1b"><apply id="S4.T2.5.5.1.m1.1.1.cmml" xref="S4.T2.5.5.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.5.5.1.m1.1.1.1.cmml" xref="S4.T2.5.5.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.5.5.1.m1.1.1.2.cmml" xref="S4.T2.5.5.1.m1.1.1.2"><minus id="S4.T2.5.5.1.m1.1.1.2.1.cmml" xref="S4.T2.5.5.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.5.5.1.m1.1.1.2.2.cmml" xref="S4.T2.5.5.1.m1.1.1.2.2">1.4368</cn></apply><cn type="float" id="S4.T2.5.5.1.m1.1.1.3.cmml" xref="S4.T2.5.5.1.m1.1.1.3">0.0004</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.5.5.1.m1.1c">-1.4368\pm 0.0004</annotation></semantics></math></td>
+<td id="S4.T2.5.5.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4368</td>
+</tr>
+<tr id="S4.T2.6.6" class="ltx_tr">
+<td id="S4.T2.6.6.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">ENC</td>
+<td id="S4.T2.6.6.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.6.6.1.m1.1" class="ltx_Math" alttext="-1.4566\pm 0.0005" display="inline"><semantics id="S4.T2.6.6.1.m1.1a"><mrow id="S4.T2.6.6.1.m1.1.1" xref="S4.T2.6.6.1.m1.1.1.cmml"><mrow id="S4.T2.6.6.1.m1.1.1.2" xref="S4.T2.6.6.1.m1.1.1.2.cmml"><mo id="S4.T2.6.6.1.m1.1.1.2a" xref="S4.T2.6.6.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.6.6.1.m1.1.1.2.2" xref="S4.T2.6.6.1.m1.1.1.2.2.cmml">1.4566</mn></mrow><mo id="S4.T2.6.6.1.m1.1.1.1" xref="S4.T2.6.6.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.6.6.1.m1.1.1.3" xref="S4.T2.6.6.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.6.6.1.m1.1b"><apply id="S4.T2.6.6.1.m1.1.1.cmml" xref="S4.T2.6.6.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.6.6.1.m1.1.1.1.cmml" xref="S4.T2.6.6.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.6.6.1.m1.1.1.2.cmml" xref="S4.T2.6.6.1.m1.1.1.2"><minus id="S4.T2.6.6.1.m1.1.1.2.1.cmml" xref="S4.T2.6.6.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.6.6.1.m1.1.1.2.2.cmml" xref="S4.T2.6.6.1.m1.1.1.2.2">1.4566</cn></apply><cn type="float" id="S4.T2.6.6.1.m1.1.1.3.cmml" xref="S4.T2.6.6.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.6.6.1.m1.1c">-1.4566\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T2.6.6.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4565</td>
+</tr>
+<tr id="S4.T2.7.7" class="ltx_tr">
+<td id="S4.T2.7.7.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">AMC</td>
+<td id="S4.T2.7.7.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.7.7.1.m1.1" class="ltx_Math" alttext="-1.4586\pm 0.0005" display="inline"><semantics id="S4.T2.7.7.1.m1.1a"><mrow id="S4.T2.7.7.1.m1.1.1" xref="S4.T2.7.7.1.m1.1.1.cmml"><mrow id="S4.T2.7.7.1.m1.1.1.2" xref="S4.T2.7.7.1.m1.1.1.2.cmml"><mo id="S4.T2.7.7.1.m1.1.1.2a" xref="S4.T2.7.7.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.7.7.1.m1.1.1.2.2" xref="S4.T2.7.7.1.m1.1.1.2.2.cmml">1.4586</mn></mrow><mo id="S4.T2.7.7.1.m1.1.1.1" xref="S4.T2.7.7.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.7.7.1.m1.1.1.3" xref="S4.T2.7.7.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.7.7.1.m1.1b"><apply id="S4.T2.7.7.1.m1.1.1.cmml" xref="S4.T2.7.7.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.7.7.1.m1.1.1.1.cmml" xref="S4.T2.7.7.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.7.7.1.m1.1.1.2.cmml" xref="S4.T2.7.7.1.m1.1.1.2"><minus id="S4.T2.7.7.1.m1.1.1.2.1.cmml" xref="S4.T2.7.7.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.7.7.1.m1.1.1.2.2.cmml" xref="S4.T2.7.7.1.m1.1.1.2.2">1.4586</cn></apply><cn type="float" id="S4.T2.7.7.1.m1.1.1.3.cmml" xref="S4.T2.7.7.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.7.7.1.m1.1c">-1.4586\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T2.7.7.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4583</td>
+</tr>
+<tr id="S4.T2.8.8" class="ltx_tr">
+<td id="S4.T2.8.8.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">MSC</td>
+<td id="S4.T2.8.8.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.8.8.1.m1.1" class="ltx_Math" alttext="-1.4609\pm 0.0006" display="inline"><semantics id="S4.T2.8.8.1.m1.1a"><mrow id="S4.T2.8.8.1.m1.1.1" xref="S4.T2.8.8.1.m1.1.1.cmml"><mrow id="S4.T2.8.8.1.m1.1.1.2" xref="S4.T2.8.8.1.m1.1.1.2.cmml"><mo id="S4.T2.8.8.1.m1.1.1.2a" xref="S4.T2.8.8.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.8.8.1.m1.1.1.2.2" xref="S4.T2.8.8.1.m1.1.1.2.2.cmml">1.4609</mn></mrow><mo id="S4.T2.8.8.1.m1.1.1.1" xref="S4.T2.8.8.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.8.8.1.m1.1.1.3" xref="S4.T2.8.8.1.m1.1.1.3.cmml">0.0006</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.8.8.1.m1.1b"><apply id="S4.T2.8.8.1.m1.1.1.cmml" xref="S4.T2.8.8.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.8.8.1.m1.1.1.1.cmml" xref="S4.T2.8.8.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.8.8.1.m1.1.1.2.cmml" xref="S4.T2.8.8.1.m1.1.1.2"><minus id="S4.T2.8.8.1.m1.1.1.2.1.cmml" xref="S4.T2.8.8.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.8.8.1.m1.1.1.2.2.cmml" xref="S4.T2.8.8.1.m1.1.1.2.2">1.4609</cn></apply><cn type="float" id="S4.T2.8.8.1.m1.1.1.3.cmml" xref="S4.T2.8.8.1.m1.1.1.3">0.0006</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.8.8.1.m1.1c">-1.4609\pm 0.0006</annotation></semantics></math></td>
+<td id="S4.T2.8.8.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4607</td>
+</tr>
+<tr id="S4.T2.10.10" class="ltx_tr">
+<td id="S4.T2.10.10.3" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><span id="S4.T2.10.10.3.1" class="ltx_text ltx_font_bold">SGC</span></td>
+<td id="S4.T2.9.9.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.9.9.1.m1.1" class="ltx_Math" alttext="\textbf{-1.4653}\pm\textbf{0.0005}" display="inline"><semantics id="S4.T2.9.9.1.m1.1a"><mrow id="S4.T2.9.9.1.m1.1.1" xref="S4.T2.9.9.1.m1.1.1.cmml"><mtext class="ltx_mathvariant_bold" id="S4.T2.9.9.1.m1.1.1.2" xref="S4.T2.9.9.1.m1.1.1.2a.cmml">-1.4653</mtext><mo id="S4.T2.9.9.1.m1.1.1.1" xref="S4.T2.9.9.1.m1.1.1.1.cmml">±</mo><mtext class="ltx_mathvariant_bold" id="S4.T2.9.9.1.m1.1.1.3" xref="S4.T2.9.9.1.m1.1.1.3a.cmml">0.0005</mtext></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.9.9.1.m1.1b"><apply id="S4.T2.9.9.1.m1.1.1.cmml" xref="S4.T2.9.9.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.9.9.1.m1.1.1.1.cmml" xref="S4.T2.9.9.1.m1.1.1.1">plus-or-minus</csymbol><ci id="S4.T2.9.9.1.m1.1.1.2a.cmml" xref="S4.T2.9.9.1.m1.1.1.2"><mtext class="ltx_mathvariant_bold" id="S4.T2.9.9.1.m1.1.1.2.cmml" xref="S4.T2.9.9.1.m1.1.1.2">-1.4653</mtext></ci><ci id="S4.T2.9.9.1.m1.1.1.3a.cmml" xref="S4.T2.9.9.1.m1.1.1.3"><mtext class="ltx_mathvariant_bold" id="S4.T2.9.9.1.m1.1.1.3.cmml" xref="S4.T2.9.9.1.m1.1.1.3">0.0005</mtext></ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.9.9.1.m1.1c">\textbf{-1.4653}\pm\textbf{0.0005}</annotation></semantics></math></td>
+<td id="S4.T2.10.10.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span id="S4.T2.10.10.2.1" class="ltx_text ltx_markedasmath ltx_font_bold">1.4650</span></td>
+</tr>
+<tr id="S4.T2.11.11" class="ltx_tr">
+<td id="S4.T2.11.11.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">VMC</td>
+<td id="S4.T2.11.11.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.11.11.1.m1.1" class="ltx_Math" alttext="-1.4882\pm 0.0008" display="inline"><semantics id="S4.T2.11.11.1.m1.1a"><mrow id="S4.T2.11.11.1.m1.1.1" xref="S4.T2.11.11.1.m1.1.1.cmml"><mrow id="S4.T2.11.11.1.m1.1.1.2" xref="S4.T2.11.11.1.m1.1.1.2.cmml"><mo id="S4.T2.11.11.1.m1.1.1.2a" xref="S4.T2.11.11.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.11.11.1.m1.1.1.2.2" xref="S4.T2.11.11.1.m1.1.1.2.2.cmml">1.4882</mn></mrow><mo id="S4.T2.11.11.1.m1.1.1.1" xref="S4.T2.11.11.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.11.11.1.m1.1.1.3" xref="S4.T2.11.11.1.m1.1.1.3.cmml">0.0008</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.11.11.1.m1.1b"><apply id="S4.T2.11.11.1.m1.1.1.cmml" xref="S4.T2.11.11.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.11.11.1.m1.1.1.1.cmml" xref="S4.T2.11.11.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.11.11.1.m1.1.1.2.cmml" xref="S4.T2.11.11.1.m1.1.1.2"><minus id="S4.T2.11.11.1.m1.1.1.2.1.cmml" xref="S4.T2.11.11.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.11.11.1.m1.1.1.2.2.cmml" xref="S4.T2.11.11.1.m1.1.1.2.2">1.4882</cn></apply><cn type="float" id="S4.T2.11.11.1.m1.1.1.3.cmml" xref="S4.T2.11.11.1.m1.1.1.3">0.0008</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.11.11.1.m1.1c">-1.4882\pm 0.0008</annotation></semantics></math></td>
+<td id="S4.T2.11.11.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4878</td>
+</tr>
+<tr id="S4.T2.12.12" class="ltx_tr">
+<td id="S4.T2.12.12.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">AYNC</td>
+<td id="S4.T2.12.12.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T2.12.12.1.m1.1" class="ltx_Math" alttext="-1.5215\pm 0.0005" display="inline"><semantics id="S4.T2.12.12.1.m1.1a"><mrow id="S4.T2.12.12.1.m1.1.1" xref="S4.T2.12.12.1.m1.1.1.cmml"><mrow id="S4.T2.12.12.1.m1.1.1.2" xref="S4.T2.12.12.1.m1.1.1.2.cmml"><mo id="S4.T2.12.12.1.m1.1.1.2a" xref="S4.T2.12.12.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.12.12.1.m1.1.1.2.2" xref="S4.T2.12.12.1.m1.1.1.2.2.cmml">1.5215</mn></mrow><mo id="S4.T2.12.12.1.m1.1.1.1" xref="S4.T2.12.12.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.12.12.1.m1.1.1.3" xref="S4.T2.12.12.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.12.12.1.m1.1b"><apply id="S4.T2.12.12.1.m1.1.1.cmml" xref="S4.T2.12.12.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.12.12.1.m1.1.1.1.cmml" xref="S4.T2.12.12.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.12.12.1.m1.1.1.2.cmml" xref="S4.T2.12.12.1.m1.1.1.2"><minus id="S4.T2.12.12.1.m1.1.1.2.1.cmml" xref="S4.T2.12.12.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.12.12.1.m1.1.1.2.2.cmml" xref="S4.T2.12.12.1.m1.1.1.2.2">1.5215</cn></apply><cn type="float" id="S4.T2.12.12.1.m1.1.1.3.cmml" xref="S4.T2.12.12.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.12.12.1.m1.1c">-1.5215\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T2.12.12.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.5213</td>
+</tr>
+<tr id="S4.T2.13.13" class="ltx_tr">
+<td id="S4.T2.13.13.2" class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">YMC</td>
+<td id="S4.T2.13.13.1" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S4.T2.13.13.1.m1.1" class="ltx_Math" alttext="-1.5295\pm 0.0005" display="inline"><semantics id="S4.T2.13.13.1.m1.1a"><mrow id="S4.T2.13.13.1.m1.1.1" xref="S4.T2.13.13.1.m1.1.1.cmml"><mrow id="S4.T2.13.13.1.m1.1.1.2" xref="S4.T2.13.13.1.m1.1.1.2.cmml"><mo id="S4.T2.13.13.1.m1.1.1.2a" xref="S4.T2.13.13.1.m1.1.1.2.cmml">−</mo><mn id="S4.T2.13.13.1.m1.1.1.2.2" xref="S4.T2.13.13.1.m1.1.1.2.2.cmml">1.5295</mn></mrow><mo id="S4.T2.13.13.1.m1.1.1.1" xref="S4.T2.13.13.1.m1.1.1.1.cmml">±</mo><mn id="S4.T2.13.13.1.m1.1.1.3" xref="S4.T2.13.13.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T2.13.13.1.m1.1b"><apply id="S4.T2.13.13.1.m1.1.1.cmml" xref="S4.T2.13.13.1.m1.1.1"><csymbol cd="latexml" id="S4.T2.13.13.1.m1.1.1.1.cmml" xref="S4.T2.13.13.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T2.13.13.1.m1.1.1.2.cmml" xref="S4.T2.13.13.1.m1.1.1.2"><minus id="S4.T2.13.13.1.m1.1.1.2.1.cmml" xref="S4.T2.13.13.1.m1.1.1.2"></minus><cn type="float" id="S4.T2.13.13.1.m1.1.1.2.2.cmml" xref="S4.T2.13.13.1.m1.1.1.2.2">1.5295</cn></apply><cn type="float" id="S4.T2.13.13.1.m1.1.1.3.cmml" xref="S4.T2.13.13.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T2.13.13.1.m1.1c">-1.5295\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T2.13.13.3" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1.5271</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<div id="S4.p4" class="ltx_para">
+<p id="S4.p4.1" class="ltx_p">If it is assumed that the genetic code table is optimized for increasing chance of survival against mutations, then the results of Table <a href="#S4.T1" title="Table 1 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> and Table <a href="#S4.T2" title="Table 2 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> cause many concerns. Even though there are few code tables giving results which favor the usage of <span id="S4.p4.1.1" class="ltx_text ltx_font_italic">SGC</span> (like VMC, AYNC, and YMC), we can see that if we use a different code table, for example <span id="S4.p4.1.2" class="ltx_text ltx_font_italic">FMC</span>, our white blood cell production would be more resilient towards mutations.</p>
+</div>
+<div id="S4.p5" class="ltx_para">
+<p id="S4.p5.1" class="ltx_p">To be certain that the results obtained in Table <a href="#S4.T1" title="Table 1 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> and Table <a href="#S4.T2" title="Table 2 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> do not depend on particular genes, we have first created an artificial average human gene and we run simulations using this average human gene as representetive of individuals. Table <a href="#S4.T3" title="Table 3 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> shows the results from these simulations.</p>
+</div>
+<figure id="S4.T3" class="ltx_table">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 3: </span>Average slopes of the population decrease using different genetic code tables and the average human gene. Larger the magnitude of the slope is, the more the survival chance.</figcaption>
+<table id="S4.T3.13" class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr id="S4.T3.13.14.1" class="ltx_tr">
+<th id="S4.T3.13.14.1.1" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t">Code</th>
+<th id="S4.T3.13.14.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Simulation</th>
+<th id="S4.T3.13.14.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">Calculation</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr id="S4.T3.1.1" class="ltx_tr">
+<td id="S4.T3.1.1.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">FMC</td>
+<td id="S4.T3.1.1.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.1.1.1.m1.1" class="ltx_Math" alttext="-1.4081\pm 0.0005" display="inline"><semantics id="S4.T3.1.1.1.m1.1a"><mrow id="S4.T3.1.1.1.m1.1.1" xref="S4.T3.1.1.1.m1.1.1.cmml"><mrow id="S4.T3.1.1.1.m1.1.1.2" xref="S4.T3.1.1.1.m1.1.1.2.cmml"><mo id="S4.T3.1.1.1.m1.1.1.2a" xref="S4.T3.1.1.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.1.1.1.m1.1.1.2.2" xref="S4.T3.1.1.1.m1.1.1.2.2.cmml">1.4081</mn></mrow><mo id="S4.T3.1.1.1.m1.1.1.1" xref="S4.T3.1.1.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.1.1.1.m1.1.1.3" xref="S4.T3.1.1.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.1.1.1.m1.1b"><apply id="S4.T3.1.1.1.m1.1.1.cmml" xref="S4.T3.1.1.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.1.1.1.m1.1.1.1.cmml" xref="S4.T3.1.1.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.1.1.1.m1.1.1.2.cmml" xref="S4.T3.1.1.1.m1.1.1.2"><minus id="S4.T3.1.1.1.m1.1.1.2.1.cmml" xref="S4.T3.1.1.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.1.1.1.m1.1.1.2.2.cmml" xref="S4.T3.1.1.1.m1.1.1.2.2">1.4081</cn></apply><cn type="float" id="S4.T3.1.1.1.m1.1.1.3.cmml" xref="S4.T3.1.1.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.1.1.1.m1.1c">-1.4081\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T3.1.1.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4083</td>
+</tr>
+<tr id="S4.T3.2.2" class="ltx_tr">
+<td id="S4.T3.2.2.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">EMC</td>
+<td id="S4.T3.2.2.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.2.2.1.m1.1" class="ltx_Math" alttext="-1.4204\pm 0.0005" display="inline"><semantics id="S4.T3.2.2.1.m1.1a"><mrow id="S4.T3.2.2.1.m1.1.1" xref="S4.T3.2.2.1.m1.1.1.cmml"><mrow id="S4.T3.2.2.1.m1.1.1.2" xref="S4.T3.2.2.1.m1.1.1.2.cmml"><mo id="S4.T3.2.2.1.m1.1.1.2a" xref="S4.T3.2.2.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.2.2.1.m1.1.1.2.2" xref="S4.T3.2.2.1.m1.1.1.2.2.cmml">1.4204</mn></mrow><mo id="S4.T3.2.2.1.m1.1.1.1" xref="S4.T3.2.2.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.2.2.1.m1.1.1.3" xref="S4.T3.2.2.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.2.2.1.m1.1b"><apply id="S4.T3.2.2.1.m1.1.1.cmml" xref="S4.T3.2.2.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.2.2.1.m1.1.1.1.cmml" xref="S4.T3.2.2.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.2.2.1.m1.1.1.2.cmml" xref="S4.T3.2.2.1.m1.1.1.2"><minus id="S4.T3.2.2.1.m1.1.1.2.1.cmml" xref="S4.T3.2.2.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.2.2.1.m1.1.1.2.2.cmml" xref="S4.T3.2.2.1.m1.1.1.2.2">1.4204</cn></apply><cn type="float" id="S4.T3.2.2.1.m1.1.1.3.cmml" xref="S4.T3.2.2.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.2.2.1.m1.1c">-1.4204\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T3.2.2.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4207</td>
+</tr>
+<tr id="S4.T3.3.3" class="ltx_tr">
+<td id="S4.T3.3.3.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">IMC</td>
+<td id="S4.T3.3.3.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.3.3.1.m1.1" class="ltx_Math" alttext="-1.4438\pm 0.0003" display="inline"><semantics id="S4.T3.3.3.1.m1.1a"><mrow id="S4.T3.3.3.1.m1.1.1" xref="S4.T3.3.3.1.m1.1.1.cmml"><mrow id="S4.T3.3.3.1.m1.1.1.2" xref="S4.T3.3.3.1.m1.1.1.2.cmml"><mo id="S4.T3.3.3.1.m1.1.1.2a" xref="S4.T3.3.3.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.3.3.1.m1.1.1.2.2" xref="S4.T3.3.3.1.m1.1.1.2.2.cmml">1.4438</mn></mrow><mo id="S4.T3.3.3.1.m1.1.1.1" xref="S4.T3.3.3.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.3.3.1.m1.1.1.3" xref="S4.T3.3.3.1.m1.1.1.3.cmml">0.0003</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.3.3.1.m1.1b"><apply id="S4.T3.3.3.1.m1.1.1.cmml" xref="S4.T3.3.3.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.3.3.1.m1.1.1.1.cmml" xref="S4.T3.3.3.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.3.3.1.m1.1.1.2.cmml" xref="S4.T3.3.3.1.m1.1.1.2"><minus id="S4.T3.3.3.1.m1.1.1.2.1.cmml" xref="S4.T3.3.3.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.3.3.1.m1.1.1.2.2.cmml" xref="S4.T3.3.3.1.m1.1.1.2.2">1.4438</cn></apply><cn type="float" id="S4.T3.3.3.1.m1.1.1.3.cmml" xref="S4.T3.3.3.1.m1.1.1.3">0.0003</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.3.3.1.m1.1c">-1.4438\pm 0.0003</annotation></semantics></math></td>
+<td id="S4.T3.3.3.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4439</td>
+</tr>
+<tr id="S4.T3.4.4" class="ltx_tr">
+<td id="S4.T3.4.4.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">CDHNC</td>
+<td id="S4.T3.4.4.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.4.4.1.m1.1" class="ltx_Math" alttext="-1.4498\pm 0.0001" display="inline"><semantics id="S4.T3.4.4.1.m1.1a"><mrow id="S4.T3.4.4.1.m1.1.1" xref="S4.T3.4.4.1.m1.1.1.cmml"><mrow id="S4.T3.4.4.1.m1.1.1.2" xref="S4.T3.4.4.1.m1.1.1.2.cmml"><mo id="S4.T3.4.4.1.m1.1.1.2a" xref="S4.T3.4.4.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.4.4.1.m1.1.1.2.2" xref="S4.T3.4.4.1.m1.1.1.2.2.cmml">1.4498</mn></mrow><mo id="S4.T3.4.4.1.m1.1.1.1" xref="S4.T3.4.4.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.4.4.1.m1.1.1.3" xref="S4.T3.4.4.1.m1.1.1.3.cmml">0.0001</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.4.4.1.m1.1b"><apply id="S4.T3.4.4.1.m1.1.1.cmml" xref="S4.T3.4.4.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.4.4.1.m1.1.1.1.cmml" xref="S4.T3.4.4.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.4.4.1.m1.1.1.2.cmml" xref="S4.T3.4.4.1.m1.1.1.2"><minus id="S4.T3.4.4.1.m1.1.1.2.1.cmml" xref="S4.T3.4.4.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.4.4.1.m1.1.1.2.2.cmml" xref="S4.T3.4.4.1.m1.1.1.2.2">1.4498</cn></apply><cn type="float" id="S4.T3.4.4.1.m1.1.1.3.cmml" xref="S4.T3.4.4.1.m1.1.1.3">0.0001</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.4.4.1.m1.1c">-1.4498\pm 0.0001</annotation></semantics></math></td>
+<td id="S4.T3.4.4.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4501</td>
+</tr>
+<tr id="S4.T3.5.5" class="ltx_tr">
+<td id="S4.T3.5.5.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">BNC</td>
+<td id="S4.T3.5.5.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.5.5.1.m1.1" class="ltx_Math" alttext="-1.4554\pm 0.0006" display="inline"><semantics id="S4.T3.5.5.1.m1.1a"><mrow id="S4.T3.5.5.1.m1.1.1" xref="S4.T3.5.5.1.m1.1.1.cmml"><mrow id="S4.T3.5.5.1.m1.1.1.2" xref="S4.T3.5.5.1.m1.1.1.2.cmml"><mo id="S4.T3.5.5.1.m1.1.1.2a" xref="S4.T3.5.5.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.5.5.1.m1.1.1.2.2" xref="S4.T3.5.5.1.m1.1.1.2.2.cmml">1.4554</mn></mrow><mo id="S4.T3.5.5.1.m1.1.1.1" xref="S4.T3.5.5.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.5.5.1.m1.1.1.3" xref="S4.T3.5.5.1.m1.1.1.3.cmml">0.0006</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.5.5.1.m1.1b"><apply id="S4.T3.5.5.1.m1.1.1.cmml" xref="S4.T3.5.5.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.5.5.1.m1.1.1.1.cmml" xref="S4.T3.5.5.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.5.5.1.m1.1.1.2.cmml" xref="S4.T3.5.5.1.m1.1.1.2"><minus id="S4.T3.5.5.1.m1.1.1.2.1.cmml" xref="S4.T3.5.5.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.5.5.1.m1.1.1.2.2.cmml" xref="S4.T3.5.5.1.m1.1.1.2.2">1.4554</cn></apply><cn type="float" id="S4.T3.5.5.1.m1.1.1.3.cmml" xref="S4.T3.5.5.1.m1.1.1.3">0.0006</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.5.5.1.m1.1c">-1.4554\pm 0.0006</annotation></semantics></math></td>
+<td id="S4.T3.5.5.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4558</td>
+</tr>
+<tr id="S4.T3.6.6" class="ltx_tr">
+<td id="S4.T3.6.6.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">ENC</td>
+<td id="S4.T3.6.6.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.6.6.1.m1.1" class="ltx_Math" alttext="-1.4595\pm 0.0005" display="inline"><semantics id="S4.T3.6.6.1.m1.1a"><mrow id="S4.T3.6.6.1.m1.1.1" xref="S4.T3.6.6.1.m1.1.1.cmml"><mrow id="S4.T3.6.6.1.m1.1.1.2" xref="S4.T3.6.6.1.m1.1.1.2.cmml"><mo id="S4.T3.6.6.1.m1.1.1.2a" xref="S4.T3.6.6.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.6.6.1.m1.1.1.2.2" xref="S4.T3.6.6.1.m1.1.1.2.2.cmml">1.4595</mn></mrow><mo id="S4.T3.6.6.1.m1.1.1.1" xref="S4.T3.6.6.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.6.6.1.m1.1.1.3" xref="S4.T3.6.6.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.6.6.1.m1.1b"><apply id="S4.T3.6.6.1.m1.1.1.cmml" xref="S4.T3.6.6.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.6.6.1.m1.1.1.1.cmml" xref="S4.T3.6.6.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.6.6.1.m1.1.1.2.cmml" xref="S4.T3.6.6.1.m1.1.1.2"><minus id="S4.T3.6.6.1.m1.1.1.2.1.cmml" xref="S4.T3.6.6.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.6.6.1.m1.1.1.2.2.cmml" xref="S4.T3.6.6.1.m1.1.1.2.2">1.4595</cn></apply><cn type="float" id="S4.T3.6.6.1.m1.1.1.3.cmml" xref="S4.T3.6.6.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.6.6.1.m1.1c">-1.4595\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T3.6.6.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4596</td>
+</tr>
+<tr id="S4.T3.7.7" class="ltx_tr">
+<td id="S4.T3.7.7.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">MSC</td>
+<td id="S4.T3.7.7.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.7.7.1.m1.1" class="ltx_Math" alttext="-1.4655\pm 0.0005" display="inline"><semantics id="S4.T3.7.7.1.m1.1a"><mrow id="S4.T3.7.7.1.m1.1.1" xref="S4.T3.7.7.1.m1.1.1.cmml"><mrow id="S4.T3.7.7.1.m1.1.1.2" xref="S4.T3.7.7.1.m1.1.1.2.cmml"><mo id="S4.T3.7.7.1.m1.1.1.2a" xref="S4.T3.7.7.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.7.7.1.m1.1.1.2.2" xref="S4.T3.7.7.1.m1.1.1.2.2.cmml">1.4655</mn></mrow><mo id="S4.T3.7.7.1.m1.1.1.1" xref="S4.T3.7.7.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.7.7.1.m1.1.1.3" xref="S4.T3.7.7.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.7.7.1.m1.1b"><apply id="S4.T3.7.7.1.m1.1.1.cmml" xref="S4.T3.7.7.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.7.7.1.m1.1.1.1.cmml" xref="S4.T3.7.7.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.7.7.1.m1.1.1.2.cmml" xref="S4.T3.7.7.1.m1.1.1.2"><minus id="S4.T3.7.7.1.m1.1.1.2.1.cmml" xref="S4.T3.7.7.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.7.7.1.m1.1.1.2.2.cmml" xref="S4.T3.7.7.1.m1.1.1.2.2">1.4655</cn></apply><cn type="float" id="S4.T3.7.7.1.m1.1.1.3.cmml" xref="S4.T3.7.7.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.7.7.1.m1.1c">-1.4655\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T3.7.7.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4658</td>
+</tr>
+<tr id="S4.T3.8.8" class="ltx_tr">
+<td id="S4.T3.8.8.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">AMC</td>
+<td id="S4.T3.8.8.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.8.8.1.m1.1" class="ltx_Math" alttext="-1.4693\pm 0.0006" display="inline"><semantics id="S4.T3.8.8.1.m1.1a"><mrow id="S4.T3.8.8.1.m1.1.1" xref="S4.T3.8.8.1.m1.1.1.cmml"><mrow id="S4.T3.8.8.1.m1.1.1.2" xref="S4.T3.8.8.1.m1.1.1.2.cmml"><mo id="S4.T3.8.8.1.m1.1.1.2a" xref="S4.T3.8.8.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.8.8.1.m1.1.1.2.2" xref="S4.T3.8.8.1.m1.1.1.2.2.cmml">1.4693</mn></mrow><mo id="S4.T3.8.8.1.m1.1.1.1" xref="S4.T3.8.8.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.8.8.1.m1.1.1.3" xref="S4.T3.8.8.1.m1.1.1.3.cmml">0.0006</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.8.8.1.m1.1b"><apply id="S4.T3.8.8.1.m1.1.1.cmml" xref="S4.T3.8.8.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.8.8.1.m1.1.1.1.cmml" xref="S4.T3.8.8.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.8.8.1.m1.1.1.2.cmml" xref="S4.T3.8.8.1.m1.1.1.2"><minus id="S4.T3.8.8.1.m1.1.1.2.1.cmml" xref="S4.T3.8.8.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.8.8.1.m1.1.1.2.2.cmml" xref="S4.T3.8.8.1.m1.1.1.2.2">1.4693</cn></apply><cn type="float" id="S4.T3.8.8.1.m1.1.1.3.cmml" xref="S4.T3.8.8.1.m1.1.1.3">0.0006</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.8.8.1.m1.1c">-1.4693\pm 0.0006</annotation></semantics></math></td>
+<td id="S4.T3.8.8.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4697</td>
+</tr>
+<tr id="S4.T3.10.10" class="ltx_tr">
+<td id="S4.T3.10.10.3" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t"><span id="S4.T3.10.10.3.1" class="ltx_text ltx_font_bold">SGC</span></td>
+<td id="S4.T3.9.9.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.9.9.1.m1.1" class="ltx_Math" alttext="\textbf{-1.4712}\pm\textbf{0.0004}" display="inline"><semantics id="S4.T3.9.9.1.m1.1a"><mrow id="S4.T3.9.9.1.m1.1.1" xref="S4.T3.9.9.1.m1.1.1.cmml"><mtext class="ltx_mathvariant_bold" id="S4.T3.9.9.1.m1.1.1.2" xref="S4.T3.9.9.1.m1.1.1.2a.cmml">-1.4712</mtext><mo id="S4.T3.9.9.1.m1.1.1.1" xref="S4.T3.9.9.1.m1.1.1.1.cmml">±</mo><mtext class="ltx_mathvariant_bold" id="S4.T3.9.9.1.m1.1.1.3" xref="S4.T3.9.9.1.m1.1.1.3a.cmml">0.0004</mtext></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.9.9.1.m1.1b"><apply id="S4.T3.9.9.1.m1.1.1.cmml" xref="S4.T3.9.9.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.9.9.1.m1.1.1.1.cmml" xref="S4.T3.9.9.1.m1.1.1.1">plus-or-minus</csymbol><ci id="S4.T3.9.9.1.m1.1.1.2a.cmml" xref="S4.T3.9.9.1.m1.1.1.2"><mtext class="ltx_mathvariant_bold" id="S4.T3.9.9.1.m1.1.1.2.cmml" xref="S4.T3.9.9.1.m1.1.1.2">-1.4712</mtext></ci><ci id="S4.T3.9.9.1.m1.1.1.3a.cmml" xref="S4.T3.9.9.1.m1.1.1.3"><mtext class="ltx_mathvariant_bold" id="S4.T3.9.9.1.m1.1.1.3.cmml" xref="S4.T3.9.9.1.m1.1.1.3">0.0004</mtext></ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.9.9.1.m1.1c">\textbf{-1.4712}\pm\textbf{0.0004}</annotation></semantics></math></td>
+<td id="S4.T3.10.10.2" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span id="S4.T3.10.10.2.1" class="ltx_text ltx_markedasmath ltx_font_bold">1.4716</span></td>
+</tr>
+<tr id="S4.T3.11.11" class="ltx_tr">
+<td id="S4.T3.11.11.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">VMC</td>
+<td id="S4.T3.11.11.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.11.11.1.m1.1" class="ltx_Math" alttext="-1.4969\pm 0.0005" display="inline"><semantics id="S4.T3.11.11.1.m1.1a"><mrow id="S4.T3.11.11.1.m1.1.1" xref="S4.T3.11.11.1.m1.1.1.cmml"><mrow id="S4.T3.11.11.1.m1.1.1.2" xref="S4.T3.11.11.1.m1.1.1.2.cmml"><mo id="S4.T3.11.11.1.m1.1.1.2a" xref="S4.T3.11.11.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.11.11.1.m1.1.1.2.2" xref="S4.T3.11.11.1.m1.1.1.2.2.cmml">1.4969</mn></mrow><mo id="S4.T3.11.11.1.m1.1.1.1" xref="S4.T3.11.11.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.11.11.1.m1.1.1.3" xref="S4.T3.11.11.1.m1.1.1.3.cmml">0.0005</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.11.11.1.m1.1b"><apply id="S4.T3.11.11.1.m1.1.1.cmml" xref="S4.T3.11.11.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.11.11.1.m1.1.1.1.cmml" xref="S4.T3.11.11.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.11.11.1.m1.1.1.2.cmml" xref="S4.T3.11.11.1.m1.1.1.2"><minus id="S4.T3.11.11.1.m1.1.1.2.1.cmml" xref="S4.T3.11.11.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.11.11.1.m1.1.1.2.2.cmml" xref="S4.T3.11.11.1.m1.1.1.2.2">1.4969</cn></apply><cn type="float" id="S4.T3.11.11.1.m1.1.1.3.cmml" xref="S4.T3.11.11.1.m1.1.1.3">0.0005</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.11.11.1.m1.1c">-1.4969\pm 0.0005</annotation></semantics></math></td>
+<td id="S4.T3.11.11.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.4971</td>
+</tr>
+<tr id="S4.T3.12.12" class="ltx_tr">
+<td id="S4.T3.12.12.2" class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">YMC</td>
+<td id="S4.T3.12.12.1" class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="S4.T3.12.12.1.m1.1" class="ltx_Math" alttext="-1.5540\pm 0.0006" display="inline"><semantics id="S4.T3.12.12.1.m1.1a"><mrow id="S4.T3.12.12.1.m1.1.1" xref="S4.T3.12.12.1.m1.1.1.cmml"><mrow id="S4.T3.12.12.1.m1.1.1.2" xref="S4.T3.12.12.1.m1.1.1.2.cmml"><mo id="S4.T3.12.12.1.m1.1.1.2a" xref="S4.T3.12.12.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.12.12.1.m1.1.1.2.2" xref="S4.T3.12.12.1.m1.1.1.2.2.cmml">1.5540</mn></mrow><mo id="S4.T3.12.12.1.m1.1.1.1" xref="S4.T3.12.12.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.12.12.1.m1.1.1.3" xref="S4.T3.12.12.1.m1.1.1.3.cmml">0.0006</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.12.12.1.m1.1b"><apply id="S4.T3.12.12.1.m1.1.1.cmml" xref="S4.T3.12.12.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.12.12.1.m1.1.1.1.cmml" xref="S4.T3.12.12.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.12.12.1.m1.1.1.2.cmml" xref="S4.T3.12.12.1.m1.1.1.2"><minus id="S4.T3.12.12.1.m1.1.1.2.1.cmml" xref="S4.T3.12.12.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.12.12.1.m1.1.1.2.2.cmml" xref="S4.T3.12.12.1.m1.1.1.2.2">1.5540</cn></apply><cn type="float" id="S4.T3.12.12.1.m1.1.1.3.cmml" xref="S4.T3.12.12.1.m1.1.1.3">0.0006</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.12.12.1.m1.1c">-1.5540\pm 0.0006</annotation></semantics></math></td>
+<td id="S4.T3.12.12.3" class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.5543</td>
+</tr>
+<tr id="S4.T3.13.13" class="ltx_tr">
+<td id="S4.T3.13.13.2" class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">AYNC</td>
+<td id="S4.T3.13.13.1" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math id="S4.T3.13.13.1.m1.1" class="ltx_Math" alttext="-1.5803\pm 0.0001" display="inline"><semantics id="S4.T3.13.13.1.m1.1a"><mrow id="S4.T3.13.13.1.m1.1.1" xref="S4.T3.13.13.1.m1.1.1.cmml"><mrow id="S4.T3.13.13.1.m1.1.1.2" xref="S4.T3.13.13.1.m1.1.1.2.cmml"><mo id="S4.T3.13.13.1.m1.1.1.2a" xref="S4.T3.13.13.1.m1.1.1.2.cmml">−</mo><mn id="S4.T3.13.13.1.m1.1.1.2.2" xref="S4.T3.13.13.1.m1.1.1.2.2.cmml">1.5803</mn></mrow><mo id="S4.T3.13.13.1.m1.1.1.1" xref="S4.T3.13.13.1.m1.1.1.1.cmml">±</mo><mn id="S4.T3.13.13.1.m1.1.1.3" xref="S4.T3.13.13.1.m1.1.1.3.cmml">0.0001</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T3.13.13.1.m1.1b"><apply id="S4.T3.13.13.1.m1.1.1.cmml" xref="S4.T3.13.13.1.m1.1.1"><csymbol cd="latexml" id="S4.T3.13.13.1.m1.1.1.1.cmml" xref="S4.T3.13.13.1.m1.1.1.1">plus-or-minus</csymbol><apply id="S4.T3.13.13.1.m1.1.1.2.cmml" xref="S4.T3.13.13.1.m1.1.1.2"><minus id="S4.T3.13.13.1.m1.1.1.2.1.cmml" xref="S4.T3.13.13.1.m1.1.1.2"></minus><cn type="float" id="S4.T3.13.13.1.m1.1.1.2.2.cmml" xref="S4.T3.13.13.1.m1.1.1.2.2">1.5803</cn></apply><cn type="float" id="S4.T3.13.13.1.m1.1.1.3.cmml" xref="S4.T3.13.13.1.m1.1.1.3">0.0001</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T3.13.13.1.m1.1c">-1.5803\pm 0.0001</annotation></semantics></math></td>
+<td id="S4.T3.13.13.3" class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1.5804</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<div id="S4.p6" class="ltx_para">
+<p id="S4.p6.1" class="ltx_p">In Table <a href="#S4.T3" title="Table 3 ‣ 4 RESULTS AND DISCUSSION ‣ MONTE CARLO SIMULATION AND STATISTICAL ANALYSIS OF THE EFFECT OF CODING TABLE SPECIFICITY ON GENETIC INFORMATION CODING" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a>, <span id="S4.p6.1.1" class="ltx_text ltx_font_italic">FMC</span> still performs much better and the worst performance is still by <span id="S4.p6.1.2" class="ltx_text ltx_font_italic">AYNC</span> followed by <span id="S4.p6.1.3" class="ltx_text ltx_font_italic">YMC</span>. The human average gene gives comparable results to the genes chosen in this work, indicating that the advantage of <span id="S4.p6.1.4" class="ltx_text ltx_font_italic">SGC</span> cannot be simply explained on the basis of singular mutations without taking higher order effects like protein folding into account.</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>CONCLUSION
+<br class="ltx_break">
+</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p id="S5.p1.1" class="ltx_p">In this paper, we used a computer simulation to represent a living organism under mutations. Furthermore, we changed the genetic code used in the simulations to analyze its effect on population stability.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p id="S5.p2.1" class="ltx_p">We have used different code tables utilized in the Nature in connection with two sample genes, human cytokine gene and human ARNT gene . Since these genes are one of the key factors for our bodies, we assumed that if the organism fails to produce any of the proteins coded by these genes, it will not be able to survive.</p>
+</div>
+<div id="S5.p3" class="ltx_para">
+<p id="S5.p3.1" class="ltx_p">The simulations show that <span id="S5.p3.1.1" class="ltx_text ltx_font_italic">SGC</span>, which is being used in most of the vertebrates, actually does not give the most resilient organisms against point mutations if we only apply simple simulation rules.</p>
+</div>
+<div id="S5.p4" class="ltx_para">
+<p id="S5.p4.1" class="ltx_p">To test these results, we have also created an artificial average human gene. If we compare our results as <span id="S5.p4.1.1" class="ltx_text ltx_font_italic">SGC</span> versus the rest of the coding schemes, the results do not change, i. e., <span id="S5.p4.1.2" class="ltx_text ltx_font_italic">SGC</span> is still not the best solution. However, when we compare other code tables within themselves we see that some code tables give better results with different human genes whereas others give better results with the artificial average human gene. This result is most pronounced with <span id="S5.p4.1.3" class="ltx_text ltx_font_italic">CDHNC</span>, which survives much better if we use the average human gene than the human cytokine gene.</p>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6 </span>ACKNOWLEDGEMENTS</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p id="S6.p1.1" class="ltx_p">I am grateful to Dr. Isil Aksan Kurnaz and Dr. Muhittin Mungan for their contributions on the model and the calculations. This work has been supported by Bogazici University under BAP 07B302.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+<li id="bib.bib1" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[1]</span>
+<span class="ltx_bibblock">
+N. G. F. Medeiros and
+R. N. Onody
+Phys. Rev. E <span id="bib.bib1.1.1" class="ltx_text ltx_font_bold">64</span>,
+041915 (2001).
+
+</span>
+</li>
+<li id="bib.bib2" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[2]</span>
+<span class="ltx_bibblock">
+L. D. Mueller and
+M. R. Rose
+PNAS <span id="bib.bib2.1.1" class="ltx_text ltx_font_bold">93</span>,
+15249 (1996).
+
+</span>
+</li>
+<li id="bib.bib3" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[3]</span>
+<span class="ltx_bibblock">
+Y. Cui
+R. S. Chen and
+W. H. Wong
+PNAS <span id="bib.bib3.1.1" class="ltx_text ltx_font_bold">97</span>,
+3330 (2000).
+
+</span>
+</li>
+<li id="bib.bib4" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[4]</span>
+<span class="ltx_bibblock">
+M. Heumann and
+M. H tzel
+J. Stat. Phys. <span id="bib.bib4.1.1" class="ltx_text ltx_font_bold">79</span>,
+483 (1995).
+
+</span>
+</li>
+<li id="bib.bib5" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[5]</span>
+<span class="ltx_bibblock">
+T. J. P. Penna,
+J. Stat. Phys. <span id="bib.bib5.1.1" class="ltx_text ltx_font_bold">78</span>,
+1629 (1995).
+
+</span>
+</li>
+<li id="bib.bib6" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[6]</span>
+<span class="ltx_bibblock">
+R. F. Weaver,
+<em id="bib.bib6.1.1" class="ltx_emph ltx_font_italic">Molecular Biology</em> (McGraw-Hill, New York, 2002).
+
+</span>
+</li>
+<li id="bib.bib7" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[7]</span>
+<span class="ltx_bibblock">
+<span id="bib.bib7.1.1" class="ltx_text ltx_font_typewriter">www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi?mode=c</span>.
+
+</span>
+</li>
+<li id="bib.bib8" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[8]</span>
+<span class="ltx_bibblock">
+E. Gultepe and
+M. L. Kurnaz
+Physica A <span id="bib.bib8.1.1" class="ltx_text ltx_font_bold">357</span>,
+525 (2005).
+
+</span>
+</li>
+<li id="bib.bib9" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[9]</span>
+<span class="ltx_bibblock">
+<span id="bib.bib9.1.1" class="ltx_text ltx_font_typewriter">www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide&amp;val=285912</span>.
+
+</span>
+</li>
+<li id="bib.bib10" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[10]</span>
+<span class="ltx_bibblock">
+<span id="bib.bib10.1.1" class="ltx_text ltx_font_typewriter">www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=Homo+sapiens +[gbpri]</span>
+
+</span>
+</li>
+<li id="bib.bib11" class="ltx_bibitem">
+<span class="ltx_tag ltx_tag_bibitem">[11]</span>
+<span class="ltx_bibblock">
+T. H. Jukes and
+C. R. Cantor
+<em id="bib.bib11.1.1" class="ltx_emph ltx_font_italic">in Mammalian Protein Metabolism, edited by H. N. Munro</em>
+(Academic Press, New York,
+21 1969).
+
+</span>
+</li>
+</ul>
+</section>
+</article>
+</div>
+<div class="ar5iv-footer"><a href="/html/0707.1976" class="ar5iv-nav-button ar5iv-nav-button-prev">◄</a>
+    <a class="ar5iv-home-button" href="/"><img height="40" alt="ar5iv homepage" src="/assets/ar5iv.png"></a>
+    <a href="/feeling_lucky" class="ar5iv-text-button">Feeling<br>lucky?</a>
+    <a href="/log/0707.1977" class="ar5iv-text-button ar5iv-severity-warning">Conversion<br>report</a>
+    <a class="ar5iv-text-button" target="_blank" href="https://github.com/dginev/ar5iv/issues/new?template=improve-article--arxiv-id-.md&title=Improve+article+0707.1977">Report<br>an issue</a>
+    <a href="https://arxiv.org/abs/0707.1977" class="ar5iv-text-button arxiv-ui-theme">View&nbsp;original<br>on&nbsp;arXiv</a><a href="/html/0707.1978" class="ar5iv-nav-button ar5iv-nav-button-next">►</a>
+</div><footer class="ltx_page_footer">
+<a class="ar5iv-toggle-color-scheme" href="javascript:toggleColorScheme()" title="Toggle ar5iv color scheme"><span class="color-scheme-icon"></span></a>
+<a class="ar5iv-footer-button" href="https://arxiv.org/help/license" target="_blank">Copyright</a>
+<a class="ar5iv-footer-button" href="https://arxiv.org/help/policies/privacy_policy" target="_blank">Privacy Policy</a>
+
+<div class="ltx_page_logo">Generated  on Tue Mar 19 11:39:31 2024 by <a target="_blank" href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+
+    <script>
+      var canMathML = typeof(MathMLElement) == "function";
+      if (!canMathML) {
+        var body = document.querySelector("body");
+        body.firstElementChild.setAttribute('style', 'opacity: 0;');
+        var loading = document.createElement("div");
+        loading.setAttribute("id", "mathjax-loading-spinner");
+        var message = document.createElement("div");
+        message.setAttribute("id", "mathjax-loading-message");
+        message.innerText = "Typesetting Equations...";
+        body.prepend(loading);
+        body.prepend(message);
+
+        var el = document.createElement("script");
+        el.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+        document.querySelector("head").appendChild(el);
+
+        window.MathJax = {
+          startup: {
+            pageReady: () => {
+              return MathJax.startup.defaultPageReady().then(() => {
+                body.removeChild(loading);
+                body.removeChild(message);
+                body.firstElementChild.removeAttribute('style');
+              }); } } };
+      }
+    </script>
+    <script>
+    // Auxiliary function, building the preview feature when
+    // an inline citation is clicked
+    function clicked_cite(e) {
+      e.preventDefault();
+      let cite = this.closest('.ltx_cite');
+      let next = cite.nextSibling;
+      if (next && next.nodeType == Node.ELEMENT_NODE && next.getAttribute('class') == "ar5iv-bibitem-preview") {
+        next.remove();
+        return; }
+      // Before adding a preview modal,
+      // cleanup older previews, in case they're still open
+      document.querySelectorAll('span.ar5iv-bibitem-preview').forEach(function(node) {
+        node.remove();
+      })
+
+      // Create the preview
+      preview = document.createElement('span');
+      preview.setAttribute('class','ar5iv-bibitem-preview');
+      let target = document.getElementById(this.getAttribute('href').slice(1));
+      target.childNodes.forEach(function (child) {
+        preview.append(child.cloneNode(true));
+      });
+      let close_x = document.createElement('button');
+      close_x.setAttribute("aria-label","Close modal for bibliography item preview");
+      close_x.textContent = "×";
+      close_x.setAttribute('class', 'ar5iv-button-close-preview');
+      close_x.setAttribute('onclick','this.parentNode.remove()');
+      preview.append(close_x);
+      preview.querySelectorAll('.ltx_tag_bibitem').forEach(function(node) {
+        node.remove();
+      });
+      cite.parentNode.insertBefore(preview, cite.nextSibling);
+      return;
+    }
+    // Global Document initialization:
+    // - assign the preview feature to all inline citation links
+    document.querySelectorAll(".ltx_cite .ltx_ref").forEach(function (link) {
+      link.addEventListener("click", clicked_cite);
+    });
+    </script>
+    </body>
+</html>

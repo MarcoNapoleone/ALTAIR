@@ -1,0 +1,1625 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>[0710.0588] On the Fraction of Quasars with Outflows</title><meta property="og:description" content="Outflows from active galactic nuclei (AGNs) seem to be common and
+are thought to be important from a variety of perspectives: as an
+agent of chemical enhancement of the interstellar and intergalactic
+media, as an agent…">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="On the Fraction of Quasars with Outflows">
+<meta name="twitter:image:src" content="https://ar5iv.labs.arxiv.org/assets/ar5iv_card.png">
+<meta name="twitter:image:alt" content="ar5iv logo">
+<meta property="og:title" content="On the Fraction of Quasars with Outflows">
+<meta property="og:site_name" content="ar5iv">
+<meta property="og:image" content="https://ar5iv.labs.arxiv.org/assets/ar5iv_card.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ar5iv.labs.arxiv.org/html/0710.0588">
+
+<!--Generated on Fri Mar  8 10:08:32 2024 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" lang="en" content="quasars: general — quasars: absorption lines —
+galaxies: active — accretion">
+
+<script>
+  function detectColorScheme(){
+    var theme="light";
+    var current_theme = localStorage.getItem("ar5iv_theme");
+    if(current_theme){
+      if(current_theme == "dark"){
+        theme = "dark";
+      } }
+    else if(!window.matchMedia) { return false; }
+    else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark"; }
+    if (theme=="dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light"); } }
+
+  detectColorScheme();
+
+  function toggleColorScheme(){
+    var current_theme = localStorage.getItem("ar5iv_theme");
+    if (current_theme) {
+      if (current_theme == "light") {
+        localStorage.setItem("ar5iv_theme", "dark"); }
+      else {
+        localStorage.setItem("ar5iv_theme", "light"); } }
+    else {
+        localStorage.setItem("ar5iv_theme", "dark"); }
+    detectColorScheme(); }
+</script>
+<link media="all" rel="stylesheet" href="/assets/ar5iv-fonts.0.8.0.min.css"><link media="all" rel="stylesheet" href="/assets/ar5iv.0.8.0.min.css"><link media="all" rel="stylesheet" href="/assets/ar5iv-site.0.2.2.css">
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_multiline">
+<h1 class="ltx_title ltx_title_document">On the Fraction of Quasars with Outflows</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Rajib Ganguly &amp; Michael S. Brotherton<span id="id3.1.id1" class="ltx_note ltx_role_affiliation"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_note_type">affiliation: </span>Department of Physics &amp; Astronomy, The University
+of Wyoming (Dept. 3905), 1000 East University Ave., Laramie, WY,
+82071</span></span></span>
+</span></span>
+</div>
+
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p id="id2.1" class="ltx_p">Outflows from active galactic nuclei (AGNs) seem to be common and
+are thought to be important from a variety of perspectives: as an
+agent of chemical enhancement of the interstellar and intergalactic
+media, as an agent of angular momentum removal from the accreting
+central engine, and as an agent limiting star formation in
+starbursting systems by blowing out gas and dust from the host
+galaxy. To understand these processes, we must determine what
+fraction of AGNs feature outflows and understand what forms they
+take. We examine recent surveys of quasar absorption lines,
+reviewing the best means to determine if systems are intrinsic and
+result from outflowing material, and the limitations of approaches
+taken to date. The surveys reveal that, while the fraction of
+specific forms of outflows depends on AGN properties, the overall
+fraction displaying outflows is fairly constant, approximately
+60<math id="id2.1.m1.1" class="ltx_Math" alttext="\%" display="inline"><semantics id="id2.1.m1.1a"><mo id="id2.1.m1.1.1" xref="id2.1.m1.1.1.cmml">%</mo><annotation-xml encoding="MathML-Content" id="id2.1.m1.1b"><csymbol cd="latexml" id="id2.1.m1.1.1.cmml" xref="id2.1.m1.1.1">percent</csymbol></annotation-xml><annotation encoding="application/x-tex" id="id2.1.m1.1c">\%</annotation></semantics></math>, over many orders of magnitude in luminosity. We emphasize
+some issues concerning classification of outflows driven by data
+type rather than necessarily the physical nature of outflows, and
+illustrate how understanding outflows probably requires more a
+comprehensive approach than has usually been taken in the past.</p>
+</div>
+<div class="ltx_keywords">
+<h6 class="ltx_title ltx_title_keywords">Subject headings: </h6>quasars: general — quasars: absorption lines —
+galaxies: active — accretion
+</div>
+<span id="id1" class="ltx_note ltx_note_frontmatter ltx_role_slugcomment"><sup class="ltx_note_mark">†</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">†</sup><span class="ltx_note_type">slugcomment: </span>Accepted for Publication in <span id="id1.1" class="ltx_text ltx_font_italic">The Astrophysical
+Journal</span></span></span></span>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1. </span>Introduction</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p id="S1.p1.1" class="ltx_p">The role of outflows from quasars and active galactic nuclei (AGN)
+has recently become an important feature in the overall framework of
+how galaxies and star formation processes evolve over cosmic time.
+Mergers and other interactions triggering AGN seem to provide
+feedback affecting the larger scale environment. Recent efforts to
+include the effects of this so-called AGN feedback focus on two
+modes: a “radio” mode whereby a relativistic jet heats the
+surrounding interstellar and intercluster media
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Best, <a href="#bib.bib7" title="" class="ltx_ref">2007</a>)</cite>, and a “quasar” mode whereby a lower
+velocity but higher mass outflow also helps to clear out post-merger
+shrouding gas and quenches star formation <cite class="ltx_cite ltx_citemacro_citep">(e.g., Di Matteo, Springel, &amp; Hernquist, <a href="#bib.bib16" title="" class="ltx_ref">2005</a>)</cite>.
+We focus on this second mode in this paper. For this mode, a number
+of questions require addressing. How common are outflows? Do all AGN
+have outflows? What drives outflows? Is there a single all-governing
+structure of AGN? Answering these questions will help us to
+understand the role AGN outflows with respect to issue of feedback,
+and other important issues like chemical enrichment and accretion.</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p id="S1.p2.1" class="ltx_p">In the ensuing sections we aim to achieve several goals: (1) to
+review the ways in which outflows are detected in AGN over all
+luminosity scales; (2) to comment on the merits of various catalogs
+of outflows; and (3) to arrive at the true (possibly
+property-dependent) observed frequency of outflows. In its most
+basic interpretation, the observed frequency of outflows can be
+equated with the fraction of solid angle (from the view point of the
+central black hole) subtended by outflowing gas. This interpretation
+assumes that all AGN feature outflows and that not all sight-lines
+to the emitting regions are occulted by the outflow. Alternatively
+(and equally simplistic), the frequency can be interpreted as the
+fraction of the duty cycle over which AGN feature outflows (assuming
+the outflow subtends 4<math id="S1.p2.1.m1.1" class="ltx_Math" alttext="\pi" display="inline"><semantics id="S1.p2.1.m1.1a"><mi id="S1.p2.1.m1.1.1" xref="S1.p2.1.m1.1.1.cmml">π</mi><annotation-xml encoding="MathML-Content" id="S1.p2.1.m1.1b"><ci id="S1.p2.1.m1.1.1.cmml" xref="S1.p2.1.m1.1.1">𝜋</ci></annotation-xml><annotation encoding="application/x-tex" id="S1.p2.1.m1.1c">\pi</annotation></semantics></math> steradians). The actual conversion of
+the fraction of AGN featuring spectroscopic evidence of outflow to
+the solid angle subtend by such outflows has been treated by
+<cite class="ltx_cite ltx_citemacro_citet">Crenshaw
+et al. (<a href="#bib.bib11" title="" class="ltx_ref">1999</a>)</cite> and <cite class="ltx_cite ltx_citemacro_citet">Crenshaw, Kraemer, &amp; George (<a href="#bib.bib12" title="" class="ltx_ref">2003</a>)</cite>. This computation involves
+further knowledge of the line-of-sight covering factor (that is, the
+fraction of lines-of-sight that reach the observer that are occulted
+by the outflow) as well as an understanding of range of solid angle
+sampled by the AGN used (e.g., Type 1 versus Type 2 AGN). The true
+situation is likely in between these two extremes, and may depend
+also on properties we can not currently constrain, such as the time
+since the AGN was triggered.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p id="S1.p3.5" class="ltx_p">Additionally, we strive here to build a case that more effort should
+be made to consider outflows of all types together. Often data
+limitations of one sort or another have led to the study of limited
+parts of parameter space (e.g., outflow velocity or velocity
+dispersion), creating artificial or at least biased divisions. There
+appears to be a continuous range in properties of outflows and these
+should only be regarded as fundamentally different when there is clear
+evidence to reach such a conclusion. Below we discuss the
+identification of outflows (§2) and the data-driven subcategories
+(§3). We show an illustrative example of how combining the
+different outflow subclasses may lead to a more unified physical
+understanding of outflows (§4). Finally, we bring together the
+different survey methodologies to determine an overall fraction of AGN
+displaying the signatures of outflows (§5) and summarize the case
+for more global studies of the outflow phenomenon. We adopt a
+cosmology with <math id="S1.p3.1.m1.1" class="ltx_Math" alttext="\Omega_{M}" display="inline"><semantics id="S1.p3.1.m1.1a"><msub id="S1.p3.1.m1.1.1" xref="S1.p3.1.m1.1.1.cmml"><mi mathvariant="normal" id="S1.p3.1.m1.1.1.2" xref="S1.p3.1.m1.1.1.2.cmml">Ω</mi><mi id="S1.p3.1.m1.1.1.3" xref="S1.p3.1.m1.1.1.3.cmml">M</mi></msub><annotation-xml encoding="MathML-Content" id="S1.p3.1.m1.1b"><apply id="S1.p3.1.m1.1.1.cmml" xref="S1.p3.1.m1.1.1"><csymbol cd="ambiguous" id="S1.p3.1.m1.1.1.1.cmml" xref="S1.p3.1.m1.1.1">subscript</csymbol><ci id="S1.p3.1.m1.1.1.2.cmml" xref="S1.p3.1.m1.1.1.2">Ω</ci><ci id="S1.p3.1.m1.1.1.3.cmml" xref="S1.p3.1.m1.1.1.3">𝑀</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S1.p3.1.m1.1c">\Omega_{M}</annotation></semantics></math> = 0.3, <math id="S1.p3.2.m2.1" class="ltx_Math" alttext="\Omega_{\Lambda}" display="inline"><semantics id="S1.p3.2.m2.1a"><msub id="S1.p3.2.m2.1.1" xref="S1.p3.2.m2.1.1.cmml"><mi mathvariant="normal" id="S1.p3.2.m2.1.1.2" xref="S1.p3.2.m2.1.1.2.cmml">Ω</mi><mi mathvariant="normal" id="S1.p3.2.m2.1.1.3" xref="S1.p3.2.m2.1.1.3.cmml">Λ</mi></msub><annotation-xml encoding="MathML-Content" id="S1.p3.2.m2.1b"><apply id="S1.p3.2.m2.1.1.cmml" xref="S1.p3.2.m2.1.1"><csymbol cd="ambiguous" id="S1.p3.2.m2.1.1.1.cmml" xref="S1.p3.2.m2.1.1">subscript</csymbol><ci id="S1.p3.2.m2.1.1.2.cmml" xref="S1.p3.2.m2.1.1.2">Ω</ci><ci id="S1.p3.2.m2.1.1.3.cmml" xref="S1.p3.2.m2.1.1.3">Λ</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S1.p3.2.m2.1c">\Omega_{\Lambda}</annotation></semantics></math> = 0.7, and H<sub id="S1.p3.5.1" class="ltx_sub">0</sub> =
+70 km s<sup id="S1.p3.5.2" class="ltx_sup"><span id="S1.p3.5.2.1" class="ltx_text ltx_font_italic">-1</span></sup> Mpc<sup id="S1.p3.5.3" class="ltx_sup"><span id="S1.p3.5.3.1" class="ltx_text ltx_font_italic">-1</span></sup>.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2. </span>The Ideal Way To Select Quasars Exhibiting Outflows</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p id="S2.p1.3" class="ltx_p">Outflows from AGN are primarily detected in ultraviolet and X-ray
+absorption against the compact continuum source (i.e, the inner
+portions of the accretion disk) and/or the more extended broad
+emission line region. In a few cases, outflows have been
+demonstratively observed in emission both from the broad line region
+in narrow-line Seyfert 1 galaxies
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Leighly &amp;
+Moore, <a href="#bib.bib44" title="" class="ltx_ref">2004</a>; Leighly, <a href="#bib.bib43" title="" class="ltx_ref">2004</a>; Yuan et al., <a href="#bib.bib65" title="" class="ltx_ref">2007</a>)</cite> and from the narrow
+line region of Seyfert 1 galaxies <cite class="ltx_cite ltx_citemacro_citep">(e.g., Das
+et al., <a href="#bib.bib14" title="" class="ltx_ref">2005</a>, <a href="#bib.bib15" title="" class="ltx_ref">2006</a>)</cite>.
+[Arguably, the fact that broad emission lines in most AGN have only
+a single peak is also a signature of outflowing gas
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Murray
+et al., <a href="#bib.bib47" title="" class="ltx_ref">1995</a>)</cite>.] For emission-line gas, reverberation
+mapping provides a direct means at establishing the location of the
+gas. For absorption-line gas, placing a distance between the gas and
+the ionizing continuum relies on using absorption-line diagnostics
+to assess the photoionization parameter (<math id="S2.p1.1.m1.1" class="ltx_Math" alttext="U" display="inline"><semantics id="S2.p1.1.m1.1a"><mi id="S2.p1.1.m1.1.1" xref="S2.p1.1.m1.1.1.cmml">U</mi><annotation-xml encoding="MathML-Content" id="S2.p1.1.m1.1b"><ci id="S2.p1.1.m1.1.1.cmml" xref="S2.p1.1.m1.1.1">𝑈</ci></annotation-xml><annotation encoding="application/x-tex" id="S2.p1.1.m1.1c">U</annotation></semantics></math>), and having other
+information that constrains the density (<math id="S2.p1.2.m2.1" class="ltx_Math" alttext="n" display="inline"><semantics id="S2.p1.2.m2.1a"><mi id="S2.p1.2.m2.1.1" xref="S2.p1.2.m2.1.1.cmml">n</mi><annotation-xml encoding="MathML-Content" id="S2.p1.2.m2.1b"><ci id="S2.p1.2.m2.1.1.cmml" xref="S2.p1.2.m2.1.1">𝑛</ci></annotation-xml><annotation encoding="application/x-tex" id="S2.p1.2.m2.1c">n</annotation></semantics></math>) of the gas. The
+distance, <math id="S2.p1.3.m3.1" class="ltx_Math" alttext="r" display="inline"><semantics id="S2.p1.3.m3.1a"><mi id="S2.p1.3.m3.1.1" xref="S2.p1.3.m3.1.1.cmml">r</mi><annotation-xml encoding="MathML-Content" id="S2.p1.3.m3.1b"><ci id="S2.p1.3.m3.1.1.cmml" xref="S2.p1.3.m3.1.1">𝑟</ci></annotation-xml><annotation encoding="application/x-tex" id="S2.p1.3.m3.1c">r</annotation></semantics></math>, is related to these quantities via</p>
+<table id="S2.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.E1.m1.2" class="ltx_Math" alttext="r=\sqrt{{{\int_{\nu_{\mathrm{LL}}}^{\infty}(L_{\nu}/\nu)d\nu}\over{4\pi hcnU}}}," display="block"><semantics id="S2.E1.m1.2a"><mrow id="S2.E1.m1.2.2.1" xref="S2.E1.m1.2.2.1.1.cmml"><mrow id="S2.E1.m1.2.2.1.1" xref="S2.E1.m1.2.2.1.1.cmml"><mi id="S2.E1.m1.2.2.1.1.2" xref="S2.E1.m1.2.2.1.1.2.cmml">r</mi><mo id="S2.E1.m1.2.2.1.1.1" xref="S2.E1.m1.2.2.1.1.1.cmml">=</mo><msqrt id="S2.E1.m1.1.1" xref="S2.E1.m1.1.1.cmml"><mfrac id="S2.E1.m1.1.1.1" xref="S2.E1.m1.1.1.1.cmml"><mrow id="S2.E1.m1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.cmml"><msubsup id="S2.E1.m1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.2.cmml"><mo id="S2.E1.m1.1.1.1.1.1.2.2.2" xref="S2.E1.m1.1.1.1.1.1.2.2.2.cmml">∫</mo><msub id="S2.E1.m1.1.1.1.1.1.2.2.3" xref="S2.E1.m1.1.1.1.1.1.2.2.3.cmml"><mi id="S2.E1.m1.1.1.1.1.1.2.2.3.2" xref="S2.E1.m1.1.1.1.1.1.2.2.3.2.cmml">ν</mi><mi id="S2.E1.m1.1.1.1.1.1.2.2.3.3" xref="S2.E1.m1.1.1.1.1.1.2.2.3.3.cmml">LL</mi></msub><mi mathvariant="normal" id="S2.E1.m1.1.1.1.1.1.2.3" xref="S2.E1.m1.1.1.1.1.1.2.3.cmml">∞</mi></msubsup><mrow id="S2.E1.m1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.cmml"><mrow id="S2.E1.m1.1.1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.cmml"><mo lspace="0em" stretchy="false" id="S2.E1.m1.1.1.1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.cmml">(</mo><mrow id="S2.E1.m1.1.1.1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.cmml"><msub id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.cmml"><mi id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.2" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.2.cmml">L</mi><mi id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.3" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.3.cmml">ν</mi></msub><mo id="S2.E1.m1.1.1.1.1.1.1.1.1.1.1" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.1.cmml">/</mo><mi id="S2.E1.m1.1.1.1.1.1.1.1.1.1.3" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.3.cmml">ν</mi></mrow><mo stretchy="false" id="S2.E1.m1.1.1.1.1.1.1.1.1.3" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.cmml">)</mo></mrow><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.2" xref="S2.E1.m1.1.1.1.1.1.1.2.cmml">​</mo><mrow id="S2.E1.m1.1.1.1.1.1.1.3" xref="S2.E1.m1.1.1.1.1.1.1.3.cmml"><mo rspace="0em" id="S2.E1.m1.1.1.1.1.1.1.3.1" xref="S2.E1.m1.1.1.1.1.1.1.3.1.cmml">𝑑</mo><mi id="S2.E1.m1.1.1.1.1.1.1.3.2" xref="S2.E1.m1.1.1.1.1.1.1.3.2.cmml">ν</mi></mrow></mrow></mrow><mrow id="S2.E1.m1.1.1.1.3" xref="S2.E1.m1.1.1.1.3.cmml"><mn id="S2.E1.m1.1.1.1.3.2" xref="S2.E1.m1.1.1.1.3.2.cmml">4</mn><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.3.1" xref="S2.E1.m1.1.1.1.3.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.3.3" xref="S2.E1.m1.1.1.1.3.3.cmml">π</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.3.1a" xref="S2.E1.m1.1.1.1.3.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.3.4" xref="S2.E1.m1.1.1.1.3.4.cmml">h</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.3.1b" xref="S2.E1.m1.1.1.1.3.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.3.5" xref="S2.E1.m1.1.1.1.3.5.cmml">c</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.3.1c" xref="S2.E1.m1.1.1.1.3.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.3.6" xref="S2.E1.m1.1.1.1.3.6.cmml">n</mi><mo lspace="0em" rspace="0em" id="S2.E1.m1.1.1.1.3.1d" xref="S2.E1.m1.1.1.1.3.1.cmml">​</mo><mi id="S2.E1.m1.1.1.1.3.7" xref="S2.E1.m1.1.1.1.3.7.cmml">U</mi></mrow></mfrac></msqrt></mrow><mo id="S2.E1.m1.2.2.1.2" xref="S2.E1.m1.2.2.1.1.cmml">,</mo></mrow><annotation-xml encoding="MathML-Content" id="S2.E1.m1.2b"><apply id="S2.E1.m1.2.2.1.1.cmml" xref="S2.E1.m1.2.2.1"><eq id="S2.E1.m1.2.2.1.1.1.cmml" xref="S2.E1.m1.2.2.1.1.1"></eq><ci id="S2.E1.m1.2.2.1.1.2.cmml" xref="S2.E1.m1.2.2.1.1.2">𝑟</ci><apply id="S2.E1.m1.1.1.cmml" xref="S2.E1.m1.1.1"><root id="S2.E1.m1.1.1a.cmml" xref="S2.E1.m1.1.1"></root><apply id="S2.E1.m1.1.1.1.cmml" xref="S2.E1.m1.1.1.1"><divide id="S2.E1.m1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1"></divide><apply id="S2.E1.m1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1"><apply id="S2.E1.m1.1.1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1.1.1.2"><csymbol cd="ambiguous" id="S2.E1.m1.1.1.1.1.1.2.1.cmml" xref="S2.E1.m1.1.1.1.1.1.2">superscript</csymbol><apply id="S2.E1.m1.1.1.1.1.1.2.2.cmml" xref="S2.E1.m1.1.1.1.1.1.2"><csymbol cd="ambiguous" id="S2.E1.m1.1.1.1.1.1.2.2.1.cmml" xref="S2.E1.m1.1.1.1.1.1.2">subscript</csymbol><int id="S2.E1.m1.1.1.1.1.1.2.2.2.cmml" xref="S2.E1.m1.1.1.1.1.1.2.2.2"></int><apply id="S2.E1.m1.1.1.1.1.1.2.2.3.cmml" xref="S2.E1.m1.1.1.1.1.1.2.2.3"><csymbol cd="ambiguous" id="S2.E1.m1.1.1.1.1.1.2.2.3.1.cmml" xref="S2.E1.m1.1.1.1.1.1.2.2.3">subscript</csymbol><ci id="S2.E1.m1.1.1.1.1.1.2.2.3.2.cmml" xref="S2.E1.m1.1.1.1.1.1.2.2.3.2">𝜈</ci><ci id="S2.E1.m1.1.1.1.1.1.2.2.3.3.cmml" xref="S2.E1.m1.1.1.1.1.1.2.2.3.3">LL</ci></apply></apply><infinity id="S2.E1.m1.1.1.1.1.1.2.3.cmml" xref="S2.E1.m1.1.1.1.1.1.2.3"></infinity></apply><apply id="S2.E1.m1.1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1"><times id="S2.E1.m1.1.1.1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1.1.1.1.2"></times><apply id="S2.E1.m1.1.1.1.1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1"><divide id="S2.E1.m1.1.1.1.1.1.1.1.1.1.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.1"></divide><apply id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2"><csymbol cd="ambiguous" id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2">subscript</csymbol><ci id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.2.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.2">𝐿</ci><ci id="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.3.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.2.3">𝜈</ci></apply><ci id="S2.E1.m1.1.1.1.1.1.1.1.1.1.3.cmml" xref="S2.E1.m1.1.1.1.1.1.1.1.1.1.3">𝜈</ci></apply><apply id="S2.E1.m1.1.1.1.1.1.1.3.cmml" xref="S2.E1.m1.1.1.1.1.1.1.3"><csymbol cd="latexml" id="S2.E1.m1.1.1.1.1.1.1.3.1.cmml" xref="S2.E1.m1.1.1.1.1.1.1.3.1">differential-d</csymbol><ci id="S2.E1.m1.1.1.1.1.1.1.3.2.cmml" xref="S2.E1.m1.1.1.1.1.1.1.3.2">𝜈</ci></apply></apply></apply><apply id="S2.E1.m1.1.1.1.3.cmml" xref="S2.E1.m1.1.1.1.3"><times id="S2.E1.m1.1.1.1.3.1.cmml" xref="S2.E1.m1.1.1.1.3.1"></times><cn type="integer" id="S2.E1.m1.1.1.1.3.2.cmml" xref="S2.E1.m1.1.1.1.3.2">4</cn><ci id="S2.E1.m1.1.1.1.3.3.cmml" xref="S2.E1.m1.1.1.1.3.3">𝜋</ci><ci id="S2.E1.m1.1.1.1.3.4.cmml" xref="S2.E1.m1.1.1.1.3.4">ℎ</ci><ci id="S2.E1.m1.1.1.1.3.5.cmml" xref="S2.E1.m1.1.1.1.3.5">𝑐</ci><ci id="S2.E1.m1.1.1.1.3.6.cmml" xref="S2.E1.m1.1.1.1.3.6">𝑛</ci><ci id="S2.E1.m1.1.1.1.3.7.cmml" xref="S2.E1.m1.1.1.1.3.7">𝑈</ci></apply></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.E1.m1.2c">r=\sqrt{{{\int_{\nu_{\mathrm{LL}}}^{\infty}(L_{\nu}/\nu)d\nu}\over{4\pi hcnU}}},</annotation></semantics></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr></tbody>
+</table>
+<p id="S2.p1.4" class="ltx_p">where <math id="S2.p1.4.m1.1" class="ltx_Math" alttext="\nu_{\mathrm{LL}}=3.3\times 10^{15}" display="inline"><semantics id="S2.p1.4.m1.1a"><mrow id="S2.p1.4.m1.1.1" xref="S2.p1.4.m1.1.1.cmml"><msub id="S2.p1.4.m1.1.1.2" xref="S2.p1.4.m1.1.1.2.cmml"><mi id="S2.p1.4.m1.1.1.2.2" xref="S2.p1.4.m1.1.1.2.2.cmml">ν</mi><mi id="S2.p1.4.m1.1.1.2.3" xref="S2.p1.4.m1.1.1.2.3.cmml">LL</mi></msub><mo id="S2.p1.4.m1.1.1.1" xref="S2.p1.4.m1.1.1.1.cmml">=</mo><mrow id="S2.p1.4.m1.1.1.3" xref="S2.p1.4.m1.1.1.3.cmml"><mn id="S2.p1.4.m1.1.1.3.2" xref="S2.p1.4.m1.1.1.3.2.cmml">3.3</mn><mo lspace="0.222em" rspace="0.222em" id="S2.p1.4.m1.1.1.3.1" xref="S2.p1.4.m1.1.1.3.1.cmml">×</mo><msup id="S2.p1.4.m1.1.1.3.3" xref="S2.p1.4.m1.1.1.3.3.cmml"><mn id="S2.p1.4.m1.1.1.3.3.2" xref="S2.p1.4.m1.1.1.3.3.2.cmml">10</mn><mn id="S2.p1.4.m1.1.1.3.3.3" xref="S2.p1.4.m1.1.1.3.3.3.cmml">15</mn></msup></mrow></mrow><annotation-xml encoding="MathML-Content" id="S2.p1.4.m1.1b"><apply id="S2.p1.4.m1.1.1.cmml" xref="S2.p1.4.m1.1.1"><eq id="S2.p1.4.m1.1.1.1.cmml" xref="S2.p1.4.m1.1.1.1"></eq><apply id="S2.p1.4.m1.1.1.2.cmml" xref="S2.p1.4.m1.1.1.2"><csymbol cd="ambiguous" id="S2.p1.4.m1.1.1.2.1.cmml" xref="S2.p1.4.m1.1.1.2">subscript</csymbol><ci id="S2.p1.4.m1.1.1.2.2.cmml" xref="S2.p1.4.m1.1.1.2.2">𝜈</ci><ci id="S2.p1.4.m1.1.1.2.3.cmml" xref="S2.p1.4.m1.1.1.2.3">LL</ci></apply><apply id="S2.p1.4.m1.1.1.3.cmml" xref="S2.p1.4.m1.1.1.3"><times id="S2.p1.4.m1.1.1.3.1.cmml" xref="S2.p1.4.m1.1.1.3.1"></times><cn type="float" id="S2.p1.4.m1.1.1.3.2.cmml" xref="S2.p1.4.m1.1.1.3.2">3.3</cn><apply id="S2.p1.4.m1.1.1.3.3.cmml" xref="S2.p1.4.m1.1.1.3.3"><csymbol cd="ambiguous" id="S2.p1.4.m1.1.1.3.3.1.cmml" xref="S2.p1.4.m1.1.1.3.3">superscript</csymbol><cn type="integer" id="S2.p1.4.m1.1.1.3.3.2.cmml" xref="S2.p1.4.m1.1.1.3.3.2">10</cn><cn type="integer" id="S2.p1.4.m1.1.1.3.3.3.cmml" xref="S2.p1.4.m1.1.1.3.3.3">15</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p1.4.m1.1c">\nu_{\mathrm{LL}}=3.3\times 10^{15}</annotation></semantics></math> Hz is the frequency of
+the Lyman limit. Constraints on the density can come from
+time-variability (if ionization/recombination dominates the
+variability timescale), or the presence of excited-state lines.
+Density information is not typically available for intrinsic
+absorbers, so secondary indicators must be employed to separate
+intrinsic absorbers from absorption by interloping structures (e.g.,
+IGM filaments, galaxy halos and disks).</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p id="S2.p2.1" class="ltx_p">In order of decreasing utility and importance, the secondary
+indicators of an intrinsic origin for an absorption-line system are:
+(1) velocity width, (2) partial coverage, (3) time variability, (4)
+high photoionization parameter, (5) high metallicity,
+<cite class="ltx_cite ltx_citemacro_citep">(e.g. Barlow &amp;
+Sargent, <a href="#bib.bib3" title="" class="ltx_ref">1997</a>)</cite>. Not all intrinsic absorbers exhibit all of
+these properties, but the probability of an intrinsic origin is
+higher if an absorber exhibits more than one property. Likewise,
+with the exception of the first two indicators (and the first only
+in its most extreme, see §<a href="#S3.SS1" title="3.1. Broad Absorption Lines (BALs) ‣ 3. Observations of the Incidence of Various Forms of Outflows ‣ On the Fraction of Quasars with Outflows" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>), each of these indicators
+have been observed in intervening material. Thus, by themselves, no
+one indicator should be taken to imply an intrinsic origin.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p id="S2.p3.4" class="ltx_p">Historically, the first criterion has led to three divisions in the
+classification of intrinsic absorbers. Outflows with the largest
+velocity dispersions are termed “broad absorption lines”
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Weymann
+et al., <a href="#bib.bib61" title="" class="ltx_ref">1991</a>, BALs, FWHM <math id="S2.p3.1.1.m1.1" class="ltx_Math" alttext="\geq 2000" display="inline"><semantics id="S2.p3.1.1.m1.1a"><mrow id="S2.p3.1.1.m1.1.1" xref="S2.p3.1.1.m1.1.1.cmml"><mi id="S2.p3.1.1.m1.1.1.2" xref="S2.p3.1.1.m1.1.1.2.cmml"></mi><mo id="S2.p3.1.1.m1.1.1.1" xref="S2.p3.1.1.m1.1.1.1.cmml">≥</mo><mn id="S2.p3.1.1.m1.1.1.3" xref="S2.p3.1.1.m1.1.1.3.cmml">2000</mn></mrow><annotation-xml encoding="MathML-Content" id="S2.p3.1.1.m1.1b"><apply id="S2.p3.1.1.m1.1.1.cmml" xref="S2.p3.1.1.m1.1.1"><geq id="S2.p3.1.1.m1.1.1.1.cmml" xref="S2.p3.1.1.m1.1.1.1"></geq><csymbol cd="latexml" id="S2.p3.1.1.m1.1.1.2.cmml" xref="S2.p3.1.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S2.p3.1.1.m1.1.1.3.cmml" xref="S2.p3.1.1.m1.1.1.3">2000</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p3.1.1.m1.1c">\geq 2000</annotation></semantics></math>  km s<sup id="S2.p3.4.5.1" class="ltx_sup"><span id="S2.p3.4.5.1.1" class="ltx_text ltx_font_italic">-1</span></sup>)</cite>. On the other
+extreme, intrinsic absorbers where the velocity dispersion is
+sufficiently small as to cleanly separate the C IV doublet are
+called “narrow absorption lines” <cite class="ltx_cite ltx_citemacro_citep">(e.g., Hamann &amp;
+Ferland, <a href="#bib.bib34" title="" class="ltx_ref">1999</a>, NALs, FWHM
+<math id="S2.p3.3.3.m1.1" class="ltx_Math" alttext="\leq 500" display="inline"><semantics id="S2.p3.3.3.m1.1a"><mrow id="S2.p3.3.3.m1.1.1" xref="S2.p3.3.3.m1.1.1.cmml"><mi id="S2.p3.3.3.m1.1.1.2" xref="S2.p3.3.3.m1.1.1.2.cmml"></mi><mo id="S2.p3.3.3.m1.1.1.1" xref="S2.p3.3.3.m1.1.1.1.cmml">≤</mo><mn id="S2.p3.3.3.m1.1.1.3" xref="S2.p3.3.3.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S2.p3.3.3.m1.1b"><apply id="S2.p3.3.3.m1.1.1.cmml" xref="S2.p3.3.3.m1.1.1"><leq id="S2.p3.3.3.m1.1.1.1.cmml" xref="S2.p3.3.3.m1.1.1.1"></leq><csymbol cd="latexml" id="S2.p3.3.3.m1.1.1.2.cmml" xref="S2.p3.3.3.m1.1.1.2">absent</csymbol><cn type="integer" id="S2.p3.3.3.m1.1.1.3.cmml" xref="S2.p3.3.3.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S2.p3.3.3.m1.1c">\leq 500</annotation></semantics></math>  km s<sup id="S2.p3.4.6.1" class="ltx_sup"><span id="S2.p3.4.6.1.1" class="ltx_text ltx_font_italic">-1</span></sup>)</cite>. Since there is a whole continuum of velocity
+widths, this has led to an in-between class known as “mini-BALs”
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Hamann
+et al., <a href="#bib.bib32" title="" class="ltx_ref">1997</a>; Churchill
+et al., <a href="#bib.bib10" title="" class="ltx_ref">1999</a>)</cite>. Below we examine each of these
+classes in terms of their observed frequency, and note various
+issues in determining this number, including dependencies on quasar
+physical properties.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3. </span>Observations of the Incidence of Various Forms of Outflows</h2>
+
+<section id="S3.SS1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1. </span>Broad Absorption Lines (BALs)</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p id="S3.SS1.p1.1" class="ltx_p">Broad absorption lines in the spectra of quasars are the most easily
+identifiable forms of outflows. The large velocity width is very
+readily associated with accelerated, outflowing gas. As such, these
+garnered more attention historically than their smaller
+velocity-width kin
+<cite class="ltx_cite ltx_citemacro_citep">(e.g. Weymann et al., <a href="#bib.bib62" title="" class="ltx_ref">1985</a>; Turnshek
+et al., <a href="#bib.bib58" title="" class="ltx_ref">1988</a>; Turnshek, <a href="#bib.bib57" title="" class="ltx_ref">1988</a>; Weymann
+et al., <a href="#bib.bib61" title="" class="ltx_ref">1991</a>; Voit
+et al., <a href="#bib.bib60" title="" class="ltx_ref">1993</a>)</cite>.</p>
+</div>
+<div id="S3.SS1.p2" class="ltx_para">
+<p id="S3.SS1.p2.6" class="ltx_p"><cite class="ltx_cite ltx_citemacro_citet">Weymann
+et al. (<a href="#bib.bib61" title="" class="ltx_ref">1991</a>)</cite> established criteria, summarized in a number
+called the BALnicity index (BI), for determining if an absorption
+line constituted a BAL. The BI was a modified form of an equivalent
+width whereby one counted absorption that fell below 90% of the
+true quasar continuum that was contiguously below this level for
+more than 2000  km s<sup id="S3.SS1.p2.6.1" class="ltx_sup"><span id="S3.SS1.p2.6.1.1" class="ltx_text ltx_font_italic">-1</span></sup>. Moreover, no absorption within 3000  km s<sup id="S3.SS1.p2.6.2" class="ltx_sup"><span id="S3.SS1.p2.6.2.1" class="ltx_text ltx_font_italic">-1</span></sup> of
+the quasar redshift was counted in order to remove possible
+contamination by absorption-line gas not physically associated with
+the quasar central engine (e.g., interstellar gas from the quasar
+host galaxy, or intergalactic material from the host cluster).
+[Note: With a minimum velocity of 3000  km s<sup id="S3.SS1.p2.6.3" class="ltx_sup"><span id="S3.SS1.p2.6.3.1" class="ltx_text ltx_font_italic">-1</span></sup>and a minimum
+contiguous width of 2000  km s<sup id="S3.SS1.p2.6.4" class="ltx_sup"><span id="S3.SS1.p2.6.4.1" class="ltx_text ltx_font_italic">-1</span></sup>, this means that no absorption
+falling entirely within 5000  km s<sup id="S3.SS1.p2.6.5" class="ltx_sup"><span id="S3.SS1.p2.6.5.1" class="ltx_text ltx_font_italic">-1</span></sup> of the quasar redshift is
+counted.] This index was established using low-dispersion data of
+high-redshift (<math id="S3.SS1.p2.6.m6.1" class="ltx_Math" alttext="1.5\leq z\leq 3.0" display="inline"><semantics id="S3.SS1.p2.6.m6.1a"><mrow id="S3.SS1.p2.6.m6.1.1" xref="S3.SS1.p2.6.m6.1.1.cmml"><mn id="S3.SS1.p2.6.m6.1.1.2" xref="S3.SS1.p2.6.m6.1.1.2.cmml">1.5</mn><mo id="S3.SS1.p2.6.m6.1.1.3" xref="S3.SS1.p2.6.m6.1.1.3.cmml">≤</mo><mi id="S3.SS1.p2.6.m6.1.1.4" xref="S3.SS1.p2.6.m6.1.1.4.cmml">z</mi><mo id="S3.SS1.p2.6.m6.1.1.5" xref="S3.SS1.p2.6.m6.1.1.5.cmml">≤</mo><mn id="S3.SS1.p2.6.m6.1.1.6" xref="S3.SS1.p2.6.m6.1.1.6.cmml">3.0</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p2.6.m6.1b"><apply id="S3.SS1.p2.6.m6.1.1.cmml" xref="S3.SS1.p2.6.m6.1.1"><and id="S3.SS1.p2.6.m6.1.1a.cmml" xref="S3.SS1.p2.6.m6.1.1"></and><apply id="S3.SS1.p2.6.m6.1.1b.cmml" xref="S3.SS1.p2.6.m6.1.1"><leq id="S3.SS1.p2.6.m6.1.1.3.cmml" xref="S3.SS1.p2.6.m6.1.1.3"></leq><cn type="float" id="S3.SS1.p2.6.m6.1.1.2.cmml" xref="S3.SS1.p2.6.m6.1.1.2">1.5</cn><ci id="S3.SS1.p2.6.m6.1.1.4.cmml" xref="S3.SS1.p2.6.m6.1.1.4">𝑧</ci></apply><apply id="S3.SS1.p2.6.m6.1.1c.cmml" xref="S3.SS1.p2.6.m6.1.1"><leq id="S3.SS1.p2.6.m6.1.1.5.cmml" xref="S3.SS1.p2.6.m6.1.1.5"></leq><share href="#S3.SS1.p2.6.m6.1.1.4.cmml" id="S3.SS1.p2.6.m6.1.1d.cmml" xref="S3.SS1.p2.6.m6.1.1"></share><cn type="float" id="S3.SS1.p2.6.m6.1.1.6.cmml" xref="S3.SS1.p2.6.m6.1.1.6">3.0</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p2.6.m6.1c">1.5\leq z\leq 3.0</annotation></semantics></math>) objects from the Large Bright
+Quasar Survey, or LBQS <cite class="ltx_cite ltx_citemacro_citep">(Foltz et al., <a href="#bib.bib20" title="" class="ltx_ref">1987a</a>; Foltz
+et al., <a href="#bib.bib18" title="" class="ltx_ref">1989</a>; Hewett
+et al., <a href="#bib.bib38" title="" class="ltx_ref">1991</a>, <a href="#bib.bib37" title="" class="ltx_ref">1995</a>)</cite>, and was designed to
+yield a pure sample of objects with bonafide outflows. We note here
+that the utility of BI was driven purely by the data quality (signal-to-noise
+ratio and resolution) of the LBQS spectra in conjunction with the desire
+to remove false positives (at the expense of losing some true BAL quasars).
+While the use of BI to define samples of BAL quasars has utility, especially
+in comparing results between data sets of varying quality, it
+excludes some fraction of real high-velocity dispersion outflows that
+qualitatively appear to be BAL quasars but just fail to have positive BI.</p>
+</div>
+<div id="S3.SS1.p3" class="ltx_para">
+<p id="S3.SS1.p3.1" class="ltx_p">An improvement on the BI, termed the intrinsic absorption index (AI),
+was developed by <cite class="ltx_cite ltx_citemacro_citet">Hall et al. (<a href="#bib.bib31" title="" class="ltx_ref">2002</a>)</cite> to alleviate the inadequacies of BI in
+selecting objects where high velocity outflows were clearly observed
+but were not included as BAL quasars by the BI criteria (e.g., UM 660,
+PG 2302+029). The AI was designed to be more flexible and inclusive
+and has been very useful in its application to newer and better
+quality datasets like the Sloan Digital Sky Survey (SDSS). This
+flexibility, while good at including objects not previously selected
+by BI, has increased the contamination of samples of intrinsic
+absorption while still not including other forms of intrinsic
+absorption <cite class="ltx_cite ltx_citemacro_citep">(e.g., Ganguly
+et al., <a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>.</p>
+</div>
+<div id="S3.SS1.p4" class="ltx_para">
+<p id="S3.SS1.p4.5" class="ltx_p">The incidence of BALs has primarily been determined using optical
+spectra where, historically, large samples of high-redshift quasars
+(to get rest-frame UV coverage) could efficiently be selected (e.g.,
+with color-selection). In such surveys
+<cite class="ltx_cite ltx_citemacro_citep">(Hewett &amp;
+Foltz, <a href="#bib.bib36" title="" class="ltx_ref">2003</a>; Reichard
+et al., <a href="#bib.bib48" title="" class="ltx_ref">2003</a>; Trump
+et al., <a href="#bib.bib56" title="" class="ltx_ref">2006</a>; Ganguly
+et al., <a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>, roughly 10-25% of objects are
+observed to host BALs. An issue with optical/UV surveys, however, is
+potential biases in the selection of quasars against those hosting
+BALs due to the fact that much of the continuum is absorbed
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Goodrich &amp;
+Miller, <a href="#bib.bib29" title="" class="ltx_ref">1995</a>; Goodrich, <a href="#bib.bib28" title="" class="ltx_ref">1997</a>; Krolik &amp;
+Voit, <a href="#bib.bib41" title="" class="ltx_ref">1998</a>)</cite> and intrinsically reddened
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Reichard
+et al., <a href="#bib.bib48" title="" class="ltx_ref">2003</a>)</cite>. Using the LBQS, where the observed
+frequency of BAL quasars in the redshift range <math id="S3.SS1.p4.1.m1.1" class="ltx_Math" alttext="1.5\leq z\leq 3" display="inline"><semantics id="S3.SS1.p4.1.m1.1a"><mrow id="S3.SS1.p4.1.m1.1.1" xref="S3.SS1.p4.1.m1.1.1.cmml"><mn id="S3.SS1.p4.1.m1.1.1.2" xref="S3.SS1.p4.1.m1.1.1.2.cmml">1.5</mn><mo id="S3.SS1.p4.1.m1.1.1.3" xref="S3.SS1.p4.1.m1.1.1.3.cmml">≤</mo><mi id="S3.SS1.p4.1.m1.1.1.4" xref="S3.SS1.p4.1.m1.1.1.4.cmml">z</mi><mo id="S3.SS1.p4.1.m1.1.1.5" xref="S3.SS1.p4.1.m1.1.1.5.cmml">≤</mo><mn id="S3.SS1.p4.1.m1.1.1.6" xref="S3.SS1.p4.1.m1.1.1.6.cmml">3</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p4.1.m1.1b"><apply id="S3.SS1.p4.1.m1.1.1.cmml" xref="S3.SS1.p4.1.m1.1.1"><and id="S3.SS1.p4.1.m1.1.1a.cmml" xref="S3.SS1.p4.1.m1.1.1"></and><apply id="S3.SS1.p4.1.m1.1.1b.cmml" xref="S3.SS1.p4.1.m1.1.1"><leq id="S3.SS1.p4.1.m1.1.1.3.cmml" xref="S3.SS1.p4.1.m1.1.1.3"></leq><cn type="float" id="S3.SS1.p4.1.m1.1.1.2.cmml" xref="S3.SS1.p4.1.m1.1.1.2">1.5</cn><ci id="S3.SS1.p4.1.m1.1.1.4.cmml" xref="S3.SS1.p4.1.m1.1.1.4">𝑧</ci></apply><apply id="S3.SS1.p4.1.m1.1.1c.cmml" xref="S3.SS1.p4.1.m1.1.1"><leq id="S3.SS1.p4.1.m1.1.1.5.cmml" xref="S3.SS1.p4.1.m1.1.1.5"></leq><share href="#S3.SS1.p4.1.m1.1.1.4.cmml" id="S3.SS1.p4.1.m1.1.1d.cmml" xref="S3.SS1.p4.1.m1.1.1"></share><cn type="integer" id="S3.SS1.p4.1.m1.1.1.6.cmml" xref="S3.SS1.p4.1.m1.1.1.6">3</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p4.1.m1.1c">1.5\leq z\leq 3</annotation></semantics></math> is
+15% using a BI criterion, <cite class="ltx_cite ltx_citemacro_citet">Hewett &amp;
+Foltz (<a href="#bib.bib36" title="" class="ltx_ref">2003</a>)</cite> estimated a true BAL frequency
+of 22% from comparisons in the <math id="S3.SS1.p4.2.m2.1" class="ltx_Math" alttext="k" display="inline"><semantics id="S3.SS1.p4.2.m2.1a"><mi id="S3.SS1.p4.2.m2.1.1" xref="S3.SS1.p4.2.m2.1.1.cmml">k</mi><annotation-xml encoding="MathML-Content" id="S3.SS1.p4.2.m2.1b"><ci id="S3.SS1.p4.2.m2.1.1.cmml" xref="S3.SS1.p4.2.m2.1.1">𝑘</ci></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p4.2.m2.1c">k</annotation></semantics></math>-corrections of BAL and non-BAL
+quasars. The recent catalog of BAL quasars using an AI criterion from
+<cite class="ltx_cite ltx_citemacro_citet">Trump
+et al. (<a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite> found a BAL frequency of 26% (in the redshift range
+<math id="S3.SS1.p4.3.m3.1" class="ltx_Math" alttext="1.7\leq z\leq 4.38" display="inline"><semantics id="S3.SS1.p4.3.m3.1a"><mrow id="S3.SS1.p4.3.m3.1.1" xref="S3.SS1.p4.3.m3.1.1.cmml"><mn id="S3.SS1.p4.3.m3.1.1.2" xref="S3.SS1.p4.3.m3.1.1.2.cmml">1.7</mn><mo id="S3.SS1.p4.3.m3.1.1.3" xref="S3.SS1.p4.3.m3.1.1.3.cmml">≤</mo><mi id="S3.SS1.p4.3.m3.1.1.4" xref="S3.SS1.p4.3.m3.1.1.4.cmml">z</mi><mo id="S3.SS1.p4.3.m3.1.1.5" xref="S3.SS1.p4.3.m3.1.1.5.cmml">≤</mo><mn id="S3.SS1.p4.3.m3.1.1.6" xref="S3.SS1.p4.3.m3.1.1.6.cmml">4.38</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p4.3.m3.1b"><apply id="S3.SS1.p4.3.m3.1.1.cmml" xref="S3.SS1.p4.3.m3.1.1"><and id="S3.SS1.p4.3.m3.1.1a.cmml" xref="S3.SS1.p4.3.m3.1.1"></and><apply id="S3.SS1.p4.3.m3.1.1b.cmml" xref="S3.SS1.p4.3.m3.1.1"><leq id="S3.SS1.p4.3.m3.1.1.3.cmml" xref="S3.SS1.p4.3.m3.1.1.3"></leq><cn type="float" id="S3.SS1.p4.3.m3.1.1.2.cmml" xref="S3.SS1.p4.3.m3.1.1.2">1.7</cn><ci id="S3.SS1.p4.3.m3.1.1.4.cmml" xref="S3.SS1.p4.3.m3.1.1.4">𝑧</ci></apply><apply id="S3.SS1.p4.3.m3.1.1c.cmml" xref="S3.SS1.p4.3.m3.1.1"><leq id="S3.SS1.p4.3.m3.1.1.5.cmml" xref="S3.SS1.p4.3.m3.1.1.5"></leq><share href="#S3.SS1.p4.3.m3.1.1.4.cmml" id="S3.SS1.p4.3.m3.1.1d.cmml" xref="S3.SS1.p4.3.m3.1.1"></share><cn type="float" id="S3.SS1.p4.3.m3.1.1.6.cmml" xref="S3.SS1.p4.3.m3.1.1.6">4.38</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p4.3.m3.1c">1.7\leq z\leq 4.38</annotation></semantics></math>). Both of these estimates are based on the
+C IV <math id="S3.SS1.p4.4.m4.2" class="ltx_Math" alttext="\lambda 1548,1550" display="inline"><semantics id="S3.SS1.p4.4.m4.2a"><mrow id="S3.SS1.p4.4.m4.2.2.1" xref="S3.SS1.p4.4.m4.2.2.2.cmml"><mrow id="S3.SS1.p4.4.m4.2.2.1.1" xref="S3.SS1.p4.4.m4.2.2.1.1.cmml"><mi id="S3.SS1.p4.4.m4.2.2.1.1.2" xref="S3.SS1.p4.4.m4.2.2.1.1.2.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S3.SS1.p4.4.m4.2.2.1.1.1" xref="S3.SS1.p4.4.m4.2.2.1.1.1.cmml">​</mo><mn id="S3.SS1.p4.4.m4.2.2.1.1.3" xref="S3.SS1.p4.4.m4.2.2.1.1.3.cmml">1548</mn></mrow><mo id="S3.SS1.p4.4.m4.2.2.1.2" xref="S3.SS1.p4.4.m4.2.2.2.cmml">,</mo><mn id="S3.SS1.p4.4.m4.1.1" xref="S3.SS1.p4.4.m4.1.1.cmml">1550</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p4.4.m4.2b"><list id="S3.SS1.p4.4.m4.2.2.2.cmml" xref="S3.SS1.p4.4.m4.2.2.1"><apply id="S3.SS1.p4.4.m4.2.2.1.1.cmml" xref="S3.SS1.p4.4.m4.2.2.1.1"><times id="S3.SS1.p4.4.m4.2.2.1.1.1.cmml" xref="S3.SS1.p4.4.m4.2.2.1.1.1"></times><ci id="S3.SS1.p4.4.m4.2.2.1.1.2.cmml" xref="S3.SS1.p4.4.m4.2.2.1.1.2">𝜆</ci><cn type="integer" id="S3.SS1.p4.4.m4.2.2.1.1.3.cmml" xref="S3.SS1.p4.4.m4.2.2.1.1.3">1548</cn></apply><cn type="integer" id="S3.SS1.p4.4.m4.1.1.cmml" xref="S3.SS1.p4.4.m4.1.1">1550</cn></list></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p4.4.m4.2c">\lambda 1548,1550</annotation></semantics></math> doublet, which is the most commonly
+used species in selecting intrinsic absorption owing to the relatively
+high abundance of carbon, the high ionization fraction of C<sup id="S3.SS1.p4.5.1" class="ltx_sup"><span id="S3.SS1.p4.5.1.1" class="ltx_text ltx_font_italic">3+</span></sup> in
+moderately-ionized gas, and the resonant absorption of the doublet.</p>
+</div>
+<div id="S3.SS1.p5" class="ltx_para">
+<p id="S3.SS1.p5.2" class="ltx_p">To combat possible selection biases in the optical, one can examine
+quasar catalogs selected in other bands. <cite class="ltx_cite ltx_citemacro_citet">Becker
+et al. (<a href="#bib.bib4" title="" class="ltx_ref">2000</a>)</cite> examined
+radio-selected quasars from the FIRST Bright Quasar Survey and found
+a BAL quasar frequency of about 18% (though it is only 14% if only
+BI<math id="S3.SS1.p5.1.m1.1" class="ltx_Math" alttext="&gt;0" display="inline"><semantics id="S3.SS1.p5.1.m1.1a"><mrow id="S3.SS1.p5.1.m1.1.1" xref="S3.SS1.p5.1.m1.1.1.cmml"><mi id="S3.SS1.p5.1.m1.1.1.2" xref="S3.SS1.p5.1.m1.1.1.2.cmml"></mi><mo id="S3.SS1.p5.1.m1.1.1.1" xref="S3.SS1.p5.1.m1.1.1.1.cmml">&gt;</mo><mn id="S3.SS1.p5.1.m1.1.1.3" xref="S3.SS1.p5.1.m1.1.1.3.cmml">0</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p5.1.m1.1b"><apply id="S3.SS1.p5.1.m1.1.1.cmml" xref="S3.SS1.p5.1.m1.1.1"><gt id="S3.SS1.p5.1.m1.1.1.1.cmml" xref="S3.SS1.p5.1.m1.1.1.1"></gt><csymbol cd="latexml" id="S3.SS1.p5.1.m1.1.1.2.cmml" xref="S3.SS1.p5.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S3.SS1.p5.1.m1.1.1.3.cmml" xref="S3.SS1.p5.1.m1.1.1.3">0</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p5.1.m1.1c">&gt;0</annotation></semantics></math> objects are counted, comparable to other estimates based on
+optical-selection). This again predominantly used the C IV
+doublet and objects at <math id="S3.SS1.p5.2.m2.1" class="ltx_Math" alttext="z&gt;1.7" display="inline"><semantics id="S3.SS1.p5.2.m2.1a"><mrow id="S3.SS1.p5.2.m2.1.1" xref="S3.SS1.p5.2.m2.1.1.cmml"><mi id="S3.SS1.p5.2.m2.1.1.2" xref="S3.SS1.p5.2.m2.1.1.2.cmml">z</mi><mo id="S3.SS1.p5.2.m2.1.1.1" xref="S3.SS1.p5.2.m2.1.1.1.cmml">&gt;</mo><mn id="S3.SS1.p5.2.m2.1.1.3" xref="S3.SS1.p5.2.m2.1.1.3.cmml">1.7</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p5.2.m2.1b"><apply id="S3.SS1.p5.2.m2.1.1.cmml" xref="S3.SS1.p5.2.m2.1.1"><gt id="S3.SS1.p5.2.m2.1.1.1.cmml" xref="S3.SS1.p5.2.m2.1.1.1"></gt><ci id="S3.SS1.p5.2.m2.1.1.2.cmml" xref="S3.SS1.p5.2.m2.1.1.2">𝑧</ci><cn type="float" id="S3.SS1.p5.2.m2.1.1.3.cmml" xref="S3.SS1.p5.2.m2.1.1.3">1.7</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p5.2.m2.1c">z&gt;1.7</annotation></semantics></math>.</p>
+</div>
+<div id="S3.SS1.p6" class="ltx_para">
+<p id="S3.SS1.p6.2" class="ltx_p">Incidentally, several studies <cite class="ltx_cite ltx_citemacro_citep">(e.g., Brotherton
+et al., <a href="#bib.bib9" title="" class="ltx_ref">1998</a>)</cite> have now
+dismantled the myth that BALs are only observed in formally
+radio-quiet (i.e.,
+<math id="S3.SS1.p6.1.m1.2" class="ltx_Math" alttext="f_{\nu}(\mathrm{5\,GHz})/f_{\nu}(\mathrm{3000\,\AA})&lt;10" display="inline"><semantics id="S3.SS1.p6.1.m1.2a"><mrow id="S3.SS1.p6.1.m1.2.2" xref="S3.SS1.p6.1.m1.2.2.cmml"><mrow id="S3.SS1.p6.1.m1.2.2.2" xref="S3.SS1.p6.1.m1.2.2.2.cmml"><mrow id="S3.SS1.p6.1.m1.1.1.1.1" xref="S3.SS1.p6.1.m1.1.1.1.1.cmml"><mrow id="S3.SS1.p6.1.m1.1.1.1.1.1" xref="S3.SS1.p6.1.m1.1.1.1.1.1.cmml"><msub id="S3.SS1.p6.1.m1.1.1.1.1.1.3" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3.cmml"><mi id="S3.SS1.p6.1.m1.1.1.1.1.1.3.2" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3.2.cmml">f</mi><mi id="S3.SS1.p6.1.m1.1.1.1.1.1.3.3" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3.3.cmml">ν</mi></msub><mo lspace="0em" rspace="0em" id="S3.SS1.p6.1.m1.1.1.1.1.1.2" xref="S3.SS1.p6.1.m1.1.1.1.1.1.2.cmml">​</mo><mrow id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.2" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.cmml">(</mo><mrow id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.cmml"><mn id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.2" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.2.cmml">5</mn><mo lspace="0.170em" rspace="0em" id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.1" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.1.cmml">​</mo><mi id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.3" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.3.cmml">GHz</mi></mrow><mo stretchy="false" id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.3" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S3.SS1.p6.1.m1.1.1.1.1.2" xref="S3.SS1.p6.1.m1.1.1.1.1.2.cmml">/</mo><msub id="S3.SS1.p6.1.m1.1.1.1.1.3" xref="S3.SS1.p6.1.m1.1.1.1.1.3.cmml"><mi id="S3.SS1.p6.1.m1.1.1.1.1.3.2" xref="S3.SS1.p6.1.m1.1.1.1.1.3.2.cmml">f</mi><mi id="S3.SS1.p6.1.m1.1.1.1.1.3.3" xref="S3.SS1.p6.1.m1.1.1.1.1.3.3.cmml">ν</mi></msub></mrow><mo lspace="0em" rspace="0em" id="S3.SS1.p6.1.m1.2.2.2.3" xref="S3.SS1.p6.1.m1.2.2.2.3.cmml">​</mo><mrow id="S3.SS1.p6.1.m1.2.2.2.2.1" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.cmml"><mo stretchy="false" id="S3.SS1.p6.1.m1.2.2.2.2.1.2" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.cmml">(</mo><mrow id="S3.SS1.p6.1.m1.2.2.2.2.1.1" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.cmml"><mn id="S3.SS1.p6.1.m1.2.2.2.2.1.1.2" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.2.cmml">3000</mn><mo lspace="0.170em" rspace="0em" id="S3.SS1.p6.1.m1.2.2.2.2.1.1.1" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.1.cmml">​</mo><mi mathvariant="normal" id="S3.SS1.p6.1.m1.2.2.2.2.1.1.3" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.3.cmml">Å</mi></mrow><mo stretchy="false" id="S3.SS1.p6.1.m1.2.2.2.2.1.3" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.cmml">)</mo></mrow></mrow><mo id="S3.SS1.p6.1.m1.2.2.3" xref="S3.SS1.p6.1.m1.2.2.3.cmml">&lt;</mo><mn id="S3.SS1.p6.1.m1.2.2.4" xref="S3.SS1.p6.1.m1.2.2.4.cmml">10</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p6.1.m1.2b"><apply id="S3.SS1.p6.1.m1.2.2.cmml" xref="S3.SS1.p6.1.m1.2.2"><lt id="S3.SS1.p6.1.m1.2.2.3.cmml" xref="S3.SS1.p6.1.m1.2.2.3"></lt><apply id="S3.SS1.p6.1.m1.2.2.2.cmml" xref="S3.SS1.p6.1.m1.2.2.2"><times id="S3.SS1.p6.1.m1.2.2.2.3.cmml" xref="S3.SS1.p6.1.m1.2.2.2.3"></times><apply id="S3.SS1.p6.1.m1.1.1.1.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1"><divide id="S3.SS1.p6.1.m1.1.1.1.1.2.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.2"></divide><apply id="S3.SS1.p6.1.m1.1.1.1.1.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1"><times id="S3.SS1.p6.1.m1.1.1.1.1.1.2.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.2"></times><apply id="S3.SS1.p6.1.m1.1.1.1.1.1.3.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3"><csymbol cd="ambiguous" id="S3.SS1.p6.1.m1.1.1.1.1.1.3.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3">subscript</csymbol><ci id="S3.SS1.p6.1.m1.1.1.1.1.1.3.2.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3.2">𝑓</ci><ci id="S3.SS1.p6.1.m1.1.1.1.1.1.3.3.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.3.3">𝜈</ci></apply><apply id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1"><times id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.1"></times><cn type="integer" id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.2.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.2">5</cn><ci id="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.3.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.1.1.1.1.3">GHz</ci></apply></apply><apply id="S3.SS1.p6.1.m1.1.1.1.1.3.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.3"><csymbol cd="ambiguous" id="S3.SS1.p6.1.m1.1.1.1.1.3.1.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.3">subscript</csymbol><ci id="S3.SS1.p6.1.m1.1.1.1.1.3.2.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.3.2">𝑓</ci><ci id="S3.SS1.p6.1.m1.1.1.1.1.3.3.cmml" xref="S3.SS1.p6.1.m1.1.1.1.1.3.3">𝜈</ci></apply></apply><apply id="S3.SS1.p6.1.m1.2.2.2.2.1.1.cmml" xref="S3.SS1.p6.1.m1.2.2.2.2.1"><times id="S3.SS1.p6.1.m1.2.2.2.2.1.1.1.cmml" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.1"></times><cn type="integer" id="S3.SS1.p6.1.m1.2.2.2.2.1.1.2.cmml" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.2">3000</cn><ci id="S3.SS1.p6.1.m1.2.2.2.2.1.1.3.cmml" xref="S3.SS1.p6.1.m1.2.2.2.2.1.1.3">Å</ci></apply></apply><cn type="integer" id="S3.SS1.p6.1.m1.2.2.4.cmml" xref="S3.SS1.p6.1.m1.2.2.4">10</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p6.1.m1.2c">f_{\nu}(\mathrm{5\,GHz})/f_{\nu}(\mathrm{3000\,\AA})&lt;10</annotation></semantics></math>) objects, though
+their frequency does significantly decrease among the most radio-loud
+quasars <cite class="ltx_cite ltx_citemacro_citep">(Becker et al., <a href="#bib.bib5" title="" class="ltx_ref">2001</a>; Gregg, Becker, &amp; de Vries, <a href="#bib.bib30" title="" class="ltx_ref">2006</a>)</cite>. We note that a subset of
+radio-selected BAL quasars can be identified as polar outflows
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Zhou et al., <a href="#bib.bib66" title="" class="ltx_ref">2006</a>; Brotherton, de Breuck, &amp;
+Schaefer, <a href="#bib.bib8" title="" class="ltx_ref">2006</a>; Ghosh &amp; Punsly, <a href="#bib.bib27" title="" class="ltx_ref">2007</a>)</cite>. At least one of these
+objects, FIRST J155633.8<math id="S3.SS1.p6.2.m2.1" class="ltx_Math" alttext="+" display="inline"><semantics id="S3.SS1.p6.2.m2.1a"><mo id="S3.SS1.p6.2.m2.1.1" xref="S3.SS1.p6.2.m2.1.1.cmml">+</mo><annotation-xml encoding="MathML-Content" id="S3.SS1.p6.2.m2.1b"><plus id="S3.SS1.p6.2.m2.1.1.cmml" xref="S3.SS1.p6.2.m2.1.1"></plus></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p6.2.m2.1c">+</annotation></semantics></math>351758, appears to be an optically reddened
+and beamed radio-quiet quasar <cite class="ltx_cite ltx_citemacro_citep">(Berrington
+et al., <a href="#bib.bib6" title="" class="ltx_ref">2007</a>)</cite>. The presence of BAL
+outflows in such objects as well in as edge-on FR II BAL quasars,
+<cite class="ltx_cite ltx_citemacro_citep">(e.g.,  Gregg et al., <a href="#bib.bib30" title="" class="ltx_ref">2006</a>)</cite> indicates high-velocity outflows are present
+in a variety of geometries. There is as yet no observational
+signature in the absorption spectra that is correlated with
+orientation indicators, so any geometrically restrictive model such as
+those identifying BAL outflows solely with equatorial winds are either
+wrong or incomplete. Any complete picture of outflows must reflect a
+range of geometries. It has yet to be established observationally how
+often polar outflows occur compared to equatorial, or if the location
+or dynamics differ.</p>
+</div>
+<div id="S3.SS1.p7" class="ltx_para">
+<p id="S3.SS1.p7.1" class="ltx_p">In addition to radio-selection, one can examine the frequency of BAL
+quasars from infrared selection. Recently, <cite class="ltx_cite ltx_citemacro_citet">Dai
+et al. (<a href="#bib.bib13" title="" class="ltx_ref">2007</a>)</cite> compared the
+catalog of BAL quasars <cite class="ltx_cite ltx_citemacro_citep">(Trump
+et al., <a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite> from the Third Data Release
+(DR3) of SDSS and the parent sample of DR3 quasars <cite class="ltx_cite ltx_citemacro_citep">(Schneider
+et al., <a href="#bib.bib53" title="" class="ltx_ref">2005</a>)</cite>
+with the Two Micron All-Sky Survey <cite class="ltx_cite ltx_citemacro_citep">(Skrutskie
+et al., <a href="#bib.bib55" title="" class="ltx_ref">2006</a>, 2MASS)</cite> Point-Source
+Catalog (PSC). With some variation with redshift, they reported an
+overall true BAL quasar fraction of <math id="S3.SS1.p7.1.m1.1" class="ltx_Math" alttext="43\pm 2" display="inline"><semantics id="S3.SS1.p7.1.m1.1a"><mrow id="S3.SS1.p7.1.m1.1.1" xref="S3.SS1.p7.1.m1.1.1.cmml"><mn id="S3.SS1.p7.1.m1.1.1.2" xref="S3.SS1.p7.1.m1.1.1.2.cmml">43</mn><mo id="S3.SS1.p7.1.m1.1.1.1" xref="S3.SS1.p7.1.m1.1.1.1.cmml">±</mo><mn id="S3.SS1.p7.1.m1.1.1.3" xref="S3.SS1.p7.1.m1.1.1.3.cmml">2</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p7.1.m1.1b"><apply id="S3.SS1.p7.1.m1.1.1.cmml" xref="S3.SS1.p7.1.m1.1.1"><csymbol cd="latexml" id="S3.SS1.p7.1.m1.1.1.1.cmml" xref="S3.SS1.p7.1.m1.1.1.1">plus-or-minus</csymbol><cn type="integer" id="S3.SS1.p7.1.m1.1.1.2.cmml" xref="S3.SS1.p7.1.m1.1.1.2">43</cn><cn type="integer" id="S3.SS1.p7.1.m1.1.1.3.cmml" xref="S3.SS1.p7.1.m1.1.1.3">2</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p7.1.m1.1c">43\pm 2</annotation></semantics></math>%, markedly higher than
+estimates based on UV/optical data alone. Presumably, this difference
+accounts for the effects of dust and absorption that may bias
+UV/optical selection techniques against find BAL quasars.</p>
+</div>
+<div id="S3.SS1.p8" class="ltx_para">
+<p id="S3.SS1.p8.2" class="ltx_p">We point out that this estimate relies heavily on the automated
+techniques employed in finding BAL quasars in a large dataset such
+as SDSS. From a critical look at 5088 <math id="S3.SS1.p8.1.m1.1" class="ltx_Math" alttext="1.7&lt;z&lt;2" display="inline"><semantics id="S3.SS1.p8.1.m1.1a"><mrow id="S3.SS1.p8.1.m1.1.1" xref="S3.SS1.p8.1.m1.1.1.cmml"><mn id="S3.SS1.p8.1.m1.1.1.2" xref="S3.SS1.p8.1.m1.1.1.2.cmml">1.7</mn><mo id="S3.SS1.p8.1.m1.1.1.3" xref="S3.SS1.p8.1.m1.1.1.3.cmml">&lt;</mo><mi id="S3.SS1.p8.1.m1.1.1.4" xref="S3.SS1.p8.1.m1.1.1.4.cmml">z</mi><mo id="S3.SS1.p8.1.m1.1.1.5" xref="S3.SS1.p8.1.m1.1.1.5.cmml">&lt;</mo><mn id="S3.SS1.p8.1.m1.1.1.6" xref="S3.SS1.p8.1.m1.1.1.6.cmml">2</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p8.1.m1.1b"><apply id="S3.SS1.p8.1.m1.1.1.cmml" xref="S3.SS1.p8.1.m1.1.1"><and id="S3.SS1.p8.1.m1.1.1a.cmml" xref="S3.SS1.p8.1.m1.1.1"></and><apply id="S3.SS1.p8.1.m1.1.1b.cmml" xref="S3.SS1.p8.1.m1.1.1"><lt id="S3.SS1.p8.1.m1.1.1.3.cmml" xref="S3.SS1.p8.1.m1.1.1.3"></lt><cn type="float" id="S3.SS1.p8.1.m1.1.1.2.cmml" xref="S3.SS1.p8.1.m1.1.1.2">1.7</cn><ci id="S3.SS1.p8.1.m1.1.1.4.cmml" xref="S3.SS1.p8.1.m1.1.1.4">𝑧</ci></apply><apply id="S3.SS1.p8.1.m1.1.1c.cmml" xref="S3.SS1.p8.1.m1.1.1"><lt id="S3.SS1.p8.1.m1.1.1.5.cmml" xref="S3.SS1.p8.1.m1.1.1.5"></lt><share href="#S3.SS1.p8.1.m1.1.1.4.cmml" id="S3.SS1.p8.1.m1.1.1d.cmml" xref="S3.SS1.p8.1.m1.1.1"></share><cn type="integer" id="S3.SS1.p8.1.m1.1.1.6.cmml" xref="S3.SS1.p8.1.m1.1.1.6">2</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p8.1.m1.1c">1.7&lt;z&lt;2</annotation></semantics></math> quasars from
+SDSS DR2, <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite> noted several instances of false (and
+missed) classifications in the <cite class="ltx_cite ltx_citemacro_citet">Trump
+et al. (<a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite> catalog. A comparison
+of the <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite> sample with the 2MASS PSC reveals a BAL
+fraction of 66/287 (23%), completely consistent with the analysis
+of <cite class="ltx_cite ltx_citemacro_citet">Hewett &amp;
+Foltz (<a href="#bib.bib36" title="" class="ltx_ref">2003</a>)</cite>. Blindly using the <cite class="ltx_cite ltx_citemacro_citet">Trump
+et al. (<a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite> catalog yields a
+BAL fraction of 96/287 (33%), consistent with the <math id="S3.SS1.p8.2.m2.1" class="ltx_Math" alttext="z&lt;2" display="inline"><semantics id="S3.SS1.p8.2.m2.1a"><mrow id="S3.SS1.p8.2.m2.1.1" xref="S3.SS1.p8.2.m2.1.1.cmml"><mi id="S3.SS1.p8.2.m2.1.1.2" xref="S3.SS1.p8.2.m2.1.1.2.cmml">z</mi><mo id="S3.SS1.p8.2.m2.1.1.1" xref="S3.SS1.p8.2.m2.1.1.1.cmml">&lt;</mo><mn id="S3.SS1.p8.2.m2.1.1.3" xref="S3.SS1.p8.2.m2.1.1.3.cmml">2</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS1.p8.2.m2.1b"><apply id="S3.SS1.p8.2.m2.1.1.cmml" xref="S3.SS1.p8.2.m2.1.1"><lt id="S3.SS1.p8.2.m2.1.1.1.cmml" xref="S3.SS1.p8.2.m2.1.1.1"></lt><ci id="S3.SS1.p8.2.m2.1.1.2.cmml" xref="S3.SS1.p8.2.m2.1.1.2">𝑧</ci><cn type="integer" id="S3.SS1.p8.2.m2.1.1.3.cmml" xref="S3.SS1.p8.2.m2.1.1.3">2</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS1.p8.2.m2.1c">z&lt;2</annotation></semantics></math> points
+from <cite class="ltx_cite ltx_citemacro_citet">Dai
+et al. (<a href="#bib.bib13" title="" class="ltx_ref">2007</a>, see their Figure 4)</cite>. At face value, this
+implies that nearly 30% of the <cite class="ltx_cite ltx_citemacro_citet">Trump
+et al. (<a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite>-2MASS cross-matched
+sample consists of false-positives. We return to the issue of
+false-negatives below.</p>
+</div>
+</section>
+<section id="S3.SS2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2. </span>Narrow Absorption Lines (NALs) and mini-BALs</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p id="S3.SS2.p1.2" class="ltx_p">Intrinsic NALs and mini-BALs have, within the last decade, come to
+light as a very powerful and complementary means of studying
+outflows. Unlike their very broad kin, these absorbers are generally
+not blended and, therefore, offer a means to determine ionization
+levels and metalicities using absorption-line diagnostics. Thus,
+NALs and mini-BALs are more useful as probes of the physical
+conditions of outflows. The drawback, however, is that truly
+intrinsic NALs and mini-BALs are more difficult to identify, since
+interloping structures such as the cosmic web, galaxy clusters, and
+galactic disks and halos also have comparable velocity spreads
+(<math id="S3.SS2.p1.1.m1.1" class="ltx_Math" alttext="\lesssim 800" display="inline"><semantics id="S3.SS2.p1.1.m1.1a"><mrow id="S3.SS2.p1.1.m1.1.1" xref="S3.SS2.p1.1.m1.1.1.cmml"><mi id="S3.SS2.p1.1.m1.1.1.2" xref="S3.SS2.p1.1.m1.1.1.2.cmml"></mi><mo id="S3.SS2.p1.1.m1.1.1.1" xref="S3.SS2.p1.1.m1.1.1.1.cmml">≲</mo><mn id="S3.SS2.p1.1.m1.1.1.3" xref="S3.SS2.p1.1.m1.1.1.3.cmml">800</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.p1.1.m1.1b"><apply id="S3.SS2.p1.1.m1.1.1.cmml" xref="S3.SS2.p1.1.m1.1.1"><csymbol cd="latexml" id="S3.SS2.p1.1.m1.1.1.1.cmml" xref="S3.SS2.p1.1.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S3.SS2.p1.1.m1.1.1.2.cmml" xref="S3.SS2.p1.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S3.SS2.p1.1.m1.1.1.3.cmml" xref="S3.SS2.p1.1.m1.1.1.3">800</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.p1.1.m1.1c">\lesssim 800</annotation></semantics></math>  km s<sup id="S3.SS2.p1.2.1" class="ltx_sup"><span id="S3.SS2.p1.2.1.1" class="ltx_text ltx_font_italic">-1</span></sup>). Historically, progress was made by
+statistically identifying an excess of absorbers over what is
+expected from randomly distributed intervening structures
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Weymann
+et al., <a href="#bib.bib63" title="" class="ltx_ref">1979</a>)</cite>. With improved technologies (such as
+high-resolution spectroscopy with large telescopes), we can now take
+advantage of the other secondary indicators to separate intrinsic
+from intervening absorption. In the following subsections, we
+discuss the frequency of two subclasses based on both historical and
+more recent studies. We distinguish between absorbers that appear
+near the quasar redshift (associated absorbers), and those that
+appear at large velocity separations.</p>
+</div>
+<section id="S3.SS2.SSS1" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">3.2.1 </span>Associated (<math id="S3.SS2.SSS1.1.m1.1" class="ltx_Math" alttext="z_{\mathrm{abs}}\sim z_{\mathrm{em}}" display="inline"><semantics id="S3.SS2.SSS1.1.m1.1b"><mrow id="S3.SS2.SSS1.1.m1.1.1" xref="S3.SS2.SSS1.1.m1.1.1.cmml"><msub id="S3.SS2.SSS1.1.m1.1.1.2" xref="S3.SS2.SSS1.1.m1.1.1.2.cmml"><mi id="S3.SS2.SSS1.1.m1.1.1.2.2" xref="S3.SS2.SSS1.1.m1.1.1.2.2.cmml">z</mi><mi id="S3.SS2.SSS1.1.m1.1.1.2.3" xref="S3.SS2.SSS1.1.m1.1.1.2.3.cmml">abs</mi></msub><mo id="S3.SS2.SSS1.1.m1.1.1.1" xref="S3.SS2.SSS1.1.m1.1.1.1.cmml">∼</mo><msub id="S3.SS2.SSS1.1.m1.1.1.3" xref="S3.SS2.SSS1.1.m1.1.1.3.cmml"><mi id="S3.SS2.SSS1.1.m1.1.1.3.2" xref="S3.SS2.SSS1.1.m1.1.1.3.2.cmml">z</mi><mi id="S3.SS2.SSS1.1.m1.1.1.3.3" xref="S3.SS2.SSS1.1.m1.1.1.3.3.cmml">em</mi></msub></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.1.m1.1c"><apply id="S3.SS2.SSS1.1.m1.1.1.cmml" xref="S3.SS2.SSS1.1.m1.1.1"><csymbol cd="latexml" id="S3.SS2.SSS1.1.m1.1.1.1.cmml" xref="S3.SS2.SSS1.1.m1.1.1.1">similar-to</csymbol><apply id="S3.SS2.SSS1.1.m1.1.1.2.cmml" xref="S3.SS2.SSS1.1.m1.1.1.2"><csymbol cd="ambiguous" id="S3.SS2.SSS1.1.m1.1.1.2.1.cmml" xref="S3.SS2.SSS1.1.m1.1.1.2">subscript</csymbol><ci id="S3.SS2.SSS1.1.m1.1.1.2.2.cmml" xref="S3.SS2.SSS1.1.m1.1.1.2.2">𝑧</ci><ci id="S3.SS2.SSS1.1.m1.1.1.2.3.cmml" xref="S3.SS2.SSS1.1.m1.1.1.2.3">abs</ci></apply><apply id="S3.SS2.SSS1.1.m1.1.1.3.cmml" xref="S3.SS2.SSS1.1.m1.1.1.3"><csymbol cd="ambiguous" id="S3.SS2.SSS1.1.m1.1.1.3.1.cmml" xref="S3.SS2.SSS1.1.m1.1.1.3">subscript</csymbol><ci id="S3.SS2.SSS1.1.m1.1.1.3.2.cmml" xref="S3.SS2.SSS1.1.m1.1.1.3.2">𝑧</ci><ci id="S3.SS2.SSS1.1.m1.1.1.3.3.cmml" xref="S3.SS2.SSS1.1.m1.1.1.3.3">em</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.1.m1.1d">z_{\mathrm{abs}}\sim z_{\mathrm{em}}</annotation></semantics></math>) Absorbers (AALs)</h4>
+
+<div id="S3.SS2.SSS1.p1" class="ltx_para">
+<p id="S3.SS2.SSS1.p1.1" class="ltx_p">The term “associated” refers to narrow velocity-dispersion
+absorption-line systems that lie near the quasar redshift. It has
+been shown that the frequency of such systems is much larger than
+those at large velocity separations
+<cite class="ltx_cite ltx_citemacro_citep">(Weymann
+et al., <a href="#bib.bib63" title="" class="ltx_ref">1979</a>; Foltz
+et al., <a href="#bib.bib21" title="" class="ltx_ref">1987b</a>; Anderson
+et al., <a href="#bib.bib2" title="" class="ltx_ref">1987</a>; Aldcroft
+et al., <a href="#bib.bib1" title="" class="ltx_ref">1994</a>; Richards
+et al., <a href="#bib.bib50" title="" class="ltx_ref">1999</a>; Richards, <a href="#bib.bib49" title="" class="ltx_ref">2001</a>)</cite>. Typically,
+associated absorbers are defined as those lying within 5000  km s<sup id="S3.SS2.SSS1.p1.1.1" class="ltx_sup"><span id="S3.SS2.SSS1.p1.1.1.1" class="ltx_text ltx_font_italic">-1</span></sup> of the quasar redshift <cite class="ltx_cite ltx_citemacro_citep">(Foltz
+et al., <a href="#bib.bib22" title="" class="ltx_ref">1986</a>)</cite>. As such, they were
+historically very complementary to BAL quasars selected using BI.
+Updating BAL classification to reflect the better data quality
+usually available today does allow for some confusion among classes,
+at least in some cases, and this should be kept in mind. The issue
+of what types of quasars hosted AALs was the subject of much
+scrutiny with some studies claiming to see an excess of AALs
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Foltz
+et al., <a href="#bib.bib21" title="" class="ltx_ref">1987b</a>)</cite>, while other studies claimed no excess
+<cite class="ltx_cite ltx_citemacro_citep">(e.g., Sargent, Steidel, &amp;
+Boksenberg, <a href="#bib.bib52" title="" class="ltx_ref">1988</a>)</cite>. It was surmised that strong AALs (i.e.,
+those with a large C IV equivalent width) were preferentially
+found in optically-faint, steep radio spectrum quasars
+<cite class="ltx_cite ltx_citemacro_citep">(Møller &amp;
+Jakobsen, <a href="#bib.bib46" title="" class="ltx_ref">1987</a>; Foltz
+et al., <a href="#bib.bib19" title="" class="ltx_ref">1988</a>)</cite>. However, more recent studies have found that
+AALs are found (with varying frequency) in all AGN subclasses from
+Seyfert galaxies <cite class="ltx_cite ltx_citemacro_citep">(e.g., Crenshaw
+et al., <a href="#bib.bib11" title="" class="ltx_ref">1999</a>; Kriss, <a href="#bib.bib40" title="" class="ltx_ref">2006</a>)</cite> to higher luminosity
+quasars <cite class="ltx_cite ltx_citemacro_citep">(e.g. Ganguly
+et al., <a href="#bib.bib24" title="" class="ltx_ref">2001</a>; Laor &amp;
+Brandt, <a href="#bib.bib42" title="" class="ltx_ref">2002</a>; Vestergaard, <a href="#bib.bib59" title="" class="ltx_ref">2003</a>; Misawa
+et al., <a href="#bib.bib45" title="" class="ltx_ref">2007</a>)</cite>, and from steep
+to flat radio spectrum sources <cite class="ltx_cite ltx_citemacro_citep">(Ganguly
+et al., <a href="#bib.bib24" title="" class="ltx_ref">2001</a>; Vestergaard, <a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite>.</p>
+</div>
+<div id="S3.SS2.SSS1.p2" class="ltx_para">
+<p id="S3.SS2.SSS1.p2.2" class="ltx_p">An important issue in the consideration of AALs as it relates to
+outflows is where the absorbing gas originates. We note here a few
+arguments for a direct association with outflows from the central
+engine. While detailed studies of individual objects have shown
+absorption-line <span id="S3.SS2.SSS1.p2.2.1" class="ltx_text ltx_font_italic">components</span> that must reside in the host galaxy
+far from the central engine <cite class="ltx_cite ltx_citemacro_citep">(e.g., Hamann
+et al., <a href="#bib.bib35" title="" class="ltx_ref">2001</a>; Scott
+et al., <a href="#bib.bib54" title="" class="ltx_ref">2004</a>; Ganguly
+et al., <a href="#bib.bib26" title="" class="ltx_ref">2006</a>)</cite>,
+on the whole there have been no documented cases of AALs that are
+truly redshifted with respect to the actual systemic velocity. If
+AALs were to originate in the host galaxy, one would expect some
+fraction of the absorbers to arise from infalling material. In fact,
+the velocity distribution of C IV AALs is sharply peaked with
+the C IV emission redshift <cite class="ltx_cite ltx_citemacro_citep">(Ganguly
+et al., <a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite>, implying a close
+dynamical connection between AALs and the broad emission-line
+region. In addition, blind studies of AALs using secondary
+indicators find that <math id="S3.SS2.SSS1.p2.1.m1.1" class="ltx_Math" alttext="\geq 20" display="inline"><semantics id="S3.SS2.SSS1.p2.1.m1.1a"><mrow id="S3.SS2.SSS1.p2.1.m1.1.1" xref="S3.SS2.SSS1.p2.1.m1.1.1.cmml"><mi id="S3.SS2.SSS1.p2.1.m1.1.1.2" xref="S3.SS2.SSS1.p2.1.m1.1.1.2.cmml"></mi><mo id="S3.SS2.SSS1.p2.1.m1.1.1.1" xref="S3.SS2.SSS1.p2.1.m1.1.1.1.cmml">≥</mo><mn id="S3.SS2.SSS1.p2.1.m1.1.1.3" xref="S3.SS2.SSS1.p2.1.m1.1.1.3.cmml">20</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.p2.1.m1.1b"><apply id="S3.SS2.SSS1.p2.1.m1.1.1.cmml" xref="S3.SS2.SSS1.p2.1.m1.1.1"><geq id="S3.SS2.SSS1.p2.1.m1.1.1.1.cmml" xref="S3.SS2.SSS1.p2.1.m1.1.1.1"></geq><csymbol cd="latexml" id="S3.SS2.SSS1.p2.1.m1.1.1.2.cmml" xref="S3.SS2.SSS1.p2.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S3.SS2.SSS1.p2.1.m1.1.1.3.cmml" xref="S3.SS2.SSS1.p2.1.m1.1.1.3">20</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.p2.1.m1.1c">\geq 20</annotation></semantics></math>% are time-variable <cite class="ltx_cite ltx_citemacro_citep">(Wise et al., <a href="#bib.bib64" title="" class="ltx_ref">2004</a>)</cite>,
+and that <math id="S3.SS2.SSS1.p2.2.m2.1" class="ltx_Math" alttext="\sim 33" display="inline"><semantics id="S3.SS2.SSS1.p2.2.m2.1a"><mrow id="S3.SS2.SSS1.p2.2.m2.1.1" xref="S3.SS2.SSS1.p2.2.m2.1.1.cmml"><mi id="S3.SS2.SSS1.p2.2.m2.1.1.2" xref="S3.SS2.SSS1.p2.2.m2.1.1.2.cmml"></mi><mo id="S3.SS2.SSS1.p2.2.m2.1.1.1" xref="S3.SS2.SSS1.p2.2.m2.1.1.1.cmml">∼</mo><mn id="S3.SS2.SSS1.p2.2.m2.1.1.3" xref="S3.SS2.SSS1.p2.2.m2.1.1.3.cmml">33</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.p2.2.m2.1b"><apply id="S3.SS2.SSS1.p2.2.m2.1.1.cmml" xref="S3.SS2.SSS1.p2.2.m2.1.1"><csymbol cd="latexml" id="S3.SS2.SSS1.p2.2.m2.1.1.1.cmml" xref="S3.SS2.SSS1.p2.2.m2.1.1.1">similar-to</csymbol><csymbol cd="latexml" id="S3.SS2.SSS1.p2.2.m2.1.1.2.cmml" xref="S3.SS2.SSS1.p2.2.m2.1.1.2">absent</csymbol><cn type="integer" id="S3.SS2.SSS1.p2.2.m2.1.1.3.cmml" xref="S3.SS2.SSS1.p2.2.m2.1.1.3">33</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.p2.2.m2.1c">\sim 33</annotation></semantics></math>% show partial coverage <cite class="ltx_cite ltx_citemacro_citep">(Misawa
+et al., <a href="#bib.bib45" title="" class="ltx_ref">2007</a>)</cite>.</p>
+</div>
+<div id="S3.SS2.SSS1.p3" class="ltx_para">
+<p id="S3.SS2.SSS1.p3.4" class="ltx_p">From an analysis of 59 <math id="S3.SS2.SSS1.p3.1.m1.1" class="ltx_Math" alttext="z&lt;1" display="inline"><semantics id="S3.SS2.SSS1.p3.1.m1.1a"><mrow id="S3.SS2.SSS1.p3.1.m1.1.1" xref="S3.SS2.SSS1.p3.1.m1.1.1.cmml"><mi id="S3.SS2.SSS1.p3.1.m1.1.1.2" xref="S3.SS2.SSS1.p3.1.m1.1.1.2.cmml">z</mi><mo id="S3.SS2.SSS1.p3.1.m1.1.1.1" xref="S3.SS2.SSS1.p3.1.m1.1.1.1.cmml">&lt;</mo><mn id="S3.SS2.SSS1.p3.1.m1.1.1.3" xref="S3.SS2.SSS1.p3.1.m1.1.1.3.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.p3.1.m1.1b"><apply id="S3.SS2.SSS1.p3.1.m1.1.1.cmml" xref="S3.SS2.SSS1.p3.1.m1.1.1"><lt id="S3.SS2.SSS1.p3.1.m1.1.1.1.cmml" xref="S3.SS2.SSS1.p3.1.m1.1.1.1"></lt><ci id="S3.SS2.SSS1.p3.1.m1.1.1.2.cmml" xref="S3.SS2.SSS1.p3.1.m1.1.1.2">𝑧</ci><cn type="integer" id="S3.SS2.SSS1.p3.1.m1.1.1.3.cmml" xref="S3.SS2.SSS1.p3.1.m1.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.p3.1.m1.1c">z&lt;1</annotation></semantics></math> quasars, <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite> showed that
+the overall frequency of AALs was 25<math id="S3.SS2.SSS1.p3.2.m2.1" class="ltx_Math" alttext="\pm" display="inline"><semantics id="S3.SS2.SSS1.p3.2.m2.1a"><mo id="S3.SS2.SSS1.p3.2.m2.1.1" xref="S3.SS2.SSS1.p3.2.m2.1.1.cmml">±</mo><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.p3.2.m2.1b"><csymbol cd="latexml" id="S3.SS2.SSS1.p3.2.m2.1.1.cmml" xref="S3.SS2.SSS1.p3.2.m2.1.1">plus-or-minus</csymbol></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.p3.2.m2.1c">\pm</annotation></semantics></math>6%, with some variation
+with broad-band spectral properties. Similar frequencies have been
+established at higher redshift by <cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>, <math id="S3.SS2.SSS1.p3.3.1.1.1.m1.1" class="ltx_Math" alttext="27\pm 5" display="inline"><semantics id="S3.SS2.SSS1.p3.3.1.1.1.m1.1a"><mrow id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.cmml"><mn id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.2" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.2.cmml">27</mn><mo id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.1" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.1.cmml">±</mo><mn id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.3" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.3.cmml">5</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS1.p3.3.1.1.1.m1.1b"><apply id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.cmml" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1"><csymbol cd="latexml" id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.1.cmml" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.1">plus-or-minus</csymbol><cn type="integer" id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.2.cmml" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.2">27</cn><cn type="integer" id="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.3.cmml" xref="S3.SS2.SSS1.p3.3.1.1.1.m1.1.1.3">5</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS1.p3.3.1.1.1.m1.1c">27\pm 5</annotation></semantics></math>%)</cite> and
+<cite class="ltx_cite ltx_citemacro_citet">Misawa
+et al. (<a href="#bib.bib45" title="" class="ltx_ref">2007</a>, 23%)</cite>, both of which made attempts to filter out
+contamination by intervening absorbers. Oddly, these fractions are
+lower than the recent study of <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>, who find an AAL
+frequency of 1898/5088 (37%), although the 5000  km s<sup id="S3.SS2.SSS1.p3.4.2" class="ltx_sup"><span id="S3.SS2.SSS1.p3.4.2.1" class="ltx_text ltx_font_italic">-1</span></sup> velocity
+cutoff for traditional AALs was not strictly adhered to in that
+survey. We note that 1478/1898 (78%) AALs in that study were missed
+by the AI selection used by <cite class="ltx_cite ltx_citemacro_citet">Trump
+et al. (<a href="#bib.bib56" title="" class="ltx_ref">2006</a>)</cite>. These certainly
+constitute false-negatives from the standpoint of finding intrinsic
+absorption, though not from the standpoint of finding only BAL
+quasars. While <cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite> did note that quasars with AALs are
+redder on average, a comparison of the <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite> sample with
+the 2MASS PSC reveals that the frequency of AALs is similar to the
+parent sample (107/287, 37%). Thus, the selection of AALs quasars
+is not affected by optical biases (e.g., reddening or large optical
+absorption) like BAL quasars.</p>
+</div>
+</section>
+<section id="S3.SS2.SSS2" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">3.2.2 </span>High Velocity NALs</h4>
+
+<div id="S3.SS2.SSS2.p1" class="ltx_para">
+<p id="S3.SS2.SSS2.p1.2" class="ltx_p">The first observational evidence for intrinsic narrow
+velocity-dispersion absorption appearing at high ejection velocity
+(many tens of thousands of kilometers per second) came nearly a
+decade ago and include: PG 2302+029 <cite class="ltx_cite ltx_citemacro_citep">(Jannuzi
+et al., <a href="#bib.bib39" title="" class="ltx_ref">1996</a>)</cite>, Q 2343+125
+<cite class="ltx_cite ltx_citemacro_citep">(Hamann, Barlow, &amp; Junkkarinen, <a href="#bib.bib33" title="" class="ltx_ref">1997</a>)</cite>, and PG 0935+417 <cite class="ltx_cite ltx_citemacro_citep">(Hamann
+et al., <a href="#bib.bib32" title="" class="ltx_ref">1997</a>)</cite>. Models of quasar
+winds generally are able to explain outflows with <math id="S3.SS2.SSS2.p1.1.m1.1" class="ltx_Math" alttext="\Delta v/v\sim 1" display="inline"><semantics id="S3.SS2.SSS2.p1.1.m1.1a"><mrow id="S3.SS2.SSS2.p1.1.m1.1.1" xref="S3.SS2.SSS2.p1.1.m1.1.1.cmml"><mrow id="S3.SS2.SSS2.p1.1.m1.1.1.2" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.cmml"><mrow id="S3.SS2.SSS2.p1.1.m1.1.1.2.2" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.cmml"><mi mathvariant="normal" id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.2" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.2.cmml">Δ</mi><mo lspace="0em" rspace="0em" id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.1" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.1.cmml">​</mo><mi id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.3" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.3.cmml">v</mi></mrow><mo id="S3.SS2.SSS2.p1.1.m1.1.1.2.1" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.1.cmml">/</mo><mi id="S3.SS2.SSS2.p1.1.m1.1.1.2.3" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.3.cmml">v</mi></mrow><mo id="S3.SS2.SSS2.p1.1.m1.1.1.1" xref="S3.SS2.SSS2.p1.1.m1.1.1.1.cmml">∼</mo><mn id="S3.SS2.SSS2.p1.1.m1.1.1.3" xref="S3.SS2.SSS2.p1.1.m1.1.1.3.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p1.1.m1.1b"><apply id="S3.SS2.SSS2.p1.1.m1.1.1.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1"><csymbol cd="latexml" id="S3.SS2.SSS2.p1.1.m1.1.1.1.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.1">similar-to</csymbol><apply id="S3.SS2.SSS2.p1.1.m1.1.1.2.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2"><divide id="S3.SS2.SSS2.p1.1.m1.1.1.2.1.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.1"></divide><apply id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2"><times id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.1.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.1"></times><ci id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.2.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.2">Δ</ci><ci id="S3.SS2.SSS2.p1.1.m1.1.1.2.2.3.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.2.3">𝑣</ci></apply><ci id="S3.SS2.SSS2.p1.1.m1.1.1.2.3.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.2.3">𝑣</ci></apply><cn type="integer" id="S3.SS2.SSS2.p1.1.m1.1.1.3.cmml" xref="S3.SS2.SSS2.p1.1.m1.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p1.1.m1.1c">\Delta v/v\sim 1</annotation></semantics></math>, but are challenged by these <math id="S3.SS2.SSS2.p1.2.m2.1" class="ltx_Math" alttext="\Delta v/v&lt;&lt;1" display="inline"><semantics id="S3.SS2.SSS2.p1.2.m2.1a"><mrow id="S3.SS2.SSS2.p1.2.m2.1.1" xref="S3.SS2.SSS2.p1.2.m2.1.1.cmml"><mrow id="S3.SS2.SSS2.p1.2.m2.1.1.2" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.cmml"><mrow id="S3.SS2.SSS2.p1.2.m2.1.1.2.2" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.cmml"><mi mathvariant="normal" id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.2" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.2.cmml">Δ</mi><mo lspace="0em" rspace="0em" id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.1" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.1.cmml">​</mo><mi id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.3" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.3.cmml">v</mi></mrow><mo id="S3.SS2.SSS2.p1.2.m2.1.1.2.1" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.1.cmml">/</mo><mi id="S3.SS2.SSS2.p1.2.m2.1.1.2.3" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.3.cmml">v</mi></mrow><mo id="S3.SS2.SSS2.p1.2.m2.1.1.1" xref="S3.SS2.SSS2.p1.2.m2.1.1.1.cmml">&lt;&lt;</mo><mn id="S3.SS2.SSS2.p1.2.m2.1.1.3" xref="S3.SS2.SSS2.p1.2.m2.1.1.3.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p1.2.m2.1b"><apply id="S3.SS2.SSS2.p1.2.m2.1.1.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1"><csymbol cd="latexml" id="S3.SS2.SSS2.p1.2.m2.1.1.1.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.1">much-less-than</csymbol><apply id="S3.SS2.SSS2.p1.2.m2.1.1.2.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2"><divide id="S3.SS2.SSS2.p1.2.m2.1.1.2.1.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.1"></divide><apply id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2"><times id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.1.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.1"></times><ci id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.2.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.2">Δ</ci><ci id="S3.SS2.SSS2.p1.2.m2.1.1.2.2.3.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.2.3">𝑣</ci></apply><ci id="S3.SS2.SSS2.p1.2.m2.1.1.2.3.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.2.3">𝑣</ci></apply><cn type="integer" id="S3.SS2.SSS2.p1.2.m2.1.1.3.cmml" xref="S3.SS2.SSS2.p1.2.m2.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p1.2.m2.1c">\Delta v/v&lt;&lt;1</annotation></semantics></math> systems. One idea
+is that the sight-line cuts across the outflow that would produce a
+BAL under a difference orientation <cite class="ltx_cite ltx_citemacro_citep">(e.g., Elvis, <a href="#bib.bib17" title="" class="ltx_ref">2000</a>; Ganguly
+et al., <a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite>,
+but this has yet to be demonstrated theoretically. These systems are
+also interesting because they only absorb photons from the compact
+continuum. Thus, partial coverage indicators provide severe
+constraints on the geometry of the flow.</p>
+</div>
+<div id="S3.SS2.SSS2.p2" class="ltx_para">
+<p id="S3.SS2.SSS2.p2.1" class="ltx_p">In terms of demographics, the first assessment of the frequency of
+these systems came from <cite class="ltx_cite ltx_citemacro_citet">Richards
+et al. (<a href="#bib.bib50" title="" class="ltx_ref">1999</a>)</cite> and <cite class="ltx_cite ltx_citemacro_citet">Richards (<a href="#bib.bib49" title="" class="ltx_ref">2001</a>)</cite>. From a
+statistical analysis examining the variation in the velocity
+distribution of C IV NALs with quasar radio-loudness and
+spectral index, <cite class="ltx_cite ltx_citemacro_citet">Richards
+et al. (<a href="#bib.bib50" title="" class="ltx_ref">1999</a>)</cite> estimated that as many as 36% of
+C IV NALs may arise from outflowing gas. Recently,
+<cite class="ltx_cite ltx_citemacro_citet">Misawa
+et al. (<a href="#bib.bib45" title="" class="ltx_ref">2007</a>)</cite> report that only 10-17% of C IV NALs in the
+velocity range 5000-70000  km s<sup id="S3.SS2.SSS2.p2.1.1" class="ltx_sup"><span id="S3.SS2.SSS2.p2.1.1.1" class="ltx_text ltx_font_italic">-1</span></sup> show evidence of partial coverage.
+(Thus it is possible that <cite class="ltx_cite ltx_citemacro_citet">Richards
+et al. (<a href="#bib.bib50" title="" class="ltx_ref">1999</a>)</cite> overestimated the fraction
+of high-velocity NALs, or that 50-70% of intrinsic C IV NALs
+do not show partial coverage.) This is not a statement, however, on
+the fraction of quasars that host such outflows.</p>
+</div>
+<div id="S3.SS2.SSS2.p3" class="ltx_para">
+<p id="S3.SS2.SSS2.p3.9" class="ltx_p"><cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite> reported that high velocity intrinsic NALs appeared in
+18<math id="S3.SS2.SSS2.p3.1.m1.1" class="ltx_Math" alttext="\pm" display="inline"><semantics id="S3.SS2.SSS2.p3.1.m1.1a"><mo id="S3.SS2.SSS2.p3.1.m1.1.1" xref="S3.SS2.SSS2.p3.1.m1.1.1.cmml">±</mo><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.1.m1.1b"><csymbol cd="latexml" id="S3.SS2.SSS2.p3.1.m1.1.1.cmml" xref="S3.SS2.SSS2.p3.1.m1.1.1">plus-or-minus</csymbol></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.1.m1.1c">\pm</annotation></semantics></math>4% of <math id="S3.SS2.SSS2.p3.2.m2.1" class="ltx_Math" alttext="1.5&lt;z&lt;3.6" display="inline"><semantics id="S3.SS2.SSS2.p3.2.m2.1a"><mrow id="S3.SS2.SSS2.p3.2.m2.1.1" xref="S3.SS2.SSS2.p3.2.m2.1.1.cmml"><mn id="S3.SS2.SSS2.p3.2.m2.1.1.2" xref="S3.SS2.SSS2.p3.2.m2.1.1.2.cmml">1.5</mn><mo id="S3.SS2.SSS2.p3.2.m2.1.1.3" xref="S3.SS2.SSS2.p3.2.m2.1.1.3.cmml">&lt;</mo><mi id="S3.SS2.SSS2.p3.2.m2.1.1.4" xref="S3.SS2.SSS2.p3.2.m2.1.1.4.cmml">z</mi><mo id="S3.SS2.SSS2.p3.2.m2.1.1.5" xref="S3.SS2.SSS2.p3.2.m2.1.1.5.cmml">&lt;</mo><mn id="S3.SS2.SSS2.p3.2.m2.1.1.6" xref="S3.SS2.SSS2.p3.2.m2.1.1.6.cmml">3.6</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.2.m2.1b"><apply id="S3.SS2.SSS2.p3.2.m2.1.1.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1"><and id="S3.SS2.SSS2.p3.2.m2.1.1a.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1"></and><apply id="S3.SS2.SSS2.p3.2.m2.1.1b.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1"><lt id="S3.SS2.SSS2.p3.2.m2.1.1.3.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1.3"></lt><cn type="float" id="S3.SS2.SSS2.p3.2.m2.1.1.2.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1.2">1.5</cn><ci id="S3.SS2.SSS2.p3.2.m2.1.1.4.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1.4">𝑧</ci></apply><apply id="S3.SS2.SSS2.p3.2.m2.1.1c.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1"><lt id="S3.SS2.SSS2.p3.2.m2.1.1.5.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1.5"></lt><share href="#S3.SS2.SSS2.p3.2.m2.1.1.4.cmml" id="S3.SS2.SSS2.p3.2.m2.1.1d.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1"></share><cn type="float" id="S3.SS2.SSS2.p3.2.m2.1.1.6.cmml" xref="S3.SS2.SSS2.p3.2.m2.1.1.6">3.6</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.2.m2.1c">1.5&lt;z&lt;3.6</annotation></semantics></math> quasars in the velocity range
+5000–21000  km s<sup id="S3.SS2.SSS2.p3.9.1" class="ltx_sup"><span id="S3.SS2.SSS2.p3.9.1.1" class="ltx_text ltx_font_italic">-1</span></sup>, with about a factor of two variation between
+radio core-dominated (17<math id="S3.SS2.SSS2.p3.4.m4.1" class="ltx_Math" alttext="\pm" display="inline"><semantics id="S3.SS2.SSS2.p3.4.m4.1a"><mo id="S3.SS2.SSS2.p3.4.m4.1.1" xref="S3.SS2.SSS2.p3.4.m4.1.1.cmml">±</mo><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.4.m4.1b"><csymbol cd="latexml" id="S3.SS2.SSS2.p3.4.m4.1.1.cmml" xref="S3.SS2.SSS2.p3.4.m4.1.1">plus-or-minus</csymbol></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.4.m4.1c">\pm</annotation></semantics></math>10%) and radio lobe-dominated
+(33<math id="S3.SS2.SSS2.p3.5.m5.1" class="ltx_Math" alttext="\pm" display="inline"><semantics id="S3.SS2.SSS2.p3.5.m5.1a"><mo id="S3.SS2.SSS2.p3.5.m5.1.1" xref="S3.SS2.SSS2.p3.5.m5.1.1.cmml">±</mo><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.5.m5.1b"><csymbol cd="latexml" id="S3.SS2.SSS2.p3.5.m5.1.1.cmml" xref="S3.SS2.SSS2.p3.5.m5.1.1">plus-or-minus</csymbol></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.5.m5.1c">\pm</annotation></semantics></math>15%) morphologies. In a recent survey of <math id="S3.SS2.SSS2.p3.6.m6.1" class="ltx_Math" alttext="1.8&lt;z&lt;3.5" display="inline"><semantics id="S3.SS2.SSS2.p3.6.m6.1a"><mrow id="S3.SS2.SSS2.p3.6.m6.1.1" xref="S3.SS2.SSS2.p3.6.m6.1.1.cmml"><mn id="S3.SS2.SSS2.p3.6.m6.1.1.2" xref="S3.SS2.SSS2.p3.6.m6.1.1.2.cmml">1.8</mn><mo id="S3.SS2.SSS2.p3.6.m6.1.1.3" xref="S3.SS2.SSS2.p3.6.m6.1.1.3.cmml">&lt;</mo><mi id="S3.SS2.SSS2.p3.6.m6.1.1.4" xref="S3.SS2.SSS2.p3.6.m6.1.1.4.cmml">z</mi><mo id="S3.SS2.SSS2.p3.6.m6.1.1.5" xref="S3.SS2.SSS2.p3.6.m6.1.1.5.cmml">&lt;</mo><mn id="S3.SS2.SSS2.p3.6.m6.1.1.6" xref="S3.SS2.SSS2.p3.6.m6.1.1.6.cmml">3.5</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.6.m6.1b"><apply id="S3.SS2.SSS2.p3.6.m6.1.1.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1"><and id="S3.SS2.SSS2.p3.6.m6.1.1a.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1"></and><apply id="S3.SS2.SSS2.p3.6.m6.1.1b.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1"><lt id="S3.SS2.SSS2.p3.6.m6.1.1.3.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1.3"></lt><cn type="float" id="S3.SS2.SSS2.p3.6.m6.1.1.2.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1.2">1.8</cn><ci id="S3.SS2.SSS2.p3.6.m6.1.1.4.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1.4">𝑧</ci></apply><apply id="S3.SS2.SSS2.p3.6.m6.1.1c.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1"><lt id="S3.SS2.SSS2.p3.6.m6.1.1.5.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1.5"></lt><share href="#S3.SS2.SSS2.p3.6.m6.1.1.4.cmml" id="S3.SS2.SSS2.p3.6.m6.1.1d.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1"></share><cn type="float" id="S3.SS2.SSS2.p3.6.m6.1.1.6.cmml" xref="S3.SS2.SSS2.p3.6.m6.1.1.6">3.5</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.6.m6.1c">1.8&lt;z&lt;3.5</annotation></semantics></math> SDSS sources, <cite class="ltx_cite ltx_citemacro_citet">Rodriguez
+Hidalgo et al. (<a href="#bib.bib51" title="" class="ltx_ref">2007</a>)</cite> find about 12% of quasars have
+high-velocity NALs in the velocity range 5000-50000  km s<sup id="S3.SS2.SSS2.p3.9.2" class="ltx_sup"><span id="S3.SS2.SSS2.p3.9.2.1" class="ltx_text ltx_font_italic">-1</span></sup>, and
+<math id="S3.SS2.SSS2.p3.8.m8.1" class="ltx_Math" alttext="\sim 2.3" display="inline"><semantics id="S3.SS2.SSS2.p3.8.m8.1a"><mrow id="S3.SS2.SSS2.p3.8.m8.1.1" xref="S3.SS2.SSS2.p3.8.m8.1.1.cmml"><mi id="S3.SS2.SSS2.p3.8.m8.1.1.2" xref="S3.SS2.SSS2.p3.8.m8.1.1.2.cmml"></mi><mo id="S3.SS2.SSS2.p3.8.m8.1.1.1" xref="S3.SS2.SSS2.p3.8.m8.1.1.1.cmml">∼</mo><mn id="S3.SS2.SSS2.p3.8.m8.1.1.3" xref="S3.SS2.SSS2.p3.8.m8.1.1.3.cmml">2.3</mn></mrow><annotation-xml encoding="MathML-Content" id="S3.SS2.SSS2.p3.8.m8.1b"><apply id="S3.SS2.SSS2.p3.8.m8.1.1.cmml" xref="S3.SS2.SSS2.p3.8.m8.1.1"><csymbol cd="latexml" id="S3.SS2.SSS2.p3.8.m8.1.1.1.cmml" xref="S3.SS2.SSS2.p3.8.m8.1.1.1">similar-to</csymbol><csymbol cd="latexml" id="S3.SS2.SSS2.p3.8.m8.1.1.2.cmml" xref="S3.SS2.SSS2.p3.8.m8.1.1.2">absent</csymbol><cn type="float" id="S3.SS2.SSS2.p3.8.m8.1.1.3.cmml" xref="S3.SS2.SSS2.p3.8.m8.1.1.3">2.3</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S3.SS2.SSS2.p3.8.m8.1c">\sim 2.3</annotation></semantics></math>% in the velocity range 25000-50000  km s<sup id="S3.SS2.SSS2.p3.9.3" class="ltx_sup"><span id="S3.SS2.SSS2.p3.9.3.1" class="ltx_text ltx_font_italic">-1</span></sup>. This latter
+velocity range is often missed by surveys due purely to
+observational cutoffs. Over this velocity range, absorption by
+C IV can become confused with Si IV absorption.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4. </span>An Example Illustrating the Merits of Comprehensive Outflow Studies</h2>
+
+<figure id="S4.F1" class="ltx_figure">
+<div id="S4.F1.1" class="ltx_inline-block ltx_transformed_outer" style="width:626.6pt;height:432.2pt;vertical-align:-432.2pt;"><span class="ltx_transformed_inner" style="width:432.2pt;transform:translate(97.2pt,-529.38pt) rotate(90deg) ;"><img src="/html/0710.0588/assets/x1.png" id="S4.F1.1.g1" class="ltx_graphics ltx_img_portrait" width="461" height="668" alt="Refer to caption">
+</span></div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 1.— </span>We present a summary plot of
+the maximum velocity of absorption versus the monochromatic
+luminosity at 3000 Å. Data from several studies are included:
+Seyfert 1 galaxies from <cite class="ltx_cite ltx_citemacro_citet">Crenshaw
+et al. (<a href="#bib.bib11" title="" class="ltx_ref">1999</a>, <span id="S4.F1.3.1.1.1.1" class="ltx_text ltx_font_italic">filled blue circles)</span></cite>;
+<math id="S4.F1.2.m1.1" class="ltx_Math" alttext="z&lt;0.5" display="inline"><semantics id="S4.F1.2.m1.1b"><mrow id="S4.F1.2.m1.1.1" xref="S4.F1.2.m1.1.1.cmml"><mi id="S4.F1.2.m1.1.1.2" xref="S4.F1.2.m1.1.1.2.cmml">z</mi><mo id="S4.F1.2.m1.1.1.1" xref="S4.F1.2.m1.1.1.1.cmml">&lt;</mo><mn id="S4.F1.2.m1.1.1.3" xref="S4.F1.2.m1.1.1.3.cmml">0.5</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.F1.2.m1.1c"><apply id="S4.F1.2.m1.1.1.cmml" xref="S4.F1.2.m1.1.1"><lt id="S4.F1.2.m1.1.1.1.cmml" xref="S4.F1.2.m1.1.1.1"></lt><ci id="S4.F1.2.m1.1.1.2.cmml" xref="S4.F1.2.m1.1.1.2">𝑧</ci><cn type="float" id="S4.F1.2.m1.1.1.3.cmml" xref="S4.F1.2.m1.1.1.3">0.5</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.F1.2.m1.1d">z&lt;0.5</annotation></semantics></math> Palomar-Green quasars from <cite class="ltx_cite ltx_citemacro_citet">Laor &amp;
+Brandt (<a href="#bib.bib42" title="" class="ltx_ref">2002</a>, <span id="S4.F1.4.2.1.1.1" class="ltx_text ltx_font_italic">open green
+triangles)</span></cite>; SDSS DR2 BAL quasars from <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>, <span id="S4.F1.5.3.1.1.1" class="ltx_text ltx_font_italic">filled
+yellow circles)</span></cite>; LBQS BAL quasars from Gallagher et al.
+(2006, <span id="S4.F1.6.4" class="ltx_text ltx_font_italic">open red squares</span>); intrinsic NALs from <cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>, <span id="S4.F1.7.5.1.1.1" class="ltx_text ltx_font_italic">filled blue pentagons)</span></cite>; intrinsic NALs from <cite class="ltx_cite ltx_citemacro_citet">Misawa
+et al. (<a href="#bib.bib45" title="" class="ltx_ref">2007</a>, <span id="S4.F1.8.6.1.1.1" class="ltx_text ltx_font_italic">open cyan pentagons)</span></cite>; polar BAL quasars from
+<cite class="ltx_cite ltx_citemacro_citet">Ghosh &amp;
+Punsly (<a href="#bib.bib27" title="" class="ltx_ref">2007</a>, <span id="S4.F1.9.7.1.1.1" class="ltx_text ltx_font_italic">pink stars)</span></cite>; UM 675, intrinsic NAL/mini-BALs in
+Q 2343+125, and PG 0935+417 from <cite class="ltx_cite ltx_citemacro_citet">Hamann
+et al. (<a href="#bib.bib32" title="" class="ltx_ref">1997</a>, <span id="S4.F1.10.8.1.1.1" class="ltx_text ltx_font_italic">black
+stars)</span></cite>; and the mini-BAL in PG 2302+029 from <cite class="ltx_cite ltx_citemacro_citet">Jannuzi
+et al. (<a href="#bib.bib39" title="" class="ltx_ref">1996</a>, <span id="S4.F1.11.9.1.1.1" class="ltx_text ltx_font_italic">yellow star)</span></cite>.</figcaption>
+</figure>
+<div id="S4.p1" class="ltx_para">
+<p id="S4.p1.1" class="ltx_p">When parameter space is truncated, either intentionally (e.g.,
+through subclass segregation or the desire to avoid false
+positives/negatives) or unintentionally (e.g., by data limitations),
+real correlations that could lead to physical understanding may be
+missed. The wide variety of observational techniques and the
+improvements in sample size now make it possible to study the
+outflow phenomenon in a more complete manner than ever before
+possible.</p>
+</div>
+<figure id="S4.T1" class="ltx_table">
+
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 1</span>Demographics of Outflows</figcaption><div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1">
+<table id="S4.T1.26" class="ltx_tabular ltx_figure_panel">
+<tbody class="ltx_tbody">
+<tr id="S4.T1.26.27.1" class="ltx_tr">
+<th id="S4.T1.26.27.1.1" class="ltx_td ltx_th ltx_th_column ltx_border_tt"></th>
+<th id="S4.T1.26.27.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt" colspan="6">Ranges</th>
+<td id="S4.T1.26.27.1.3" class="ltx_td ltx_border_tt"></td>
+</tr>
+<tr id="S4.T1.1.1" class="ltx_tr">
+<th id="S4.T1.1.1.2" class="ltx_td ltx_align_center ltx_th ltx_th_column">Study</th>
+<th id="S4.T1.1.1.3" class="ltx_td ltx_align_center ltx_th ltx_th_column">Redshift</th>
+<th id="S4.T1.1.1.1" class="ltx_td ltx_align_center ltx_th ltx_th_column" colspan="2">
+<math id="S4.T1.1.1.1.m1.1" class="ltx_Math" alttext="\log\lambda L_{\lambda}" display="inline"><semantics id="S4.T1.1.1.1.m1.1a"><mrow id="S4.T1.1.1.1.m1.1.1" xref="S4.T1.1.1.1.m1.1.1.cmml"><mi id="S4.T1.1.1.1.m1.1.1.1" xref="S4.T1.1.1.1.m1.1.1.1.cmml">log</mi><mo lspace="0.167em" id="S4.T1.1.1.1.m1.1.1a" xref="S4.T1.1.1.1.m1.1.1.cmml">⁡</mo><mrow id="S4.T1.1.1.1.m1.1.1.2" xref="S4.T1.1.1.1.m1.1.1.2.cmml"><mi id="S4.T1.1.1.1.m1.1.1.2.2" xref="S4.T1.1.1.1.m1.1.1.2.2.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S4.T1.1.1.1.m1.1.1.2.1" xref="S4.T1.1.1.1.m1.1.1.2.1.cmml">​</mo><msub id="S4.T1.1.1.1.m1.1.1.2.3" xref="S4.T1.1.1.1.m1.1.1.2.3.cmml"><mi id="S4.T1.1.1.1.m1.1.1.2.3.2" xref="S4.T1.1.1.1.m1.1.1.2.3.2.cmml">L</mi><mi id="S4.T1.1.1.1.m1.1.1.2.3.3" xref="S4.T1.1.1.1.m1.1.1.2.3.3.cmml">λ</mi></msub></mrow></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.1.1.1.m1.1b"><apply id="S4.T1.1.1.1.m1.1.1.cmml" xref="S4.T1.1.1.1.m1.1.1"><log id="S4.T1.1.1.1.m1.1.1.1.cmml" xref="S4.T1.1.1.1.m1.1.1.1"></log><apply id="S4.T1.1.1.1.m1.1.1.2.cmml" xref="S4.T1.1.1.1.m1.1.1.2"><times id="S4.T1.1.1.1.m1.1.1.2.1.cmml" xref="S4.T1.1.1.1.m1.1.1.2.1"></times><ci id="S4.T1.1.1.1.m1.1.1.2.2.cmml" xref="S4.T1.1.1.1.m1.1.1.2.2">𝜆</ci><apply id="S4.T1.1.1.1.m1.1.1.2.3.cmml" xref="S4.T1.1.1.1.m1.1.1.2.3"><csymbol cd="ambiguous" id="S4.T1.1.1.1.m1.1.1.2.3.1.cmml" xref="S4.T1.1.1.1.m1.1.1.2.3">subscript</csymbol><ci id="S4.T1.1.1.1.m1.1.1.2.3.2.cmml" xref="S4.T1.1.1.1.m1.1.1.2.3.2">𝐿</ci><ci id="S4.T1.1.1.1.m1.1.1.2.3.3.cmml" xref="S4.T1.1.1.1.m1.1.1.2.3.3">𝜆</ci></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.1.1.1.m1.1c">\log\lambda L_{\lambda}</annotation></semantics></math>(3000 Å)</th>
+<th id="S4.T1.1.1.4" class="ltx_td ltx_align_center ltx_th ltx_th_column" colspan="2">Velocity</th>
+<th id="S4.T1.1.1.5" class="ltx_td ltx_align_center ltx_th ltx_th_column">Width</th>
+<th id="S4.T1.1.1.6" class="ltx_td ltx_align_center ltx_th ltx_th_column">Fraction</th>
+</tr>
+<tr id="S4.T1.6.6" class="ltx_tr">
+<th id="S4.T1.6.6.6" class="ltx_td ltx_th ltx_th_column"></th>
+<th id="S4.T1.6.6.7" class="ltx_td ltx_th ltx_th_column"></th>
+<th id="S4.T1.3.3.2" class="ltx_td ltx_align_center ltx_th ltx_th_column" colspan="2">(<math id="S4.T1.2.2.1.m1.1" class="ltx_Math" alttext="\log" display="inline"><semantics id="S4.T1.2.2.1.m1.1a"><mi id="S4.T1.2.2.1.m1.1.1" xref="S4.T1.2.2.1.m1.1.1.cmml">log</mi><annotation-xml encoding="MathML-Content" id="S4.T1.2.2.1.m1.1b"><log id="S4.T1.2.2.1.m1.1.1.cmml" xref="S4.T1.2.2.1.m1.1.1"></log></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.2.2.1.m1.1c">\log</annotation></semantics></math> [erg s<sup id="S4.T1.3.3.2.1" class="ltx_sup"><span id="S4.T1.3.3.2.1.1" class="ltx_text ltx_font_italic">-1</span></sup>])</th>
+<th id="S4.T1.5.5.4" class="ltx_td ltx_align_center ltx_th ltx_th_column" colspan="2">(<math id="S4.T1.4.4.3.m1.1" class="ltx_Math" alttext="10^{3}" display="inline"><semantics id="S4.T1.4.4.3.m1.1a"><msup id="S4.T1.4.4.3.m1.1.1" xref="S4.T1.4.4.3.m1.1.1.cmml"><mn id="S4.T1.4.4.3.m1.1.1.2" xref="S4.T1.4.4.3.m1.1.1.2.cmml">10</mn><mn id="S4.T1.4.4.3.m1.1.1.3" xref="S4.T1.4.4.3.m1.1.1.3.cmml">3</mn></msup><annotation-xml encoding="MathML-Content" id="S4.T1.4.4.3.m1.1b"><apply id="S4.T1.4.4.3.m1.1.1.cmml" xref="S4.T1.4.4.3.m1.1.1"><csymbol cd="ambiguous" id="S4.T1.4.4.3.m1.1.1.1.cmml" xref="S4.T1.4.4.3.m1.1.1">superscript</csymbol><cn type="integer" id="S4.T1.4.4.3.m1.1.1.2.cmml" xref="S4.T1.4.4.3.m1.1.1.2">10</cn><cn type="integer" id="S4.T1.4.4.3.m1.1.1.3.cmml" xref="S4.T1.4.4.3.m1.1.1.3">3</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.4.4.3.m1.1c">10^{3}</annotation></semantics></math> km s<sup id="S4.T1.5.5.4.1" class="ltx_sup"><span id="S4.T1.5.5.4.1.1" class="ltx_text ltx_font_italic">-1</span></sup>)</th>
+<th id="S4.T1.6.6.5" class="ltx_td ltx_align_center ltx_th ltx_th_column">( km s<sup id="S4.T1.6.6.5.1" class="ltx_sup"><span id="S4.T1.6.6.5.1.1" class="ltx_text ltx_font_italic">-1</span></sup>)</th>
+<td id="S4.T1.6.6.8" class="ltx_td"></td>
+</tr>
+<tr id="S4.T1.8.8" class="ltx_tr">
+<td id="S4.T1.8.8.3" class="ltx_td ltx_align_left ltx_border_t"><cite class="ltx_cite ltx_citemacro_citet">Crenshaw
+et al. (<a href="#bib.bib11" title="" class="ltx_ref">1999</a>)</cite></td>
+<td id="S4.T1.7.7.1" class="ltx_td ltx_align_left ltx_border_t"><math id="S4.T1.7.7.1.m1.1" class="ltx_Math" alttext="\leq 0.08" display="inline"><semantics id="S4.T1.7.7.1.m1.1a"><mrow id="S4.T1.7.7.1.m1.1.1" xref="S4.T1.7.7.1.m1.1.1.cmml"><mi id="S4.T1.7.7.1.m1.1.1.2" xref="S4.T1.7.7.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.7.7.1.m1.1.1.1" xref="S4.T1.7.7.1.m1.1.1.1.cmml">≤</mo><mn id="S4.T1.7.7.1.m1.1.1.3" xref="S4.T1.7.7.1.m1.1.1.3.cmml">0.08</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.7.7.1.m1.1b"><apply id="S4.T1.7.7.1.m1.1.1.cmml" xref="S4.T1.7.7.1.m1.1.1"><leq id="S4.T1.7.7.1.m1.1.1.1.cmml" xref="S4.T1.7.7.1.m1.1.1.1"></leq><csymbol cd="latexml" id="S4.T1.7.7.1.m1.1.1.2.cmml" xref="S4.T1.7.7.1.m1.1.1.2">absent</csymbol><cn type="float" id="S4.T1.7.7.1.m1.1.1.3.cmml" xref="S4.T1.7.7.1.m1.1.1.3">0.08</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.7.7.1.m1.1c">\leq 0.08</annotation></semantics></math></td>
+<td id="S4.T1.8.8.4" class="ltx_td ltx_align_right ltx_border_t">42 to</td>
+<td id="S4.T1.8.8.5" class="ltx_td ltx_nopad_l ltx_align_left ltx_border_t">44.8</td>
+<td id="S4.T1.8.8.6" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_t">0 to</td>
+<td id="S4.T1.8.8.7" class="ltx_td ltx_nopad_l ltx_align_left ltx_border_t">+2</td>
+<td id="S4.T1.8.8.2" class="ltx_td ltx_align_left ltx_border_t"><math id="S4.T1.8.8.2.m1.1" class="ltx_Math" alttext="\lesssim 2000" display="inline"><semantics id="S4.T1.8.8.2.m1.1a"><mrow id="S4.T1.8.8.2.m1.1.1" xref="S4.T1.8.8.2.m1.1.1.cmml"><mi id="S4.T1.8.8.2.m1.1.1.2" xref="S4.T1.8.8.2.m1.1.1.2.cmml"></mi><mo id="S4.T1.8.8.2.m1.1.1.1" xref="S4.T1.8.8.2.m1.1.1.1.cmml">≲</mo><mn id="S4.T1.8.8.2.m1.1.1.3" xref="S4.T1.8.8.2.m1.1.1.3.cmml">2000</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.8.8.2.m1.1b"><apply id="S4.T1.8.8.2.m1.1.1.cmml" xref="S4.T1.8.8.2.m1.1.1"><csymbol cd="latexml" id="S4.T1.8.8.2.m1.1.1.1.cmml" xref="S4.T1.8.8.2.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S4.T1.8.8.2.m1.1.1.2.cmml" xref="S4.T1.8.8.2.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.8.8.2.m1.1.1.3.cmml" xref="S4.T1.8.8.2.m1.1.1.3">2000</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.8.8.2.m1.1c">\lesssim 2000</annotation></semantics></math></td>
+<td id="S4.T1.8.8.8" class="ltx_td ltx_align_left ltx_border_t">50–70%</td>
+</tr>
+<tr id="S4.T1.11.11" class="ltx_tr">
+<td id="S4.T1.11.11.4" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite></td>
+<td id="S4.T1.9.9.1" class="ltx_td ltx_align_left"><math id="S4.T1.9.9.1.m1.1" class="ltx_Math" alttext="\leq 1" display="inline"><semantics id="S4.T1.9.9.1.m1.1a"><mrow id="S4.T1.9.9.1.m1.1.1" xref="S4.T1.9.9.1.m1.1.1.cmml"><mi id="S4.T1.9.9.1.m1.1.1.2" xref="S4.T1.9.9.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.9.9.1.m1.1.1.1" xref="S4.T1.9.9.1.m1.1.1.1.cmml">≤</mo><mn id="S4.T1.9.9.1.m1.1.1.3" xref="S4.T1.9.9.1.m1.1.1.3.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.9.9.1.m1.1b"><apply id="S4.T1.9.9.1.m1.1.1.cmml" xref="S4.T1.9.9.1.m1.1.1"><leq id="S4.T1.9.9.1.m1.1.1.1.cmml" xref="S4.T1.9.9.1.m1.1.1.1"></leq><csymbol cd="latexml" id="S4.T1.9.9.1.m1.1.1.2.cmml" xref="S4.T1.9.9.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.9.9.1.m1.1.1.3.cmml" xref="S4.T1.9.9.1.m1.1.1.3">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.9.9.1.m1.1c">\leq 1</annotation></semantics></math></td>
+<td id="S4.T1.11.11.5" class="ltx_td ltx_align_right">44.5 to</td>
+<td id="S4.T1.11.11.6" class="ltx_td ltx_nopad_l ltx_align_left">46.7</td>
+<td id="S4.T1.10.10.2" class="ltx_td ltx_nopad_r ltx_align_right">
+<math id="S4.T1.10.10.2.m1.1" class="ltx_Math" alttext="-1" display="inline"><semantics id="S4.T1.10.10.2.m1.1a"><mrow id="S4.T1.10.10.2.m1.1.1" xref="S4.T1.10.10.2.m1.1.1.cmml"><mo id="S4.T1.10.10.2.m1.1.1a" xref="S4.T1.10.10.2.m1.1.1.cmml">−</mo><mn id="S4.T1.10.10.2.m1.1.1.2" xref="S4.T1.10.10.2.m1.1.1.2.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.10.10.2.m1.1b"><apply id="S4.T1.10.10.2.m1.1.1.cmml" xref="S4.T1.10.10.2.m1.1.1"><minus id="S4.T1.10.10.2.m1.1.1.1.cmml" xref="S4.T1.10.10.2.m1.1.1"></minus><cn type="integer" id="S4.T1.10.10.2.m1.1.1.2.cmml" xref="S4.T1.10.10.2.m1.1.1.2">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.10.10.2.m1.1c">-1</annotation></semantics></math> to</td>
+<td id="S4.T1.11.11.7" class="ltx_td ltx_nopad_l ltx_align_left">+5</td>
+<td id="S4.T1.11.11.3" class="ltx_td ltx_align_left"><math id="S4.T1.11.11.3.m1.1" class="ltx_Math" alttext="\lesssim 500" display="inline"><semantics id="S4.T1.11.11.3.m1.1a"><mrow id="S4.T1.11.11.3.m1.1.1" xref="S4.T1.11.11.3.m1.1.1.cmml"><mi id="S4.T1.11.11.3.m1.1.1.2" xref="S4.T1.11.11.3.m1.1.1.2.cmml"></mi><mo id="S4.T1.11.11.3.m1.1.1.1" xref="S4.T1.11.11.3.m1.1.1.1.cmml">≲</mo><mn id="S4.T1.11.11.3.m1.1.1.3" xref="S4.T1.11.11.3.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.11.11.3.m1.1b"><apply id="S4.T1.11.11.3.m1.1.1.cmml" xref="S4.T1.11.11.3.m1.1.1"><csymbol cd="latexml" id="S4.T1.11.11.3.m1.1.1.1.cmml" xref="S4.T1.11.11.3.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S4.T1.11.11.3.m1.1.1.2.cmml" xref="S4.T1.11.11.3.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.11.11.3.m1.1.1.3.cmml" xref="S4.T1.11.11.3.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.11.11.3.m1.1c">\lesssim 500</annotation></semantics></math></td>
+<td id="S4.T1.11.11.8" class="ltx_td ltx_align_left">25%</td>
+</tr>
+<tr id="S4.T1.13.13" class="ltx_tr">
+<td id="S4.T1.13.13.3" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Laor &amp;
+Brandt (<a href="#bib.bib42" title="" class="ltx_ref">2002</a>)</cite></td>
+<td id="S4.T1.12.12.1" class="ltx_td ltx_align_left"><math id="S4.T1.12.12.1.m1.1" class="ltx_Math" alttext="\leq 0.5" display="inline"><semantics id="S4.T1.12.12.1.m1.1a"><mrow id="S4.T1.12.12.1.m1.1.1" xref="S4.T1.12.12.1.m1.1.1.cmml"><mi id="S4.T1.12.12.1.m1.1.1.2" xref="S4.T1.12.12.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.12.12.1.m1.1.1.1" xref="S4.T1.12.12.1.m1.1.1.1.cmml">≤</mo><mn id="S4.T1.12.12.1.m1.1.1.3" xref="S4.T1.12.12.1.m1.1.1.3.cmml">0.5</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.12.12.1.m1.1b"><apply id="S4.T1.12.12.1.m1.1.1.cmml" xref="S4.T1.12.12.1.m1.1.1"><leq id="S4.T1.12.12.1.m1.1.1.1.cmml" xref="S4.T1.12.12.1.m1.1.1.1"></leq><csymbol cd="latexml" id="S4.T1.12.12.1.m1.1.1.2.cmml" xref="S4.T1.12.12.1.m1.1.1.2">absent</csymbol><cn type="float" id="S4.T1.12.12.1.m1.1.1.3.cmml" xref="S4.T1.12.12.1.m1.1.1.3">0.5</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.12.12.1.m1.1c">\leq 0.5</annotation></semantics></math></td>
+<td id="S4.T1.13.13.4" class="ltx_td ltx_align_right">43.9 to</td>
+<td id="S4.T1.13.13.5" class="ltx_td ltx_nopad_l ltx_align_left">46.4</td>
+<td id="S4.T1.13.13.6" class="ltx_td ltx_nopad_r ltx_align_right">0 to</td>
+<td id="S4.T1.13.13.7" class="ltx_td ltx_nopad_l ltx_align_left">+31</td>
+<td id="S4.T1.13.13.2" class="ltx_td ltx_align_left"><math id="S4.T1.13.13.2.m1.1" class="ltx_Math" alttext="\cdots" display="inline"><semantics id="S4.T1.13.13.2.m1.1a"><mi mathvariant="normal" id="S4.T1.13.13.2.m1.1.1" xref="S4.T1.13.13.2.m1.1.1.cmml">⋯</mi><annotation-xml encoding="MathML-Content" id="S4.T1.13.13.2.m1.1b"><ci id="S4.T1.13.13.2.m1.1.1.cmml" xref="S4.T1.13.13.2.m1.1.1">⋯</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.13.13.2.m1.1c">\cdots</annotation></semantics></math></td>
+<td id="S4.T1.13.13.8" class="ltx_td ltx_align_left">50%</td>
+</tr>
+<tr id="S4.T1.15.15" class="ltx_tr">
+<td id="S4.T1.15.15.3" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Hewett &amp;
+Foltz (<a href="#bib.bib36" title="" class="ltx_ref">2003</a>)</cite></td>
+<td id="S4.T1.15.15.4" class="ltx_td ltx_align_left">1.5–3.0</td>
+<td id="S4.T1.15.15.5" class="ltx_td ltx_align_right">45.8 to</td>
+<td id="S4.T1.15.15.6" class="ltx_td ltx_nopad_l ltx_align_left">47</td>
+<td id="S4.T1.15.15.7" class="ltx_td ltx_nopad_r ltx_align_right">+5 to</td>
+<td id="S4.T1.15.15.8" class="ltx_td ltx_nopad_l ltx_align_left">+25</td>
+<td id="S4.T1.14.14.1" class="ltx_td ltx_align_left"><math id="S4.T1.14.14.1.m1.1" class="ltx_Math" alttext="\geq 2000" display="inline"><semantics id="S4.T1.14.14.1.m1.1a"><mrow id="S4.T1.14.14.1.m1.1.1" xref="S4.T1.14.14.1.m1.1.1.cmml"><mi id="S4.T1.14.14.1.m1.1.1.2" xref="S4.T1.14.14.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.14.14.1.m1.1.1.1" xref="S4.T1.14.14.1.m1.1.1.1.cmml">≥</mo><mn id="S4.T1.14.14.1.m1.1.1.3" xref="S4.T1.14.14.1.m1.1.1.3.cmml">2000</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.14.14.1.m1.1b"><apply id="S4.T1.14.14.1.m1.1.1.cmml" xref="S4.T1.14.14.1.m1.1.1"><geq id="S4.T1.14.14.1.m1.1.1.1.cmml" xref="S4.T1.14.14.1.m1.1.1.1"></geq><csymbol cd="latexml" id="S4.T1.14.14.1.m1.1.1.2.cmml" xref="S4.T1.14.14.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.14.14.1.m1.1.1.3.cmml" xref="S4.T1.14.14.1.m1.1.1.3">2000</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.14.14.1.m1.1c">\geq 2000</annotation></semantics></math></td>
+<td id="S4.T1.15.15.2" class="ltx_td ltx_align_left">15% <math id="S4.T1.15.15.2.m1.1" class="ltx_Math" alttext="\rightarrow" display="inline"><semantics id="S4.T1.15.15.2.m1.1a"><mo stretchy="false" id="S4.T1.15.15.2.m1.1.1" xref="S4.T1.15.15.2.m1.1.1.cmml">→</mo><annotation-xml encoding="MathML-Content" id="S4.T1.15.15.2.m1.1b"><ci id="S4.T1.15.15.2.m1.1.1.cmml" xref="S4.T1.15.15.2.m1.1.1">→</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.15.15.2.m1.1c">\rightarrow</annotation></semantics></math> 23%</td>
+</tr>
+<tr id="S4.T1.16.16" class="ltx_tr">
+<td id="S4.T1.16.16.2" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite></td>
+<td id="S4.T1.16.16.3" class="ltx_td ltx_align_left">1.5-3.6</td>
+<td id="S4.T1.16.16.4" class="ltx_td ltx_align_right">45.5 to</td>
+<td id="S4.T1.16.16.5" class="ltx_td ltx_nopad_l ltx_align_left">47</td>
+<td id="S4.T1.16.16.6" class="ltx_td ltx_nopad_r ltx_align_right">0 to</td>
+<td id="S4.T1.16.16.7" class="ltx_td ltx_nopad_l ltx_align_left">+5</td>
+<td id="S4.T1.16.16.1" class="ltx_td ltx_align_left"><math id="S4.T1.16.16.1.m1.1" class="ltx_Math" alttext="\lesssim 500" display="inline"><semantics id="S4.T1.16.16.1.m1.1a"><mrow id="S4.T1.16.16.1.m1.1.1" xref="S4.T1.16.16.1.m1.1.1.cmml"><mi id="S4.T1.16.16.1.m1.1.1.2" xref="S4.T1.16.16.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.16.16.1.m1.1.1.1" xref="S4.T1.16.16.1.m1.1.1.1.cmml">≲</mo><mn id="S4.T1.16.16.1.m1.1.1.3" xref="S4.T1.16.16.1.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.16.16.1.m1.1b"><apply id="S4.T1.16.16.1.m1.1.1.cmml" xref="S4.T1.16.16.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.16.16.1.m1.1.1.1.cmml" xref="S4.T1.16.16.1.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S4.T1.16.16.1.m1.1.1.2.cmml" xref="S4.T1.16.16.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.16.16.1.m1.1.1.3.cmml" xref="S4.T1.16.16.1.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.16.16.1.m1.1c">\lesssim 500</annotation></semantics></math></td>
+<td id="S4.T1.16.16.8" class="ltx_td ltx_align_left">27%</td>
+</tr>
+<tr id="S4.T1.26.28.2" class="ltx_tr">
+<td id="S4.T1.26.28.2.1" class="ltx_td"></td>
+<td id="S4.T1.26.28.2.2" class="ltx_td"></td>
+<td id="S4.T1.26.28.2.3" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.26.28.2.4" class="ltx_td ltx_nopad_r ltx_align_right">+5 to</td>
+<td id="S4.T1.26.28.2.5" class="ltx_td ltx_nopad_l ltx_align_left">+21</td>
+<td id="S4.T1.26.28.2.6" class="ltx_td"></td>
+<td id="S4.T1.26.28.2.7" class="ltx_td ltx_align_left">18%</td>
+</tr>
+<tr id="S4.T1.17.17" class="ltx_tr">
+<td id="S4.T1.17.17.2" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Misawa
+et al. (<a href="#bib.bib45" title="" class="ltx_ref">2007</a>)</cite></td>
+<td id="S4.T1.17.17.3" class="ltx_td ltx_align_left">2–4</td>
+<td id="S4.T1.17.17.4" class="ltx_td ltx_align_right">46.5 to</td>
+<td id="S4.T1.17.17.5" class="ltx_td ltx_nopad_l ltx_align_left">47.6</td>
+<td id="S4.T1.17.17.6" class="ltx_td ltx_nopad_r ltx_align_right">0 to</td>
+<td id="S4.T1.17.17.7" class="ltx_td ltx_nopad_l ltx_align_left">+5</td>
+<td id="S4.T1.17.17.1" class="ltx_td ltx_align_left"><math id="S4.T1.17.17.1.m1.1" class="ltx_Math" alttext="\lesssim 500" display="inline"><semantics id="S4.T1.17.17.1.m1.1a"><mrow id="S4.T1.17.17.1.m1.1.1" xref="S4.T1.17.17.1.m1.1.1.cmml"><mi id="S4.T1.17.17.1.m1.1.1.2" xref="S4.T1.17.17.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.17.17.1.m1.1.1.1" xref="S4.T1.17.17.1.m1.1.1.1.cmml">≲</mo><mn id="S4.T1.17.17.1.m1.1.1.3" xref="S4.T1.17.17.1.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.17.17.1.m1.1b"><apply id="S4.T1.17.17.1.m1.1.1.cmml" xref="S4.T1.17.17.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.17.17.1.m1.1.1.1.cmml" xref="S4.T1.17.17.1.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S4.T1.17.17.1.m1.1.1.2.cmml" xref="S4.T1.17.17.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.17.17.1.m1.1.1.3.cmml" xref="S4.T1.17.17.1.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.17.17.1.m1.1c">\lesssim 500</annotation></semantics></math></td>
+<td id="S4.T1.17.17.8" class="ltx_td ltx_align_left">23%</td>
+</tr>
+<tr id="S4.T1.26.29.3" class="ltx_tr">
+<td id="S4.T1.26.29.3.1" class="ltx_td"></td>
+<td id="S4.T1.26.29.3.2" class="ltx_td"></td>
+<td id="S4.T1.26.29.3.3" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.26.29.3.4" class="ltx_td ltx_nopad_r ltx_align_right">+5 to</td>
+<td id="S4.T1.26.29.3.5" class="ltx_td ltx_nopad_l ltx_align_left">+50</td>
+<td id="S4.T1.26.29.3.6" class="ltx_td"></td>
+<td id="S4.T1.26.29.3.7" class="ltx_td ltx_align_left">30%</td>
+</tr>
+<tr id="S4.T1.18.18" class="ltx_tr">
+<td id="S4.T1.18.18.2" class="ltx_td ltx_align_left">Rodriguez Hidalgo</td>
+<td id="S4.T1.18.18.3" class="ltx_td ltx_align_left">1.8-3.5</td>
+<td id="S4.T1.18.18.1" class="ltx_td ltx_align_center" colspan="2"> <math id="S4.T1.18.18.1.m1.1" class="ltx_Math" alttext="\cdots" display="inline"><semantics id="S4.T1.18.18.1.m1.1a"><mi mathvariant="normal" id="S4.T1.18.18.1.m1.1.1" xref="S4.T1.18.18.1.m1.1.1.cmml">⋯</mi><annotation-xml encoding="MathML-Content" id="S4.T1.18.18.1.m1.1b"><ci id="S4.T1.18.18.1.m1.1.1.cmml" xref="S4.T1.18.18.1.m1.1.1">⋯</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.18.18.1.m1.1c">\cdots</annotation></semantics></math>
+</td>
+<td id="S4.T1.18.18.4" class="ltx_td ltx_nopad_r ltx_align_right">0 to</td>
+<td id="S4.T1.18.18.5" class="ltx_td ltx_nopad_l ltx_align_left">+5</td>
+<td id="S4.T1.18.18.6" class="ltx_td ltx_align_left">800–3000</td>
+<td id="S4.T1.18.18.7" class="ltx_td ltx_align_left">2%</td>
+</tr>
+<tr id="S4.T1.26.30.4" class="ltx_tr">
+<td id="S4.T1.26.30.4.1" class="ltx_td ltx_align_left">et al. (2007)</td>
+<td id="S4.T1.26.30.4.2" class="ltx_td"></td>
+<td id="S4.T1.26.30.4.3" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.26.30.4.4" class="ltx_td ltx_nopad_r ltx_align_right">+5 to</td>
+<td id="S4.T1.26.30.4.5" class="ltx_td ltx_nopad_l ltx_align_left">+10</td>
+<td id="S4.T1.26.30.4.6" class="ltx_td"></td>
+<td id="S4.T1.26.30.4.7" class="ltx_td ltx_align_left">3%</td>
+</tr>
+<tr id="S4.T1.26.31.5" class="ltx_tr">
+<td id="S4.T1.26.31.5.1" class="ltx_td"></td>
+<td id="S4.T1.26.31.5.2" class="ltx_td"></td>
+<td id="S4.T1.26.31.5.3" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.26.31.5.4" class="ltx_td ltx_nopad_r ltx_align_right">+10 to</td>
+<td id="S4.T1.26.31.5.5" class="ltx_td ltx_nopad_l ltx_align_left">+25</td>
+<td id="S4.T1.26.31.5.6" class="ltx_td"></td>
+<td id="S4.T1.26.31.5.7" class="ltx_td ltx_align_left">6.7%</td>
+</tr>
+<tr id="S4.T1.26.32.6" class="ltx_tr">
+<td id="S4.T1.26.32.6.1" class="ltx_td"></td>
+<td id="S4.T1.26.32.6.2" class="ltx_td"></td>
+<td id="S4.T1.26.32.6.3" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.26.32.6.4" class="ltx_td ltx_nopad_r ltx_align_right">+25 to</td>
+<td id="S4.T1.26.32.6.5" class="ltx_td ltx_nopad_l ltx_align_left">+50</td>
+<td id="S4.T1.26.32.6.6" class="ltx_td"></td>
+<td id="S4.T1.26.32.6.7" class="ltx_td ltx_align_left">2.3%</td>
+</tr>
+<tr id="S4.T1.21.21" class="ltx_tr">
+<td id="S4.T1.21.21.4" class="ltx_td ltx_align_left"><cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite></td>
+<td id="S4.T1.21.21.5" class="ltx_td ltx_align_left">1.7–2.0</td>
+<td id="S4.T1.21.21.6" class="ltx_td ltx_align_right">44.8 to</td>
+<td id="S4.T1.21.21.7" class="ltx_td ltx_nopad_l ltx_align_left">46.6</td>
+<td id="S4.T1.19.19.1" class="ltx_td ltx_nopad_r ltx_align_right">
+<math id="S4.T1.19.19.1.m1.1" class="ltx_Math" alttext="-1" display="inline"><semantics id="S4.T1.19.19.1.m1.1a"><mrow id="S4.T1.19.19.1.m1.1.1" xref="S4.T1.19.19.1.m1.1.1.cmml"><mo id="S4.T1.19.19.1.m1.1.1a" xref="S4.T1.19.19.1.m1.1.1.cmml">−</mo><mn id="S4.T1.19.19.1.m1.1.1.2" xref="S4.T1.19.19.1.m1.1.1.2.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.19.19.1.m1.1b"><apply id="S4.T1.19.19.1.m1.1.1.cmml" xref="S4.T1.19.19.1.m1.1.1"><minus id="S4.T1.19.19.1.m1.1.1.1.cmml" xref="S4.T1.19.19.1.m1.1.1"></minus><cn type="integer" id="S4.T1.19.19.1.m1.1.1.2.cmml" xref="S4.T1.19.19.1.m1.1.1.2">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.19.19.1.m1.1c">-1</annotation></semantics></math> to</td>
+<td id="S4.T1.21.21.8" class="ltx_td ltx_nopad_l ltx_align_left">+40</td>
+<td id="S4.T1.20.20.2" class="ltx_td ltx_align_left"><math id="S4.T1.20.20.2.m1.1" class="ltx_Math" alttext="\gtrsim 500" display="inline"><semantics id="S4.T1.20.20.2.m1.1a"><mrow id="S4.T1.20.20.2.m1.1.1" xref="S4.T1.20.20.2.m1.1.1.cmml"><mi id="S4.T1.20.20.2.m1.1.1.2" xref="S4.T1.20.20.2.m1.1.1.2.cmml"></mi><mo id="S4.T1.20.20.2.m1.1.1.1" xref="S4.T1.20.20.2.m1.1.1.1.cmml">≳</mo><mn id="S4.T1.20.20.2.m1.1.1.3" xref="S4.T1.20.20.2.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.20.20.2.m1.1b"><apply id="S4.T1.20.20.2.m1.1.1.cmml" xref="S4.T1.20.20.2.m1.1.1"><csymbol cd="latexml" id="S4.T1.20.20.2.m1.1.1.1.cmml" xref="S4.T1.20.20.2.m1.1.1.1">greater-than-or-equivalent-to</csymbol><csymbol cd="latexml" id="S4.T1.20.20.2.m1.1.1.2.cmml" xref="S4.T1.20.20.2.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.20.20.2.m1.1.1.3.cmml" xref="S4.T1.20.20.2.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.20.20.2.m1.1c">\gtrsim 500</annotation></semantics></math></td>
+<td id="S4.T1.21.21.3" class="ltx_td ltx_align_left">12% <math id="S4.T1.21.21.3.m1.1" class="ltx_Math" alttext="\rightarrow" display="inline"><semantics id="S4.T1.21.21.3.m1.1a"><mo stretchy="false" id="S4.T1.21.21.3.m1.1.1" xref="S4.T1.21.21.3.m1.1.1.cmml">→</mo><annotation-xml encoding="MathML-Content" id="S4.T1.21.21.3.m1.1b"><ci id="S4.T1.21.21.3.m1.1.1.cmml" xref="S4.T1.21.21.3.m1.1.1">→</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.21.21.3.m1.1c">\rightarrow</annotation></semantics></math> 23%</td>
+</tr>
+<tr id="S4.T1.24.24" class="ltx_tr">
+<td id="S4.T1.24.24.4" class="ltx_td"></td>
+<td id="S4.T1.24.24.5" class="ltx_td"></td>
+<td id="S4.T1.24.24.6" class="ltx_td" colspan="2"></td>
+<td id="S4.T1.22.22.1" class="ltx_td ltx_nopad_r ltx_align_right">
+<math id="S4.T1.22.22.1.m1.1" class="ltx_Math" alttext="-1" display="inline"><semantics id="S4.T1.22.22.1.m1.1a"><mrow id="S4.T1.22.22.1.m1.1.1" xref="S4.T1.22.22.1.m1.1.1.cmml"><mo id="S4.T1.22.22.1.m1.1.1a" xref="S4.T1.22.22.1.m1.1.1.cmml">−</mo><mn id="S4.T1.22.22.1.m1.1.1.2" xref="S4.T1.22.22.1.m1.1.1.2.cmml">1</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.22.22.1.m1.1b"><apply id="S4.T1.22.22.1.m1.1.1.cmml" xref="S4.T1.22.22.1.m1.1.1"><minus id="S4.T1.22.22.1.m1.1.1.1.cmml" xref="S4.T1.22.22.1.m1.1.1"></minus><cn type="integer" id="S4.T1.22.22.1.m1.1.1.2.cmml" xref="S4.T1.22.22.1.m1.1.1.2">1</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.22.22.1.m1.1c">-1</annotation></semantics></math> to</td>
+<td id="S4.T1.24.24.7" class="ltx_td ltx_nopad_l ltx_align_left">+5</td>
+<td id="S4.T1.23.23.2" class="ltx_td ltx_align_left"><math id="S4.T1.23.23.2.m1.1" class="ltx_Math" alttext="\lesssim 500" display="inline"><semantics id="S4.T1.23.23.2.m1.1a"><mrow id="S4.T1.23.23.2.m1.1.1" xref="S4.T1.23.23.2.m1.1.1.cmml"><mi id="S4.T1.23.23.2.m1.1.1.2" xref="S4.T1.23.23.2.m1.1.1.2.cmml"></mi><mo id="S4.T1.23.23.2.m1.1.1.1" xref="S4.T1.23.23.2.m1.1.1.1.cmml">≲</mo><mn id="S4.T1.23.23.2.m1.1.1.3" xref="S4.T1.23.23.2.m1.1.1.3.cmml">500</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.23.23.2.m1.1b"><apply id="S4.T1.23.23.2.m1.1.1.cmml" xref="S4.T1.23.23.2.m1.1.1"><csymbol cd="latexml" id="S4.T1.23.23.2.m1.1.1.1.cmml" xref="S4.T1.23.23.2.m1.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S4.T1.23.23.2.m1.1.1.2.cmml" xref="S4.T1.23.23.2.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.23.23.2.m1.1.1.3.cmml" xref="S4.T1.23.23.2.m1.1.1.3">500</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.23.23.2.m1.1c">\lesssim 500</annotation></semantics></math></td>
+<td id="S4.T1.24.24.3" class="ltx_td ltx_align_left">37% <math id="S4.T1.24.24.3.m1.1" class="ltx_Math" alttext="\rightarrow" display="inline"><semantics id="S4.T1.24.24.3.m1.1a"><mo stretchy="false" id="S4.T1.24.24.3.m1.1.1" xref="S4.T1.24.24.3.m1.1.1.cmml">→</mo><annotation-xml encoding="MathML-Content" id="S4.T1.24.24.3.m1.1b"><ci id="S4.T1.24.24.3.m1.1.1.cmml" xref="S4.T1.24.24.3.m1.1.1">→</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.24.24.3.m1.1c">\rightarrow</annotation></semantics></math> 37%</td>
+</tr>
+<tr id="S4.T1.26.26" class="ltx_tr">
+<td id="S4.T1.26.26.3" class="ltx_td ltx_align_left ltx_border_b"><cite class="ltx_cite ltx_citemacro_citet">Dai
+et al. (<a href="#bib.bib13" title="" class="ltx_ref">2007</a>)</cite></td>
+<td id="S4.T1.26.26.4" class="ltx_td ltx_align_left ltx_border_b">1.7–4.0</td>
+<td id="S4.T1.26.26.5" class="ltx_td ltx_align_right ltx_border_b"> to</td>
+<td id="S4.T1.26.26.6" class="ltx_td ltx_nopad_l ltx_border_b"></td>
+<td id="S4.T1.26.26.7" class="ltx_td ltx_nopad_r ltx_align_right ltx_border_b">0 to</td>
+<td id="S4.T1.26.26.8" class="ltx_td ltx_nopad_l ltx_align_left ltx_border_b">+25</td>
+<td id="S4.T1.25.25.1" class="ltx_td ltx_align_left ltx_border_b"><math id="S4.T1.25.25.1.m1.1" class="ltx_Math" alttext="\gtrsim 1000" display="inline"><semantics id="S4.T1.25.25.1.m1.1a"><mrow id="S4.T1.25.25.1.m1.1.1" xref="S4.T1.25.25.1.m1.1.1.cmml"><mi id="S4.T1.25.25.1.m1.1.1.2" xref="S4.T1.25.25.1.m1.1.1.2.cmml"></mi><mo id="S4.T1.25.25.1.m1.1.1.1" xref="S4.T1.25.25.1.m1.1.1.1.cmml">≳</mo><mn id="S4.T1.25.25.1.m1.1.1.3" xref="S4.T1.25.25.1.m1.1.1.3.cmml">1000</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.25.25.1.m1.1b"><apply id="S4.T1.25.25.1.m1.1.1.cmml" xref="S4.T1.25.25.1.m1.1.1"><csymbol cd="latexml" id="S4.T1.25.25.1.m1.1.1.1.cmml" xref="S4.T1.25.25.1.m1.1.1.1">greater-than-or-equivalent-to</csymbol><csymbol cd="latexml" id="S4.T1.25.25.1.m1.1.1.2.cmml" xref="S4.T1.25.25.1.m1.1.1.2">absent</csymbol><cn type="integer" id="S4.T1.25.25.1.m1.1.1.3.cmml" xref="S4.T1.25.25.1.m1.1.1.3">1000</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.25.25.1.m1.1c">\gtrsim 1000</annotation></semantics></math></td>
+<td id="S4.T1.26.26.2" class="ltx_td ltx_align_left ltx_border_b">26% <math id="S4.T1.26.26.2.m1.1" class="ltx_Math" alttext="\rightarrow" display="inline"><semantics id="S4.T1.26.26.2.m1.1a"><mo stretchy="false" id="S4.T1.26.26.2.m1.1.1" xref="S4.T1.26.26.2.m1.1.1.cmml">→</mo><annotation-xml encoding="MathML-Content" id="S4.T1.26.26.2.m1.1b"><ci id="S4.T1.26.26.2.m1.1.1.cmml" xref="S4.T1.26.26.2.m1.1.1">→</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.26.26.2.m1.1c">\rightarrow</annotation></semantics></math> 40%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1">
+<p id="S4.T1.30.4" class="ltx_p ltx_figure_panel ltx_parbox ltx_align_middle" style="width:433.6pt;"><span id="S4.T1.30.4.1" class="ltx_text" style="font-size:80%;">Note. — The percentages in the last column indicates the fraction of AGN (in the
+redshift and luminosity ranges listed in columns two and three, respectively) that host
+intrinsic absorption (with velocities and velocity widths listed in columns four and five,
+respectively). An arrow indicates a percentage that has been corrected for possible
+selection biases. The luminosities in column three were computed assuming a </span><math id="S4.T1.27.1.m1.1" class="ltx_Math" alttext="h=0.7" display="inline"><semantics id="S4.T1.27.1.m1.1a"><mrow id="S4.T1.27.1.m1.1.1" xref="S4.T1.27.1.m1.1.1.cmml"><mi mathsize="80%" id="S4.T1.27.1.m1.1.1.2" xref="S4.T1.27.1.m1.1.1.2.cmml">h</mi><mo mathsize="80%" id="S4.T1.27.1.m1.1.1.1" xref="S4.T1.27.1.m1.1.1.1.cmml">=</mo><mn mathsize="80%" id="S4.T1.27.1.m1.1.1.3" xref="S4.T1.27.1.m1.1.1.3.cmml">0.7</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.27.1.m1.1b"><apply id="S4.T1.27.1.m1.1.1.cmml" xref="S4.T1.27.1.m1.1.1"><eq id="S4.T1.27.1.m1.1.1.1.cmml" xref="S4.T1.27.1.m1.1.1.1"></eq><ci id="S4.T1.27.1.m1.1.1.2.cmml" xref="S4.T1.27.1.m1.1.1.2">ℎ</ci><cn type="float" id="S4.T1.27.1.m1.1.1.3.cmml" xref="S4.T1.27.1.m1.1.1.3">0.7</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.27.1.m1.1c">h=0.7</annotation></semantics></math><span id="S4.T1.30.4.2" class="ltx_text" style="font-size:80%;">,
+</span><math id="S4.T1.28.2.m2.1" class="ltx_Math" alttext="\Omega_{\mathrm{m}}=0.3" display="inline"><semantics id="S4.T1.28.2.m2.1a"><mrow id="S4.T1.28.2.m2.1.1" xref="S4.T1.28.2.m2.1.1.cmml"><msub id="S4.T1.28.2.m2.1.1.2" xref="S4.T1.28.2.m2.1.1.2.cmml"><mi mathsize="80%" mathvariant="normal" id="S4.T1.28.2.m2.1.1.2.2" xref="S4.T1.28.2.m2.1.1.2.2.cmml">Ω</mi><mi mathsize="80%" mathvariant="normal" id="S4.T1.28.2.m2.1.1.2.3" xref="S4.T1.28.2.m2.1.1.2.3.cmml">m</mi></msub><mo mathsize="80%" id="S4.T1.28.2.m2.1.1.1" xref="S4.T1.28.2.m2.1.1.1.cmml">=</mo><mn mathsize="80%" id="S4.T1.28.2.m2.1.1.3" xref="S4.T1.28.2.m2.1.1.3.cmml">0.3</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.28.2.m2.1b"><apply id="S4.T1.28.2.m2.1.1.cmml" xref="S4.T1.28.2.m2.1.1"><eq id="S4.T1.28.2.m2.1.1.1.cmml" xref="S4.T1.28.2.m2.1.1.1"></eq><apply id="S4.T1.28.2.m2.1.1.2.cmml" xref="S4.T1.28.2.m2.1.1.2"><csymbol cd="ambiguous" id="S4.T1.28.2.m2.1.1.2.1.cmml" xref="S4.T1.28.2.m2.1.1.2">subscript</csymbol><ci id="S4.T1.28.2.m2.1.1.2.2.cmml" xref="S4.T1.28.2.m2.1.1.2.2">Ω</ci><ci id="S4.T1.28.2.m2.1.1.2.3.cmml" xref="S4.T1.28.2.m2.1.1.2.3">m</ci></apply><cn type="float" id="S4.T1.28.2.m2.1.1.3.cmml" xref="S4.T1.28.2.m2.1.1.3">0.3</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.28.2.m2.1c">\Omega_{\mathrm{m}}=0.3</annotation></semantics></math><span id="S4.T1.30.4.3" class="ltx_text" style="font-size:80%;">, </span><math id="S4.T1.29.3.m3.1" class="ltx_Math" alttext="\Omega_{\Lambda}=0.7" display="inline"><semantics id="S4.T1.29.3.m3.1a"><mrow id="S4.T1.29.3.m3.1.1" xref="S4.T1.29.3.m3.1.1.cmml"><msub id="S4.T1.29.3.m3.1.1.2" xref="S4.T1.29.3.m3.1.1.2.cmml"><mi mathsize="80%" mathvariant="normal" id="S4.T1.29.3.m3.1.1.2.2" xref="S4.T1.29.3.m3.1.1.2.2.cmml">Ω</mi><mi mathsize="80%" mathvariant="normal" id="S4.T1.29.3.m3.1.1.2.3" xref="S4.T1.29.3.m3.1.1.2.3.cmml">Λ</mi></msub><mo mathsize="80%" id="S4.T1.29.3.m3.1.1.1" xref="S4.T1.29.3.m3.1.1.1.cmml">=</mo><mn mathsize="80%" id="S4.T1.29.3.m3.1.1.3" xref="S4.T1.29.3.m3.1.1.3.cmml">0.7</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.29.3.m3.1b"><apply id="S4.T1.29.3.m3.1.1.cmml" xref="S4.T1.29.3.m3.1.1"><eq id="S4.T1.29.3.m3.1.1.1.cmml" xref="S4.T1.29.3.m3.1.1.1"></eq><apply id="S4.T1.29.3.m3.1.1.2.cmml" xref="S4.T1.29.3.m3.1.1.2"><csymbol cd="ambiguous" id="S4.T1.29.3.m3.1.1.2.1.cmml" xref="S4.T1.29.3.m3.1.1.2">subscript</csymbol><ci id="S4.T1.29.3.m3.1.1.2.2.cmml" xref="S4.T1.29.3.m3.1.1.2.2">Ω</ci><ci id="S4.T1.29.3.m3.1.1.2.3.cmml" xref="S4.T1.29.3.m3.1.1.2.3">Λ</ci></apply><cn type="float" id="S4.T1.29.3.m3.1.1.3.cmml" xref="S4.T1.29.3.m3.1.1.3">0.7</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.29.3.m3.1c">\Omega_{\Lambda}=0.7</annotation></semantics></math><span id="S4.T1.30.4.4" class="ltx_text" style="font-size:80%;">, </span><math id="S4.T1.30.4.m4.1" class="ltx_Math" alttext="q=0.5" display="inline"><semantics id="S4.T1.30.4.m4.1a"><mrow id="S4.T1.30.4.m4.1.1" xref="S4.T1.30.4.m4.1.1.cmml"><mi mathsize="80%" id="S4.T1.30.4.m4.1.1.2" xref="S4.T1.30.4.m4.1.1.2.cmml">q</mi><mo mathsize="80%" id="S4.T1.30.4.m4.1.1.1" xref="S4.T1.30.4.m4.1.1.1.cmml">=</mo><mn mathsize="80%" id="S4.T1.30.4.m4.1.1.3" xref="S4.T1.30.4.m4.1.1.3.cmml">0.5</mn></mrow><annotation-xml encoding="MathML-Content" id="S4.T1.30.4.m4.1b"><apply id="S4.T1.30.4.m4.1.1.cmml" xref="S4.T1.30.4.m4.1.1"><eq id="S4.T1.30.4.m4.1.1.1.cmml" xref="S4.T1.30.4.m4.1.1.1"></eq><ci id="S4.T1.30.4.m4.1.1.2.cmml" xref="S4.T1.30.4.m4.1.1.2">𝑞</ci><cn type="float" id="S4.T1.30.4.m4.1.1.3.cmml" xref="S4.T1.30.4.m4.1.1.3">0.5</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.T1.30.4.m4.1c">q=0.5</annotation></semantics></math><span id="S4.T1.30.4.5" class="ltx_text" style="font-size:80%;"> cosmology.</span></p>
+</div>
+</div>
+</figure>
+<div id="S4.p2" class="ltx_para">
+<p id="S4.p2.1" class="ltx_p">As discussed above, outflow velocity (both in terms of dispersion
+and range) has often been limited in many studies. By putting
+together different surveys, we can study the velocity properties of
+outflows as a function of other potentially important parameters.
+One recent example where this has been shown to be fruitful is in
+plotting maximum velocity of absorption, <math id="S4.p2.1.m1.1" class="ltx_Math" alttext="v_{\mathrm{max}}" display="inline"><semantics id="S4.p2.1.m1.1a"><msub id="S4.p2.1.m1.1.1" xref="S4.p2.1.m1.1.1.cmml"><mi id="S4.p2.1.m1.1.1.2" xref="S4.p2.1.m1.1.1.2.cmml">v</mi><mi id="S4.p2.1.m1.1.1.3" xref="S4.p2.1.m1.1.1.3.cmml">max</mi></msub><annotation-xml encoding="MathML-Content" id="S4.p2.1.m1.1b"><apply id="S4.p2.1.m1.1.1.cmml" xref="S4.p2.1.m1.1.1"><csymbol cd="ambiguous" id="S4.p2.1.m1.1.1.1.cmml" xref="S4.p2.1.m1.1.1">subscript</csymbol><ci id="S4.p2.1.m1.1.1.2.cmml" xref="S4.p2.1.m1.1.1.2">𝑣</ci><ci id="S4.p2.1.m1.1.1.3.cmml" xref="S4.p2.1.m1.1.1.3">max</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p2.1.m1.1c">v_{\mathrm{max}}</annotation></semantics></math>, against
+luminosity. This was originally done by <cite class="ltx_cite ltx_citemacro_citet">Laor &amp;
+Brandt (<a href="#bib.bib42" title="" class="ltx_ref">2002</a>)</cite> for PG
+quasars, who, finding an upper envelope formed by the soft X-ray
+weak absorbers, argued for radiation-driven winds as quasar
+outflows. More recently, others have added other samples of outflows
+to this plot <cite class="ltx_cite ltx_citemacro_citep">(e.g., Gallagher
+et al., <a href="#bib.bib23" title="" class="ltx_ref">2006</a>; Misawa
+et al., <a href="#bib.bib45" title="" class="ltx_ref">2007</a>; Ganguly
+et al., <a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite> showing that
+this envelope can be extrapolated to higher luminosities and
+similarly constrains luminous BAL quasars.</p>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p id="S4.p3.9" class="ltx_p">We have further added to this plot in Figure <a href="#S4.F1" title="Figure 1 ‣ 4. An Example Illustrating the Merits of Comprehensive Outflow Studies ‣ On the Fraction of Quasars with Outflows" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>
+<cite class="ltx_cite ltx_citemacro_citep">(with the envelope fit from  Ganguly
+et al., <a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>, including all types
+of intrinsic outflows and the most extreme in terms of both terminal
+velocity and luminosity. Polar BAL quasars are included as well and
+fall among the general BAL quasar population. Intrinsic NAL systems
+are well represented throughout the full luminosity range. Some
+data biases are present; for instance, the wavelength range of SDSS
+spectra limited the observed <math id="S4.p3.1.m1.1" class="ltx_Math" alttext="v_{\mathrm{max}}" display="inline"><semantics id="S4.p3.1.m1.1a"><msub id="S4.p3.1.m1.1.1" xref="S4.p3.1.m1.1.1.cmml"><mi id="S4.p3.1.m1.1.1.2" xref="S4.p3.1.m1.1.1.2.cmml">v</mi><mi id="S4.p3.1.m1.1.1.3" xref="S4.p3.1.m1.1.1.3.cmml">max</mi></msub><annotation-xml encoding="MathML-Content" id="S4.p3.1.m1.1b"><apply id="S4.p3.1.m1.1.1.cmml" xref="S4.p3.1.m1.1.1"><csymbol cd="ambiguous" id="S4.p3.1.m1.1.1.1.cmml" xref="S4.p3.1.m1.1.1">subscript</csymbol><ci id="S4.p3.1.m1.1.1.2.cmml" xref="S4.p3.1.m1.1.1.2">𝑣</ci><ci id="S4.p3.1.m1.1.1.3.cmml" xref="S4.p3.1.m1.1.1.3">max</ci></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.1.m1.1c">v_{\mathrm{max}}</annotation></semantics></math> to less than 30000  km s<sup id="S4.p3.9.1" class="ltx_sup"><span id="S4.p3.9.1.1" class="ltx_text ltx_font_italic">-1</span></sup> for
+most quasars studied by <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>, so the gap under the
+envelope for luminosities above <math id="S4.p3.3.m3.1" class="ltx_Math" alttext="10^{46}" display="inline"><semantics id="S4.p3.3.m3.1a"><msup id="S4.p3.3.m3.1.1" xref="S4.p3.3.m3.1.1.cmml"><mn id="S4.p3.3.m3.1.1.2" xref="S4.p3.3.m3.1.1.2.cmml">10</mn><mn id="S4.p3.3.m3.1.1.3" xref="S4.p3.3.m3.1.1.3.cmml">46</mn></msup><annotation-xml encoding="MathML-Content" id="S4.p3.3.m3.1b"><apply id="S4.p3.3.m3.1.1.cmml" xref="S4.p3.3.m3.1.1"><csymbol cd="ambiguous" id="S4.p3.3.m3.1.1.1.cmml" xref="S4.p3.3.m3.1.1">superscript</csymbol><cn type="integer" id="S4.p3.3.m3.1.1.2.cmml" xref="S4.p3.3.m3.1.1.2">10</cn><cn type="integer" id="S4.p3.3.m3.1.1.3.cmml" xref="S4.p3.3.m3.1.1.3">46</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.3.m3.1c">10^{46}</annotation></semantics></math> erg s<sup id="S4.p3.9.2" class="ltx_sup"><span id="S4.p3.9.2.1" class="ltx_text ltx_font_italic">-1</span></sup> is
+potentially not real. Similarly, searching for intrinsic absorption
+at velocities above 50000  km s<sup id="S4.p3.9.3" class="ltx_sup"><span id="S4.p3.9.3.1" class="ltx_text ltx_font_italic">-1</span></sup> becomes very difficult since the
+C IV lines become blueshifted into the N V/Lyman
+<math id="S4.p3.6.m6.1" class="ltx_Math" alttext="\alpha" display="inline"><semantics id="S4.p3.6.m6.1a"><mi id="S4.p3.6.m6.1.1" xref="S4.p3.6.m6.1.1.cmml">α</mi><annotation-xml encoding="MathML-Content" id="S4.p3.6.m6.1b"><ci id="S4.p3.6.m6.1.1.cmml" xref="S4.p3.6.m6.1.1">𝛼</ci></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.6.m6.1c">\alpha</annotation></semantics></math> region where identification is especially challenging. Of
+course, the empirical fit does not take into account relativistic
+effects, so it is inappropriate to extrapolate it to arbitrarily
+high luminosities. Taken at face value, the fit implies that a
+quasar with luminosity <math id="S4.p3.7.m7.1" class="ltx_Math" alttext="\lambda L_{\lambda}" display="inline"><semantics id="S4.p3.7.m7.1a"><mrow id="S4.p3.7.m7.1.1" xref="S4.p3.7.m7.1.1.cmml"><mi id="S4.p3.7.m7.1.1.2" xref="S4.p3.7.m7.1.1.2.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S4.p3.7.m7.1.1.1" xref="S4.p3.7.m7.1.1.1.cmml">​</mo><msub id="S4.p3.7.m7.1.1.3" xref="S4.p3.7.m7.1.1.3.cmml"><mi id="S4.p3.7.m7.1.1.3.2" xref="S4.p3.7.m7.1.1.3.2.cmml">L</mi><mi id="S4.p3.7.m7.1.1.3.3" xref="S4.p3.7.m7.1.1.3.3.cmml">λ</mi></msub></mrow><annotation-xml encoding="MathML-Content" id="S4.p3.7.m7.1b"><apply id="S4.p3.7.m7.1.1.cmml" xref="S4.p3.7.m7.1.1"><times id="S4.p3.7.m7.1.1.1.cmml" xref="S4.p3.7.m7.1.1.1"></times><ci id="S4.p3.7.m7.1.1.2.cmml" xref="S4.p3.7.m7.1.1.2">𝜆</ci><apply id="S4.p3.7.m7.1.1.3.cmml" xref="S4.p3.7.m7.1.1.3"><csymbol cd="ambiguous" id="S4.p3.7.m7.1.1.3.1.cmml" xref="S4.p3.7.m7.1.1.3">subscript</csymbol><ci id="S4.p3.7.m7.1.1.3.2.cmml" xref="S4.p3.7.m7.1.1.3.2">𝐿</ci><ci id="S4.p3.7.m7.1.1.3.3.cmml" xref="S4.p3.7.m7.1.1.3.3">𝜆</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.7.m7.1c">\lambda L_{\lambda}</annotation></semantics></math>(3000 Å)<math id="S4.p3.8.m8.1" class="ltx_Math" alttext="=10^{47.3}" display="inline"><semantics id="S4.p3.8.m8.1a"><mrow id="S4.p3.8.m8.1.1" xref="S4.p3.8.m8.1.1.cmml"><mi id="S4.p3.8.m8.1.1.2" xref="S4.p3.8.m8.1.1.2.cmml"></mi><mo id="S4.p3.8.m8.1.1.1" xref="S4.p3.8.m8.1.1.1.cmml">=</mo><msup id="S4.p3.8.m8.1.1.3" xref="S4.p3.8.m8.1.1.3.cmml"><mn id="S4.p3.8.m8.1.1.3.2" xref="S4.p3.8.m8.1.1.3.2.cmml">10</mn><mn id="S4.p3.8.m8.1.1.3.3" xref="S4.p3.8.m8.1.1.3.3.cmml">47.3</mn></msup></mrow><annotation-xml encoding="MathML-Content" id="S4.p3.8.m8.1b"><apply id="S4.p3.8.m8.1.1.cmml" xref="S4.p3.8.m8.1.1"><eq id="S4.p3.8.m8.1.1.1.cmml" xref="S4.p3.8.m8.1.1.1"></eq><csymbol cd="latexml" id="S4.p3.8.m8.1.1.2.cmml" xref="S4.p3.8.m8.1.1.2">absent</csymbol><apply id="S4.p3.8.m8.1.1.3.cmml" xref="S4.p3.8.m8.1.1.3"><csymbol cd="ambiguous" id="S4.p3.8.m8.1.1.3.1.cmml" xref="S4.p3.8.m8.1.1.3">superscript</csymbol><cn type="integer" id="S4.p3.8.m8.1.1.3.2.cmml" xref="S4.p3.8.m8.1.1.3.2">10</cn><cn type="float" id="S4.p3.8.m8.1.1.3.3.cmml" xref="S4.p3.8.m8.1.1.3.3">47.3</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p3.8.m8.1c">=10^{47.3}</annotation></semantics></math> erg s<sup id="S4.p3.9.4" class="ltx_sup"><span id="S4.p3.9.4.1" class="ltx_text ltx_font_italic">-1</span></sup> would be capable of
+driving an outflow at the speed of light, but this is clearly
+unphysical. More data, and insights establishing better criteria as
+to which outflows sample the envelope are needed to improve our
+understanding of the dependence on the terminal velocity on quasar
+physical properties.</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p id="S4.p4.5" class="ltx_p">The figure also illustrates another (though more subtle) issue.
+While AALs are typically defined as those NALs appearing within
+5000  km s<sup id="S4.p4.5.1" class="ltx_sup"><span id="S4.p4.5.1.1" class="ltx_text ltx_font_italic">-1</span></sup>, some studies at lower redshift have opted for smaller
+velocity differences, claiming that 5000  km s<sup id="S4.p4.5.2" class="ltx_sup"><span id="S4.p4.5.2.1" class="ltx_text ltx_font_italic">-1</span></sup> is an arbitrary
+cut-off. The figure shows that there is a physical reason for this.
+As the figure apparently shows, no outflow appears to be driven to a
+velocity larger than is allowed by radiation pressure. At lower
+redshifts, most objects studied are also lower luminosity (e.g.,
+Seyfert galaxies). The figure clearly shows that objects with
+<math id="S4.p4.3.m3.1" class="ltx_Math" alttext="\lambda L_{\lambda}(3000\,\mathrm{\AA})\lesssim 3\times 10^{44}" display="inline"><semantics id="S4.p4.3.m3.1a"><mrow id="S4.p4.3.m3.1.1" xref="S4.p4.3.m3.1.1.cmml"><mrow id="S4.p4.3.m3.1.1.1" xref="S4.p4.3.m3.1.1.1.cmml"><mi id="S4.p4.3.m3.1.1.1.3" xref="S4.p4.3.m3.1.1.1.3.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S4.p4.3.m3.1.1.1.2" xref="S4.p4.3.m3.1.1.1.2.cmml">​</mo><msub id="S4.p4.3.m3.1.1.1.4" xref="S4.p4.3.m3.1.1.1.4.cmml"><mi id="S4.p4.3.m3.1.1.1.4.2" xref="S4.p4.3.m3.1.1.1.4.2.cmml">L</mi><mi id="S4.p4.3.m3.1.1.1.4.3" xref="S4.p4.3.m3.1.1.1.4.3.cmml">λ</mi></msub><mo lspace="0em" rspace="0em" id="S4.p4.3.m3.1.1.1.2a" xref="S4.p4.3.m3.1.1.1.2.cmml">​</mo><mrow id="S4.p4.3.m3.1.1.1.1.1" xref="S4.p4.3.m3.1.1.1.1.1.1.cmml"><mo stretchy="false" id="S4.p4.3.m3.1.1.1.1.1.2" xref="S4.p4.3.m3.1.1.1.1.1.1.cmml">(</mo><mrow id="S4.p4.3.m3.1.1.1.1.1.1" xref="S4.p4.3.m3.1.1.1.1.1.1.cmml"><mn id="S4.p4.3.m3.1.1.1.1.1.1.2" xref="S4.p4.3.m3.1.1.1.1.1.1.2.cmml">3000</mn><mo lspace="0.170em" rspace="0em" id="S4.p4.3.m3.1.1.1.1.1.1.1" xref="S4.p4.3.m3.1.1.1.1.1.1.1.cmml">​</mo><mi mathvariant="normal" id="S4.p4.3.m3.1.1.1.1.1.1.3" xref="S4.p4.3.m3.1.1.1.1.1.1.3.cmml">Å</mi></mrow><mo stretchy="false" id="S4.p4.3.m3.1.1.1.1.1.3" xref="S4.p4.3.m3.1.1.1.1.1.1.cmml">)</mo></mrow></mrow><mo id="S4.p4.3.m3.1.1.2" xref="S4.p4.3.m3.1.1.2.cmml">≲</mo><mrow id="S4.p4.3.m3.1.1.3" xref="S4.p4.3.m3.1.1.3.cmml"><mn id="S4.p4.3.m3.1.1.3.2" xref="S4.p4.3.m3.1.1.3.2.cmml">3</mn><mo lspace="0.222em" rspace="0.222em" id="S4.p4.3.m3.1.1.3.1" xref="S4.p4.3.m3.1.1.3.1.cmml">×</mo><msup id="S4.p4.3.m3.1.1.3.3" xref="S4.p4.3.m3.1.1.3.3.cmml"><mn id="S4.p4.3.m3.1.1.3.3.2" xref="S4.p4.3.m3.1.1.3.3.2.cmml">10</mn><mn id="S4.p4.3.m3.1.1.3.3.3" xref="S4.p4.3.m3.1.1.3.3.3.cmml">44</mn></msup></mrow></mrow><annotation-xml encoding="MathML-Content" id="S4.p4.3.m3.1b"><apply id="S4.p4.3.m3.1.1.cmml" xref="S4.p4.3.m3.1.1"><csymbol cd="latexml" id="S4.p4.3.m3.1.1.2.cmml" xref="S4.p4.3.m3.1.1.2">less-than-or-similar-to</csymbol><apply id="S4.p4.3.m3.1.1.1.cmml" xref="S4.p4.3.m3.1.1.1"><times id="S4.p4.3.m3.1.1.1.2.cmml" xref="S4.p4.3.m3.1.1.1.2"></times><ci id="S4.p4.3.m3.1.1.1.3.cmml" xref="S4.p4.3.m3.1.1.1.3">𝜆</ci><apply id="S4.p4.3.m3.1.1.1.4.cmml" xref="S4.p4.3.m3.1.1.1.4"><csymbol cd="ambiguous" id="S4.p4.3.m3.1.1.1.4.1.cmml" xref="S4.p4.3.m3.1.1.1.4">subscript</csymbol><ci id="S4.p4.3.m3.1.1.1.4.2.cmml" xref="S4.p4.3.m3.1.1.1.4.2">𝐿</ci><ci id="S4.p4.3.m3.1.1.1.4.3.cmml" xref="S4.p4.3.m3.1.1.1.4.3">𝜆</ci></apply><apply id="S4.p4.3.m3.1.1.1.1.1.1.cmml" xref="S4.p4.3.m3.1.1.1.1.1"><times id="S4.p4.3.m3.1.1.1.1.1.1.1.cmml" xref="S4.p4.3.m3.1.1.1.1.1.1.1"></times><cn type="integer" id="S4.p4.3.m3.1.1.1.1.1.1.2.cmml" xref="S4.p4.3.m3.1.1.1.1.1.1.2">3000</cn><ci id="S4.p4.3.m3.1.1.1.1.1.1.3.cmml" xref="S4.p4.3.m3.1.1.1.1.1.1.3">Å</ci></apply></apply><apply id="S4.p4.3.m3.1.1.3.cmml" xref="S4.p4.3.m3.1.1.3"><times id="S4.p4.3.m3.1.1.3.1.cmml" xref="S4.p4.3.m3.1.1.3.1"></times><cn type="integer" id="S4.p4.3.m3.1.1.3.2.cmml" xref="S4.p4.3.m3.1.1.3.2">3</cn><apply id="S4.p4.3.m3.1.1.3.3.cmml" xref="S4.p4.3.m3.1.1.3.3"><csymbol cd="ambiguous" id="S4.p4.3.m3.1.1.3.3.1.cmml" xref="S4.p4.3.m3.1.1.3.3">superscript</csymbol><cn type="integer" id="S4.p4.3.m3.1.1.3.3.2.cmml" xref="S4.p4.3.m3.1.1.3.3.2">10</cn><cn type="integer" id="S4.p4.3.m3.1.1.3.3.3.cmml" xref="S4.p4.3.m3.1.1.3.3.3">44</cn></apply></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S4.p4.3.m3.1c">\lambda L_{\lambda}(3000\,\mathrm{\AA})\lesssim 3\times 10^{44}</annotation></semantics></math> erg s<sup id="S4.p4.5.3" class="ltx_sup"><span id="S4.p4.5.3.1" class="ltx_text ltx_font_italic">-1</span></sup> are not capable of radiatively driving
+outflows with velocities larger than 5000  km s<sup id="S4.p4.5.4" class="ltx_sup"><span id="S4.p4.5.4.1" class="ltx_text ltx_font_italic">-1</span></sup>. An insight such as
+this is not only interesting for understanding AGN outflow physics,
+but is also of use to other fields that make use of intervening
+absorption-line systems (as it presents an additional means at
+separating intrinsic from intervening absorbers).</p>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5. </span>What is the True Fraction of Outflows?</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p id="S5.p1.3" class="ltx_p">Table <a href="#S4.T1" title="Table 1 ‣ 4. An Example Illustrating the Merits of Comprehensive Outflow Studies ‣ On the Fraction of Quasars with Outflows" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> summarizes the incidence of outflows in
+AGN from several recent surveys (with the redshift and luminosity
+ranges of the AGN listed in columns two and three, respectively, and
+the ranges in outflow velocity and velocity width listed in columns
+four and five, respectively). Inspection of the table shows that the
+outflow fraction is dependent both on the characteristics of the
+parent sample of AGN used, and on the forms of intrinsic absorption
+included. If one only counts BALs observed in higher luminosity AGN
+[<math id="S5.p1.1.m1.1" class="ltx_Math" alttext="\lambda L_{\lambda}" display="inline"><semantics id="S5.p1.1.m1.1a"><mrow id="S5.p1.1.m1.1.1" xref="S5.p1.1.m1.1.1.cmml"><mi id="S5.p1.1.m1.1.1.2" xref="S5.p1.1.m1.1.1.2.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S5.p1.1.m1.1.1.1" xref="S5.p1.1.m1.1.1.1.cmml">​</mo><msub id="S5.p1.1.m1.1.1.3" xref="S5.p1.1.m1.1.1.3.cmml"><mi id="S5.p1.1.m1.1.1.3.2" xref="S5.p1.1.m1.1.1.3.2.cmml">L</mi><mi id="S5.p1.1.m1.1.1.3.3" xref="S5.p1.1.m1.1.1.3.3.cmml">λ</mi></msub></mrow><annotation-xml encoding="MathML-Content" id="S5.p1.1.m1.1b"><apply id="S5.p1.1.m1.1.1.cmml" xref="S5.p1.1.m1.1.1"><times id="S5.p1.1.m1.1.1.1.cmml" xref="S5.p1.1.m1.1.1.1"></times><ci id="S5.p1.1.m1.1.1.2.cmml" xref="S5.p1.1.m1.1.1.2">𝜆</ci><apply id="S5.p1.1.m1.1.1.3.cmml" xref="S5.p1.1.m1.1.1.3"><csymbol cd="ambiguous" id="S5.p1.1.m1.1.1.3.1.cmml" xref="S5.p1.1.m1.1.1.3">subscript</csymbol><ci id="S5.p1.1.m1.1.1.3.2.cmml" xref="S5.p1.1.m1.1.1.3.2">𝐿</ci><ci id="S5.p1.1.m1.1.1.3.3.cmml" xref="S5.p1.1.m1.1.1.3.3">𝜆</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p1.1.m1.1c">\lambda L_{\lambda}</annotation></semantics></math>(3000 Å)<math id="S5.p1.2.m2.1" class="ltx_Math" alttext="\gtrsim 10^{45}" display="inline"><semantics id="S5.p1.2.m2.1a"><mrow id="S5.p1.2.m2.1.1" xref="S5.p1.2.m2.1.1.cmml"><mi id="S5.p1.2.m2.1.1.2" xref="S5.p1.2.m2.1.1.2.cmml"></mi><mo id="S5.p1.2.m2.1.1.1" xref="S5.p1.2.m2.1.1.1.cmml">≳</mo><msup id="S5.p1.2.m2.1.1.3" xref="S5.p1.2.m2.1.1.3.cmml"><mn id="S5.p1.2.m2.1.1.3.2" xref="S5.p1.2.m2.1.1.3.2.cmml">10</mn><mn id="S5.p1.2.m2.1.1.3.3" xref="S5.p1.2.m2.1.1.3.3.cmml">45</mn></msup></mrow><annotation-xml encoding="MathML-Content" id="S5.p1.2.m2.1b"><apply id="S5.p1.2.m2.1.1.cmml" xref="S5.p1.2.m2.1.1"><csymbol cd="latexml" id="S5.p1.2.m2.1.1.1.cmml" xref="S5.p1.2.m2.1.1.1">greater-than-or-equivalent-to</csymbol><csymbol cd="latexml" id="S5.p1.2.m2.1.1.2.cmml" xref="S5.p1.2.m2.1.1.2">absent</csymbol><apply id="S5.p1.2.m2.1.1.3.cmml" xref="S5.p1.2.m2.1.1.3"><csymbol cd="ambiguous" id="S5.p1.2.m2.1.1.3.1.cmml" xref="S5.p1.2.m2.1.1.3">superscript</csymbol><cn type="integer" id="S5.p1.2.m2.1.1.3.2.cmml" xref="S5.p1.2.m2.1.1.3.2">10</cn><cn type="integer" id="S5.p1.2.m2.1.1.3.3.cmml" xref="S5.p1.2.m2.1.1.3.3">45</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p1.2.m2.1c">\gtrsim 10^{45}</annotation></semantics></math> erg s<sup id="S5.p1.3.1" class="ltx_sup"><span id="S5.p1.3.1.1" class="ltx_text ltx_font_italic">-1</span></sup>],
+then the outflow fraction is 23 % <cite class="ltx_cite ltx_citemacro_citep">(Hewett &amp;
+Foltz, <a href="#bib.bib36" title="" class="ltx_ref">2003</a>; Ganguly
+et al., <a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>. However,
+this is by no means a complete assessment of outflows.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p id="S5.p2.3" class="ltx_p">In order to compute a more complete outflow fraction, one must deal
+with three issues: (1) cross-talk among classifications, (2)
+dependence of frequencies on quasar properties, and (3) mode of the
+outflow. Here, we ignore the third issue and focus on the first two.
+<cite class="ltx_cite ltx_citemacro_citet">Crenshaw
+et al. (<a href="#bib.bib11" title="" class="ltx_ref">1999</a>)</cite> surveyed outflows in lower luminosity [<math id="S5.p2.1.m1.1" class="ltx_Math" alttext="\lambda L_{\lambda}" display="inline"><semantics id="S5.p2.1.m1.1a"><mrow id="S5.p2.1.m1.1.1" xref="S5.p2.1.m1.1.1.cmml"><mi id="S5.p2.1.m1.1.1.2" xref="S5.p2.1.m1.1.1.2.cmml">λ</mi><mo lspace="0em" rspace="0em" id="S5.p2.1.m1.1.1.1" xref="S5.p2.1.m1.1.1.1.cmml">​</mo><msub id="S5.p2.1.m1.1.1.3" xref="S5.p2.1.m1.1.1.3.cmml"><mi id="S5.p2.1.m1.1.1.3.2" xref="S5.p2.1.m1.1.1.3.2.cmml">L</mi><mi id="S5.p2.1.m1.1.1.3.3" xref="S5.p2.1.m1.1.1.3.3.cmml">λ</mi></msub></mrow><annotation-xml encoding="MathML-Content" id="S5.p2.1.m1.1b"><apply id="S5.p2.1.m1.1.1.cmml" xref="S5.p2.1.m1.1.1"><times id="S5.p2.1.m1.1.1.1.cmml" xref="S5.p2.1.m1.1.1.1"></times><ci id="S5.p2.1.m1.1.1.2.cmml" xref="S5.p2.1.m1.1.1.2">𝜆</ci><apply id="S5.p2.1.m1.1.1.3.cmml" xref="S5.p2.1.m1.1.1.3"><csymbol cd="ambiguous" id="S5.p2.1.m1.1.1.3.1.cmml" xref="S5.p2.1.m1.1.1.3">subscript</csymbol><ci id="S5.p2.1.m1.1.1.3.2.cmml" xref="S5.p2.1.m1.1.1.3.2">𝐿</ci><ci id="S5.p2.1.m1.1.1.3.3.cmml" xref="S5.p2.1.m1.1.1.3.3">𝜆</ci></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p2.1.m1.1c">\lambda L_{\lambda}</annotation></semantics></math>(3000 Å)<math id="S5.p2.2.m2.1" class="ltx_Math" alttext="\lesssim 10^{45}" display="inline"><semantics id="S5.p2.2.m2.1a"><mrow id="S5.p2.2.m2.1.1" xref="S5.p2.2.m2.1.1.cmml"><mi id="S5.p2.2.m2.1.1.2" xref="S5.p2.2.m2.1.1.2.cmml"></mi><mo id="S5.p2.2.m2.1.1.1" xref="S5.p2.2.m2.1.1.1.cmml">≲</mo><msup id="S5.p2.2.m2.1.1.3" xref="S5.p2.2.m2.1.1.3.cmml"><mn id="S5.p2.2.m2.1.1.3.2" xref="S5.p2.2.m2.1.1.3.2.cmml">10</mn><mn id="S5.p2.2.m2.1.1.3.3" xref="S5.p2.2.m2.1.1.3.3.cmml">45</mn></msup></mrow><annotation-xml encoding="MathML-Content" id="S5.p2.2.m2.1b"><apply id="S5.p2.2.m2.1.1.cmml" xref="S5.p2.2.m2.1.1"><csymbol cd="latexml" id="S5.p2.2.m2.1.1.1.cmml" xref="S5.p2.2.m2.1.1.1">less-than-or-similar-to</csymbol><csymbol cd="latexml" id="S5.p2.2.m2.1.1.2.cmml" xref="S5.p2.2.m2.1.1.2">absent</csymbol><apply id="S5.p2.2.m2.1.1.3.cmml" xref="S5.p2.2.m2.1.1.3"><csymbol cd="ambiguous" id="S5.p2.2.m2.1.1.3.1.cmml" xref="S5.p2.2.m2.1.1.3">superscript</csymbol><cn type="integer" id="S5.p2.2.m2.1.1.3.2.cmml" xref="S5.p2.2.m2.1.1.3.2">10</cn><cn type="integer" id="S5.p2.2.m2.1.1.3.3.cmml" xref="S5.p2.2.m2.1.1.3.3">45</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p2.2.m2.1c">\lesssim 10^{45}</annotation></semantics></math> erg s<sup id="S5.p2.3.1" class="ltx_sup"><span id="S5.p2.3.1.1" class="ltx_text ltx_font_italic">-1</span></sup>] AGN and we
+use their result, 59%, as one benchmark <cite class="ltx_cite ltx_citemacro_citep">(see also Kriss, <a href="#bib.bib40" title="" class="ltx_ref">2006</a>, who finds
+a similar percentage based on O VI absorption)</cite>. For
+higher luminosity AGN, we start with the <cite class="ltx_cite ltx_citemacro_citet">Hewett &amp;
+Foltz (<a href="#bib.bib36" title="" class="ltx_ref">2003</a>)</cite> percentage of
+23%, as it is the purest, and most well-defined sample of outflows.
+To this, we must add in two things, the contribution from AALs, and
+the contribution from high-velocity NALs/mini-BALs. There is general
+agreement between <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite> and <cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite> that the AAL
+fraction is 23–27 %. As noted by <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib24" title="" class="ltx_ref">2001</a>)</cite>, quasars that
+host broad-absorption lines also tend to host associated absorption.
+However, the sample of quasars employed in the <cite class="ltx_cite ltx_citemacro_citet">Vestergaard (<a href="#bib.bib59" title="" class="ltx_ref">2003</a>)</cite>
+estimates explicitly does not include BAL quasars. Thus, while there
+is likely some cross-talk between the class of BAL quasars and AAL
+quasars, the above range should minimize this effect. Thus, the
+outflow fraction counting BALs and AALs (integrated over “all”
+high luminosity AGN) is 46–50%. For high velocity NALs/mini-BALs,
+there is a more sizeable error margin (12–30%) owing to cross-talk
+and dependence on quasar property. Adding this uncertain number
+gives our final tally: 57-80%. This fraction is surprisingly
+comparable to that of lower luminosity AGN.</p>
+</div>
+<div id="S5.p3" class="ltx_para">
+<p id="S5.p3.4" class="ltx_p">An alternative approach is to begin with the complete sample of
+outflows from <cite class="ltx_cite ltx_citemacro_citet">Ganguly
+et al. (<a href="#bib.bib25" title="" class="ltx_ref">2007</a>)</cite>. Correcting their overall outflow
+fraction (2515/5088, 49%) for quasar selection biases
+<cite class="ltx_cite ltx_citemacro_citep">(following the strategy of Dai
+et al., <a href="#bib.bib13" title="" class="ltx_ref">2007</a>)</cite>, we find an outflow
+fraction of 60<math id="S5.p3.1.m1.1" class="ltx_Math" alttext="\pm" display="inline"><semantics id="S5.p3.1.m1.1a"><mo id="S5.p3.1.m1.1.1" xref="S5.p3.1.m1.1.1.cmml">±</mo><annotation-xml encoding="MathML-Content" id="S5.p3.1.m1.1b"><csymbol cd="latexml" id="S5.p3.1.m1.1.1.cmml" xref="S5.p3.1.m1.1.1">plus-or-minus</csymbol></annotation-xml><annotation encoding="application/x-tex" id="S5.p3.1.m1.1c">\pm</annotation></semantics></math>5% (<math id="S5.p3.2.m2.1" class="ltx_Math" alttext="66/287+107/287" display="inline"><semantics id="S5.p3.2.m2.1a"><mrow id="S5.p3.2.m2.1.1" xref="S5.p3.2.m2.1.1.cmml"><mrow id="S5.p3.2.m2.1.1.2" xref="S5.p3.2.m2.1.1.2.cmml"><mn id="S5.p3.2.m2.1.1.2.2" xref="S5.p3.2.m2.1.1.2.2.cmml">66</mn><mo id="S5.p3.2.m2.1.1.2.1" xref="S5.p3.2.m2.1.1.2.1.cmml">/</mo><mn id="S5.p3.2.m2.1.1.2.3" xref="S5.p3.2.m2.1.1.2.3.cmml">287</mn></mrow><mo id="S5.p3.2.m2.1.1.1" xref="S5.p3.2.m2.1.1.1.cmml">+</mo><mrow id="S5.p3.2.m2.1.1.3" xref="S5.p3.2.m2.1.1.3.cmml"><mn id="S5.p3.2.m2.1.1.3.2" xref="S5.p3.2.m2.1.1.3.2.cmml">107</mn><mo id="S5.p3.2.m2.1.1.3.1" xref="S5.p3.2.m2.1.1.3.1.cmml">/</mo><mn id="S5.p3.2.m2.1.1.3.3" xref="S5.p3.2.m2.1.1.3.3.cmml">287</mn></mrow></mrow><annotation-xml encoding="MathML-Content" id="S5.p3.2.m2.1b"><apply id="S5.p3.2.m2.1.1.cmml" xref="S5.p3.2.m2.1.1"><plus id="S5.p3.2.m2.1.1.1.cmml" xref="S5.p3.2.m2.1.1.1"></plus><apply id="S5.p3.2.m2.1.1.2.cmml" xref="S5.p3.2.m2.1.1.2"><divide id="S5.p3.2.m2.1.1.2.1.cmml" xref="S5.p3.2.m2.1.1.2.1"></divide><cn type="integer" id="S5.p3.2.m2.1.1.2.2.cmml" xref="S5.p3.2.m2.1.1.2.2">66</cn><cn type="integer" id="S5.p3.2.m2.1.1.2.3.cmml" xref="S5.p3.2.m2.1.1.2.3">287</cn></apply><apply id="S5.p3.2.m2.1.1.3.cmml" xref="S5.p3.2.m2.1.1.3"><divide id="S5.p3.2.m2.1.1.3.1.cmml" xref="S5.p3.2.m2.1.1.3.1"></divide><cn type="integer" id="S5.p3.2.m2.1.1.3.2.cmml" xref="S5.p3.2.m2.1.1.3.2">107</cn><cn type="integer" id="S5.p3.2.m2.1.1.3.3.cmml" xref="S5.p3.2.m2.1.1.3.3">287</cn></apply></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p3.2.m2.1c">66/287+107/287</annotation></semantics></math>, see §<a href="#S3.SS1" title="3.1. Broad Absorption Lines (BALs) ‣ 3. Observations of the Incidence of Various Forms of Outflows ‣ On the Fraction of Quasars with Outflows" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>, and
+§<a href="#S3.SS2.SSS1" title="3.2.1 Associated (𝑧_abs∼𝑧ₑₘ) Absorbers (AALs) ‣ 3.2. Narrow Absorption Lines (NALs) and mini-BALs ‣ 3. Observations of the Incidence of Various Forms of Outflows ‣ On the Fraction of Quasars with Outflows" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.2.1</span></a>). This falls in the above range, and the only
+missing form of outflow from that sample is NALs/mini-BALs at
+velocities larger than <math id="S5.p3.3.m3.1" class="ltx_Math" alttext="\sim 30000" display="inline"><semantics id="S5.p3.3.m3.1a"><mrow id="S5.p3.3.m3.1.1" xref="S5.p3.3.m3.1.1.cmml"><mi id="S5.p3.3.m3.1.1.2" xref="S5.p3.3.m3.1.1.2.cmml"></mi><mo id="S5.p3.3.m3.1.1.1" xref="S5.p3.3.m3.1.1.1.cmml">∼</mo><mn id="S5.p3.3.m3.1.1.3" xref="S5.p3.3.m3.1.1.3.cmml">30000</mn></mrow><annotation-xml encoding="MathML-Content" id="S5.p3.3.m3.1b"><apply id="S5.p3.3.m3.1.1.cmml" xref="S5.p3.3.m3.1.1"><csymbol cd="latexml" id="S5.p3.3.m3.1.1.1.cmml" xref="S5.p3.3.m3.1.1.1">similar-to</csymbol><csymbol cd="latexml" id="S5.p3.3.m3.1.1.2.cmml" xref="S5.p3.3.m3.1.1.2">absent</csymbol><cn type="integer" id="S5.p3.3.m3.1.1.3.cmml" xref="S5.p3.3.m3.1.1.3">30000</cn></apply></annotation-xml><annotation encoding="application/x-tex" id="S5.p3.3.m3.1c">\sim 30000</annotation></semantics></math>  km s<sup id="S5.p3.4.1" class="ltx_sup"><span id="S5.p3.4.1.1" class="ltx_text ltx_font_italic">-1</span></sup>. We further note that this
+explicitly eliminates cross-talk between quasars hosting BALs and
+quasars hosting AALs.</p>
+</div>
+</section>
+<section id="S6" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6. </span>Summary</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p id="S6.p1.1" class="ltx_p">We conclude that, largely independent of AGN luminosity, 60% is a good
+reference number for the percentage of AGN with intrinsic outflows. This
+number may increase slightly with more thorough searches of parameter
+space (e.g., very high velocity outflows). Until evidence suggests
+otherwise, we recommend that quasar outflows be studied as a single phenomenon
+whenever possible and that restrictions based on absorber subclass or data
+limitations be clearly stated and considered in the interpretation of results.
+Catalogs should clearly state their contamination issues and their limitations
+for particular applications as appropriate. A more comprehensive understanding
+of the outflow phenomenon awaits us.</p>
+</div>
+<div class="ltx_acknowledgements">We wish to thanks the anonymous referee for comments that improved
+the quality of the paper. This publication makes use of data
+products from the Two Micron All Sky Survey, which is a joint
+project of the University of Massachusetts and the Infrared
+Processing and Analysis Center/California Institute of Technology,
+funded by the National Aeronautics and Space Administration and the
+National Science Foundation. We acknowledge support from the US
+National Science Foundation through grant AST 05-07781.
+
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+<li id="bib.bib1" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Aldcroft
+et al. (1994)</span>
+<span class="ltx_bibblock">
+Aldcroft, T. L., Bechtold, J., &amp; Elvis, M. 1994, ApJS, 93, 1
+
+</span>
+</li>
+<li id="bib.bib2" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Anderson
+et al. (1987)</span>
+<span class="ltx_bibblock">
+Anderson, S. F., Weymann, R. J., Foltz, C. B., &amp; Chaffee, F. H. 1987,
+AJ, 94, 278
+
+</span>
+</li>
+<li id="bib.bib3" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Barlow &amp;
+Sargent (1997)</span>
+<span class="ltx_bibblock">
+Barlow, T. A., &amp; Sargent, W. L. W. 1997, AJ, 113, 136
+
+</span>
+</li>
+<li id="bib.bib4" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Becker
+et al. (2000)</span>
+<span class="ltx_bibblock">
+Becker, R. H., White, R. L., Gregg, M. D., Brotherton, M. S.,
+Laurent-Muehleisen, S. A., &amp; Arav, N. 2000, ApJ, 538, 72
+
+</span>
+</li>
+<li id="bib.bib5" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Becker
+et al. (2001)</span>
+<span class="ltx_bibblock">
+Becker, R.  H., White, R. L., Gregg, M. D., Laurent-Muehleisen, S. A.,
+Brotherton, M. S., Impey, C. D. Chaffee, F. H., Richards, G. T.,
+Helfand, D. J., Lacy, M., Courbin, F., &amp; Proctor, D. D. 2001, ApJS,
+135, 227
+
+</span>
+</li>
+<li id="bib.bib6" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Berrington
+et al. (2007)</span>
+<span class="ltx_bibblock">
+Berrington, R. C., Brotherton, M. S., Gallagher, S. C.,
+Ganguly, R. Shang, Zhaohui, Lacy, M., Gregg, M. D., &amp; Hall,
+P. B. 2007, ApJ, in preparation
+
+</span>
+</li>
+<li id="bib.bib7" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Best (2007)</span>
+<span class="ltx_bibblock">
+Best, P. N. 2007, New Astronomy Review, 51, 168
+
+</span>
+</li>
+<li id="bib.bib8" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Brotherton et al. (2006)</span>
+<span class="ltx_bibblock">
+Brotherton, M. S., de Breuck, C., &amp; Schaefer, J. J. 2006, MNRAS, 372,
+L58
+
+</span>
+</li>
+<li id="bib.bib9" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Brotherton
+et al. (1998)</span>
+<span class="ltx_bibblock">
+Brotherton, M. S., van Breugel, W., Smith, R. J., Boyle, B. J.,
+Shanks, T., Croom, S. M., Miller, L., &amp; Becker, R. H. 1998, ApJ,
+505, L7
+
+</span>
+</li>
+<li id="bib.bib10" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Churchill
+et al. (1999)</span>
+<span class="ltx_bibblock">
+Churchill, C. W., Schneider, D. P., Schmidt, M., &amp; Gunn, J. E. 1999,
+AJ, 117, 2573
+
+</span>
+</li>
+<li id="bib.bib11" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Crenshaw
+et al. (1999)</span>
+<span class="ltx_bibblock">
+Crenshaw, D. M., Kraemer, S. B., Boggess, A., Maran, S. P.,
+Mushotzky, R. F., &amp; Wu, C. 1999, ApJ, 516, 750
+
+</span>
+</li>
+<li id="bib.bib12" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Crenshaw
+et al. (2003)</span>
+<span class="ltx_bibblock"> Crenshaw, D. M.,
+Kraemer, S. B., &amp; George, I. M. 2003, ARA&amp;A, 41, 117
+
+</span>
+</li>
+<li id="bib.bib13" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Dai
+et al. (2007)</span>
+<span class="ltx_bibblock">
+Dai, X., Shankar, F., &amp; Sivakoff, G. R. 2007, ApJ, submitted
+(astro-ph/0704.2882)
+
+</span>
+</li>
+<li id="bib.bib14" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Das
+et al. (2005)</span>
+<span class="ltx_bibblock">
+Das, V., Crenshaw, D. M., Hutchings,
+J. B., Deo, R. P., Kraemer, S. B., Gull, T. R., Kaiser,
+M. E., Nelson, C. H., Weistrop, D. 2005, AJ, 130, 945
+
+</span>
+</li>
+<li id="bib.bib15" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Das
+et al. (2006)</span>
+<span class="ltx_bibblock"> Das, V., Crenshaw, D. M., Kraemer,
+S. B., Deo, R. P. 2006, AJ, 132, 620
+
+</span>
+</li>
+<li id="bib.bib16" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Di
+Matteo et al. (2005)</span>
+<span class="ltx_bibblock">
+Di Matteo, T., Springel, V., &amp; Hernquist, L. 2005, Nature, 433, 604
+
+</span>
+</li>
+<li id="bib.bib17" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Elvis (2000)</span>
+<span class="ltx_bibblock">
+Elvis, M. 2000, ApJ, 545, 63
+
+</span>
+</li>
+<li id="bib.bib18" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Foltz
+et al. (1989)</span>
+<span class="ltx_bibblock">
+Foltz, C. B., Chaffee, F. H., Hewett, P. C., Weymann, R. J.,
+Anderson, S. F., &amp; MacAlpine, G. M. 1989, AJ, 98, 1959
+
+</span>
+</li>
+<li id="bib.bib19" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Foltz
+et al. (1988)</span>
+<span class="ltx_bibblock">
+Foltz, C. B., Chaffee, F. H., Weymann, R. J., &amp; Anderson, S. F. 1988,
+in QSO Absorption Lines; Probing the Universe; Proceedings of the QSO
+Absorption Line Meeting, ed. J. C. Blades, D. A. Turnshek, &amp; C. A.
+Norman (Cambridge: Cambridge University Press), 53
+
+</span>
+</li>
+<li id="bib.bib20" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Foltz et al. (1987a)</span>
+<span class="ltx_bibblock">
+Foltz, C. B., Chaffee, F. H., Jr., Hewett, P. C., MacAlpine, G. M.,
+Turnshek, D. A., Weymann, R. J., &amp; Anderson, S. F. 1987a, AJ, 94,
+1423
+
+</span>
+</li>
+<li id="bib.bib21" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Foltz
+et al. (1987b)</span>
+<span class="ltx_bibblock">
+Foltz, C. B., Weymann, R. J., Morris, S. L., &amp; Turnshek, D. A. 1987b,
+ApJ, 317, 450
+
+</span>
+</li>
+<li id="bib.bib22" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Foltz
+et al. (1986)</span>
+<span class="ltx_bibblock">
+Foltz, C. B., Weymann, R. J., Peterson, B. M., Sun, L., Malkan,
+M. A., &amp; Chaffee, F. H. 1986, ApJ, 307, 504
+
+</span>
+</li>
+<li id="bib.bib23" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Gallagher
+et al. (2006)</span>
+<span class="ltx_bibblock">
+Gallagher, S. C., Brandt, W. N., Chartas, G., Priddey, R., Garmire,
+G. P., &amp; Sambruna, R. M. 2006, ApJ, 644, 709
+
+</span>
+</li>
+<li id="bib.bib24" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ganguly
+et al. (2001)</span>
+<span class="ltx_bibblock">
+Ganguly, R., Bond, N. A., Charlton, J. C., Eracleous, M., Brandt,
+W. N., &amp; Churchill, C. W. 2001, ApJ, 549, 133
+
+</span>
+</li>
+<li id="bib.bib25" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ganguly
+et al. (2007)</span>
+<span class="ltx_bibblock">
+Ganguly, R., Scoggins, B., Cales, S., Brotherton, M. S., &amp;
+Vestergaard, M. 2007, ApJ, 665, 990
+
+</span>
+</li>
+<li id="bib.bib26" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ganguly
+et al. (2006)</span>
+<span class="ltx_bibblock">
+Ganguly, R., Sembach, K. R., Tripp, T. M., Savage, B. D., &amp; Wakker,
+B. P. 2006, ApJ, 645, 868
+
+</span>
+</li>
+<li id="bib.bib27" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Ghosh &amp;
+Punsly (2007)</span>
+<span class="ltx_bibblock">
+Ghosh, K. K., &amp; Punsly, B. 2007, ApJ, 661, 139
+
+</span>
+</li>
+<li id="bib.bib28" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Goodrich (1997)</span>
+<span class="ltx_bibblock">
+Goodrich, R. W. 1997, ApJ, 474, 606
+
+</span>
+</li>
+<li id="bib.bib29" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Goodrich &amp;
+Miller (1995)</span>
+<span class="ltx_bibblock">
+Goodrich, R. W., &amp; Miller, J. S. 1995, ApJ, 448, L73
+
+</span>
+</li>
+<li id="bib.bib30" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Gregg et al. (2006)</span>
+<span class="ltx_bibblock">
+Gregg, M. D., Becker, R. H., &amp; de Vries, W. 2006, ApJ, 641, 210
+
+</span>
+</li>
+<li id="bib.bib31" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hall et al. (2002)</span>
+<span class="ltx_bibblock">
+Hall, P. B., et al. 2002, ApJS, 141, 267
+
+</span>
+</li>
+<li id="bib.bib32" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hamann
+et al. (1997)</span>
+<span class="ltx_bibblock">
+Hamann, F., Barlow, T., Cohen, R. D., Junkkarinen, V., &amp; Burbidge,
+E. M. 1997, in ASP Conf. Ser. 128: Mass Ejection from Active Galactic Nuclei,
+ed. N. Arav, I. Shlosman, &amp; R. J. Weymann (San Francisco: ASP), 19
+
+</span>
+</li>
+<li id="bib.bib33" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hamann
+et al. (1997)</span>
+<span class="ltx_bibblock">
+Hamann, F., Barlow, T. A., &amp; Junkkarinen, V. 1997, ApJ, 478, 87
+
+</span>
+</li>
+<li id="bib.bib34" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hamann &amp;
+Ferland (1999)</span>
+<span class="ltx_bibblock">
+Hamann, F., &amp; Ferland, G. 1999, ARA&amp;A, 37, 487
+
+</span>
+</li>
+<li id="bib.bib35" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hamann
+et al. (2001)</span>
+<span class="ltx_bibblock">
+Hamann, F. W., Barlow, T. A., Chaffee, F. C., Foltz, C. B., &amp;
+Weymann, R. J. 2001, ApJ, 550, 142
+
+</span>
+</li>
+<li id="bib.bib36" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hewett &amp;
+Foltz (2003)</span>
+<span class="ltx_bibblock">
+Hewett, P. C., &amp; Foltz, C. B. 2003, AJ, 125, 1784
+
+</span>
+</li>
+<li id="bib.bib37" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hewett
+et al. (1995)</span>
+<span class="ltx_bibblock">
+Hewett, P. C., Foltz, C. B., &amp; Chaffee, F. H. 1995, AJ, 109, 1498
+
+</span>
+</li>
+<li id="bib.bib38" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Hewett
+et al. (1991)</span>
+<span class="ltx_bibblock">
+Hewett, P. C., Foltz, C. B., Chaffee, F. H., Francis, P. J., Weymann,
+R. J., Morris, S. L., Anderson, S. F., &amp; MacAlpine, G. M. 1991, AJ,
+101, 1121
+
+</span>
+</li>
+<li id="bib.bib39" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Jannuzi
+et al. (1996)</span>
+<span class="ltx_bibblock">
+Jannuzi, B. T., et al. 1996, ApJ, 470, L11
+
+</span>
+</li>
+<li id="bib.bib40" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Kriss (2006)</span>
+<span class="ltx_bibblock">
+Kriss, G. A. 2006, in Astronomical Society of the Pacific Conference Series,
+Vol. 348, Astrophysics in the Far Ultraviolet: Five Years of Discovery with
+FUSE, ed. G. Sonneborn, H. W. Moos, &amp; B.-G. Andersson, 499
+
+</span>
+</li>
+<li id="bib.bib41" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Krolik &amp;
+Voit (1998)</span>
+<span class="ltx_bibblock">
+Krolik, J. H., &amp; Voit, G. M. 1998, ApJ, 497, L5
+
+</span>
+</li>
+<li id="bib.bib42" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Laor &amp;
+Brandt (2002)</span>
+<span class="ltx_bibblock">
+Laor, A., &amp; Brandt, W. N. 2002, ApJ, 569, 641
+
+</span>
+</li>
+<li id="bib.bib43" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Leighly (2004)</span>
+<span class="ltx_bibblock">
+Leighly, K. M. 2004, ApJ, 611, 125
+
+</span>
+</li>
+<li id="bib.bib44" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Leighly &amp;
+Moore (2004)</span>
+<span class="ltx_bibblock">
+Leighly, K. M., &amp; Moore, J. R. 2004, ApJ, 611, 107
+
+</span>
+</li>
+<li id="bib.bib45" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Misawa
+et al. (2007)</span>
+<span class="ltx_bibblock">
+Misawa, T., Charlton, J. C., Eracleous, M., Ganguly, R., Tytler, D.,
+Kirkman, D., Suzuki, N., &amp; Lubin, D. 2007, ApJS, 171, 1
+
+</span>
+</li>
+<li id="bib.bib46" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Møller &amp;
+Jakobsen (1987)</span>
+<span class="ltx_bibblock">
+Møller, P., &amp; Jakobsen, P. 1987, ApJ, 320, L75
+
+</span>
+</li>
+<li id="bib.bib47" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Murray
+et al. (1995)</span>
+<span class="ltx_bibblock">
+Murray, N., Chiang, J., Grossman, S. A., &amp; Voit, G. M. 1995, ApJ,
+451, 498
+
+</span>
+</li>
+<li id="bib.bib48" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Reichard
+et al. (2003)</span>
+<span class="ltx_bibblock">
+Reichard, T. A., et al. 2003, AJ, 125, 1711
+
+</span>
+</li>
+<li id="bib.bib49" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Richards (2001)</span>
+<span class="ltx_bibblock">
+Richards, G. T. 2001, ApJS, 133, 53
+
+</span>
+</li>
+<li id="bib.bib50" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Richards
+et al. (1999)</span>
+<span class="ltx_bibblock">
+Richards, G. T., York, D. G., Yanny, B., Kollgaard, R. I.,
+Laurent–Muehleisen, S. A., &amp; vanden Berk, D. E. 1999, ApJ, 513, 576
+
+</span>
+</li>
+<li id="bib.bib51" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Rodriguez
+Hidalgo et al. (2007)</span>
+<span class="ltx_bibblock">
+Rodriguez Hidalgo, P., Hamann, F., Nestor, D., &amp; Shields,
+J. 2007, in Astronomical Society of the Pacific Conferene Series, The
+Central Engine of Active Galactic Nuclei ed. L. Ho, &amp; J. M. Wang
+(astro-ph/0701838)
+
+</span>
+</li>
+<li id="bib.bib52" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Sargent et al. (1988)</span>
+<span class="ltx_bibblock">
+Sargent, W. L. W., Steidel, C. C., &amp; Boksenberg, A. 1988, ApJS, 68,
+539
+
+</span>
+</li>
+<li id="bib.bib53" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Schneider
+et al. (2005)</span>
+<span class="ltx_bibblock">
+Schneider, D. P., et al. 2005, AJ, 130, 367
+
+</span>
+</li>
+<li id="bib.bib54" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Scott
+et al. (2004)</span>
+<span class="ltx_bibblock">
+Scott, J. E., et al. 2004, ApJS, 152, 1
+
+</span>
+</li>
+<li id="bib.bib55" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Skrutskie
+et al. (2006)</span>
+<span class="ltx_bibblock">
+Skrutskie, M. F., et al. 2006, AJ, 131, 1163
+
+</span>
+</li>
+<li id="bib.bib56" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Trump
+et al. (2006)</span>
+<span class="ltx_bibblock">
+Trump, J. R., et al. 2006, ApJS, 165, 1
+
+</span>
+</li>
+<li id="bib.bib57" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Turnshek (1988)</span>
+<span class="ltx_bibblock">
+Turnshek, D. A. 1988, in QSO Absorption Lines; Probing the Universe;
+Proceedings of the QSO Absorption Line Meeting, ed. J. C. Blades, D. A.
+Turnshek, &amp; C. A. Norman (Cambridge: Cambridge University Press), 17
+
+</span>
+</li>
+<li id="bib.bib58" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Turnshek
+et al. (1988)</span>
+<span class="ltx_bibblock">
+Turnshek, D. A., Grillmair, C. J., Foltz, C. B., &amp; Weymann, R. J.
+1988, ApJ, 325, 651
+
+</span>
+</li>
+<li id="bib.bib59" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Vestergaard (2003)</span>
+<span class="ltx_bibblock">
+Vestergaard, M. 2003, ApJ, 599, 116
+
+</span>
+</li>
+<li id="bib.bib60" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Voit
+et al. (1993)</span>
+<span class="ltx_bibblock">
+Voit, G. M., Weymann, R. J., &amp; Korista, K. T. 1993, ApJ, 413, 95
+
+</span>
+</li>
+<li id="bib.bib61" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Weymann
+et al. (1991)</span>
+<span class="ltx_bibblock">
+Weymann, R. J., Morris, S. L., Foltz, C. B., &amp; Hewett, P. C. 1991,
+ApJ, 373, 23
+
+</span>
+</li>
+<li id="bib.bib62" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Weymann et al. (1985)</span>
+<span class="ltx_bibblock">
+Weymann, R. J., Turnshek, D. A., &amp; Christiansen, W. A. 1985, in
+Astrophysics of Active Galaxies and Quasi-Stellar Objects, ed. J. S.
+Miller, 333
+
+</span>
+</li>
+<li id="bib.bib63" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Weymann
+et al. (1979)</span>
+<span class="ltx_bibblock">
+Weymann, R. J., Williams, R. E., Peterson, B. M., &amp; Turnshek, D. A.
+1979, ApJ, 234, 33
+
+</span>
+</li>
+<li id="bib.bib64" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Wise et al. (2004)</span>
+<span class="ltx_bibblock">
+Wise, J. H., Eracleous, M., Charlton, J. C., &amp; Ganguly, R. 2004,
+ApJ, 613, 129
+
+</span>
+</li>
+<li id="bib.bib65" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Yuan et al. (2007)</span>
+<span class="ltx_bibblock">
+Yuan, Q., Brotherton, M., Green, R. F., Kriss, G. A., &amp; Ganguly, R.
+2007, ApJ, in preparation
+
+</span>
+</li>
+<li id="bib.bib66" class="ltx_bibitem">
+<span class="ltx_tag ltx_role_refnum ltx_tag_bibitem">Zhou et al. (2006)</span>
+<span class="ltx_bibblock">
+Zhou, H., Wang, T., Wang, H., Wang, J., Yuan, W., &amp; Lu, Y. 2006,
+ApJ, 639, 716
+
+</span>
+</li>
+</ul>
+</section>
+</article>
+</div>
+<div class="ar5iv-footer"><a href="/html/0710.0587" class="ar5iv-nav-button ar5iv-nav-button-prev">◄</a>
+    <a class="ar5iv-home-button" href="/"><img height="40" alt="ar5iv homepage" src="/assets/ar5iv.png"></a>
+    <a href="/feeling_lucky" class="ar5iv-text-button">Feeling<br>lucky?</a>
+    <a href="/log/0710.0588" class="ar5iv-text-button ar5iv-severity-ok">Conversion<br>report</a>
+    <a class="ar5iv-text-button" target="_blank" href="https://github.com/dginev/ar5iv/issues/new?template=improve-article--arxiv-id-.md&title=Improve+article+0710.0588">Report<br>an issue</a>
+    <a href="https://arxiv.org/abs/0710.0588" class="ar5iv-text-button arxiv-ui-theme">View&nbsp;original<br>on&nbsp;arXiv</a><a href="/html/0710.0589" class="ar5iv-nav-button ar5iv-nav-button-next">►</a>
+</div><footer class="ltx_page_footer">
+<a class="ar5iv-toggle-color-scheme" href="javascript:toggleColorScheme()" title="Toggle ar5iv color scheme"><span class="color-scheme-icon"></span></a>
+<a class="ar5iv-footer-button" href="https://arxiv.org/help/license" target="_blank">Copyright</a>
+<a class="ar5iv-footer-button" href="https://arxiv.org/help/policies/privacy_policy" target="_blank">Privacy Policy</a>
+
+<div class="ltx_page_logo">Generated  on Fri Mar  8 10:08:32 2024 by <a target="_blank" href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+
+    <script>
+      var canMathML = typeof(MathMLElement) == "function";
+      if (!canMathML) {
+        var body = document.querySelector("body");
+        body.firstElementChild.setAttribute('style', 'opacity: 0;');
+        var loading = document.createElement("div");
+        loading.setAttribute("id", "mathjax-loading-spinner");
+        var message = document.createElement("div");
+        message.setAttribute("id", "mathjax-loading-message");
+        message.innerText = "Typesetting Equations...";
+        body.prepend(loading);
+        body.prepend(message);
+
+        var el = document.createElement("script");
+        el.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+        document.querySelector("head").appendChild(el);
+
+        window.MathJax = {
+          startup: {
+            pageReady: () => {
+              return MathJax.startup.defaultPageReady().then(() => {
+                body.removeChild(loading);
+                body.removeChild(message);
+                body.firstElementChild.removeAttribute('style');
+              }); } } };
+      }
+    </script>
+    <script>
+    // Auxiliary function, building the preview feature when
+    // an inline citation is clicked
+    function clicked_cite(e) {
+      e.preventDefault();
+      let cite = this.closest('.ltx_cite');
+      let next = cite.nextSibling;
+      if (next && next.nodeType == Node.ELEMENT_NODE && next.getAttribute('class') == "ar5iv-bibitem-preview") {
+        next.remove();
+        return; }
+      // Before adding a preview modal,
+      // cleanup older previews, in case they're still open
+      document.querySelectorAll('span.ar5iv-bibitem-preview').forEach(function(node) {
+        node.remove();
+      })
+
+      // Create the preview
+      preview = document.createElement('span');
+      preview.setAttribute('class','ar5iv-bibitem-preview');
+      let target = document.getElementById(this.getAttribute('href').slice(1));
+      target.childNodes.forEach(function (child) {
+        preview.append(child.cloneNode(true));
+      });
+      let close_x = document.createElement('button');
+      close_x.setAttribute("aria-label","Close modal for bibliography item preview");
+      close_x.textContent = "×";
+      close_x.setAttribute('class', 'ar5iv-button-close-preview');
+      close_x.setAttribute('onclick','this.parentNode.remove()');
+      preview.append(close_x);
+      preview.querySelectorAll('.ltx_tag_bibitem').forEach(function(node) {
+        node.remove();
+      });
+      cite.parentNode.insertBefore(preview, cite.nextSibling);
+      return;
+    }
+    // Global Document initialization:
+    // - assign the preview feature to all inline citation links
+    document.querySelectorAll(".ltx_cite .ltx_ref").forEach(function (link) {
+      link.addEventListener("click", clicked_cite);
+    });
+    </script>
+    </body>
+</html>
