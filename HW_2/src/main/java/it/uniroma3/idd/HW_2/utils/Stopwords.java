@@ -16,7 +16,7 @@ public class Stopwords{
         List<String> stopWordsList = new ArrayList<>();
 
         // Leggi il file
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        /*try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 // Aggiungi la stopword alla lista, rimuovendo eventuali spazi extra
@@ -24,7 +24,7 @@ public class Stopwords{
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         return stopWordsList;
     }
