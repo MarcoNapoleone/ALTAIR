@@ -1,23 +1,7 @@
 # Focused Scientific Paper Search Engine
 
 ## Description
-This project is a multi-language application that utilizes both Python and Java. The Java part of the project is built using the Spring Boot framework and managed with Maven, while the Python part is managed with pip.
-
-## Technologies Used
-- **Python**: Used for scripting and data processing.
-- **pip**: Python package installer used to manage dependencies.
-- **Java**: Used for the main application logic.
-- **Spring Boot**: Java framework used to create stand-alone, production-grade Spring-based applications.
-- **Maven**: Build automation tool used for managing the Java project's dependencies and build lifecycle.
-- **Lucene**: Used for indexing and searching the scientific papers.
-
-## Project Structure
-- `src/main/java`: Contains the Java source code.
-- `src/main/resources`: Contains the resources for the Java application.
-- `src/test/java`: Contains the Java test cases.
-- `python_scripts`: Contains the Python scripts.
-- `pom.xml`: Maven configuration file.
-- `requirements.txt`: Python dependencies file.
+This project implements a focused scientific paper search engine using Java and Python. The search engine is built using Apache Lucene, a high-performance, full-featured text search engine library. The Java application is built using Spring Boot, a Java-based framework for creating stand-alone, production-grade Spring-based applications. The Python scripts are used for data processing tasks.
 
 ## Setup Instructions
 
@@ -43,12 +27,28 @@ This project is a multi-language application that utilizes both Python and Java.
 - **Java Application**: The main application logic is implemented in Java using Spring Boot. It can be accessed via the configured endpoints.
 - **Python Scripts**: The Python scripts can be used for various data processing tasks.
 
-## Testing
-To test the search engine, you can use the following link:
+To test the search engine, you can use the following URL:
 [https://lucene-search.web.app/](https://lucene-search.web.app/)
 ![alt text](./images/example_usage.png)
 
-This link can be accessed from localhost or within the Roma Tre University local network.
+This demo can be accessed from localhost or within the Roma Tre University local network.
+
+## Technologies Used
+- **Python**: Used for scripting and data processing.
+- **pip**: Python package installer used to manage dependencies.
+- **Java**: Used for the main application logic.
+- **Spring Boot**: Java framework used to create stand-alone, production-grade Spring-based applications.
+- **Maven**: Build automation tool used for managing the Java project's dependencies and build lifecycle.
+- **Lucene**: Used for indexing and searching the scientific papers.
+
+## Project Structure
+- `src/main/java`: Contains the Java source code.
+- `src/main/resources`: Contains the resources for the Java application.
+- `src/test/java`: Contains the Java test cases.
+- `python_scripts`: Contains the Python scripts.
+- `pom.xml`: Maven configuration file.
+- `requirements.txt`: Python dependencies file.
+
 
 ## Contributing
 1. Fork the repository.
