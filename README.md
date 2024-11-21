@@ -20,7 +20,7 @@ This project implements a focused scientific paper search engine using Java and 
 1. **Install pip**: Ensure pip is installed on your system.
 2. **Run Python Scripts**: Execute the desired Python scripts using:
     ```sh
-    .HW_1/run.sh
+    .data_scraping_cleaning/run.sh
     ```
 
 ## Usage
