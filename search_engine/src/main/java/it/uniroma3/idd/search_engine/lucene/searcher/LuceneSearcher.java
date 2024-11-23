@@ -1,7 +1,8 @@
-package it.uniroma3.idd.search_engine.utils.lucene;
+package it.uniroma3.idd.search_engine.lucene.searcher;
 
-import it.uniroma3.idd.search_engine.utils.AcronymManager;
-import it.uniroma3.idd.search_engine.utils.IndexingCompleteEvent;
+import it.uniroma3.idd.search_engine.lucene.AcronymManager;
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
+import it.uniroma3.idd.search_engine.lucene.indexer.IndexingCompleteEvent;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
@@ -63,7 +64,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         }
     }
 
-    public Set<Document> runQuery(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public Set<Document> runQueryDocuments(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (searcher == null) {
             throw new IllegalStateException("Searcher not initialized");
         }
@@ -162,6 +163,16 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
 
         return documents;
     }
+
+    public Set<Document> runQueryTables(String query, Integer limit) throws ParseException, InvalidTokenOffsetsException, IOException {
+        if (searcher == null) {
+            throw new IllegalStateException("Searcher not initialized");
+        }
+
+        BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
+        return new HashSet<>();
+    }
+
 
     private void createSnippet(Set<Document> documents, Query query) throws InvalidTokenOffsetsException, IOException {
 

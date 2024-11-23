@@ -2,25 +2,23 @@ package it.uniroma3.idd.search_engine.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import it.uniroma3.idd.search_engine.dto.GetDocumentResponse;
 import it.uniroma3.idd.search_engine.dto.GetDocumentsResponse;
+import it.uniroma3.idd.search_engine.service.DocumentService;
 import jakarta.validation.constraints.Null;
 import org.apache.lucene.document.Document;
-import it.uniroma3.idd.search_engine.service.DocumentService;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.constraints.NotBlank;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -46,13 +44,14 @@ public class DocumentController {
         return documentService.getDocument(id);
     }
 
-    @GetMapping("/search")
+    // articles search
+    @GetMapping("/search/")
     @Operation(summary = "Search documents", description = "Search for documents by query with optional field filters.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
-    public GetDocumentsResponse searchDocuments(
+    public GetDocumentsResponse searchDocumentsUrls(
             @RequestParam(required = false) @Null @Parameter(description = "Search all the indexes") String query,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String title,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String authors,
@@ -84,5 +83,6 @@ public class DocumentController {
         return new GetDocumentsResponse(documentResponses);
 
 
- }
+    }
+
 }

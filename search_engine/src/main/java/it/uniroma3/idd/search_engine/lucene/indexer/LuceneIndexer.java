@@ -1,9 +1,8 @@
-package it.uniroma3.idd.search_engine.utils.lucene;
+package it.uniroma3.idd.search_engine.lucene.indexer;
 
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.model.Article;
-import it.uniroma3.idd.search_engine.utils.IndexingCompleteEvent;
 import it.uniroma3.idd.search_engine.utils.Parser;
-import it.uniroma3.idd.search_engine.utils.Stopwords;
 import jakarta.annotation.PostConstruct;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.KeywordAnalyzer;
@@ -11,8 +10,6 @@ import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.CharArraySet;
-import org.apache.lucene.codecs.simpletext.SimpleTextCodec;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -36,11 +33,11 @@ import java.util.Map;
 public class LuceneIndexer {
 
     private final LuceneConfig luceneConfig;
-    private static final CharArraySet STOP_WORDS = new CharArraySet(Stopwords.getStopwords(), true);
-    private static final Analyzer STANDARD_ANALYZER = new StandardAnalyzer(STOP_WORDS);
+    private static final Analyzer STANDARD_ANALYZER = new StandardAnalyzer();
     private static final Analyzer WHITESPACE_ANALYZER = new WhitespaceAnalyzer();
     private static final Analyzer KEYWORD_ANALYZER = new KeywordAnalyzer();
     private static final Analyzer SIMPLE_ANALYZER = new SimpleAnalyzer();
+
     private final ApplicationEventPublisher eventPublisher;
 
     @Autowired

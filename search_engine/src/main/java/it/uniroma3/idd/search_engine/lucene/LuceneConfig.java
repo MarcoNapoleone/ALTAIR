@@ -1,15 +1,12 @@
-package it.uniroma3.idd.search_engine.utils.lucene;
+package it.uniroma3.idd.search_engine.lucene;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.WhitespaceTokenizer;
 import org.apache.lucene.analysis.en.PorterStemFilter;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.io.IOException;
 
 @Configuration
 public class LuceneConfig {

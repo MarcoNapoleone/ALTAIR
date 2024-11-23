@@ -1,6 +1,7 @@
 package it.uniroma3.idd.search_engine.service;
 
 import it.uniroma3.idd.search_engine.lucene.searcher.LuceneSearcher;
+import it.uniroma3.idd.search_engine.model.Table;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
@@ -9,32 +10,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.Set;
 
 @Service
 @Transactional
-public class DocumentService {
+public class TableService {
 
     private final LuceneSearcher luceneSearcher;
 
     @Autowired
-    public DocumentService(LuceneSearcher luceneSearcher) {
+    public TableService(LuceneSearcher luceneSearcher) {
         this.luceneSearcher = luceneSearcher;
     }
-
-    public Document getDocument(Long id) {
-        //TODO LUCENE
-        return null;
+    public Set<Document> getTablesQuery(String query, Integer limit) throws ParseException, InvalidTokenOffsetsException, IOException {
+        return luceneSearcher.runQueryTables(query, limit);
     }
-
-    public Set<Document> getDocumentsQuery(Map<String,String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
-        return luceneSearcher.runQueryDocuments(filters);
-    }
-
-    public Document getAllDocuments() {
-        //TODO LUCENE
-        return null;
-    }
-
 }

@@ -1,9 +1,9 @@
 package it.uniroma3.idd.search_engine.utils;
 
-import org.jsoup.nodes.Document;
-import org.jsoup.Jsoup;
-
 import it.uniroma3.idd.search_engine.model.Article;
+import it.uniroma3.idd.search_engine.model.Table;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -13,10 +13,9 @@ import java.util.List;
 
 @Component
 public class Parser {
-
-    public static List<Article> articleParser(){
+    public static List<Article> articleParser() {
         // Open the directory where all HTML files are stored
-        File dir = new File("search_engine/articles");
+        File dir = new File("data/articles");
 
         // List all files in the directory with .html extension
         File[] files = dir.listFiles((dir1, name) -> name.endsWith(".html"));
@@ -63,5 +62,30 @@ public class Parser {
         }
 
         return articles;
+    }
+    public static List<Table> tableParser(){
+        File dir = new File("data/tables");
+
+        // List all files in the directory with .json extension
+        File[] files = dir.listFiles((dir1, name) -> name.endsWith(".json"));
+
+        // List to store all article data
+        List<Table> tables = new ArrayList<>();
+
+        if (files != null){
+            for (File file : files){
+                try{
+                    Document document = Jsoup.parse(file, "UTF-8");
+
+                    //todo get tables from json
+
+                 } catch (IOException e) {
+                    System.out.println("Error opening the file: " + file.getName());
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return tables;
     }
 }
