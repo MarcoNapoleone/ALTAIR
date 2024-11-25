@@ -2,6 +2,7 @@ package it.uniroma3.idd.search_engine.lucene.indexer;
 
 import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.model.Article;
+import it.uniroma3.idd.search_engine.model.Table;
 import it.uniroma3.idd.search_engine.utils.Parser;
 import jakarta.annotation.PostConstruct;
 import org.apache.lucene.analysis.Analyzer;
@@ -10,6 +11,7 @@ import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.codecs.Codec;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -17,11 +19,11 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.codecs.Codec;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
+import javax.print.Doc;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -51,7 +53,7 @@ public class LuceneIndexer {
         try {
             // Log to monitor the flow
             System.out.println("Index initialization in progress...");
-            if (luceneConfig.isShouldInitializeIndex()){
+            if (luceneConfig.isShouldInitializeIndex()) {
                 System.out.println("Deleting the index directory...");
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // Delete the index directory
                 indexDocs(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
@@ -83,6 +85,7 @@ public class LuceneIndexer {
         IndexWriter writer = new IndexWriter(dir, config);
 
         List<Article> articles = Parser.articleParser();
+        List<Table> tables = Parser.tableParser();
 
         for (Article article : articles) {
             Document doc = new Document();
@@ -94,31 +97,45 @@ public class LuceneIndexer {
             writer.addDocument(doc);
         }
 
+        for (Table table: tables){
+            Document doc = new Document();
+            doc.add(new StringField("id", table.getId(), TextField.Store.YES));
+            doc.add(new TextField("caption", table.getCaption(), TextField.Store.YES));
+            doc.add(new TextField("body", table.getBody(), TextField.Store.YES));
+            for (String footnote: table.getFootnotes()){
+                doc.add(new TextField("footnotes", footnote, TextField.Store.YES));
+            }
+            for (String reference: table.getReferences()){
+                doc.add(new TextField("references", reference, TextField.Store.YES));
+            }
+            writer.addDocument(doc);
+        }
+
         writer.commit();
         writer.close();
     }
 
     public void deleteNonEmptyDirectory(Path directory) throws IOException {
-    // Verifica se la directory esiste
-    if (Files.exists(directory) && Files.isDirectory(directory)) {
-        // Rimuove ricorsivamente i file e le sottocartelle
-        Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
-            @Override
-            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                Files.delete(file);  // Elimina il file
-                return FileVisitResult.CONTINUE;
-            }
+        // Verifica se la directory esiste
+        if (Files.exists(directory) && Files.isDirectory(directory)) {
+            // Rimuove ricorsivamente i file e le sottocartelle
+            Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    Files.delete(file);  // Elimina il file
+                    return FileVisitResult.CONTINUE;
+                }
 
-            @Override
-            public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-                Files.delete(dir);  // Elimina la directory dopo aver cancellato i suoi contenuti
-                return FileVisitResult.CONTINUE;
-            }
-        });
-        System.out.println("Directory and its contents deleted.");
-    } else {
-        System.out.println("Directory does not exist or is not a directory.");
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                    Files.delete(dir);  // Elimina la directory dopo aver cancellato i suoi contenuti
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+            System.out.println("Directory and its contents deleted.");
+        } else {
+            System.out.println("Directory does not exist or is not a directory.");
+        }
     }
-}
 
 }

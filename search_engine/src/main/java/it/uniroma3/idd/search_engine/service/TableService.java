@@ -22,7 +22,12 @@ public class TableService {
     public TableService(LuceneSearcher luceneSearcher) {
         this.luceneSearcher = luceneSearcher;
     }
-    public Set<Document> getTablesQuery(String query, Integer limit) throws ParseException, InvalidTokenOffsetsException, IOException {
-        return luceneSearcher.runQueryTables(query, limit);
+    public Set<Document> getTablesQuery(String query, Boolean useNLP,  Integer limit) throws ParseException, InvalidTokenOffsetsException, IOException {
+        if (useNLP){
+            // @TODO NLP search
+            return luceneSearcher.runQueryTables(query, limit);
+        } else {
+            return luceneSearcher.runQueryTables(query, limit);
+        }
     }
 }

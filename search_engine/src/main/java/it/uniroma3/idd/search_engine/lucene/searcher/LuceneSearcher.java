@@ -18,7 +18,10 @@ import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
-import org.apache.lucene.search.highlight.*;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.apache.lucene.search.highlight.QueryScorer;
+import org.apache.lucene.search.highlight.SimpleFragmenter;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +32,9 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Component
 public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent> {
@@ -160,7 +165,6 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         }
 
         createSnippet(documents, query);
-
         return documents;
     }
 
@@ -170,7 +174,48 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         }
 
         BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
-        return new HashSet<>();
+
+        // Query with all fields
+        String[] fields = {"caption"};
+        MultiFieldQueryParser queryParser = new MultiFieldQueryParser(fields, STANDARD_ANALYZER);
+        Query queryText = queryParser.parse(query);
+        booleanQuery.add(queryText, BooleanClause.Occur.SHOULD);
+
+        // Add acronym expansion
+        for (String field : fields) {
+            PhraseQuery acronymQuery = new PhraseQuery(0, field, AcronymManager.expandAcronym(query).split(" "));
+            booleanQuery.add(acronymQuery, BooleanClause.Occur.SHOULD);
+        }
+
+        // Add fuzzy search
+        for (String field : fields) {
+            FuzzyQuery fuzzyQuery = new FuzzyQuery(new Term(field, query), 2);
+            booleanQuery.add(fuzzyQuery, BooleanClause.Occur.SHOULD);
+        }
+
+        // Limit the number of results
+        limit = limit != null ? limit : 10;
+        TopDocs topDocs;
+        try {
+            topDocs = searcher.search(booleanQuery.build(), limit);
+        } catch (IOException e) {
+            throw new RuntimeException("Error searching the index", e);
+        }
+
+        // Retrieve the documents
+        Set<Document> documents = new HashSet<>();
+        for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+            try {
+                Document doc = searcher.storedFields().document(scoreDoc.doc);
+                doc.add(new FloatField("score", scoreDoc.score, StoredField.Store.YES));
+                documents.add(doc);
+            } catch (IOException e) {
+                throw new RuntimeException("Error retrieving document", e);
+            }
+        }
+
+        createSnippet(documents, queryText);
+        return documents;
     }
 
 

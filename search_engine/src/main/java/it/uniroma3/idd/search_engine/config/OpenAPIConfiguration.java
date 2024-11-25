@@ -23,9 +23,9 @@ public class OpenAPIConfiguration {
         myContact.setEmail("mar.napoleone3@stud.uniroma3.it");
 
         Info information = new Info()
-                .title("IDD HW2")
+                .title("ALTAIR APIs documentation")
                 .version("1.0")
-                .description("REST endpoints to test Lucene framework search engine")
+                .description("REST endpoints to test ALTAIR APIs")
                 .contact(myContact);
 
 

@@ -33,14 +33,15 @@ public class TableController {
     private TableService tableService;
 
     // tables search
-    @GetMapping("/search/tables")
+    @GetMapping("/search")
     @Operation(summary = "Search documents", description = "Search for documents by query with optional field filters.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
     public GetDocumentsResponse searchDocumentsTables(
-            @RequestParam(required = false) @Null @Parameter(description = "Search all the indexes") String query,
+            @RequestParam(required = true) @Parameter(description = "Search all the indexes") String query,
+            @RequestParam(required = false) @Parameter(description = "Use NLP search") Boolean NLP,
             @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
     ) throws IOException, ParseException, InvalidTokenOffsetsException {
 
@@ -49,7 +50,11 @@ public class TableController {
             throw new IllegalArgumentException("Query field must not be null");
         }
 
-        Collection<Document> documents = tableService.getTablesQuery(query, limit);
+        if (NLP == null) {
+            NLP = false;
+        }
+
+        Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit);
 
         Collection<GetDocumentResponse> documentResponses =
                 documents
@@ -61,33 +66,4 @@ public class TableController {
 
     }
 
-    // NLP search
-    @GetMapping("/search/nlp")
-    @Operation(summary = "Search documents", description = "Search for documents by query with optional field filters.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
-            @ApiResponse(responseCode = "400", description = "Invalid search parameters")
-    })
-    public GetDocumentsResponse searchDocumentsNLP(
-            @RequestParam(required = false) @Null @Parameter(description = "Search all the indexes") String query,
-            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
-    ) throws IOException, ParseException, InvalidTokenOffsetsException {
-
-
-        // if all the fields are null, return error
-        if (query == null) {
-            throw new IllegalArgumentException("Query field must not be null");
-        }
-
-        Collection<Document> documents = tableService.getTablesQuery(query, limit);
-
-        Collection<GetDocumentResponse> documentResponses =
-                documents
-                        .stream()
-                        .map(d -> new GetDocumentResponse().documentToGetDocumentResponse(d))
-                        .collect(Collectors.toList());
-
-        return new GetDocumentsResponse(documentResponses);
-
-    }
 }
