@@ -64,6 +64,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
             Directory directory = FSDirectory.open(indexPath);
             IndexReader reader = DirectoryReader.open(directory);
             searcher = new IndexSearcher(reader);
+
         } catch (IOException e) {
             throw new RuntimeException("Error initializing the searcher", e);
         }
@@ -176,22 +177,10 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
 
         // Query with all fields
-        String[] fields = {"caption"};
+        String[] fields = {"caption","body", "footnotes","references"};
         MultiFieldQueryParser queryParser = new MultiFieldQueryParser(fields, STANDARD_ANALYZER);
         Query queryText = queryParser.parse(query);
         booleanQuery.add(queryText, BooleanClause.Occur.SHOULD);
-
-        // Add acronym expansion
-        for (String field : fields) {
-            PhraseQuery acronymQuery = new PhraseQuery(0, field, AcronymManager.expandAcronym(query).split(" "));
-            booleanQuery.add(acronymQuery, BooleanClause.Occur.SHOULD);
-        }
-
-        // Add fuzzy search
-        for (String field : fields) {
-            FuzzyQuery fuzzyQuery = new FuzzyQuery(new Term(field, query), 2);
-            booleanQuery.add(fuzzyQuery, BooleanClause.Occur.SHOULD);
-        }
 
         // Limit the number of results
         limit = limit != null ? limit : 10;
@@ -214,7 +203,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
             }
         }
 
-        createSnippet(documents, queryText);
+        //createSnippet(documents, queryText);
         return documents;
     }
 

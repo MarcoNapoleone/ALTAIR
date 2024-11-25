@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 public class Parser {
     public static List<Article> articleParser() {
-        File dir = new File("data/articles");
+        File dir = new File("search_engine/data/articles");
         File[] files = dir.listFiles((dir1, name) -> name.endsWith(".html"));
         List<Article> articles = new ArrayList<>();
 
@@ -46,9 +46,12 @@ public class Parser {
     }
 
     public static List<Table> tableParser() {
-        File dir = new File("data/tables");
-        File[] files = dir.listFiles((dir1, name) -> name.endsWith(".json"));
+        File dir = new File("search_engine/data/tables");
+        File[] files = dir.listFiles();
         List<Table> tables = new ArrayList<>();
+
+        //print the number of files in the directory
+        System.out.println("Number of files in the directory: " + files.length);
 
         if (files != null) {
             for (File file : files) {
@@ -56,20 +59,32 @@ public class Parser {
                     ObjectMapper objectMapper = new ObjectMapper();
                     JsonNode jsonNode = objectMapper.readTree(file);
 
-                    // Extract table data from jsonNode
                     jsonNode.fields().forEachRemaining(entry -> {
                         String id = entry.getKey();
                         JsonNode tableNode = entry.getValue().get("table");
-                        String tableHtml = tableNode != null ? tableNode.asText() : "";
-                        String caption = entry.getValue().get("caption").asText("");
-                        List<String> footnotes = new ArrayList<>();
-                        entry.getValue().get("footnotes").forEach(footnote -> footnotes.add(footnote.asText()));
-                        List<String> references = new ArrayList<>();
-                        entry.getValue().get("references").forEach(reference -> references.add(reference.asText()));
+                        String tableHtml = tableNode != null ? tableNode.asText("") : "";
 
-                        Table table = new Table(id, tableHtml, caption, footnotes, references);
+                        // Controlla che il nodo "caption" esista prima di chiamare asText
+                        String caption = entry.getValue().has("caption")
+                                ? entry.getValue().get("caption").asText("")
+                                : "";
+
+                        // Gestisci il nodo "footnotes"
+                        List<String> footnotes = new ArrayList<>();
+                        if (entry.getValue().has("footnotes")) {
+                            entry.getValue().get("footnotes").forEach(footnote -> footnotes.add(footnote.asText()));
+                        }
+
+                        // Gestisci il nodo "references"
+                        List<String> references = new ArrayList<>();
+                        if (entry.getValue().has("references")) {
+                            entry.getValue().get("references").forEach(reference -> references.add(reference.asText()));
+                        }
+
+                        Table table = new Table(id, caption, tableHtml, footnotes, references);
                         tables.add(table);
                     });
+
 
                 } catch (IOException e) {
                     System.out.println("Error opening the file: " + file.getName());

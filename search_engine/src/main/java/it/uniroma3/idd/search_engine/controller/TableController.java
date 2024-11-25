@@ -7,6 +7,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import it.uniroma3.idd.search_engine.dto.GetDocumentResponse;
 import it.uniroma3.idd.search_engine.dto.GetDocumentsResponse;
+import it.uniroma3.idd.search_engine.dto.GetTableResponse;
+import it.uniroma3.idd.search_engine.dto.GetTablesResponse;
 import it.uniroma3.idd.search_engine.service.TableService;
 import jakarta.validation.constraints.Null;
 import org.apache.lucene.document.Document;
@@ -34,12 +36,12 @@ public class TableController {
 
     // tables search
     @GetMapping("/search")
-    @Operation(summary = "Search documents", description = "Search for documents by query with optional field filters.")
+    @Operation(summary = "Search Tables", description = "Search for tables by query with optional field filters.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
-    public GetDocumentsResponse searchDocumentsTables(
+    public GetTablesResponse searchDocumentsTables(
             @RequestParam(required = true) @Parameter(description = "Search all the indexes") String query,
             @RequestParam(required = false) @Parameter(description = "Use NLP search") Boolean NLP,
             @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
@@ -56,13 +58,13 @@ public class TableController {
 
         Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit);
 
-        Collection<GetDocumentResponse> documentResponses =
+        Collection<GetTableResponse> tableResponses =
                 documents
                         .stream()
-                        .map(d -> new GetDocumentResponse().documentToGetDocumentResponse(d))
+                        .map(t -> new GetTableResponse().tableToGetTableResponse(t))
                         .collect(Collectors.toList());
 
-        return new GetDocumentsResponse(documentResponses);
+        return new GetTablesResponse(tableResponses);
 
     }
 

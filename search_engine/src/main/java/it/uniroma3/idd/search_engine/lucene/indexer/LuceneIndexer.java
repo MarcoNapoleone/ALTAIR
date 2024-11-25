@@ -56,9 +56,10 @@ public class LuceneIndexer {
             if (luceneConfig.isShouldInitializeIndex()) {
                 System.out.println("Deleting the index directory...");
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // Delete the index directory
-                indexDocs(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
+                indexArticles(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
+                indexTables(luceneConfig.getIndexDirectory(), Codec.getDefault());
             }
-            System.out.println("Index initialized, publishing event.");
+            System.out.println("Table Index initialized, publishing event.");
             eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // Publish the event upon completion
             System.out.println("IndexingComplete event published.");
         } catch (IOException e) {
@@ -66,7 +67,7 @@ public class LuceneIndexer {
         }
     }
 
-    public void indexDocs(String Pathdir, Codec codec) throws IOException {
+    public void indexArticles(String Pathdir, Codec codec) throws IOException {
         Path path = Paths.get(Pathdir);
         Directory dir = FSDirectory.open(path);
 
@@ -85,7 +86,6 @@ public class LuceneIndexer {
         IndexWriter writer = new IndexWriter(dir, config);
 
         List<Article> articles = Parser.articleParser();
-        List<Table> tables = Parser.tableParser();
 
         for (Article article : articles) {
             Document doc = new Document();
@@ -97,17 +97,38 @@ public class LuceneIndexer {
             writer.addDocument(doc);
         }
 
+        writer.commit();
+        writer.close();
+    }
+
+
+    public void indexTables(String Pathdir, Codec codec) throws IOException {
+        Path path = Paths.get(Pathdir);
+        Directory dir = FSDirectory.open(path);
+
+        // Configure analyzers for fields
+        Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
+        perFieldAnalyzers.put("caption", SIMPLE_ANALYZER);
+        perFieldAnalyzers.put("body", STANDARD_ANALYZER);
+        perFieldAnalyzers.put("footnotes", STANDARD_ANALYZER);
+        perFieldAnalyzers.put("references", STANDARD_ANALYZER);
+        Analyzer perFieldAnalyzer = new PerFieldAnalyzerWrapper(luceneConfig.customAnalyzer(), perFieldAnalyzers);
+        IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
+
+        // Set the codec
+        config.setCodec(codec);
+
+        IndexWriter writer = new IndexWriter(dir, config);
+
+        List<Table> tables = Parser.tableParser();
+
         for (Table table: tables){
             Document doc = new Document();
             doc.add(new StringField("id", table.getId(), TextField.Store.YES));
             doc.add(new TextField("caption", table.getCaption(), TextField.Store.YES));
             doc.add(new TextField("body", table.getBody(), TextField.Store.YES));
-            for (String footnote: table.getFootnotes()){
-                doc.add(new TextField("footnotes", footnote, TextField.Store.YES));
-            }
-            for (String reference: table.getReferences()){
-                doc.add(new TextField("references", reference, TextField.Store.YES));
-            }
+            doc.add(new TextField("footnotes", String.join(" ", table.getFootnotes()), TextField.Store.YES));
+            doc.add(new TextField("references", String.join(" ", table.getReferences()), TextField.Store.YES));
             writer.addDocument(doc);
         }
 
