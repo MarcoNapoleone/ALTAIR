@@ -29,7 +29,7 @@ public class DocumentService {
     }
 
     public Set<Document> getDocumentsQuery(Map<String,String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
-        return luceneSearcher.runQueryDocuments(filters);
+        return luceneSearcher.runQueryArticles(filters);
     }
 
     public Document getAllDocuments() {
