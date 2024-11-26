@@ -1,0 +1,3 @@
+[0.2|false] 
+
+The table appears to show results for a specific machine translation experiment ("tabl 2 result on the 20 unseen test categories"). While related to machine translation, it lacks broad information about developments in the field.  

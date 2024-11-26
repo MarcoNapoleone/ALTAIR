@@ -1,0 +1,4 @@
+[0.0|false] 
+
+
+The table appears to discuss botnets and cyberattacks, which is unrelated to scene understanding in computer vision.  

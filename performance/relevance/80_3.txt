@@ -1,0 +1,5 @@
+0.6|True 
+
+**Explanation:**
+
+While the table mentions "approach" and "result on vqa dataset" which are related to scene understanding, it doesn't delve into specific techniques used for scene understanding. It focuses more on comparing different approaches and presenting experimental results.  Therefore, it's partially relevant. 

@@ -1,0 +1,3 @@
+[0.1|false] 
+
+The table describes experimental results for different machine learning models (linear regression, lasso regression, logistic regression) on a dataset (MNIST).  Federated learning is about training models across decentralized data sources without directly sharing the data itself. The table doesn't touch on the challenges or techniques specific to federated learning. 

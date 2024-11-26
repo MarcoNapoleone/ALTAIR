@@ -1,0 +1,3 @@
+[0.0|false] 
+
+The table appears to describe experimental data related to optical measurements (wavelength, resolution). Federated learning is a machine learning technique dealing with distributed data and model training. There's no apparent connection between the two topics.  

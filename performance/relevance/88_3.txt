@@ -1,0 +1,3 @@
+0.3|True 
+
+The table discusses "feature propagation" and "score function" which are concepts related to computer vision tasks like scene understanding. However, it doesn't directly provide specific techniques for scene understanding.  It's tangentially relevant but not a primary source of information on the topic.  

@@ -173,9 +173,6 @@
                     <images>
                         <image>
                             <name>${project.artifactId}:${project.version}</name>
-                            <build>
-                                <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                            </build>
                         </image>
                     </images>
                 </configuration>

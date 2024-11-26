@@ -1,0 +1,3 @@
+[0.0|false] 
+
+The table describes anatomical data (brain regions) and doesn't relate to applications of visual question answering systems which typically involve understanding images and answering questions about them.  

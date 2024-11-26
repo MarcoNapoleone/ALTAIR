@@ -1,0 +1,43 @@
+{
+    "S2.T1": {
+        "caption": "Table 1: Results on GLUE test sets. Metrics differ per task (explained in Appendix A) but the best result is highlighted.",
+        "table": "",
+        "footnotes": [],
+        "references": [
+            "We first use the three meta-learning algorithms with PPS sampling and present in Table\u00a01 the experimental results on the GLUE test set. Generally, the meta-learning algorithms achieve better performance than the strong baseline models, with Reptile performing the best."
+        ]
+    },
+    "S3.T2": {
+        "caption": "Table 2: Effect of task distributions. We report the accuracy or Matthews correlation on development sets.",
+        "table": "",
+        "footnotes": [],
+        "references": [
+            "As we have mentioned above, we propose three different choices of the task distribution p\u200b(T)\ud835\udc5d\ud835\udc47p(T) in this paper. Here we train Reptile with these task distributions and test models\u2019 performance on the development set as shown in Table\u00a02."
+        ]
+    },
+    "S3.T3": {
+        "caption": "Table 3: Effect of the number of update steps and the inner learning rate \u03b1\ud835\udefc\\alpha.",
+        "table": "",
+        "footnotes": [],
+        "references": [
+            "In this part, we test the effect of the number of update steps k\ud835\udc58k and the learning rate in the inner learning loop. The experimental results on the development sets are shown in Table\u00a03. We find that setting k\ud835\udc58k to 5 is the optimal strategy and more or fewer update steps may lead to worse performance.",
+            "We also vary the inner learning rate \u03b1\ud835\udefc\\alpha and investigate its impact. The results are listed in Table\u00a03. We can see that larger \u03b1\ud835\udefc\\alpha may degrade the performance because the resulting gradients deviate a lot from normal ones.\nThe above two ablations studies demonstrate the importance of making the meta-gradient informative."
+        ]
+    },
+    "A0.T4": {
+        "caption": "Table 4: Basic information and statistics of the GLUE and SciTail datasets\u00a0Williams et\u00a0al. (2018).",
+        "table": "",
+        "footnotes": [],
+        "references": [
+            "Basically, the GLUE dataset \u00a0Wang et\u00a0al. (2019) consists of three types of tasks: single-sentence classification, similarity and paraphrase tasks, and inference tasks, as shown in Table\u00a04."
+        ]
+    },
+    "A3.T5": {
+        "caption": "Table 5: Accuracy numbers on the 10 probing tasks\u00a0Conneau et\u00a0al. (2018).",
+        "table": "",
+        "footnotes": [],
+        "references": [
+            "A probing task is a classification problem that requires the model to make predictions related to certain linguistic properties of sentences. The abbreviations for the 10 tasks are listed in Table\u00a05. Basically, these tasks are set to test the model\u2019s abilities to capture surface, syntactic or semantic information. We refer the reader to\u00a0Conneau et\u00a0al. (2018) for details. We freeze all the parameters of the models and only train the classification layer for the probing tasks."
+        ]
+    }
+}

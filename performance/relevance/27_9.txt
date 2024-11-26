@@ -1,0 +1,3 @@
+[0.1|false] 
+
+The table focuses on comparing different regression and classification models (linear regress, lasso regress, logistic regress) applied to the MNIST dataset. While machine learning is related to machine translation, this specific table doesn't discuss developments in *translation* models.  
