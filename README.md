@@ -1,6 +1,7 @@
-# Focused Scientific Paper Search Engine
+# ALTAIR
 
 ## Description
+Advanced Literature's Table Access Information Retrieval engine
 This project implements a focused scientific paper search engine using Java and Python. The search engine is built using Apache Lucene, a high-performance, full-featured text search engine library. The Java application is built using Spring Boot, a Java-based framework for creating stand-alone, production-grade Spring-based applications. The Python scripts are used for data processing tasks.
 
 ## Setup Instructions

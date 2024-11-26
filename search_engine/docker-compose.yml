@@ -1,9 +1,9 @@
-
+version: '3.8'
 
 services:
-    search_engine:
-        build: .
+    altair:
+        image: marconapo/altair:latest
         ports:
-        - "8000:8000"
+            - "8080:8080"
         volumes:
-        - .:/app
+            - .:/app

@@ -50,8 +50,6 @@ public class Parser {
         File[] files = dir.listFiles();
         List<Table> tables = new ArrayList<>();
 
-        //print the number of files in the directory
-        System.out.println("Number of files in the directory: " + files.length);
 
         if (files != null) {
             for (File file : files) {

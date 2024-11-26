@@ -70,7 +70,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         }
     }
 
-    public Set<Document> runQueryDocuments(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public Set<Document> runQueryArticles(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (searcher == null) {
             throw new IllegalStateException("Searcher not initialized");
         }

@@ -23,8 +23,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/documents")
-@Tag(name = "Documents", description = "Operations for retrieving documents by ID or search criteria")
+@RequestMapping("/articles")
+@Tag(name = "Articles", description = "Operations for retrieving articles by ID or search criteria")
 @Validated
 public class DocumentController {
 
@@ -32,13 +32,13 @@ public class DocumentController {
     private DocumentService documentService;
 
     @GetMapping("/{id}")
-    @Operation(summary = "Retrieve a document by ID", description = "Returns a document by its unique identifier.")
+    @Operation(summary = "Retrieve a article by ID", description = "Returns a article by its unique identifier.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Document retrieved successfully"),
-            @ApiResponse(responseCode = "404", description = "Document not found")
+            @ApiResponse(responseCode = "200", description = "Article retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Article not found")
     })
     public Document getDocument(
-            @Parameter(description = "ID of the document to retrieve", required = true)
+            @Parameter(description = "ID of the article to retrieve", required = true)
             @PathVariable Long id
     ) {
         return documentService.getDocument(id);
@@ -46,9 +46,9 @@ public class DocumentController {
 
     // articles search
     @GetMapping("/search/")
-    @Operation(summary = "Search documents", description = "Search for documents by query with optional field filters.")
+    @Operation(summary = "Search documents", description = "Search for articles by query with optional field filters.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
+            @ApiResponse(responseCode = "200", description = "Articles retrieved successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
     public GetDocumentsResponse searchDocumentsUrls(
@@ -56,7 +56,7 @@ public class DocumentController {
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String title,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String authors,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String articleAbstract,
-            @RequestParam(required = false) @Parameter(description = "Number of documents to retrieve") Integer limit
+            @RequestParam(required = false) @Parameter(description = "Number of articles to retrieve") Integer limit
     ) throws IOException, ParseException, InvalidTokenOffsetsException {
 
         // if all the fields are null, return error
