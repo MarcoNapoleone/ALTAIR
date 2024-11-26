@@ -14,9 +14,13 @@ public class OpenAPIConfiguration {
 
     @Bean
     public OpenAPI defineOpenApi() {
-        Server server = new Server();
-        server.setUrl("http://localhost:8080");
-        server.setDescription("dev");
+        Server devServer = new Server();
+        devServer.setUrl("http://localhost:8080");
+        devServer.setDescription("dev");
+
+        Server productionServer = new Server();
+        productionServer.setUrl("https://altair.marconapoleone.me");
+        productionServer.setDescription("production");
 
         Contact myContact = new Contact();
         myContact.setName("Giorgio Biancini, Marco Napoleone");
@@ -29,6 +33,6 @@ public class OpenAPIConfiguration {
                 .contact(myContact);
 
 
-        return new OpenAPI().info(information).servers(List.of(server));
+        return new OpenAPI().info(information).servers(List.of(devServer, productionServer));
     }
 }
