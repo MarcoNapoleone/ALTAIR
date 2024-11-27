@@ -3,6 +3,7 @@ package it.uniroma3.idd.search_engine.lucene.searcher;
 import it.uniroma3.idd.search_engine.lucene.AcronymManager;
 import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.lucene.indexer.IndexingCompleteEvent;
+import it.uniroma3.idd.search_engine.utils.BertEmbedder;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
@@ -42,6 +43,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
     private final LuceneConfig luceneConfig;
     private IndexSearcher searcher;
     private AcronymManager acronymManager;
+    private BertEmbedder bertEmbedder;
 
     private static final StandardAnalyzer STANDARD_ANALYZER = new StandardAnalyzer();
     private static final SimpleAnalyzer SIMPLE_ANALYZER = new SimpleAnalyzer();
@@ -49,8 +51,9 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
     private Query query;
 
     @Autowired
-    public LuceneSearcher(LuceneConfig luceneConfig) {
+    public LuceneSearcher(LuceneConfig luceneConfig, BertEmbedder bertEmbedder) {
         this.luceneConfig = luceneConfig;
+        this.bertEmbedder = bertEmbedder;
     }
 
     @Override
@@ -176,14 +179,30 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
 
         BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
 
-        // Query with all fields
-        String[] fields = {"caption","body", "footnotes","references"};
+        // Query testuale su più campi
+        String[] fields = {"caption", "body", "footnotes", "references"};
         MultiFieldQueryParser queryParser = new MultiFieldQueryParser(fields, STANDARD_ANALYZER);
         Query queryText = queryParser.parse(query);
         booleanQuery.add(queryText, BooleanClause.Occur.SHOULD);
 
-        // Limit the number of results
+
+
+        // Embedding della query
+        float[] queryEmbedding;
+        try {
+            queryEmbedding = bertEmbedder.getEmbeddings(query.trim().toLowerCase());
+        } catch (Exception e) {
+            throw new RuntimeException("Error generating query embeddings", e);
+        }
+
+        // Imposta il limite di risultati
         limit = limit != null ? limit : 10;
+
+        // Query vettoriale per il campo "embedding"
+        Query vectorQuery = new KnnFloatVectorQuery("embedding", queryEmbedding, limit);
+        booleanQuery.add(vectorQuery, BooleanClause.Occur.SHOULD);
+
+
         TopDocs topDocs;
         try {
             topDocs = searcher.search(booleanQuery.build(), limit);
@@ -191,11 +210,12 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
             throw new RuntimeException("Error searching the index", e);
         }
 
-        // Retrieve the documents
+        // Recupera i documenti
         Set<Document> documents = new HashSet<>();
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
             try {
                 Document doc = searcher.storedFields().document(scoreDoc.doc);
+                // Aggiunge il punteggio ai documenti
                 doc.add(new FloatField("score", scoreDoc.score, StoredField.Store.YES));
                 documents.add(doc);
             } catch (IOException e) {
@@ -203,9 +223,9 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
             }
         }
 
-        //createSnippet(documents, queryText);
         return documents;
     }
+
 
 
     private void createSnippet(Set<Document> documents, Query query) throws InvalidTokenOffsetsException, IOException {

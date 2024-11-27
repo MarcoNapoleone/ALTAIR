@@ -1,0 +1,3 @@
+[0.1|false] 
+
+The table focuses on privacy-preserving techniques in blockchain applications, particularly related to secure data storage and computation.  Machine translation models, while potentially benefiting from privacy-enhancing technologies, are not the primary subject of this table.  

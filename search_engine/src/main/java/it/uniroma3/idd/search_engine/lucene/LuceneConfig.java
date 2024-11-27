@@ -1,5 +1,6 @@
 package it.uniroma3.idd.search_engine.lucene;
 
+import lombok.Getter;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.WhitespaceTokenizer;
@@ -11,26 +12,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LuceneConfig {
 
+    @Getter
     @Value("${lucene.queryExplain}")
     private boolean queryExplain;
 
+    @Getter
     @Value("${lucene.index.directory}")
     private String indexDirectory;
 
+    @Getter
     @Value("${lucene.index.initialize}")
     private boolean shouldInitializeIndex;
 
-    public boolean isQueryExplain() {
-        return queryExplain;
-    }
-
-    public String getIndexDirectory() {
-        return indexDirectory;
-    }
-
-    public boolean isShouldInitializeIndex() {
-        return shouldInitializeIndex;
-    }
 
     @Bean
     public Analyzer customAnalyzer() {

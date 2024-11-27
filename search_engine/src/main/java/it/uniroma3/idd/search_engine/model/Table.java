@@ -68,6 +68,24 @@ public class Table {
         this.references = references;
     }
 
+    //if footnotes is null, return empty string
+    public String getFootnotesString() {
+        if (footnotes == null) {
+            return "";
+        }
+        return String.join(" ", footnotes);
+    }
+
+    //if references is null, return empty string
+    public String getReferencesString() {
+        if (references == null) {
+            return "";
+        }
+        return String.join(" ", references);
+    }
+
+
+
     @Override
     public String toString() {
         return "Table{" +

@@ -1,0 +1,4 @@
+[0.0|false] 
+
+
+The table appears to focus on analyzing text data related to hate speech and sentiment distribution across different datasets. It doesn't mention anything about computer vision or scene understanding techniques.  

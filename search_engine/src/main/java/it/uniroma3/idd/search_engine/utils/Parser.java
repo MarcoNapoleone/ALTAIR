@@ -1,5 +1,6 @@
 package it.uniroma3.idd.search_engine.utils;
 
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.model.Article;
 import it.uniroma3.idd.search_engine.model.Table;
 import org.jsoup.Jsoup;
@@ -15,8 +16,11 @@ import java.util.List;
 
 @Component
 public class Parser {
+
     public static List<Article> articleParser() {
-        File dir = new File("search_engine/data/articles");
+        File dir = new File("data/articles");
+        //print the number of files in the directory
+        System.out.println("Number of files in the directory: " + dir.listFiles().length);
         File[] files = dir.listFiles((dir1, name) -> name.endsWith(".html"));
         List<Article> articles = new ArrayList<>();
 
@@ -46,7 +50,8 @@ public class Parser {
     }
 
     public static List<Table> tableParser() {
-        File dir = new File("search_engine/data/tables");
+        File dir = new File("data/tables");
+        System.out.println("Number of files in the directory: " + dir.listFiles().length);
         File[] files = dir.listFiles();
         List<Table> tables = new ArrayList<>();
 
@@ -60,7 +65,7 @@ public class Parser {
                     jsonNode.fields().forEachRemaining(entry -> {
                         String id = entry.getKey();
                         JsonNode tableNode = entry.getValue().get("table");
-                        String tableHtml = tableNode != null ? tableNode.asText("") : "";
+                        String tableHtml = removeHtmlTags(tableNode != null ? tableNode.asText("") : "");
 
                         // Controlla che il nodo "caption" esista prima di chiamare asText
                         String caption = entry.getValue().has("caption")
@@ -93,4 +98,11 @@ public class Parser {
 
         return tables;
     }
+
+
+    public static String removeHtmlTags(String html) {
+        // Usa JSoup per rimuovere i tag HTML
+        return Jsoup.parse(html).text();
+    }
+
 }

@@ -1,0 +1,4 @@
+[0.0|false] 
+
+
+This table appears to discuss machine learning model performance on various image classification tasks (MNIST, CIFAR-10, etc.). Human pose estimation is a distinct task focused on identifying and locating body parts in images, not directly related to the topics covered in the table.  
