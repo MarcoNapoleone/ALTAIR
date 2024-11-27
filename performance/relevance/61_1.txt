@@ -1,3 +1,1 @@
-0.4|True 
-
-The table discusses metrics commonly used for image assessment, which is related to performance evaluation in object detection models. However, it doesn't provide specific performance data for object detection models.  
+0.3|false 

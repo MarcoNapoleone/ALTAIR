@@ -1,3 +1,1 @@
-0.3|true 
-
-The table shows an example of a table structure with headers (method, all obj num, color, etc.) and content.  While it doesn't directly discuss *techniques* for understanding table structures, it does provide a concrete illustration of what such a structure might look like. This makes it somewhat relevant to the query. 
+0.6|true 

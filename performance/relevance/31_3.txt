@@ -1,4 +1,1 @@
-[0.0|false] 
-
-
-The table appears to discuss text generation and analysis related to political discourse, not computer vision techniques for scene understanding.  
+0.0|false 

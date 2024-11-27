@@ -1,9 +1,1 @@
-0.4|True 
-
-**Explanation:**
-
-The table mentions "method" and "evalut result by our propos method", suggesting a discussion of techniques (methods) used for evaluation in scene understanding.  
-
-However, the table doesn't provide specific details about the techniques themselves. It lacks information on algorithms, architectures, or data used for scene understanding. Therefore, while there is some relevance, it's not a highly informative source for learning about specific techniques. 
-
-
+0.3|false 

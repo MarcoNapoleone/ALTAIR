@@ -1,1 +1,3 @@
-0.0|false 
+[0.0|false] 
+
+The table describes a telescope's design and seems unrelated to challenges in federated learning applications.  Federated learning deals with training machine learning models across decentralized data sets, while the table focuses on optical instrument specifications. 

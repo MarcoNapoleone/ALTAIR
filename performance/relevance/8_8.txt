@@ -1,3 +1,1 @@
-[0.0|false] 
-
-The table appears to describe symbols and descriptions, possibly related to a technical subject like cryptography or military tactics. It has no connection to speech recognition systems.  
+0.0|false 

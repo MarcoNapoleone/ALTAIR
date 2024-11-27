@@ -1,3 +1,1 @@
-[0.0|false] 
-
-The table describes anatomical regions of the brain and appears to relate to medical imaging, not computer vision techniques for scene understanding.  
+0.0|false 

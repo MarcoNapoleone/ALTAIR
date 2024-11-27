@@ -1,3 +1,1 @@
-[0.0|false] 
-
-The table discusses a language model generating text prompts targeting specific religious groups. This has no direct relation to advances in speech recognition systems.  
+0.0|false 

@@ -1,7 +1,1 @@
-The provided table focuses on questions chosen for a specific task (stance detection) within German and English language pairs.  
-
-While visual question answering systems could *potentially* be used for stance detection, the table itself doesn't directly showcase applications of such systems. 
-
-Therefore: 
-
-**0.3|false** 
+0.2|false 

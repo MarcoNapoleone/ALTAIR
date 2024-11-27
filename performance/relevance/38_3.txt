@@ -1,4 +1,1 @@
-[0.0|false] 
-
-
-The table discusses privacy preservation in blockchain systems, which is not related to scene understanding in computer vision. 
+0.0|false 

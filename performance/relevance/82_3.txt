@@ -1,3 +1,1 @@
-0.3|True 
-
-The table mentions "visual7w dataset" which suggests a connection to computer vision. However, it doesn't directly list or describe scene understanding techniques.  It focuses on evaluation results ("tabl 4 evalu result") potentially related to a specific method or algorithm. 
+0.3|true 
