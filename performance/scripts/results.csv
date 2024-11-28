@@ -472,7 +472,7 @@ index,query,score,relevant
 47,1,0.2,false
 47,2,0.1,false
 47,3,0.2,false
-47,4,"The provided table focuses on questions chosen for a specific task (stance detection) within German and English language pairs.  While visual question answering systems could *potentially* be used for stance detection, the table itself doesn't directly showcase applications of such systems. Therefore: **0.3",false**
+47,4,0.3,false
 47,5,0.1,false
 47,6,0.2,false
 47,7,0.6,true
@@ -748,7 +748,7 @@ index,query,score,relevant
 75,3,0.2,false
 75,4,0.3,false
 75,5,0.6,true
-75,6,"Here's a breakdown of why the table might not be highly relevant to the query and the resulting score:* **Limited Focus:** The table seems to present results for a specific experiment (tabl 2 result on the 20 unseen test categories). It doesn't offer a broad overview of different handwritten text recognition approaches.* **Jargon:** Terms like epe, acc 005, and f3d suggest a technical focus on specific metrics or algorithms within a particular system, rather than discussing various methods generally.* **Missing Context:**  We need more information about the experiment's context (the specific model used, type of handwritten text, etc.) to understand its relevance to broader approaches.**Therefore:**0.2",false
+75,6,0.2,false
 75,7,0.2,false
 75,8,0.2,false
 75,9,0.2,false

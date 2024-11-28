@@ -1,5 +1,0 @@
-[0.2|false] 
-
-**Explanation:**
-
-While the table discusses "lexicon" and potentially language aspects, it doesn't directly address advancements or developments in speech recognition systems themselves.  The focus seems to be on categorization and counting of terms within specific languages, which is a narrower scope than the broader field of speech recognition system improvements. 

@@ -1,3 +1,0 @@
-[0.0|false] 
-
-The table appears to discuss lexical analysis and categorization within a specific dataset ("S3.T1"). Federated learning focuses on training machine learning models across decentralized data sets without directly sharing the data itself. There's no apparent connection between these concepts.  

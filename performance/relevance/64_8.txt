@@ -1,3 +1,0 @@
-[0.0|false] 
-
-The provided table describes anatomical regions of the brain and their relationship to MRI production. It has no apparent connection to speech recognition systems.  
