@@ -1,935 +1,1597 @@
-index,query,score,relevant
-0,1,0.6,true
-0,2,0.1,false
-0,3,0.2,false
-0,4,0.1,false
-0,5,0.1,false
-0,6,0.1,false
-0,7,0.6,true
-0,8,0.2,false
-0,9,0.2,false
-0,10,0.1,false
-1,1,0.2,false
-1,2,0.1,false
-1,3,0.2,false
-1,4,0.2,false
-1,5,0.2,false
-1,6,0.2,false
-1,7,0.3,true
-1,8,0.2,false
-1,9,0.3,false
-1,10,0.1,false
-2,1,0.0,false
-2,2,0.0,false
-2,3,0.1,false
-2,4,0.1,false
-2,5,0.0,false
-2,6,0.0,false
-2,7,0.7,true
-2,8,0.1,false
-2,9,0.1,false
-2,10,0.0,false
-3,1,0.0,false
-3,2,0.0,false
-3,3,0.1,false
-3,4,0.1,false
-3,5,0.0,false
-3,6,0.0,false
-3,7,0.8,true
-3,8,0.1,false
-3,9,0.1,false
-3,10,0.75,true
-4,1,0.2,false
-4,2,0.1,false
-4,3,0.1,false
-4,4,0.2,false
-4,5,0.1,false
-4,6,0.2,false
-4,7,0.8,true
-4,8,0.1,false
-4,9,0.2,false
-4,10,0.1,false
-5,1,0.1,false
-5,2,0.0,false
-5,3,0.1,false
-5,4,0.1,false
-5,5,0.0,false
-5,6,0.1,false
-5,7,0.2,false
-5,8,0.75,true
-5,9,0.2,false
-5,10,0.0,false
-6,1,0.2,false
-6,2,0.1,false
-6,3,0.2,false
-6,4,0.1,false
-6,5,0.1,false
-6,6,0.2,false
-6,7,0.6,true
-6,8,0.1,false
-6,9,0.2,false
-6,10,0.75,true
-7,1,0.0,false
-7,2,0.0,false
-7,3,0.0,false
-7,4,0.0,false
-7,5,0.0,false
-7,6,0.0,false
-7,7,0.2,false
-7,8,0.0,false
-7,9,0.0,false
-7,10,0.0,false
-8,1,0.1,false
-8,2,0.0,false
-8,3,0.0,false
-8,4,0.1,false
-8,5,0.0,false
-8,6,0.0,false
-8,7,0.7,true
-8,8,0.0,false
-8,9,0.0,false
-8,10,0.1,false
-9,1,0.1,false
-9,2,0.0,false
-9,3,0.1,false
-9,4,0.1,false
-9,5,0.0,false
-9,6,0.1,false
-9,7,0.7,true
-9,8,0.1,false
-9,9,0.1,false
-9,10,0.1,false
-10,1,0.0,false
-10,2,0.0,false
-10,3,0.0,false
-10,4,0.0,false
-10,5,0.0,false
-10,6,0.0,false
-10,7,0.6,true
-10,8,0.0,false
-10,9,0.0,false
-10,10,0.1,false
-11,1,0.1,false
-11,2,0.0,false
-11,3,0.0,false
-11,4,0.1,false
-11,5,0.0,false
-11,6,0.0,false
-11,7,0.2,false
-11,8,0.0,false
-11,9,0.0,false
-11,10,0.1,false
-12,1,0.1,false
-12,2,0.0,false
-12,3,0.0,false
-12,4,0.0,false
-12,5,0.0,false
-12,6,0.0,false
-12,7,0.7,true
-12,8,0.0,false
-12,9,0.0,false
-12,10,0.1,false
-13,1,0.0,false
-13,2,0.0,false
-13,3,0.0,false
-13,4,0.0,false
-13,5,0.0,false
-13,6,0.0,false
-13,7,0.2,false
-13,8,0.0,false
-13,9,0.1,false
-13,10,0.1,false
-14,1,0.2,false
-14,2,0.0,false
-14,3,0.0,false
-14,4,0.0,false
-14,5,0.0,false
-14,6,0.0,false
-14,7,0.6,True
-14,8,0.0,false
-14,9,0.1,false
-14,10,0.2,false
-15,1,0.0,false
-15,2,0.0,false
-15,3,0.0,false
-15,4,0.0,false
-15,5,0.0,false
-15,6,0.0,false
-15,7,0.2,false
-15,8,0.0,false
-15,9,0.0,false
-15,10,0.0,false
-16,1,0.8,true
-16,2,0.1,false
-16,3,0.1,false
-16,4,0.1,false
-16,5,0.2,false
-16,6,0.3,false
-16,7,0.8,true
-16,8,0.2,false
-16,9,0.7,true
-16,10,0.2,false
-17,1,0.0,false
-17,2,0.0,false
-17,3,0.0,false
-17,4,0.0,false
-17,5,0.0,false
-17,6,0.1,false
-17,7,0.7,true
-17,8,0.0,false
-17,9,0.0,false
-17,10,0.0,false
-18,1,0.1,false
-18,2,0.0,false
-18,3,0.1,false
-18,4,0.1,false
-18,5,0.0,false
-18,6,0.1,false
-18,7,0.8,true
-18,8,0.1,false
-18,9,0.1,false
-18,10,0.1,false
-19,1,0.1,false
-19,2,0.0,false
-19,3,0.1,false
-19,4,0.1,false
-19,5,0.1,false
-19,6,0.1,false
-19,7,0.8,true
-19,8,0.0,false
-19,9,0.0,false
-19,10,0.7,true
-20,1,0.0,false
-20,2,0.0,false
-20,3,0.1,false
-20,4,0.1,false
-20,5,0.0,false
-20,6,0.1,false
-20,7,0.7,true
-20,8,0.0,false
-20,9,0.1,false
-20,10,0.1,false
-21,1,0.0,false
-21,2,0.1,false
-21,3,0.1,false
-21,4,0.0,false
-21,5,0.0,false
-21,6,0.1,false
-21,7,0.7,true
-21,8,0.1,false
-21,9,0.1,false
-21,10,0.2,false
-22,1,0.0,false
-22,2,0.0,false
-22,3,0.1,false
-22,4,0.1,false
-22,5,0.1,false
-22,6,0.1,false
-22,7,0.8,true
-22,8,0.2,false
-22,9,0.1,false
-22,10,0.2,false
-23,1,0.0,false
-23,2,0.0,false
-23,3,0.0,false
-23,4,0.0,false
-23,5,0.0,false
-23,6,0.0,false
-23,7,0.7,true
-23,8,0.0,false
-23,9,0.0,false
-23,10,0.3,true
-24,1,0.0,false
-24,2,0.0,false
-24,3,0.0,false
-24,4,0.1,false
-24,5,0.0,false
-24,6,0.0,false
-24,7,0.7,true
-24,8,0.0,false
-24,9,0.1,false
-24,10,0.3,true
-25,1,0.2,false
-25,2,0.2,false
-25,3,0.3,false
-25,4,0.1,false
-25,5,0.1,false
-25,6,0.6,true
-25,7,0.2,false
-25,8,0.2,false
-25,9,0.2,false
-25,10,0.1,false
-26,1,0.0,false
-26,2,0.1,false
-26,3,0.1,false
-26,4,0.0,false
-26,5,0.0,false
-26,6,0.1,false
-26,7,0.6,true
-26,8,0.0,false
-26,9,0.1,false
-26,10,0.1,false
-27,1,0.1,false
-27,2,0.1,false
-27,3,0.2,false
-27,4,0.1,false
-27,5,0.1,false
-27,6,0.6,true
-27,7,0.7,true
-27,8,0.0,false
-27,9,0.1,false
-27,10,0.1,false
-28,1,0.1,false
-28,2,0.0,false
-28,3,0.0,false
-28,4,0.1,false
-28,5,0.0,false
-28,6,0.1,false
-28,7,0.7,true
-28,8,0.0,false
-28,9,0.1,false
-28,10,0.1,false
-29,1,0.1,false
-29,2,0.0,false
-29,3,0.1,false
-29,4,0.1,false
-29,5,0.1,false
-29,6,0.2,false
-29,7,0.3,true
-29,8,0.2,false
-29,9,0.2,false
-29,10,0.1,false
-30,1,0.1,false
-30,2,0.0,false
-30,3,0.1,false
-30,4,0.2,false
-30,5,0.0,false
-30,6,0.2,false
-30,7,0.7,true
-30,8,0.1,false
-30,9,0.6,true
-30,10,0.1,false
-31,1,0.0,false
-31,2,0.0,false
-31,3,0.0,false
-31,4,0.1,false
-31,5,0.0,false
-31,6,0.0,false
-31,7,0.6,true
-31,8,0.0,false
-31,9,0.0,false
-31,10,0.0,false
-32,1,0.0,false
-32,2,0.0,false
-32,3,0.0,false
-32,4,0.1,false
-32,5,0.0,false
-32,6,0.0,false
-32,7,0.3,false
-32,8,0.1,false
-32,9,0.1,false
-32,10,0.0,false
-33,1,0.1,false
-33,2,0.0,false
-33,3,0.1,false
-33,4,0.1,false
-33,5,0.0,false
-33,6,0.1,false
-33,7,0.2,false
-33,8,0.1,false
-33,9,0.6,true
-33,10,0.1,false
-34,1,0.0,false
-34,2,0.0,false
-34,3,0.0,false
-34,4,0.1,false
-34,5,0.0,false
-34,6,0.0,false
-34,7,0.2,false
-34,8,0.0,false
-34,9,0.1,false
-34,10,0.0,false
-35,1,0.0,false
-35,2,0.0,false
-35,3,0.1,false
-35,4,0.1,false
-35,5,0.0,false
-35,6,0.0,false
-35,7,0.2,false
-35,8,0.0,false
-35,9,0.1,false
-35,10,0.1,false
-36,1,0.0,false
-36,2,0.0,false
-36,3,0.0,false
-36,4,0.0,false
-36,5,0.0,false
-36,6,0.0,false
-36,7,0.3,true
-36,8,0.0,false
-36,9,0.0,false
-36,10,0.2,false
-37,1,0.0,false
-37,2,0.0,false
-37,3,0.1,false
-37,4,0.0,false
-37,5,0.0,false
-37,6,0.1,false
-37,7,0.7,true
-37,8,0.1,false
-37,9,0.1,false
-37,10,0.1,false
-38,1,0.0,false
-38,2,0.0,false
-38,3,0.0,false
-38,4,0.0,false
-38,5,0.0,false
-38,6,0.0,false
-38,7,0.6,true
-38,8,0.0,false
-38,9,0.0,false
-38,10,0.3,True
-39,1,0.0,false
-39,2,0.0,false
-39,3,0.0,false
-39,4,0.0,false
-39,5,0.0,false
-39,6,0.0,false
-39,7,0.7,true
-39,8,0.1,false
-39,9,0.0,false
-39,10,0.7,true
-40,1,0.0,false
-40,2,0.0,false
-40,3,0.1,false
-40,4,0.0,false
-40,5,0.1,false
-40,6,0.1,false
-40,7,0.75,true
-40,8,0.1,false
-40,9,0.0,false
-40,10,0.7,True
-41,1,0.0,false
-41,2,0.0,false
-41,3,0.1,false
-41,4,0.0,false
-41,5,0.0,false
-41,6,0.0,false
-41,7,0.8,true
-41,8,0.1,false
-41,9,0.0,false
-41,10,0.7,true
-42,1,0.0,false
-42,2,0.0,false
-42,3,0.1,false
-42,4,0.0,false
-42,5,0.0,false
-42,6,0.0,false
-42,7,0.7,true
-42,8,0.0,false
-42,9,0.0,false
-42,10,0.1,false
-43,1,0.1,false
-43,2,0.1,false
-43,3,0.1,false
-43,4,0.2,false
-43,5,0.1,false
-43,6,0.1,false
-43,7,0.7,true
-43,8,0.1,false
-43,9,0.1,false
-43,10,0.2,false
-44,1,0.0,false
-44,2,0.1,false
-44,3,0.1,false
-44,4,0.2,false
-44,5,0.0,false
-44,6,0.1,false
-44,7,0.7,true
-44,8,0.2,false
-44,9,0.1,false
-44,10,0.2,false
-45,1,0.1,false
-45,2,0.0,false
-45,3,0.2,false
-45,4,0.1,false
-45,5,0.0,false
-45,6,0.0,false
-45,7,0.7,true
-45,8,0.0,false
-45,9,0.1,false
-45,10,0.1,false
-46,1,0.0,false
-46,2,0.0,false
-46,3,0.1,false
-46,4,0.1,false
-46,5,0.0,false
-46,6,0.1,false
-46,7,0.7,true
-46,8,0.0,false
-46,9,0.0,false
-46,10,0.0,false
-47,1,0.2,false
-47,2,0.1,false
-47,3,0.2,false
-47,4,0.3,false
-47,5,0.1,false
-47,6,0.2,false
-47,7,0.6,true
-47,8,0.2,false
-47,9,0.2,false
-47,10,0.1,false
-48,1,0.1,false
-48,2,0.2,false
-48,3,0.1,false
-48,4,0.1,false
-48,5,0.1,false
-48,6,0.3,false
-48,7,0.3,false
-48,8,0.2,false
-48,9,0.2,false
-48,10,0.1,false
-49,1,0.1,false
-49,2,0.1,false
-49,3,0.1,false
-49,4,0.1,false
-49,5,0.1,false
-49,6,0.1,false
-49,7,0.7,true
-49,8,0.0,false
-49,9,0.1,false
-49,10,0.1,false
-50,1,0.2,false
-50,2,0.0,false
-50,3,0.2,false
-50,4,0.2,false
-50,5,0.1,false
-50,6,0.1,false
-50,7,0.6,true
-50,8,0.0,false
-50,9,0.1,false
-50,10,0.2,false
-51,1,0.2,false
-51,2,0.0,false
-51,3,0.2,false
-51,4,0.3,true
-51,5,0.1,false
-51,6,0.1,false
-51,7,0.2,false
-51,8,0.0,false
-51,9,0.1,false
-51,10,0.1,false
-52,1,0.6,true
-52,2,0.1,false
-52,3,0.2,false
-52,4,0.1,false
-52,5,0.3,false
-52,6,0.1,false
-52,7,0.7,true
-52,8,0.2,false
-52,9,0.2,false
-52,10,0.2,false
-53,1,0.1,false
-53,2,0.1,false
-53,3,0.1,false
-53,4,0.1,false
-53,5,0.1,false
-53,6,0.2,false
-53,7,0.3,false
-53,8,0.0,false
-53,9,0.0,false
-53,10,0.1,false
-54,1,0.2,false
-54,2,0.1,false
-54,3,0.3,true
-54,4,0.2,false
-54,5,0.2,false
-54,6,0.1,false
-54,7,0.6,true
-54,8,0.0,false
-54,9,0.1,false
-54,10,0.0,false
-55,1,0.7,true
-55,2,0.1,false
-55,3,0.2,false
-55,4,0.2,false
-55,5,0.6,true
-55,6,0.2,false
-55,7,0.3,True
-55,8,0.0,false
-55,9,0.1,false
-55,10,0.1,false
-56,1,0.7,true
-56,2,0.1,false
-56,3,0.1,false
-56,4,0.1,false
-56,5,0.7,true
-56,6,0.1,false
-56,7,0.1,false
-56,8,0.0,false
-56,9,0.1,false
-56,10,0.1,false
-57,1,0.7,true
-57,2,0.1,false
-57,3,0.2,false
-57,4,0.1,false
-57,5,0.75,true
-57,6,0.1,false
-57,7,0.6,true
-57,8,0.0,false
-57,9,0.1,false
-57,10,0.1,false
-58,1,0.6,True
-58,2,0.2,false
-58,3,0.2,false
-58,4,0.1,false
-58,5,0.6,true
-58,6,0.2,false
-58,7,0.2,false
-58,8,0.1,false
-58,9,0.0,false
-58,10,0.0,false
-59,1,0.2,false
-59,2,0.1,false
-59,3,0.1,false
-59,4,0.1,false
-59,5,0.7,true
-59,6,0.1,false
-59,7,0.3,true
-59,8,0.0,false
-59,9,0.1,false
-59,10,0.1,false
-60,1,0.3,True
-60,2,0.1,false
-60,3,0.2,false
-60,4,0.1,false
-60,5,0.6,true
-60,6,0.2,false
-60,7,0.2,false
-60,8,0.0,false
-60,9,0.1,false
-60,10,0.0,false
-61,1,0.4,True
-61,2,0.2,false
-61,3,0.2,false
-61,4,0.2,false
-61,5,0.7,true
-61,6,0.1,false
-61,7,0.2,false
-61,8,0.1,false
-61,9,0.1,false
-61,10,0.1,false
-62,1,0.0,false
-62,2,0.0,false
-62,3,0.1,false
-62,4,0.1,false
-62,5,0.2,false
-62,6,0.0,false
-62,7,0.8,true
-62,8,0.0,false
-62,9,0.1,false
-62,10,0.0,false
-63,1,0.0,false
-63,2,0.0,false
-63,3,0.0,false
-63,4,0.0,false
-63,5,0.2,false
-63,6,0.0,false
-63,7,0.8,true
-63,8,0.0,false
-63,9,0.0,false
-63,10,0.0,false
-64,1,0.0,false
-64,2,0.0,false
-64,3,0.0,false
-64,4,0.1,false
-64,5,0.1,false
-64,6,0.0,false
-64,7,0.7,true
-64,8,0.0,false
-64,9,0.0,false
-64,10,0.0,false
-65,1,0.0,false
-65,2,0.0,false
-65,3,0.1,false
-65,4,0.0,false
-65,5,0.2,false
-65,6,0.0,false
-65,7,0.7,true
-65,8,0.0,false
-65,9,0.0,false
-65,10,0.0,false
-66,1,0.0,false
-66,2,0.0,false
-66,3,0.1,false
-66,4,0.1,false
-66,5,0.1,false
-66,6,0.0,false
-66,7,0.7,true
-66,8,0.0,false
-66,9,0.0,false
-66,10,0.0,false
-67,1,0.0,false
-67,2,0.0,false
-67,3,0.1,false
-67,4,0.1,false
-67,5,0.1,false
-67,6,0.0,false
-67,7,0.8,true
-67,8,0.0,false
-67,9,0.0,false
-67,10,0.0,false
-68,1,0.0,false
-68,2,0.0,false
-68,3,0.0,false
-68,4,0.1,false
-68,5,0.0,false
-68,6,0.0,false
-68,7,0.7,true
-68,8,0.0,false
-68,9,0.0,false
-68,10,0.0,false
-69,1,0.3,false
-69,2,0.0,false
-69,3,0.1,false
-69,4,0.2,false
-69,5,0.1,false
-70,1,0.1,false
-70,2,0.1,false
-70,3,0.2,false
-70,4,0.1,false
-70,5,0.1,false
-70,6,0.2,false
-70,7,0.6,true
-70,8,0.1,false
-70,9,0.1,false
-70,10,0.2,false
-71,1,0.1,false
-71,2,0.1,false
-71,3,0.1,false
-71,4,0.1,false
-71,5,0.1,false
-71,6,0.1,false
-71,7,0.7,true
-71,8,0.1,false
-71,9,0.1,false
-72,1,0.1,false
-72,2,0.0,false
-72,3,0.1,false
-72,4,0.1,false
-72,5,0.0,false
-72,6,0.0,false
-72,7,0.2,false
-72,8,0.2,false
-72,9,0.1,false
-72,10,0.1,false
-73,1,0.2,false
-73,2,0.0,false
-73,3,0.1,false
-73,4,0.2,false
-73,5,0.1,false
-73,6,0.2,false
-73,7,0.3,true
-73,8,0.1,false
-73,9,0.2,false
-73,10,0.0,false
-74,1,0.75,true
-74,2,0.1,false
-74,3,0.2,false
-74,4,0.1,false
-74,5,0.1,false
-74,6,0.2,false
-74,7,0.6,true
-74,8,0.1,false
-74,9,0.2,false
-74,10,0.1,false
-75,1,0.7,true
-75,2,0.6,true
-75,3,0.2,false
-75,4,0.3,false
-75,5,0.6,true
-75,6,0.2,false
-75,7,0.2,false
-75,8,0.2,false
-75,9,0.2,false
-75,10,0.1,false
-76,1,0.7,true
-76,2,0.3,false
-76,3,0.2,false
-76,4,0.3,false
-76,5,0.6,true
-76,6,0.3,false
-76,7,0.2,false
-76,8,0.2,false
-76,9,0.3,false
-76,10,0.2,false
-77,1,0.85,true
-77,2,0.6,true
-77,3,0.6,true
-77,4,0.65,true
-77,5,0.8,true
-77,6,0.2,false
-77,7,0.7,true
-77,8,0.1,false
-77,9,0.2,false
-77,10,0.1,false
-78,1,0.8,true
-78,2,0.2,false
-78,3,0.7,true
-78,4,0.2,false
-78,5,0.8,true
-78,6,0.1,false
-78,7,0.7,true
-78,8,0.0,false
-78,9,0.1,false
-78,10,0.0,false
-79,1,0.6,true
-79,2,0.1,false
-79,3,0.3,false
-79,4,0.7,true
-79,5,0.3,false
-79,6,0.1,false
-79,7,0.2,false
-79,8,0.1,false
-79,9,0.1,false
-79,10,0.1,false
-80,1,0.2,false
-80,2,0.1,false
-80,3,0.6,True
-80,4,0.7,true
-80,5,0.2,false
-80,6,0.2,false
-80,7,0.3,false
-80,8,0.1,false
-80,9,0.2,false
-80,10,0.1,false
-81,1,0.7,true
-81,2,0.3,false
-81,3,0.4,True
-81,4,0.2,false
-81,5,0.65,True
-81,6,0.6,true
-81,7,0.3,true
-81,8,0.1,false
-81,9,0.2,false
-81,10,0.1,false
-82,1,0.8,true
-82,2,0.3,true
-82,3,0.3,True
-82,4,0.7,true
-82,5,0.7,true
-82,6,0.7,true
-82,7,0.2,false
-82,8,0.0,false
-82,9,0.1,false
-82,10,0.1,false
-83,1,0.0,false
-83,2,0.0,false
-83,3,0.1,false
-83,4,0.1,false
-83,5,0.0,false
-83,6,0.0,false
-83,7,0.7,true
-83,8,0.0,false
-83,9,0.2,false
-83,10,0.0,false
-84,1,0.1,false
-84,2,0.0,false
-84,3,0.1,false
-84,4,0.2,false
-84,5,0.0,false
-84,6,0.0,false
-84,7,0.2,false
-84,8,0.1,false
-84,9,0.2,false
-84,10,0.1,false
-85,1,0.1,false
-85,2,0.1,false
-85,3,0.1,false
-85,4,0.1,false
-85,5,0.1,false
-85,6,0.2,false
-85,7,0.2,false
-85,8,0.1,false
-85,9,0.3,false
-85,10,0.1,false
-87,1,0.0,false
-87,2,0.0,false
-87,3,0.0,false
-87,4,0.1,false
-87,5,0.0,false
-87,6,0.0,false
-87,7,0.4,true
-87,8,0.0,false
-87,9,0.1,false
-87,10,0.0,false
-88,1,0.1,false
-88,2,0.1,false
-88,3,0.3,True
-88,4,0.2,false
-88,5,0.1,false
-88,6,0.1,false
-88,7,0.7,true
-88,8,0.1,false
-88,9,0.2,false
-88,10,0.1,false
-89,1,0.0,false
-89,2,0.0,false
-89,3,0.0,false
-89,4,0.1,false
-89,5,0.0,false
-89,6,0.0,false
-89,7,0.2,false
-89,8,0.0,false
-89,9,0.1,false
-89,10,0.0,false
-90,1,0.2,false
-90,2,0.0,false
-90,3,0.1,false
-90,4,0.2,false
-90,5,0.0,false
-90,6,0.1,false
-90,7,0.3,true
-90,8,0.1,false
-90,9,0.2,false
-90,10,0.1,false
-91,1,0.1,false
-91,2,0.0,false
-91,3,0.1,false
-91,4,0.1,false
-91,5,0.0,false
-91,6,0.0,false
-91,7,0.6,true
-91,8,0.0,false
-91,9,0.1,false
-91,10,0.1,false
-92,1,0.1,false
-92,2,0.0,false
-92,3,0.1,false
-92,4,0.2,false
-92,5,0.0,false
-92,6,0.1,false
-92,7,0.2,false
-92,8,0.0,false
-92,9,0.1,false
-92,10,0.1,false
-93,1,0.0,false
-93,2,0.0,false
-93,3,0.1,false
-93,4,0.1,false
-93,5,0.0,false
-93,6,0.0,false
-93,7,0.3,false
-93,8,0.0,false
-93,9,0.1,false
-93,10,0.1,false
-94,1,0.0,false
-94,2,0.0,false
-94,3,0.1,false
-94,4,0.1,false
-94,5,0.0,false
-94,6,0.1,false
-94,7,0.75,true
-94,8,0.1,false
-94,9,0.1,false
-94,10,0.0,false
+index,query,score,relevant,explanation,keywords
+0,1,0.1,False,"The table focuses on evaluation metrics of a method, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+0,2,0.1,False,,[]
+0,3,0.1,False,,[]
+0,4,0.8,True,The table presents results on a test set for visual question answering models.,"['visual question answering', 'accuracy', 'method']"
+0,5,0.1,False,,[]
+0,6,0.1,False,"The table focuses on performance metrics of a method, not regulatory capture or machine learning in a regulatory context.",[]
+0,7,0.1,False,,[]
+0,8,0.75,True,The table mentions methods compared over various scenes.,"['Method', 'over scenes']"
+0,9,0.8,True,The table presents performance metrics likely related to a visual task.,"['Accuracy', 'Method', 'Scenes', 'Visual']"
+0,10,0.1,False,,[]
+1,1,0.1,False,"The table focuses on test results for an abstractive summarization model, not visual question answering.","['Graph structured', 'visual Question Answering']"
+1,2,0.1,False,The table does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+1,3,0.1,False,,[]
+1,4,0.1,False,,[]
+1,5,0.1,False,"Table content focuses on abstractive text summarization, not fairness or social impact.",[]
+1,6,0.1,False,"The table does not discuss regulatory capture, IA, ML, or machine learning.",[]
+1,7,0.1,False,,[]
+1,8,0.1,False,No mention of Graph Convolutional Networks or GCNs found.,[]
+1,9,0.1,False,,[]
+1,10,0.1,False,"The table focuses on abstractive summarization results, not decentralized or FL concepts.",[]
+2,1,0.1,False,"The table provides notations about devices, not visual information or graphs.","['Graph structured', 'visual Question Answering']"
+2,2,0.1,False,"The table focuses on notations for mathematical concepts, not Autonomous Surface Vehicles or Federated Learning.",[]
+2,3,0.1,False,,[]
+2,4,0.1,False,"The table defines notations related to devices and mathematics, not visual question answering.",[]
+2,5,0.1,False,,[]
+2,6,0.1,False,,[]
+2,7,0.1,False,,[]
+2,8,0.1,False,,[]
+2,9,0.1,False,"Table focuses on notation definitions, not visual data or question answering.",[]
+2,10,0.1,False,"The table focuses on notations related to devices and mathematical structures, not decentralized systems or FL.",[]
+3,1,0.1,False,"The table focuses on test accuracy for different methods, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+3,3,0.1,False,,[]
+3,4,0.1,False,,[]
+3,5,0.1,False,,[]
+3,6,0.1,False,"The table focuses on test accuracy for different methods, not regulatory capture or machine learning.",[]
+3,7,0.1,False,,[]
+3,8,0.1,False,,[]
+3,9,0.1,False,,[]
+3,10,0.1,False,,[]
+4,1,0.1,False,"The table describes a statistical comparison, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+4,2,0.1,False,,[]
+4,3,0.1,False,,[]
+4,4,0.1,False,"The table focuses on comparing averaging samples in a Multidimensional Scaling analysis, not visual question answering applications.",[]
+4,5,0.1,False,"The table focuses on technical aspects of data analysis, not social fairness.",[]
+4,7,0.1,False,,[]
+4,8,0.1,False,,[]
+4,9,0.1,False,,[]
+4,10,0.1,False,,[]
+5,1,0.1,False,"The table focuses on test accuracy of a model, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+5,2,0.1,False,,[]
+5,3,0.1,False,"The table focuses on test accuracy of a model, not RAG or long-context LLMs.",[]
+5,4,0.1,False,"The table focuses on test accuracy of a model, not visual question answering applications.",[]
+5,5,0.1,False,,[]
+5,6,0.1,False,"Table focuses on test accuracy of a model, not regulatory capture or machine learning in a broader sense.",[]
+5,7,0.1,False,"Table content does not mention segmentation, SAM, or failure.",[]
+5,8,0.1,False,,[]
+5,10,0.75,True,"Table mentions XorMixFL, a decentralized federated learning algorithm.",['XorMixFL']
+6,1,0.1,False,"The table focuses on numerical performance metrics, not visual data or question answering.","['Graph structured', 'visual Question Answering']"
+6,2,0.1,False,,[]
+6,3,0.1,False,"The table focuses on RMSE metrics for a specific task, not long-context LLMs or graph structures.",[]
+6,4,0.1,False,"The table focuses on performance metrics for a specific algorithm, not visual question answering.",[]
+6,5,0.1,False,No mention of fairness or social aspects in the table.,[]
+6,7,0.1,False,,[]
+6,8,0.85,True,The table discusses RMSE performance comparison of GC networks.,"['Graph Convolutional Network', 'GCN']"
+6,9,0.1,False,"The table provides textual performance comparison metrics, not visual data.",[]
+6,10,0.1,False,,[]
+7,1,0.1,False,Table lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+7,2,0.0,False,,[]
+7,3,0.1,False,,[]
+7,4,0.1,False,The table does not contain information about visual question answering systems.,[]
+7,6,0.1,False,,[]
+7,7,0.1,False,,[]
+7,8,0.1,False,,[]
+7,9,0.1,False,The table contains textual data and no visual information.,[]
+7,10,0.1,False,,[]
+8,2,0.1,False,,[]
+8,3,0.1,False,,[]
+8,4,0.1,False,No direct connection to visual question answering applications found.,[]
+8,6,0.1,False,,[]
+8,7,0.1,False,,[]
+8,8,0.1,False,,[]
+8,9,0.1,False,,[]
+8,10,0.1,False,,[]
+9,1,0.1,False,The table does not appear to contain graph or visual information.,"['Graph structured', 'visual Question Answering']"
+9,2,0.1,False,,[]
+9,4,0.1,False,Table content does not appear related to visual question answering systems.,[]
+9,6,0.1,False,"Table content does not mention regulatory capture, IA, ML, or machine learning.",[]
+9,8,0.1,False,No keywords related to Graph Convolutional Networks or GCN found.,[]
+9,9,0.7,True,The table has numerical data that could be visualized.,"['Graph structured', 'visual']"
+10,1,0.1,False,The table does not contain visual elements or information about graph structures.,"['Graph structured', 'visual Question Answering']"
+10,2,0.1,False,No keywords related to Autonomous Surface Vehicles or Federated Learning found.,[]
+10,4,0.1,False,,[]
+10,6,0.1,False,"Table content does not seem to relate to Regulatory Capture, IA, ML, or Machine Learning.",[]
+10,7,0.1,False,,[]
+10,8,0.1,False,,[]
+10,9,0.1,False,No visual information or structure present in the table.,[]
+10,10,0.1,False,,[]
+11,2,0.1,False,,[]
+11,3,0.1,False,,[]
+11,4,0.1,False,No direct connection to visual question answering applications found.,[]
+11,7,0.1,False,,[]
+11,8,0.6,True,"The table discusses predicting spatial phenomena, which can involve graph-structured data.","['Graph', 'Predicting']"
+11,9,0.1,False,,[]
+11,10,0.1,False,The table does not contain information about FL or decentralised systems.,[]
+12,1,0.1,False,The table lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+12,2,0.0,False,The table content does not seem related to Autonomous Surface Vehicles or Federated Learning.,[]
+12,3,0.1,False,,[]
+12,4,0.1,False,,[]
+12,5,0.1,False,,[]
+12,6,0.1,False,,[]
+12,7,0.1,False,,[]
+12,8,0.1,False,,[]
+12,9,0.7,True,Table likely contains visual data with a graph-like structure.,"['Graph structured', 'visual']"
+12,10,0.1,False,,[]
+13,1,0.1,False,The table does not contain information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+13,2,0.05,False,,[]
+13,3,0.1,False,,[]
+13,4,0.1,False,,[]
+13,6,0.1,False,,[]
+13,7,0.1,False,,[]
+13,8,0.1,False,,[]
+13,10,0.1,False,,[]
+14,1,0.1,False,The table does not contain visual information or discuss graph-based question answering.,"['Graph structured', 'visual Question Answering']"
+14,2,0.05,False,No clear connection to Autonomous Surface Vehicles or Federated Learning.,[]
+14,3,0.1,False,,[]
+14,4,0.1,False,,[]
+14,6,0.1,False,"Table content does not appear to relate to regulatory capture, IA/ML or machine learning.",
+14,7,0.75,True,,[]
+14,8,0.1,False,,[]
+14,9,0.1,False,The table appears to be a numerical dataset without visual elements.,[]
+15,2,0.0,False,,[]
+15,3,0.1,False,,[]
+15,4,0.1,False,,[]
+15,6,0.1,False,,[]
+15,7,0.1,False,,[]
+15,8,0.1,False,,[]
+15,9,0.1,False,The table does not contain visual information.,[]
+15,10,0.1,False,,[]
+16,1,0.1,False,"The table appears to contain numerical data and references, not visual or graph-structured information.","['Graph structured', 'visual Question Answering']"
+16,2,0.1,False,,[]
+16,3,0.6,True,"Table discusses model inferences, potentially related to LLMs.","['Inferences', 'Model']"
+16,4,0.1,False,"The table focuses on model inferences for spatial reasoning, not applications of visual question answering systems.",[]
+16,5,0.1,False,,[]
+16,6,0.6,True,,[]
+16,7,0.1,False,,[]
+16,9,0.7,True,The table contains inferences which could be visual in nature.,"['Graph structured', 'Inferences']"
+16,10,0.1,False,,[]
+17,1,0.1,False,The table does not contain visual elements or graph structures.,"['Graph structured', 'visual Question Answering']"
+17,2,0.05,False,,[]
+17,3,0.1,False,The table content does not seem related to RAG or long-context language models.,[]
+17,4,0.1,False,The table content does not appear related to visual question answering applications.,[]
+17,6,0.1,False,,[]
+17,7,0.1,False,,[]
+17,8,0.1,False,No mention of Graph Convolutional Networks or GCN found.,[]
+17,9,0.6,True,Tables can be used as structured data for VQA.,"['structured data', 'table']"
+17,10,0.1,False,,[]
+18,1,0.1,False,"The table focuses on prediction assessment metrics, not visual graph analysis.","['Graph structured', 'visual Question Answering']"
+18,2,0.0,False,,[]
+18,3,0.1,False,,[]
+18,4,0.1,False,"The table focuses on predictive modeling metrics, not visual question answering.",[]
+18,5,0.1,False,,[]
+18,6,0.1,False,,[]
+18,7,0.1,False,,[]
+18,8,0.1,False,,[]
+18,9,0.1,False,The table lacks visual content and focuses on textual data.,[]
+18,10,0.1,False,,[]
+19,1,0.1,False,"The table focuses on statistical analysis, not visual graph interpretation.","['Graph structured', 'visual Question Answering']"
+19,2,0.0,False,,[]
+19,3,0.1,False,,[]
+19,4,0.0,False,,[]
+19,5,0.1,False,Table content does not mention fairness or social aspects.,[]
+19,6,0.1,False,,[]
+19,7,0.1,False,,[]
+19,8,0.1,False,,[]
+20,1,0.1,False,"The table focuses on statistical analysis, not visual data or graph structures.","['Graph structured', 'visual Question Answering']"
+20,2,0.0,False,,[]
+20,3,0.1,False,,[]
+20,4,0.1,False,The table focuses on statistical analysis and does not appear to relate to visual question answering systems.,[]
+20,5,0.1,False,,[]
+20,6,0.1,False,"Table content does not mention regulatory capture, IA, ML, or machine learning.",[]
+20,7,0.1,False,Table content does not appear to relate to segmentation or failure.,[]
+20,8,0.1,False,,[]
+20,9,0.1,False,The table provides textual information and does not appear visually structured.,[]
+20,10,0.1,False,,[]
+21,1,0.1,False,The table lacks information about graphs or visual elements.,"['Graph structured', 'visual Question Answering']"
+21,3,0.1,False,,[]
+21,6,0.1,False,,[]
+21,7,0.1,False,"Table content does not contain keywords related to segmentation, SAM, or failure.",[]
+21,8,0.1,False,,[]
+21,9,0.65,True,Table structure could potentially be used for VQA.,"['Graph structured', 'visual Question Answering']"
+21,10,0.1,False,,[]
+22,1,0.1,False,"The table focuses on parameter estimation, not visual analysis.","['Graph structured', 'visual Question Answering']"
+22,2,0.1,False,,[]
+22,3,0.1,False,,[]
+22,4,0.1,False,,[]
+22,5,0.1,False,,[]
+22,7,0.1,False,,[]
+22,8,0.1,False,,[]
+22,9,0.1,False,,[]
+23,1,0.1,False,"The table provides numerical data, not visual graph information.","['Graph structured', 'visual Question Answering']"
+23,2,0.0,False,,[]
+23,3,0.1,False,,[]
+23,4,0.0,False,"Table content is about data fitting and model performance, not visual question answering.",[]
+23,5,0.1,False,No explicit mention of fairness or social aspects.,[]
+23,6,0.1,False,,[]
+23,7,0.1,False,,[]
+23,8,0.1,False,The table does not mention Graph Convolutional Networks.,[]
+23,9,0.1,False,,[]
+24,1,0.1,False,The table focuses on parameter estimation and lacks visual or graph-related content.,"['Graph structured', 'visual Question Answering']"
+24,2,0.0,False,Table content is unrelated to Autonomous Surface Vehicles and Federated Learning.,[]
+24,3,0.1,False,,[]
+24,4,0.1,False,,[]
+24,5,0.1,False,"Table focuses on parameter estimation, not fairness or social impact.",[]
+24,6,0.1,False,"Table focuses on parameter estimation in a model, not regulatory capture or machine learning.",[]
+24,7,0.1,False,,[]
+24,8,0.1,False,,[]
+24,9,0.1,False,,[]
+24,10,0.1,False,Table content does not mention FL or decentralized concepts.,[]
+25,1,0.1,False,"The table appears to be textual data, not visually structured.","['Graph structured', 'visual Question Answering']"
+25,2,0.1,False,,[]
+25,3,0.1,False,,[]
+25,5,0.1,False,Table content does not mention fairness or social aspects.,[]
+25,7,0.1,False,,[]
+25,8,0.1,False,No mentions of Graph Convolutional Networks or GCN found.,[]
+25,9,0.1,False,,[]
+25,10,0.1,False,,[]
+26,1,0.1,False,The table appears to be a descriptive textual representation and not visually structured or related to question answering.,"['Graph structured', 'visual Question Answering']"
+26,2,0.1,False,,[]
+26,3,0.1,False,,[]
+26,4,0.1,False,The table content does not seem related to visual question answering systems.,[]
+26,5,0.1,False,,[]
+26,6,0.1,False,,[]
+26,7,0.1,False,,[]
+26,8,0.1,False,,[]
+26,9,0.1,False,,[]
+26,10,0.1,False,,[]
+27,1,0.1,False,"The table focuses on metrics for a resolution model, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+27,2,0.1,False,Table content does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+27,3,0.6,True,,[]
+27,4,0.1,False,"The table focuses on metrics for a resolution model, not visual question answering applications.",[]
+27,5,0.1,False,,[]
+27,6,0.1,False,,[]
+27,8,0.1,False,,[]
+27,9,0.1,False,,[]
+27,10,0.1,False,,[]
+28,1,0.1,False,The table is text-based and lacks visual or graph elements.,"['Graph structured', 'visual Question Answering']"
+28,2,0.1,False,Table focuses on vehicle acceleration and does not mention autonomous surface vehicles or federated learning.,[]
+28,3,0.1,False,,[]
+28,4,0.1,False,"Table focuses on hyperparameters and acceleration coefficients, not visual question answering.",[]
+28,5,0.1,False,"The table focuses on technical details about acceleration coefficients, not social fairness.",[]
+28,6,0.1,False,,[]
+28,7,0.1,False,,[]
+28,9,0.1,False,,[]
+28,10,0.1,False,"The table focuses on acceleration coefficients and vehicle speeds, not FL or decentralized systems.",[]
+29,1,0.1,False,The table describes parameters of action zones but lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+29,2,0.0,False,"The table focuses on action zone parameters, not autonomous vehicles or machine learning.",[]
+29,3,0.1,False,,[]
+29,4,0.1,False,"The table focuses on parameters of action zones, not visual question answering.",[]
+29,5,0.1,False,"Table content focuses on technical parameters, not social fairness.",[]
+29,6,0.1,False,,[]
+29,7,0.1,False,"Table content does not mention Segmentation, SAM or failure.",[]
+29,8,0.1,False,,[]
+29,9,0.1,False,The table is textual and lacks visual elements.,[]
+29,10,0.1,False,"Table focuses on action zone parameters, not FL or decentralization.",[]
+30,1,0.1,False,"Table focuses on numerical data and comparisons, not visual elements.","['Graph structured', 'visual Question Answering']"
+30,2,0.1,False,,[]
+30,3,0.6,True,"Table discusses Mean Squared Errors (MSE) in different distance ranges, not directly related to RAG or long-context LLMs.",[]
+30,4,0.1,False,,[]
+30,5,0.1,False,"The table focuses on statistical data about distance and MSE, not fairness or social aspects.",[]
+30,6,0.1,False,,[]
+30,7,0.1,False,,[]
+30,8,0.1,False,"The table focuses on Mean Squared Error in distance calculations, not Graph Convolutional Networks.",
+30,9,0.1,False,The table provides numerical data about Mean Squared Error (MSE) at different distances. It lacks visual elements.,[]
+30,10,0.1,False,,[]
+31,1,0.1,False,"The table focuses on technical comparisons, not visual data interpretation.","['Graph structured', 'visual Question Answering']"
+31,2,0.1,False,"The table focuses on machine learning techniques and metrics, not autonomous vehicles or federated learning.",[]
+31,3,0.7,True,The table compares various models based on MSE and error.,"['MSE', 'Error', 'Model']"
+31,4,0.1,False,"The table focuses on model comparison metrics, not visual question answering applications.",[]
+31,6,0.1,False,"Table focuses on comparison of Machine Learning techniques, not regulatory capture.",[]
+31,7,0.1,False,"The table focuses on model comparison metrics, not failure analysis in segmentation or SAM.",
+31,8,0.1,False,"Table focuses on MSE and error comparison in models, not GCNs.",[]
+31,9,0.1,False,"The table provides textual comparison of techniques, not visual data.",[]
+31,10,0.1,False,,[]
+32,1,0.1,False,"The table focuses on parameters and hyperparameters, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+32,3,0.6,True,"Table describes parameters and hyperparameters, which could be related to LLM training.",[]
+32,4,0.1,False,,[]
+32,5,0.1,False,"Table focuses on parameter and hyperparameter values, not fairness or social aspects.",[]
+32,6,0.6,True,,[]
+32,7,0.1,False,,[]
+32,8,0.1,False,,[]
+32,10,0.1,False,,[]
+33,1,0.1,False,The table focuses on statistical analysis rather than visual or graph-based data.,"['Graph structured', 'visual Question Answering']"
+33,2,0.1,False,"The table focuses on path planning and error analysis, not autonomous surface vehicles or federated learning.",[]
+33,3,0.1,False,"The table focuses on model performance metrics, not language models or context understanding.",[]
+33,4,0.1,False,"The table focuses on path planning and error analysis, not visual question answering.",[]
+33,5,0.1,False,No mention of fairness or social aspects in the table.,[]
+33,6,0.1,False,"Table focuses on model performance metrics, not regulatory capture or machine learning applications.",[]
+33,7,0.1,False,,[]
+33,8,0.1,False,,[]
+33,10,0.1,False,,[]
+34,1,0.1,False,The table presents numerical data and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+34,3,0.6,True,The table presents comparison data which could be relevant to understanding performance of LLMs.,[]
+34,4,0.1,False,,[]
+34,5,0.1,False,,[]
+34,6,0.1,False,,[]
+34,7,0.1,False,,[]
+34,8,0.1,False,,[]
+34,9,0.1,False,"The table presents textual data about Mean Squared Error (MSE) comparisons, not visual information.",[]
+34,10,0.1,False,,[]
+35,1,0.1,False,"The table presents numerical data, not visual graphs.","['Graph structured', 'visual Question Answering']"
+35,2,0.1,False,,[]
+35,3,0.1,False,,[]
+35,4,0.1,False,,[]
+35,5,0.1,False,,[]
+35,6,0.1,False,,[]
+35,7,0.1,False,"Table focuses on MSE comparisons for different distances, not segmentation or failure analysis.",[]
+35,8,0.1,False,,[]
+35,9,0.1,False,The table contains textual data and does not appear visually structured.,[]
+35,10,0.1,False,,[]
+36,1,0.1,False,The table focuses on numerical data and lacks visual elements or structural connections relevant to graph-based VQA.,"['Graph structured', 'visual Question Answering']"
+36,2,0.05,False,No direct connection found between autonomous surface vehicles and federated learning in the provided table.,[]
+36,3,0.1,False,,[]
+36,4,0.1,False,"The table focuses on measurement errors in a spatial context, unrelated to visual question answering.",[]
+36,5,0.1,False,"The table focuses on distance-based Mean Squared Errors, not fairness or social aspects.",[]
+36,6,0.1,False,The table focuses on comparing Mean Squared Errors for different distances in a specific context. It does not directly relate to regulatory capture or machine learning.,
+36,7,0.1,False,,[]
+36,8,0.1,False,,[]
+36,9,0.1,False,,[]
+36,10,0.1,False,,[]
+37,1,0.1,False,"The table focuses on statistical comparisons, not visual analysis or graph structures.","['Graph structured', 'visual Question Answering']"
+37,2,0.1,False,,[]
+37,3,0.1,False,"The table focuses on comparing Machine Learning models, not Long-context LLMs or RAG.",[]
+37,4,0.1,False,"The table focuses on path planning and error analysis, not visual question answering.",[]
+37,5,0.1,False,,[]
+37,6,0.1,False,"The table focuses on path planning and machine learning error metrics, not regulatory capture.",[]
+37,7,0.1,False,,[]
+37,8,0.1,False,No mention of Graph Convolutional Networks or GCN found.,[]
+37,9,0.1,False,"The table describes a comparison of different models, lacking visual elements.",[]
+37,10,0.1,False,,[]
+38,1,0.1,False,"The table focuses on comparison of models, not visual analysis.","['Graph structured', 'visual Question Answering']"
+38,2,0.1,False,,[]
+38,3,0.1,False,,[]
+38,4,0.1,False,"The table focuses on comparing path planning algorithms, not visual question answering.",[]
+38,5,0.1,False,Table focuses on technical metrics and lacks social context.,[]
+38,6,0.1,False,"Table focuses on machine learning model performance metrics, not regulatory capture.",[]
+38,7,0.1,False,,[]
+38,8,0.1,False,,[]
+38,9,0.1,False,,[]
+38,10,0.1,False,,[]
+39,1,0.9,True,Table discusses performance of models for answer generation in VQA.,"['Graph structured', 'visual Question Answering']"
+39,2,0.1,False,,[]
+39,3,0.8,True,"The table mentions Vcr and direct answer methods, which are related to question answering.","['Vcr', 'direct answer', 'multip']"
+39,4,0.85,True,The table shows performance metrics for visual question answering models.,"['visual Question Answering', 'Performance of models']"
+39,5,0.1,False,,[]
+39,6,0.1,False,"The table focuses on model performance in visual question answering, not regulatory capture or machine learning in a regulatory context.",[]
+39,7,0.1,False,,[]
+39,8,0.1,False,"The table focuses on visual question answering with various models, not Graph Convolutional Networks.",[]
+39,9,0.9,True,The table discusses model performance in Visual Question Answering.,"['VQA', 'direct answer']"
+39,10,0.1,False,,[]
+40,1,0.1,False,"The table focuses on text-based model evaluation metrics, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+40,2,0.0,False,,[]
+40,4,0.1,False,,[]
+40,5,0.1,False,,[]
+40,6,0.1,False,,[]
+40,7,0.1,False,,[]
+40,8,0.1,False,,[]
+40,10,0.1,False,,[]
+41,1,0.1,False,"The table focuses on explanation scores for a model, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+41,2,0.1,False,,[]
+41,3,0.7,True,The table discusses model performance on tasks likely requiring long-context understanding.,"['Long-context', 'LLM']"
+41,4,0.6,True,Table provides metrics related to model performance on explanations.,"['Explanation scores', 'BLEU']"
+41,5,0.1,False,,[]
+41,6,0.1,False,,[]
+41,7,0.1,False,,[]
+41,8,0.1,False,,[]
+41,9,0.85,True,,"['visual', 'bleu4']"
+41,10,0.1,False,,[]
+42,2,0.1,False,,[]
+42,3,0.6,True,Table discusses the impact of different modalities on performance.,"['Ablation', 'Modality dependency']"
+42,4,0.8,True,The table discusses the impact of different modalities on VQA accuracy.,"['Ablation study', 'modality dependency']"
+42,5,0.1,False,"Table focuses on ablation studies for modality dependency in a specific task, not fairness or social impact.",[]
+42,6,0.1,False,,[]
+42,7,0.1,False,,[]
+42,8,0.1,False,,[]
+42,10,0.1,False,,[]
+43,1,0.1,False,"The table focuses on text-based information about NLG scores, not visual data or question answering.","['Graph structured', 'visual Question Answering']"
+43,2,0.0,False,,[]
+43,3,0.7,True,Table discusses decoding performance and Ngram scores.,"['Decoding', 'Ngram Scores']"
+43,4,0.1,False,,[]
+43,5,0.1,False,,[]
+43,6,0.1,False,,[]
+43,7,0.1,False,,[]
+43,8,0.1,False,,[]
+43,9,0.1,False,,[]
+44,1,0.1,False,"The table focuses on text decoding and NLG scores, not visual data or question answering.","['Graph structured', 'visual Question Answering']"
+44,2,0.0,False,,[]
+44,3,0.6,True,"Table discusses N-gram scores learned by a language model, which relates to the concept of text understanding in long-context LLMs.",[]
+44,4,0.1,False,,[]
+44,5,0.1,False,,[]
+44,6,0.1,False,,[]
+44,7,0.1,False,,[]
+44,8,0.1,False,,[]
+44,9,0.1,False,,[]
+45,1,0.8,True,"Table discusses VQA performance metrics, implying visual question answering.","['Graph structured', 'visual Question Answering']"
+45,2,0.1,False,,[]
+45,3,0.8,True,The table mentions VQA tasks and models like Vcr.,"['Vcr', 'Vqa', 'mc']"
+45,4,0.9,True,Table evaluates performance of VQA models.,"['Vqa', 'mc golve', 'bertscore']"
+45,5,0.1,False,No direct mention of fairness or social aspects found.,[]
+45,6,0.1,False,"Table content does not mention regulatory capture, IA, ML or machine learning.",[]
+45,7,0.1,False,,[]
+45,8,0.1,False,,[]
+45,9,0.95,True,Table contains VQA results.,"['VQA', 'okvqa']"
+45,10,0.1,False,,[]
+46,2,0.0,False,,[]
+46,3,0.7,True,Table discusses scores of explanations generated by a model.,"['LLM', 'explanations']"
+46,4,0.7,True,Table presents scores of explanations for a task likely related to question answering.,"['question answering', 'scores']"
+46,5,0.1,False,,[]
+46,6,0.1,False,,[]
+46,7,0.1,False,,[]
+46,8,0.1,False,,[]
+46,9,0.8,True,"Table contains scores related to explanation generation, potentially relevant to VQA.","['VQA', 'Scores']"
+46,10,0.1,False,,[]
+47,2,0.0,False,,[]
+47,4,0.85,True,Table discusses human performance on VQA tasks.,['visual Question Answering']
+47,5,0.1,False,,[]
+47,6,0.1,False,,[]
+47,7,0.1,False,,[]
+47,8,0.1,False,,[]
+47,9,0.95,True,The table presents human performance on VQA tasks.,"['VQA', 'Human performance']"
+47,10,0.1,False,,[]
+48,1,0.1,False,"The table describes test accuracy, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+48,3,0.8,True,"The table discusses test accuracy of a method in the context of datasets and devices, potentially relevant to long-context LLMs.",[]
+48,4,0.1,False,"The table focuses on test accuracy of a dataset method, not visual question answering applications.",[]
+48,5,0.1,False,,[]
+48,6,0.1,False,"The table focuses on test accuracy of machine learning models, not regulatory capture.",
+48,7,0.1,False,,[]
+48,8,0.1,False,,[]
+48,9,0.1,False,The table is textual and does not contain visual information.,[]
+48,10,0.6,True,Table discusses client test accuracy in decentralised settings.,[]
+49,2,0.05,False,,[]
+49,4,0.9,True,Table describes characteristics of medical VQA datasets.,"['VQA datasets', 'medical VQA']"
+49,5,0.1,False,,[]
+49,6,0.1,False,"No explicit mention of regulatory capture, IA/ML, or machine learning.",[]
+49,7,0.1,False,,[]
+49,8,0.1,False,,[]
+49,9,0.9,True,The table provides statistics about VQA datasets.,"['VQA', 'Number of images']"
+49,10,0.1,False,,[]
+50,2,0.0,False,,[]
+50,3,0.7,True,,"['LM fine tuning', 'language model']"
+50,4,0.1,False,,[]
+50,5,0.1,False,,[]
+50,6,0.1,False,,[]
+50,7,0.1,False,,[]
+50,8,0.1,False,,[]
+50,9,0.7,True,The table mentions OVQA which is a task related to visual question answering.,"['OVQA', 'Path']"
+50,10,0.1,False,,[]
+51,2,0.1,False,,[]
+51,3,0.75,True,Table discusses different QA methods including PathVQA.,"['Open set', 'PathVQA']"
+51,4,0.8,True,Table compares accuracy of different VQA methods.,"['Open set', 'Accuracy', 'Visual Question Answering']"
+51,5,0.1,False,The table focuses on accuracy comparison of different methods in Open set Question Answering.,[]
+51,6,0.1,False,,[]
+51,7,0.1,False,,[]
+51,8,0.1,False,No mention of Graph Convolutional Networks (GCN) or visual Question Answering in the table.,[]
+51,9,0.9,True,Table discusses accuracy comparison of visual question answering methods.,"['Open set', 'PathVQA', 'Visual']"
+51,10,0.1,False,,[]
+52,1,0.8,True,The table mentions PathVQA which is a visual question answering task.,"['PathVQA', 'Visual Question Answering']"
+52,2,0.1,False,,[]
+52,3,0.7,True,The table discusses different prompt structures for LLMs.,"['Long-context', 'LLM']"
+52,4,0.7,True,The table presents metrics for different visual question answering (VQA) models.,"['OVQA', 'PathVQA', 'B1', 'BS', 'F1', 'Acc']"
+52,5,0.1,False,,[]
+52,6,0.1,False,,[]
+52,7,0.1,False,"The table focuses on prompt structures and performance metrics for question answering tasks, not segmentation or failure analysis.",[]
+52,8,0.1,False,"Table focuses on text-based question answering, not graph structures.",[]
+52,9,0.85,True,Table discusses performance of models on VQA tasks.,"['OVQA', 'PathVQA', 'VQA']"
+52,10,0.1,False,,[]
+53,1,0.1,False,"The table focuses on textual notations and definitions, not visual graph structures.","['Graph structured', 'visual Question Answering']"
+53,2,0.0,False,,[]
+53,3,0.1,False,,[]
+53,4,0.1,False,The table does not contain information about visual question answering systems.,[]
+53,5,0.1,False,The table does not mention fairness or social aspects.,[]
+53,6,0.1,False,"Table content does not mention regulatory capture, IA, ML or machine learning.",[]
+53,7,0.1,False,,[]
+53,8,0.1,False,,[]
+53,10,0.0,False,,[]
+54,1,0.1,False,"The table describes image classification metrics, not visual question answering on graphs.","['Graph structured', 'visual Question Answering']"
+54,2,0.1,False,The table discusses image data and machine learning concepts unrelated to autonomous surface vehicles or federated learning.,[]
+54,3,0.1,False,,[]
+54,4,0.1,False,"The table focuses on image data analysis, not question answering systems.",[]
+54,5,0.1,False,"The table discusses image data and EMD, not social fairness.",[]
+54,6,0.1,False,"The table focuses on EMD in image recognition, not regulatory capture or machine learning.",[]
+54,7,0.1,False,,[]
+54,8,0.1,False,,[]
+54,9,0.6,True,"The table discusses image data (CIFAR 10) and EMD, potentially relevant to visual tasks.","['EMD', 'CIFAR 10']"
+54,10,0.1,False,,[]
+55,1,0.1,False,"The table focuses on image classification accuracy, not visual question answering with graph structures.","['Graph structured', 'visual Question Answering']"
+55,2,0.1,False,,[]
+55,3,0.8,True,"The table discusses test accuracy of models, relevant to LLMs.","['Large Language Models', 'Long Context']"
+55,4,0.1,False,"Table focuses on image classification accuracy, not VQA applications.",[]
+55,5,0.1,False,"Table focuses on image classification accuracy, not fairness or social impact.",[]
+55,6,0.1,False,,[]
+55,7,0.1,False,"The table focuses on image classification accuracy, not segmentation or SAM failure analysis.",[]
+55,9,0.7,True,The table presents image dataset names which are often used in visual tasks.,"['CIFAR', 'SVHN', 'PathMNIST', 'DermaMNIST']"
+55,10,0.1,False,,[]
+56,1,0.1,False,"The table focuses on image classification accuracy, not visual question answering.","['Graph structured', 'visual Question Answering']"
+56,2,0.0,False,,[]
+56,3,0.6,True,"The table discusses methods and strategies related to image classification, which can be indirectly related to long-context language models used in RAG.",[]
+56,4,0.1,False,,[]
+56,6,0.1,False,,[]
+56,7,0.1,False,,[]
+56,8,0.1,False,,[]
+56,9,0.1,False,,[]
+56,10,0.1,False,,[]
+57,1,0.1,False,"The table focuses on image data analysis, not graph-based or visual question answering.","['Graph structured', 'visual Question Answering']"
+57,2,0.1,False,"The table focuses on image processing and EMD, not Autonomous Surface Vehicles or Federated Learning.",[]
+57,3,0.6,True,"Table discusses EMD on CIFAR-10, which could relate to image understanding tasks potentially involving long context.",[]
+57,4,0.1,False,"The table focuses on image processing techniques, not VQA applications.",[]
+57,5,0.1,False,,[]
+57,6,0.1,False,,[]
+57,7,0.0,False,,[]
+57,8,0.1,False,,[]
+57,9,0.1,False,"Table content focuses on image processing metrics, not visual question answering.",[]
+57,10,0.1,False,,[]
+58,1,0.1,False,"The table focuses on image datasets, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+58,2,0.1,False,"Table focuses on image datasets, not autonomous vehicles or federated learning.",[]
+58,3,0.1,False,,[]
+58,4,0.1,False,,[]
+58,5,0.1,False,"Table focuses on benchmark datasets for image recognition, not social fairness.",[]
+58,6,0.1,False,"Table focuses on benchmark datasets for image classification, not regulatory capture or machine learning in a regulatory context.",[]
+58,7,0.1,False,,[]
+58,8,0.1,False,,[]
+58,9,0.8,True,The table describes benchmark datasets used for visual tasks.,"['visual', 'benchmark datasets']"
+58,10,0.1,False,The table focuses on benchmark datasets for image recognition tasks.,[]
+59,1,0.1,False,"The table describes an experimental comparison, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+59,2,0.1,False,No keywords related to Autonomous Surface Vehicles or Federated Learning found.,[]
+59,3,0.1,False,,[]
+59,5,0.1,False,Table content does not mention fairness or social aspects.,[]
+59,6,0.1,False,"The table lacks information about regulatory capture, IA, ML, or machine learning.",[]
+59,7,0.1,False,"The table does not mention segmentation, SAM, or failure.",[]
+59,8,0.1,False,,[]
+59,9,0.1,False,Table content does not mention visual elements or question answering.,[]
+59,10,0.1,False,,[]
+60,1,0.1,False,"The table focuses on computational costs of various algorithms, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+60,2,0.0,False,,[]
+60,3,0.1,False,"The table focuses on computational costs in machine learning, not long-context LLMs.",[]
+60,4,0.1,False,"The table focuses on computational costs of different models, not visual question answering applications.",[]
+60,5,0.1,False,,[]
+60,6,0.1,False,,[]
+60,7,0.1,False,,[]
+60,8,0.8,True,The table mentions GCNAL as part of a computation.,"['Graph Convolutional Network', 'GCN']"
+60,9,0.1,False,,[]
+60,10,0.1,False,,[]
+61,1,0.1,False,"The table focuses on classification accuracy in image datasets, not visual question answering.","['Graph structured', 'visual Question Answering']"
+61,2,0.7,True,The table mentions federated learning experiments.,"['Federated Learning', 'Classification accuracy']"
+61,3,0.1,False,,[]
+61,4,0.1,False,"The table focuses on classification accuracy of models, not applications of visual question answering systems.",[]
+61,5,0.1,False,,[]
+61,6,0.1,False,,[]
+61,7,0.1,False,,[]
+61,8,0.1,False,,[]
+61,9,0.1,False,,[]
+61,10,0.7,True,Table discusses federated learning methods.,"['FL', 'decentralised']"
+62,1,0.1,False,The table is textual and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+62,2,0.0,False,The table content does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+62,3,0.1,False,,[]
+62,4,0.1,False,,[]
+62,5,0.6,True,"Table discusses comparisons of institutions, potentially touching on societal impact.",[]
+62,6,0.1,False,,[]
+62,7,0.1,False,,[]
+62,8,0.1,False,,[]
+62,9,0.1,False,Table lacks visual elements and focuses on textual comparisons.,[]
+63,1,0.1,False,"The table focuses on quantitative comparisons, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+63,2,0.0,False,,[]
+63,3,0.1,False,,[]
+63,4,0.1,False,,[]
+63,6,0.1,False,"Table focuses on quantitative comparisons between institutions, not regulatory capture or machine learning.",[]
+63,7,0.1,False,,[]
+63,8,0.1,False,,[]
+63,9,0.1,False,,[]
+63,10,0.1,False,,[]
+64,1,0.1,False,"Table focuses on ablation study of a model, not visual question answering.","['Graph structured', 'visual Question Answering']"
+64,2,0.1,False,,[]
+64,3,0.1,False,,[]
+64,4,0.1,False,Table focuses on ablation studies for Global Weight Constr... not directly related to VQA applications.,[]
+64,5,0.6,True,"Table discusses ablation studies on Global Weight Constraints, which may indirectly relate to fairness in machine learning models.",[]
+64,6,0.1,False,,[]
+64,7,0.1,False,,[]
+64,8,0.1,False,,[]
+64,9,0.1,False,,[]
+65,1,0.1,False,"The table focuses on training accuracy and testing performance, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+65,2,0.1,False,,[]
+65,3,0.1,False,,[]
+65,4,0.1,False,"The table focuses on algorithm performance in a specific task, not visual question answering applications.",[]
+65,6,0.1,False,"Table focuses on training accuracy and testing performance of algorithms, not regulatory capture.",[]
+65,7,0.1,False,"The table focuses on algorithm performance in a training setting, not failure analysis in segmentation or SAM.",[]
+65,8,0.1,False,No mention of Graph Convolutional Networks or GCN found.,[]
+65,9,0.1,False,,[]
+65,10,0.1,False,,[]
+66,1,0.1,False,"The table focuses on test accuracy of algorithms, not visual data or graph structures.","['Graph structured', 'visual Question Answering']"
+66,2,0.1,False,The table focuses on algorithm performance in a different domain.,[]
+66,3,0.6,True,,[]
+66,4,0.1,False,,[]
+66,6,0.1,False,"The table focuses on test accuracy of algorithms, not regulatory capture or machine learning in a regulatory context.",[]
+66,7,0.1,False,,[]
+66,8,0.6,True,Could not find keywords related to GCN in the provided table.,[]
+66,9,0.1,False,,[]
+66,10,0.1,False,,[]
+67,1,0.1,False,"The table focuses on task performance and sparsity ratios, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+67,2,0.1,False,,[]
+67,3,0.1,False,,[]
+67,4,0.1,False,"The table focuses on task performance of different sparsity ratios, not visual question answering applications.",[]
+67,5,0.1,False,,[]
+67,6,0.1,False,"Table content does not mention regulatory capture, IA, ML or machine learning.",[]
+67,7,0.1,False,,[]
+67,8,0.1,False,,[]
+67,9,0.1,False,"The table focuses on textual performance comparisons, not visual aspects.",[]
+67,10,0.1,False,,[]
+68,2,0.1,False,No mention of Autonomous Surface Vehicles or Federated Learning.,[]
+68,3,0.1,False,,[]
+68,5,0.1,False,,[]
+68,6,0.1,False,"Table focuses on algorithm performance, not regulatory capture or machine learning in a regulatory context.",[]
+68,7,0.7,True,The table mentions SAM and its effect on training accuracy.,['SAM']
+68,8,0.7,True,The table presents training accuracy results which could be related to GCN performance.,"['Table IV', 'training accuracy']"
+68,9,0.1,False,The table provides textual information about a training process and lacks visual elements.,[]
+68,10,0.1,False,,[]
+69,1,0.1,False,The table describes privacy parameters and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+69,2,0.1,False,,[]
+69,3,0.1,False,The table focuses on privacy parameters and does not relate to RAG or LLMs.,[]
+69,4,0.1,False,"Table focuses on privacy parameters, not visual question answering applications.",[]
+69,5,0.1,False,,[]
+69,6,0.6,True,"The table mentions privacy parameters, which could be related to regulatory capture in AI/ML contexts.",[]
+69,7,0.1,False,"Table content does not mention segmentation, SAM or failure.",[]
+69,9,0.1,False,,[]
+69,10,0.1,False,,[]
+70,1,0.1,False,The table is text-based and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+70,2,0.1,False,Table content does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+70,3,0.1,False,,[]
+70,5,0.1,False,The table does not contain information about fairness or social issues.,[]
+70,6,0.1,False,,[]
+70,7,0.1,False,,[]
+70,8,0.1,False,,[]
+70,9,0.1,False,,[]
+70,10,0.1,False,,[]
+71,2,0.1,False,,[]
+71,3,0.1,False,,[]
+71,4,0.1,False,"The table focuses on Multi-Task Learning methods, not directly related to visual question answering.",[]
+71,5,0.1,False,"Table focuses on Multi-Task Learning methods, not fairness or social aspects.",[]
+71,7,0.1,False,,[]
+71,8,0.1,False,Table does not mention Graph Convolutional Networks or GCN.,[]
+71,9,0.1,False,"Table focuses on text descriptions of Machine Translation methods, not visual information.",[]
+71,10,0.1,False,,[]
+72,1,0.1,False,"The table provides textual descriptions of notations, lacking visual or graph structure.","['Graph structured', 'visual Question Answering']"
+72,2,0.0,False,,[]
+72,3,0.1,False,,[]
+72,4,0.1,False,,[]
+72,5,0.1,False,,[]
+72,6,0.1,False,"Table content does not mention regulatory capture, IA, ML, or machine learning.",[]
+72,7,0.1,False,,[]
+72,8,0.1,False,,[]
+72,9,0.1,False,,[]
+72,10,0.1,False,,[]
+73,1,0.1,False,"The table focuses on regularization techniques in machine learning, not visual or graph-based concepts.","['Graph structured', 'visual Question Answering']"
+73,2,0.1,False,,[]
+73,3,0.1,False,,[]
+73,4,0.1,False,"The table focuses on regularization techniques in machine learning models, not visual question answering.",[]
+73,5,0.1,False,"Table focuses on regularization techniques, not fairness or social impact.",[]
+73,6,0.75,True,The table discusses regularization techniques used in machine learning models.,"['Regularization', 'Machine Learning']"
+73,7,0.1,False,,[]
+73,8,0.1,False,"Table focuses on regularization techniques, not Graph Convolutional Networks.",[]
+73,9,0.1,False,"The table focuses on textual information about regularization techniques, not visual data.",[]
+73,10,0.1,False,,[]
+74,1,0.1,False,"The table focuses on deep learning models for multi-task learning, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+74,2,0.1,False,"The table focuses on deep learning models for multi-task learning, not Autonomous Surface Vehicles or Federated Learning.",[]
+74,3,0.7,True,"Table discusses deep learning models, some of which may handle long context.",[]
+74,4,0.1,False,,[]
+74,5,0.1,False,,[]
+74,6,0.1,False,,[]
+74,8,0.1,False,,[]
+74,9,0.1,False,,[]
+74,10,0.1,False,,[]
+75,1,0.1,False,"The table focuses on notations and their descriptions, not visual or graph-structured data.","['Graph structured', 'visual Question Answering']"
+75,2,0.0,False,,[]
+75,3,0.1,False,,[]
+75,4,0.1,False,"Table focuses on notations used in a specific section, not applications of visual question answering.",[]
+75,5,0.1,False,Table content does not mention fairness or social aspects.,[]
+75,6,0.1,False,"The table focuses on notations used in a specific section, not regulatory capture or machine learning.",[]
+75,7,0.1,False,,[]
+75,8,0.1,False,No mention of Graph Convolutional Networks (GCN) or related concepts.,[]
+75,9,0.1,False,,[]
+75,10,0.05,False,,[]
+76,1,0.1,False,"The table focuses on algorithms for multi-objective learning, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+76,2,0.1,False,,[]
+76,4,0.1,False,"The table focuses on multi-objective learning algorithms, not visual question answering.",[]
+76,6,0.1,False,,[]
+76,7,0.1,False,"The table focuses on multi-objective learning algorithms, not failure analysis in segmentation or SAM.",[]
+76,9,0.1,False,,[]
+76,10,0.1,False,,[]
+77,1,0.1,False,"The table focuses on datasets for multi-task learning, not specifically graph structured data or visual question answering.","['Graph structured', 'visual Question Answering']"
+77,2,0.1,False,"The table focuses on datasets for Multi-Task Learning, not Autonomous Surface Vehicles or Federated Learning.",[]
+77,3,0.6,True,"The table lists datasets used in Multi-Task Learning, a field relevant to long-context LLMs.","['Multi-Task Learning', 'Datasets']"
+77,4,0.1,False,"The table focuses on multi-task learning datasets, not specifically visual question answering.",[]
+77,5,0.2,True,"The table focuses on datasets used in Multi-Task Learning (MTL), not explicitly on fairness or social aspects.",[]
+77,6,0.1,False,"The table focuses on datasets used in Multi-Task Learning, not regulatory capture or machine learning applications.",[]
+77,7,0.1,False,"Table focuses on datasets for Multi-Task Learning, not segmentation or failure analysis.",[]
+77,8,0.1,False,No mention of Graph Convolutional Networks or related concepts.,[]
+77,9,0.7,True,"Table discusses datasets used in Multi-task Learning, some of which may involve visual modalities.","['Modality', 'Task']"
+77,10,0.1,False,"The table focuses on datasets used in Multi-Task Learning, not decentralized systems or FL.",[]
+78,1,0.1,False,"The table describes a library and its features, not visual question answering.","['Graph structured', 'visual Question Answering']"
+78,2,0.05,False,,[]
+78,3,0.1,False,"The table focuses on library features, not long-context LLMs.",[]
+78,4,0.1,False,"The table focuses on library functionalities, not visual question answering applications.",[]
+78,5,0.1,False,"The table focuses on library features and capabilities, not social or fairness aspects.",[]
+78,6,0.1,False,,[]
+78,7,0.1,False,,[]
+78,8,0.1,False,Table focuses on library functionalities and not GCNs.,[]
+78,9,0.1,False,"The table describes a library and its features, not visual data or question answering.",[]
+78,10,0.1,False,"Table focuses on library features, not decentralized technologies or FL.",[]
+79,1,0.1,False,The table provides demographic information and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+79,2,0.0,False,,[]
+79,3,0.1,False,"Table focuses on demographics, not language models or graph structures.",[]
+79,4,0.1,False,The table focuses on demographics and lacks visual or question-answering elements.,[]
+79,5,0.1,False,Table lacks information about fairness or social aspects.,[]
+79,6,0.1,False,"Table lacks information about regulations, AI/ML or their intersection.",[]
+79,7,0.1,False,,[]
+79,8,0.1,False,,[]
+79,9,0.1,False,"The table provides textual information, not visual data.",[]
+79,10,0.1,False,The table focuses on demographics and lacks information about FL or decentralization.,
+80,1,0.1,False,"The table provides textual statistics, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+80,2,0.05,False,,[]
+80,3,0.75,True,Table content relates to transcribed data which could be relevant to LLMs.,[]
+80,4,0.1,False,The table focuses on transcribed data and lacks visual or question-answering aspects.,[]
+80,5,0.1,False,"Table content focuses on statistics from transcribed recordings, not fairness or social aspects.",[]
+80,6,0.1,False,,[]
+80,7,0.1,False,,[]
+80,8,0.1,False,,[]
+80,9,0.1,False,The table provides textual statistics and lacks visual elements.,[]
+80,10,0.1,False,,[]
+81,1,0.1,False,"The table describes a linguistic analysis, not visual data.","['Graph structured', 'visual Question Answering']"
+81,2,0.0,False,,[]
+81,3,0.1,False,"The table discusses average cross-validation WER in finetuning, which is not directly related to RAG or long context LLMs.",[]
+81,4,0.1,False,"Table content focuses on WER in fine-tuning, not visual question answering applications.",[]
+81,5,0.1,False,No mention of fairness or social aspects in the table description.,[]
+81,6,0.1,False,,[]
+81,7,0.1,False,,[]
+81,8,0.1,False,,[]
+81,9,0.1,False,Table is textual and does not contain visual information.,[]
+81,10,0.1,False,,[]
+82,1,0.1,False,"Table focuses on text-based WER results, not visual data.","['Graph structured', 'visual Question Answering']"
+82,2,0.0,False,Table content does not relate to Autonomous Surface Vehicles or Federated Learning.,[]
+82,3,0.1,False,,[]
+82,4,0.1,False,"The table focuses on Word Error Rate (WER) in a specific context, not visual question answering applications.",[]
+82,5,0.1,False,,[]
+82,6,0.1,False,"Table content focuses on WER results in machine learning tasks, not regulatory capture.",[]
+82,7,0.1,False,"Table focuses on WER results, not segmentation or SAM failures.",[]
+82,8,0.1,False,,[]
+82,9,0.1,False,"The table provides textual WER results, not visual data.",[]
+82,10,0.1,False,,[]
+83,1,0.1,False,Table content is textual and does not relate to graph or visual questions.,"['Graph structured', 'visual Question Answering']"
+83,2,0.0,False,,[]
+83,3,0.1,False,"Table content focuses on WER results, not LLM context handling.",[]
+83,4,0.1,False,"The table focuses on WER results in a text-based dataset, not visual question answering applications.",[]
+83,5,0.1,False,,[]
+83,6,0.1,False,,[]
+83,7,0.1,False,,[]
+83,8,0.1,False,,[]
+83,9,0.1,False,The table contains textual information about WER results and lacks visual elements.,[]
+84,3,0.1,False,,[]
+84,5,0.1,False,,[]
+84,6,0.1,False,,[]
+84,7,0.1,False,,[]
+84,8,0.1,False,,[]
+84,9,0.1,False,,[]
+84,10,0.1,False,,[]
+85,1,0.1,False,"The table focuses on quantitative comparisons in image segmentation, not graph-based visual question answering.","['Graph structured', 'visual Question Answering']"
+85,2,0.1,False,,[]
+85,3,0.1,False,,[]
+85,4,0.1,False,"The table focuses on quantitative comparison of methods for image segmentation, not visual question answering.",[]
+85,5,0.1,False,"The table focuses on quantitative comparisons in computer vision, not fairness or social impact.",
+85,6,0.1,False,"Table focuses on a quantitative comparison of methods in computer vision, not regulatory capture or machine learning.",[]
+85,7,0.1,False,,[]
+85,8,0.1,False,,[]
+85,9,0.75,True,Table discusses quantitative comparison on a visual dataset.,"['CityScapes', 'monocular']"
+85,10,0.05,False,,[]
+86,1,0.1,False,"Table focuses on quantitative comparisons of 3D reconstruction methods, not visual question answering.","['Graph structured', 'visual Question Answering']"
+86,2,0.0,False,,[]
+86,3,0.1,False,,[]
+86,4,0.1,False,"The table focuses on quantitative comparisons of 3D reconstruction methods, not visual question answering applications.",[]
+86,5,0.1,False,"The table focuses on quantitative comparisons in 3D scene understanding, not social fairness.",[]
+86,6,0.0,False,,[]
+86,7,0.1,False,,[]
+86,8,0.1,False,,[]
+86,9,0.75,True,The table presents quantitative comparisons on visual datasets.,"['ScanNet', 'ETH3D', 'visual']"
+86,10,0.1,False,,[]
+87,1,0.1,False,The table does not appear to discuss graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+87,2,0.1,False,,[]
+87,3,0.1,False,,[]
+87,4,0.1,False,,[]
+87,5,0.1,False,The table does not contain information about fairness or social topics.,[]
+87,6,0.1,False,"No direct mention of regulatory capture, IA, ML or related terms found.",[]
+87,7,0.7,True,,[]
+87,8,0.1,False,,[]
+87,9,0.75,True,"The table presents a quantitative comparison, suggesting a visual element.","['Quantitative comparison', 'Visual']"
+87,10,0.1,False,,[]
+88,1,0.1,False,"The table focuses on quantitative comparisons in a specific domain (CityScapes depth estimation), not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+88,2,0.1,False,,[]
+88,3,0.1,False,,[]
+88,4,0.1,False,"The table focuses on a quantitative comparison of depth estimation methods in Cityscapes dataset, which is not directly related to visual question answering.",[]
+88,5,0.1,False,"Table focuses on quantitative comparison in CityScapes dataset, unrelated to fairness or social aspects.",[]
+88,6,0.1,False,"The table focuses on a quantitative comparison of methods in computer vision. The query involves regulatory capture and machine learning, which are not directly related.",[]
+88,7,0.1,False,,[]
+88,8,0.1,False,,[]
+88,9,0.6,True,"Table discusses quantitative comparison on CityScapes dataset, relevant to visual tasks.","['CityScapes', 'depth estimation']"
+88,10,0.1,False,,[]
+89,1,0.1,False,"The table focuses on architectural variations in a model, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+89,2,0.1,False,"The table focuses on ablation studies of architectural variations in a model, not autonomous surface vehicles or federated learning.",[]
+89,3,0.6,True,"Table discusses architectural variations in a model, which could be related to long-context LLM development.",[]
+89,4,0.1,False,"The table discusses an ablation study of architecture variations in a specific system, not applications of visual question answering.",[]
+89,5,0.1,False,,[]
+89,6,0.1,False,"Table focuses on architecture variations in a model, not regulatory capture or machine learning.",[]
+89,7,0.1,False,"Table focuses on architectural variations, not segmentation or failure analysis.",[]
+89,8,0.1,False,,[]
+89,9,0.1,False,,[]
+89,10,0.7,True,The table discusses feature levels which can be related to decentralized systems.,['Feature Levels']
+90,1,0.1,False,"Table content focuses on variations and descriptions, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+90,2,0.0,False,,[]
+90,3,0.1,False,,[]
+90,4,0.1,False,,[]
+90,5,0.1,False,,[]
+90,6,0.1,False,,[]
+90,7,0.1,False,,[]
+90,8,0.1,False,Table content does not mention Graph Convolutional Networks or GCN.,[]
+90,9,0.1,False,,[]
+90,10,0.0,False,,[]
+91,2,0.1,False,,[]
+91,3,0.1,False,,[]
+91,5,0.1,False,The table content does not contain keywords related to fairness or social topics.,[]
+91,7,0.1,False,,[]
+91,8,0.1,False,,[]
+91,9,0.6,True,Table structure suggests potential for visual representation and question answering.,"['Graph structured', 'visual Question Answering']"
+91,10,0.1,False,,[]
+92,1,0.1,False,The table does not contain visual elements or graph structures.,"['Graph structured', 'visual Question Answering']"
+92,2,0.05,False,No keywords related to Autonomous Surface Vehicles or Federated Learning found.,[]
+92,3,0.2,True,,[]
+92,6,0.1,False,,[]
+92,7,0.1,False,,[]
+92,8,0.1,False,,[]
+92,9,0.1,False,,[]
+92,10,0.1,False,,[]
+93,1,0.1,False,The table describes datasets and lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+93,2,0.1,False,,[]
+93,3,0.6,True,"The table describes datasets used for testing, which might be relevant to evaluating Long-context LLMs.",[]
+93,4,0.1,False,,[]
+93,5,0.1,False,,[]
+93,6,0.1,False,,[]
+93,7,0.1,False,,[]
+93,8,0.1,False,"The table describes datasets and their characteristics, not Graph Convolutional Networks.",[]
+93,9,0.1,False,,[]
+93,10,0.1,False,,[]
+94,1,0.1,False,"The table focuses on document length statistics, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+94,2,0.0,False,,[]
+94,3,0.1,False,,[]
+94,4,0.1,False,The table provides information about document length and does not relate to visual question answering applications.,[]
+94,5,0.1,False,,[]
+94,6,0.1,False,,[]
+94,7,0.1,False,,[]
+94,8,0.1,False,,[]
+94,9,0.1,False,,[]
+94,10,0.0,False,The table focuses on document length statistics and does not mention decentralized concepts or FL.,[]
+95,1,0.1,False,"The table focuses on retrieval unit corpus size and performance metrics, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+95,3,0.75,True,Table discusses retrieval unit corpus size.,"['Retrieval', 'Corpus Size']"
+95,4,0.2,True,The table discusses retrieval unit sizes which could be indirectly related to VQA.,"['Retrieval', 'Corpus Size']"
+95,5,0.1,False,,[]
+95,6,0.1,False,,[]
+95,7,0.1,False,,[]
+95,8,0.1,False,,[]
+95,9,0.7,True,Table discusses retrieval units and sizes.,"['Retrieval', 'Corpus']"
+95,10,0.1,False,,[]
+96,1,0.1,False,"The table focuses on retrieval performance metrics, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+96,3,0.7,True,The table discusses corpus size relevant to retrieval tasks.,"['Retrieval Unit', 'Corpus Size']"
+96,4,0.6,True,The table discusses retrieval unit corpus size relevant to information retrieval.,"['Retrieval', 'Unit Corpus']"
+96,5,0.1,False,"The table focuses on retrieval units and corpus size, not fairness or social aspects.",[]
+96,6,0.1,False,,[]
+96,7,0.1,False,,[]
+96,8,0.1,False,"Table focuses on retrieval units and corpus size, not GCNs.",[]
+96,9,0.7,True,"Table discusses retrieval units and corpus size, potentially related to VQA tasks.","['Retrieval Unit', 'Corpus Size']"
+96,10,0.1,False,,[]
+97,1,0.1,False,"The table focuses on textual encoding methods, not visual or graph-based representations.","['Graph structured', 'visual Question Answering']"
+97,2,0.1,False,,[]
+97,3,0.9,True,"Table discusses encoding long range dependencies, relevant to long context LLMs.","['Long-context', 'LLM']"
+97,4,0.1,False,"The table focuses on text encoding methods for long range dependencies, not visual question answering applications.",[]
+97,7,0.1,False,,[]
+97,8,0.1,False,,[]
+97,9,0.1,False,,[]
+97,10,0.1,False,,[]
+98,1,0.1,False,"The table describes textual QA results, not visual or graph-based.","['Graph structured', 'visual Question Answering']"
+98,2,0.0,False,,[]
+98,4,0.1,False,"The table focuses on text-based question answering, not visual question answering.",[]
+98,6,0.1,False,,[]
+98,7,0.1,False,,[]
+98,8,0.1,False,,[]
+98,9,0.1,False,,[]
+98,10,0.1,False,,[]
+99,1,0.1,False,"Table focuses on text-based question answering, not visual.","['Graph structured', 'visual Question Answering']"
+99,2,0.0,False,,[]
+99,3,0.75,True,,"['QA', 'HotpotQA', 'LLM']"
+99,4,0.1,False,,[]
+99,5,0.1,False,,[]
+99,6,0.1,False,,[]
+99,7,0.1,False,,[]
+99,8,0.1,False,,[]
+99,9,0.7,True,The table presents QA results on a dataset likely involving visual content.,"['HotpotQA', 'QA results']"
+99,10,0.1,False,,[]
+100,2,0.1,False,,[]
+100,4,0.7,True,"The table presents QA results, which could be relevant to applications of visual question answering.","['QA results', 'Retrieval Units']"
+100,5,0.1,False,,[]
+100,6,0.1,False,"No keywords related to Regulatory Capture, IA, ML, or Machine Learning were found.",[]
+100,7,0.1,False,"Table focuses on QA results for a specific dataset, not related to segmentation or SAM failure.",[]
+100,8,0.1,False,"The table focuses on QA results for a specific dataset, not graph convolutional networks.",[]
+100,9,0.7,True,"Table presents QA results, potentially related to visual question answering.","['QA results', 'Retrieval Units']"
+100,10,0.1,False,,[]
+101,2,0.1,False,,[]
+101,3,0.75,True,The table describes language models used in research.,"['LLM', 'language model']"
+101,4,0.1,False,"The table focuses on text-based prompts for language models, not visual question answering.",[]
+101,5,0.1,False,"The table focuses on prompts and model usage, not fairness or social aspects.",[]
+101,6,0.1,False,,[]
+101,7,0.1,False,,[]
+101,8,0.1,False,,[]
+101,9,0.1,False,The table provides text-based prompts and does not contain visual information.,[]
+101,10,0.1,False,,[]
+102,2,0.1,False,,[]
+102,3,0.9,True,"The table discusses LongRAG, a long-context language model.","['LongRAG', 'long-context LLM']"
+102,4,0.7,True,The table mentions visual question answering metrics.,['visual Question Answering']
+102,7,0.1,False,,[]
+102,8,0.1,False,,[]
+102,10,0.1,False,,[]
+103,1,0.6,True,"The table provides examples of questions related to visual content, suggesting some relevance.","['Graph structured', 'visual Question Answering']"
+103,2,0.1,False,The table content does not relate to Autonomous Surface Vehicles or Federated Learning.,[]
+103,3,0.7,True,Table provides information about episode count in a specific context.,"['episodes', 'number']"
+103,4,0.7,True,The table provides examples of visual question answering.,"['visual', 'Question']"
+103,5,0.1,False,"The table focuses on question answering about TV show episodes, not fairness or social issues.",[]
+103,6,0.1,False,"The table focuses on question answering about episodes, not regulatory capture or machine learning.",[]
+103,7,0.1,False,"The table focuses on question answering about TV shows, not medical imaging or failures.",[]
+103,8,0.1,False,,[]
+103,9,0.8,True,The table contains a question about episodes which can be visually represented.,"['Question Answering', 'Table']"
+103,10,0.1,False,,[]
+104,1,0.1,False,"The table focuses on textual data analysis, not visual question answering.","['Graph structured', 'visual Question Answering']"
+104,2,0.0,False,,[]
+104,3,0.1,False,,[]
+104,4,0.1,False,"The table focuses on sentiment analysis tasks, not visual question answering.",[]
+104,5,0.2,True,Table mentions emotion but lacks direct connection to fairness or social aspects.,[]
+104,7,0.1,False,,[]
+104,8,0.1,False,,[]
+104,9,0.1,False,"The table provides information about a dataset, not visual data or questions.",[]
+104,10,0.1,False,,[]
+105,1,0.1,False,"The table focuses on textual data characteristics, not visual or graph-based.","['Graph structured', 'visual Question Answering']"
+105,2,0.0,False,,[]
+105,3,0.1,False,,[]
+105,4,0.1,False,,[]
+105,5,0.1,False,The table focuses on dataset information and lacks mentions of fairness or social aspects.,[]
+105,6,0.1,False,,[]
+105,7,0.1,False,,[]
+105,8,0.1,False,,[]
+105,9,0.1,False,"The table describes a dataset, not visual data or question answering tasks.",[]
+105,10,0.1,False,,[]
+106,1,0.1,False,The table lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+106,2,0.1,False,No keywords found in the table matching the query.,[]
+106,3,0.1,False,,[]
+106,5,0.1,False,,[]
+106,6,0.1,False,,[]
+106,8,0.1,False,No keywords related to Graph Convolutional Networks or GCN found in the table.,[]
+106,9,0.1,False,Table lacks visual information and context for question answering.,[]
+106,10,0.1,False,,[]
+107,1,0.1,False,The table describes competition results and lacks visual or graph-structured data.,"['Graph structured', 'visual Question Answering']"
+107,2,0.1,False,,[]
+107,3,0.1,False,,[]
+107,4,0.1,False,"The table focuses on competition results for a specific task, not visual question answering applications.",[]
+107,5,0.1,False,"The table focuses on competition results for a specific task, lacking direct connections to fairness or social aspects.",[]
+107,6,0.1,False,,[]
+107,7,0.1,False,"Table content does not mention segmentation, SAM, or failure.",[]
+107,8,0.1,False,No mention of Graph Convolutional Networks or GCN found in the table.,[]
+107,9,0.1,False,,[]
+107,10,0.1,False,,[]
+108,1,0.1,False,The table describes a ranking of results in a natural language processing competition.,"['Graph structured', 'visual Question Answering']"
+108,2,0.0,False,,[]
+108,3,0.1,False,"Table content focuses on semantic evaluation results, not long-context LLMs.",[]
+108,4,0.1,False,"The table describes results from a natural language processing competition, not visual question answering.",[]
+108,6,0.1,False,"Table focuses on machine translation results, not regulatory capture or machine learning in a broader sense.",[]
+108,7,0.1,False,,[]
+108,8,0.1,False,,[]
+108,9,0.1,False,,[]
+109,1,0.1,False,The table focuses on textual results and lacks visual or graph-based information.,"['Graph structured', 'visual Question Answering']"
+109,2,0.1,False,,[]
+109,3,0.1,False,,[]
+109,4,0.1,False,,[]
+109,5,0.1,False,,[]
+109,6,0.1,False,"Table focuses on RTM model performance, not regulatory capture or machine learning in a broader sense.",[]
+109,7,0.1,False,,[]
+109,8,0.1,False,,[]
+109,9,0.1,False,,[]
+109,10,0.1,False,,[]
+110,1,0.1,False,Table content focuses on text-based results and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+110,2,0.1,False,,[]
+110,4,0.1,False,"The table focuses on results for a text-based task, not visual question answering.",[]
+110,5,0.1,False,,[]
+110,6,0.1,False,,[]
+110,7,0.1,False,,[]
+110,8,0.1,False,,[]
+110,9,0.1,False,,[]
+111,1,0.1,False,"The table focuses on textual data and metrics, not visual or graph-based information.","['Graph structured', 'visual Question Answering']"
+111,2,0.1,False,,[]
+111,4,0.1,False,,[]
+111,5,0.1,False,"The table focuses on technical metrics for a specific task, not societal fairness or social impacts.",[]
+111,6,0.7,True,,[]
+111,7,0.1,False,,[]
+111,8,0.1,False,,[]
+111,9,0.1,False,,[]
+111,10,0.1,False,,[]
+112,1,0.1,False,"The table describes a feature selection process, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+112,2,0.1,False,,[]
+112,3,0.7,True,The table discusses features selected for Task 10.,"['features', 'Task 10']"
+112,4,0.1,False,"The table focuses on feature selection for a specific task, not applications of visual question answering.",[]
+112,5,0.1,False,The table does not mention fairness or social aspects.,[]
+112,6,0.1,False,,[]
+112,7,0.1,False,,[]
+112,8,0.1,False,,[]
+112,9,0.1,False,,[]
+112,10,0.1,False,The table does not mention FL or decentralised concepts.,[]
+113,1,0.1,False,The table describes a translation log probability and does not contain graph or visual information.,"['Graph structured', 'visual Question Answering']"
+113,2,0.0,False,,[]
+113,4,0.1,False,"The table focuses on language translation features, not visual question answering.",[]
+113,5,0.1,False,,[]
+113,6,0.1,False,"The table focuses on machine translation features, not regulatory capture or machine learning in a broader context.",[]
+113,7,0.1,False,,[]
+113,8,0.1,False,,[]
+113,9,0.1,False,Table content lacks visual information or question answering capabilities.,[]
+113,10,0.1,False,,[]
+114,1,0.1,False,The table focuses on textual data and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+114,2,0.1,False,,[]
+114,3,0.1,False,,[]
+114,4,0.1,False,"The table describes a test set for translation similarity, not visual question answering.",[]
+114,7,0.1,False,,[]
+114,8,0.1,False,,[]
+114,9,0.1,False,,[]
+115,1,0.1,False,"The table describes textual results, not visual data.","['Graph structured', 'visual Question Answering']"
+115,2,0.0,False,,[]
+115,3,0.1,False,,[]
+115,4,0.1,False,,[]
+115,5,0.1,False,,[]
+115,6,0.1,False,,[]
+115,7,0.1,False,,[]
+115,8,0.1,False,,[]
+115,9,0.1,False,,[]
+115,10,0.1,False,,[]
+116,1,0.1,False,"The table focuses on textual data analysis, not visual or graph-based question answering.","['Graph structured', 'visual Question Answering']"
+116,2,0.1,False,,[]
+116,3,0.1,False,,[]
+116,4,0.1,False,"The table focuses on task performance metrics, not visual question answering applications.",[]
+116,5,0.1,False,"The table focuses on task performance metrics, not fairness or social aspects.",[]
+116,6,0.1,False,The table focuses on task performance metrics and does not mention regulatory capture or machine learning.,[]
+116,7,0.1,False,,[]
+116,8,0.1,False,,[]
+116,9,0.1,False,"The table contains textual data about a task, not visual information.",[]
+116,10,0.1,False,,[]
+117,1,0.1,False,"The table focuses on ranking errors in metrics, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+117,2,0.1,False,,[]
+117,4,0.1,False,,[]
+117,5,0.1,False,,[]
+117,6,0.1,False,,[]
+117,7,0.1,False,"The table focuses on ranking errors in metrics, not segmentation or failure analysis.",
+117,8,0.1,False,,[]
+117,9,0.1,False,"The table describes ranking errors in a metric-based system, not visual or graph-structured data.",[]
+117,10,0.1,False,,[]
+118,2,0.1,False,No keywords found in table matching query.,[]
+118,3,0.1,False,,[]
+118,4,0.1,False,The table does not contain information related to visual question answering systems.,[]
+118,6,0.1,False,"No clear connection to regulatory capture, IA, ML, or machine learning found in the provided table data.",[]
+118,7,0.0,False,"Table content does not mention segmentation, SAM or failure.",[]
+118,8,0.1,False,,[]
+118,9,0.1,False,,[]
+118,10,0.1,False,,[]
+119,2,0.1,False,,[]
+119,3,0.1,False,,[]
+119,4,0.1,False,No keywords found in the table related to visual question answering.,[]
+119,5,0.1,False,,[]
+119,6,0.1,False,,[]
+119,7,0.1,False,,[]
+119,8,0.1,False,No mention of Graph Convolutional Networks or GCN in the provided table data.,[]
+119,9,0.1,False,No visual information or question answering capabilities are present in the provided table data.,[]
+119,10,0.1,False,,[]
+120,1,0.1,False,The table does not contain information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+120,2,0.0,False,Table content does not contain keywords related to the query.,[]
+120,4,0.1,False,,[]
+120,5,0.1,False,,[]
+120,6,0.1,False,No keywords related to the query found in the table.,[]
+120,7,0.1,False,,[]
+120,8,0.1,False,No keywords related to GCN or Graph Convolutional Networks found.,[]
+120,9,0.1,False,The table does not contain visual information.,[]
+120,10,0.1,False,No keywords found in the table matching the query.,[]
+121,2,0.1,False,,[]
+121,3,0.1,False,,[]
+121,4,0.1,False,The table content does not seem related to visual question answering systems.,[]
+121,6,0.1,False,Table content does not appear to relate to regulatory capture or machine learning.,[]
+121,7,0.1,False,"No mention of segmentation, SAM, or failure in the provided table.",[]
+121,8,0.1,False,,[]
+121,10,0.1,False,,[]
+122,1,0.1,False,No clear connection between table content and query.,"['Graph structured', 'visual Question Answering']"
+122,2,0.1,False,,[]
+122,3,0.1,False,,[]
+122,5,0.1,False,The table does not contain information about fairness or social topics.,[]
+122,6,0.1,False,"No direct mentions of regulatory capture, IA, ML, or machine learning found.",[]
+122,7,0.1,False,,[]
+122,9,0.1,False,The table lacks visual information.,[]
+122,10,0.1,False,,[]
+123,1,0.1,False,Table lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+123,2,0.1,False,No keywords found in the table matching the query.,[]
+123,3,0.1,False,,[]
+123,5,0.1,False,,[]
+123,6,0.1,False,,[]
+123,8,0.1,False,,[]
+123,9,0.1,False,The table lacks visual information.,[]
+123,10,0.1,False,,[]
+124,1,0.1,False,"The table provides textual information about notations, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+124,2,0.05,False,"Table focuses on notations and descriptions, not autonomous vehicles or federated learning.",[]
+124,5,0.1,False,,[]
+124,6,0.1,False,"Table content focuses on notations and descriptions, not regulatory capture or machine learning.",[]
+124,8,0.1,False,,[]
+124,9,0.1,False,,[]
+124,10,0.1,False,,[]
+125,1,0.1,False,The table presents experimental results and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+125,2,0.1,False,,[]
+125,3,0.1,False,,[]
+125,4,0.1,False,,[]
+125,5,0.1,False,,[]
+125,6,0.1,False,,[]
+125,7,0.1,False,,[]
+125,8,0.1,False,No mention of GCN or related concepts found in the table.,[]
+125,9,0.1,False,No visual information is provided in the table.,[]
+125,10,0.1,False,,[]
+126,1,0.1,False,"The table provides textual information about a CDR scenario, not visual or graph-structured data.","['Graph structured', 'visual Question Answering']"
+126,2,0.1,False,"Table content focuses on data analysis and scenarios, not autonomous vehicles or federated learning.",[]
+126,3,0.6,True,"The table describes statistics related to CDR scenarios, which might be relevant to RAG and long-context LLM research.","['SCDR', 'CDR scenarios']"
+126,4,0.1,False,,[]
+126,5,0.1,False,,[]
+126,6,0.1,False,,[]
+126,7,0.1,False,,[]
+126,8,0.1,False,,[]
+126,9,0.1,False,"The table provides textual statistics, not visual data.",[]
+126,10,0.1,False,,[]
+127,1,0.1,False,"The table focuses on comparing different methods, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+127,2,0.0,False,"The table focuses on comparing methods in a specific domain, not related to Autonomous Surface Vehicles or Federated Learning.",[]
+127,3,0.4,True,"The table describes different methods for comparing data, which could be relevant to long-context LLMs used in tasks like information retrieval.",[]
+127,4,0.1,False,"The table focuses on comparison of different CDR methods, not visual question answering.",[]
+127,5,0.1,False,"The table focuses on comparing methods for a technical task, not fairness or social impact.",[]
+127,6,0.1,False,"The table focuses on methods for comparison in a specific domain, not regulatory capture or machine learning.",[]
+127,7,0.1,False,"Table focuses on comparison of methods in a specific domain, not segmentation or failure analysis.",[]
+127,8,0.1,False,"Table focuses on comparison of different methods, not specifically GCNs.",[]
+127,9,0.1,False,"Table focuses on text-based method comparison, not visual aspects.",[]
+127,10,0.1,False,"Table focuses on comparing methods in a specific field, not decentralized or FL.",[]
+128,1,0.1,False,"The table focuses on adversarial robustness in SCDR, not graph structure or visual question answering.","['Graph structured', 'visual Question Answering']"
+128,2,0.1,False,The table content does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+128,3,0.1,False,,[]
+128,4,0.1,False,"The table focuses on adversarial robustness of a specific model, not applications of visual question answering systems.",[]
+128,5,0.1,False,,[]
+128,6,0.1,False,,[]
+128,7,0.1,False,,[]
+128,8,0.1,False,No mention of Graph Convolutional Networks (GCN) found in the table.,[]
+128,9,0.1,False,,[]
+129,1,0.1,False,"The table focuses on performance of recommendation models, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+129,2,0.1,False,,[]
+129,3,0.1,False,,[]
+129,4,0.1,False,,[]
+129,6,0.1,False,"Table content does not mention regulatory capture, IA, ML, or machine learning.",[]
+129,7,0.1,False,,[]
+129,8,0.1,False,,[]
+129,9,0.1,False,,[]
+129,10,0.1,False,,[]
+130,1,0.1,False,"The table describes an ablation study, not visual question answering on graphs.","['Graph structured', 'visual Question Answering']"
+130,4,0.1,False,"The table focuses on an ablation study, not applications of visual question answering.",[]
+130,5,0.1,False,,[]
+130,6,0.1,False,,[]
+130,7,0.1,False,,[]
+130,8,0.1,False,No mention of GCN or related concepts in the table.,[]
+130,9,0.1,False,The table does not contain visual information.,[]
+130,10,0.1,False,,[]
+131,1,0.1,False,The table lacks visual elements and structural information suitable for graph-based or VQA tasks.,"['Graph structured', 'visual Question Answering']"
+131,2,0.1,False,,[]
+131,3,0.6,True,"Table discusses AI applications, which overlaps with the field of large language models.",[]
+131,4,0.1,False,"The table focuses on general AI applications in disease research, not visual question answering.",[]
+131,5,0.6,True,"Table discusses AI applications, potentially touching on social impact.",[]
+131,6,0.1,False,,[]
+131,7,0.1,False,"Table does not mention segmentation, SAM or failure.",[]
+131,8,0.1,False,No mention of Graph Convolutional Networks or related terms.,[]
+131,9,0.1,False,The table does not contain visual information or question answering capabilities.,[]
+131,10,0.1,False,,[]
+132,1,0.1,False,The table lacks information about graphs or visual question answering.,"['Graph structured', 'visual Question Answering']"
+132,2,0.1,False,,[]
+132,3,0.6,True,"Table discusses AI applications, which relate to LLMs.",[]
+132,6,0.1,False,,[]
+132,7,0.1,False,,[]
+132,8,0.1,False,,[]
+132,10,0.1,False,,[]
+133,1,0.1,False,"The table focuses on algorithmic fairness metrics, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+133,2,0.1,False,"The table focuses on algorithmic fairness metrics, not Autonomous Surface Vehicles or Federated Learning.",[]
+133,3,0.6,True,"Table discusses algorithmic fairness metrics, which can be relevant to long-context LLMs.",[]
+133,4,0.1,False,"The table focuses on algorithmic fairness metrics in a specific context, not visual question answering applications.",[]
+133,6,0.6,True,"Table discusses fairness metrics used in algorithmic decision-making, which relates to the concept of regulatory capture.",[]
+133,7,0.1,False,,[]
+133,9,0.1,False,"The table provides textual information about fairness metrics, not visual data.",[]
+133,10,0.1,False,,[]
+134,1,0.1,False,"The table describes attributes of procedural fairness, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+134,2,0.1,False,,[]
+134,3,0.6,True,"Table discusses procedural fairness attributes, which are relevant to understanding how LLMs operate and potential biases.",[]
+134,4,0.1,False,"The table focuses on procedural fairness attributes in research, not visual question answering applications.",[]
+134,5,0.85,True,Table focuses on procedural fairness attributes.,"['Fairness', 'Procedural']"
+134,6,0.1,False,,[]
+134,7,0.1,False,,[]
+134,8,0.1,False,,[]
+134,9,0.1,False,"The table provides textual information about procedural fairness attributes, not visual data.",[]
+134,10,0.1,False,,[]
+135,1,0.1,False,The table lacks visual elements or structural information relevant to graph-based QA.,"['Graph structured', 'visual Question Answering']"
+135,2,0.0,False,,[]
+135,3,0.6,True,Table discusses rule-violating posts in a survey context.,[]
+135,4,0.1,False,"The table focuses on rule-violating posts in a survey context, not visual question answering applications.",[]
+135,5,0.7,True,"Table discusses rule-violating posts, potentially related to fairness in social media.","['Fairness', 'Posts']"
+135,8,0.1,False,,[]
+135,9,0.1,False,"The table contains text descriptions, not visual data.",[]
+135,10,0.1,False,,[]
+136,1,0.1,False,"The table describes a rule violation classification scheme, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+136,2,0.05,False,,[]
+136,3,0.1,False,,[]
+136,4,0.1,False,,[]
+136,5,0.1,False,"Table focuses on rule violation classification, not fairness or social aspects.",[]
+136,6,0.75,True,"Table deals with rule violation classification, potentially touching on regulatory aspects.",[]
+136,7,0.1,False,"Table focuses on rule violations, not segmentation or failure analysis.",[]
+136,8,0.1,False,,[]
+136,9,0.1,False,"Table content focuses on rule violation classification, not visual or VQA concepts.",[]
+136,10,0.1,False,,[]
+137,1,0.1,False,"The table focuses on textual guidelines, not visual or graph-based information.","['Graph structured', 'visual Question Answering']"
+137,2,0.0,False,,[]
+137,3,0.7,True,"Table discusses posting guidelines, not directly related to RAG or LLMs.",[]
+137,4,0.1,False,,[]
+137,5,0.2,False,"Table focuses on content guidelines, not fairness or social aspects.",[]
+137,6,0.1,False,,[]
+137,7,0.1,False,,[]
+137,8,0.1,False,,[]
+137,9,0.1,False,,[]
+137,10,0.1,False,,[]
+138,1,0.1,False,"The table focuses on perceived consistency in fairness aspects, not visual data analysis.","['Graph structured', 'visual Question Answering']"
+138,2,0.1,False,,[]
+138,3,0.1,False,"The table focuses on fairness aspects and classification schemes, not long-context LLMs or visual question answering.",[]
+138,4,0.1,False,,[]
+138,5,0.75,True,The table discusses perceived consistency related to fairness aspects.,"['Fairness', 'Classification']"
+138,6,0.1,False,,[]
+138,7,0.1,False,,[]
+138,8,0.1,False,,[]
+138,9,0.1,False,"The table focuses on textual analysis of fairness aspects, not visual data.",[]
+138,10,0.1,False,,[]
+139,1,0.1,False,"The table focuses on perceived consistency in guidelines, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+139,2,0.05,False,"Table focuses on fairness aspects in guidelines, not Autonomous Surface Vehicles or Federated Learning.",
+139,3,0.1,False,,[]
+139,4,0.1,False,"Table focuses on perceived consistency in guidelines, not visual question answering applications.",[]
+139,5,0.8,True,Table discusses fairness aspects related to guidelines.,"['Fairness', 'Guidelines']"
+139,6,0.1,False,,[]
+139,7,0.1,False,"The table focuses on perceived consistency in guidelines, not segmentation or failure analysis.",[]
+139,8,0.1,False,"The table focuses on perceived consistency in guidelines, not graph networks or visual question answering.",[]
+139,9,0.1,False,The table focuses on textual analysis of guidelines and lacks visual content.,[]
+139,10,0.1,False,,[]
+140,1,0.1,False,"The table focuses on perceived consistency in fairness aspects, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+140,2,0.1,False,"Table focuses on perceived consistency in fairness aspects, unrelated to autonomous vehicles or federated learning.",[]
+140,3,0.1,False,,[]
+140,4,0.1,False,"The table focuses on perceived consistency and fairness aspects of a system, not visual question answering applications.",[]
+140,5,0.6,True,Table discusses perceived consistency related to fairness.,[]
+140,6,0.1,False,,[]
+140,7,0.1,False,,[]
+140,8,0.1,False,,[]
+140,9,0.1,False,"The table provides textual information about perceived consistency, not visual data.",[]
+140,10,0.1,False,,[]
+141,1,0.1,False,"The table focuses on textual analysis of fairness aspects, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+141,2,0.1,False,"The table focuses on fairness aspects in moderation, not autonomous vehicles or federated learning.",[]
+141,3,0.1,False,,[]
+141,4,0.1,False,"The table focuses on fairness aspects in moderator types, not visual question answering.",[]
+141,6,0.1,False,,[]
+141,7,0.1,False,"The table focuses on perceived consistency in fairness aspects, not segmentation or failure.",[]
+141,8,0.1,False,The table does not mention Graph Convolutional Networks or GCNs.,[]
+141,9,0.1,False,The table is textual and does not contain visual information.,[]
+142,1,0.1,False,"The table provides textual information about a research result, not visual data.","['Graph structured', 'visual Question Answering']"
+142,2,0.1,False,,[]
+142,3,0.1,False,,[]
+142,4,0.1,False,,[]
+142,5,0.1,False,,[]
+142,6,0.1,False,,[]
+142,7,0.1,False,,[]
+142,8,0.1,False,No mention of Graph Convolutional Networks (GCN) or related concepts.,[]
+142,9,0.1,False,Table lacks visual content and focuses on textual analysis.,[]
+142,10,0.1,False,,[]
+143,1,0.1,False,"The table provides textual analysis, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+143,3,0.7,True,"Table discusses themes from open-ended questions,  potentially related to understanding user intent.",[]
+143,4,0.1,False,"The table discusses themes found in open-ended questions about flags, not visual question answering systems.",[]
+143,5,0.6,True,"Table discusses themes from open-ended questions, might touch on social aspects but not explicitly fairness.",[]
+143,6,0.1,False,"Table does not mention regulatory capture, IA, ML, or machine learning.",[]
+143,7,0.1,False,,[]
+143,8,0.1,False,"Table focuses on textual themes and analysis, not graph-based concepts.",[]
+143,9,0.1,False,The table provides textual analysis and lacks visual elements.,[]
+143,10,0.1,False,,[]
+144,1,0.1,False,The table is text-based and does not inherently support graph structures or visual question answering.,"['Graph structured', 'visual Question Answering']"
+144,2,0.0,False,,[]
+144,3,0.1,False,,[]
+144,4,0.1,False,,[]
+144,5,0.1,False,,[]
+144,6,0.1,False,"Table focuses on demographics, not regulatory capture or machine learning.",[]
+144,7,0.1,False,"Table focuses on demographics, not segmentation or failure.",[]
+144,8,0.1,False,,[]
+144,9,0.6,True,Table provides demographic data which can be visualized.,"['Demographic', 'Category']"
+144,10,0.1,False,,[]
+145,1,0.1,False,The table focuses on statistical results and lacks visual or graph elements.,"['Graph structured', 'visual Question Answering']"
+145,2,0.1,False,,[]
+145,3,0.1,False,,[]
+145,4,0.1,False,"The table focuses on statistical analysis of interaction between variables, not visual question answering.",[]
+145,5,0.7,True,The table discusses interaction effects related to fairness.,"['Fairness', 'Interaction']"
+145,6,0.1,False,"Table focuses on interaction between variables in a GLM model, not directly related to regulatory capture or machine learning.",[]
+145,7,0.1,False,,[]
+145,8,0.1,False,"The table focuses on statistical interactions, not graph structures.",[]
+145,9,0.1,False,Table is textual and does not contain visual information.,[]
+145,10,0.1,False,,[]
+146,1,0.1,False,"The table focuses on text descriptions of fairness aspects, not visual data or graph structures.","['Graph structured', 'visual Question Answering']"
+146,2,0.1,False,,[]
+146,3,0.1,False,,[]
+146,4,0.1,False,,[]
+146,6,0.1,False,,[]
+146,7,0.1,False,,[]
+146,8,0.1,False,,[]
+146,9,0.1,False,,[]
+146,10,0.1,False,,[]
+147,1,0.1,False,"The table presents textual data about quark model parameters, not visual information.","['Graph structured', 'visual Question Answering']"
+147,2,0.0,False,,[]
+147,3,0.1,False,,[]
+147,4,0.1,False,,[]
+147,5,0.05,False,"The table focuses on physics data about quark masses, not social fairness.",[]
+147,6,0.1,False,,[]
+147,7,0.0,False,"The table contains information about quark masses and physics parameters, which are not related to segmentation or failure.",[]
+147,8,0.1,False,,[]
+147,9,0.1,False,,[]
+147,10,0.05,False,The table focuses on quark masses and has no relation to FL or decentralized concepts.,[]
+148,1,0.1,False,The table does not contain visual information or graph structures.,"['Graph structured', 'visual Question Answering']"
+148,2,0.0,False,,[]
+148,3,0.7,True,,[]
+148,4,0.1,False,,[]
+148,5,0.1,False,,[]
+148,6,0.1,False,,[]
+148,7,0.1,False,,[]
+148,8,0.1,False,,[]
+148,9,0.1,False,No visual elements or graph structure are present in the table.,[]
+149,1,0.1,False,The table lacks visual elements and graph structure.,"['Graph structured', 'visual Question Answering']"
+149,2,0.0,False,,[]
+149,3,0.1,False,,[]
+149,4,0.1,False,Table focuses on a scientific concept not directly related to visual question answering applications.,[]
+149,5,0.1,False,"The table focuses on scientific data about energy states, not social or fairness concepts.",
+149,6,0.1,False,,[]
+149,7,0.1,False,,[]
+149,8,0.1,False,,[]
+149,9,0.1,False,,[]
+149,10,0.1,False,,[]
+150,1,0.1,False,The table is textual and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+150,2,0.0,False,,[]
+150,3,0.1,False,,[]
+150,4,0.1,False,,[]
+150,5,0.0,False,,[]
+150,6,0.0,False,"The table focuses on physics data and lacks mentions of regulation, machine learning, or IA.",[]
+150,7,0.1,False,,[]
+150,8,0.1,False,"The table describes a physical comparison, not machine learning concepts.",[]
+150,9,0.1,False,The table lacks visual elements and focuses on textual data.,[]
+150,10,0.05,False,"The table focuses on decay widths in particle physics, not decentralized systems or FL.",[]
+151,1,0.1,False,"The table presents data about resonant states, not visual or graph-based information.","['Graph structured', 'visual Question Answering']"
+151,2,0.0,False,,[]
+151,3,0.1,False,"The table describes a physics concept, while the query focuses on language models.",
+151,4,0.1,False,The table describes a scientific finding about resonant states and does not relate to applications of visual question answering systems.,[]
+151,5,0.1,False,"The table focuses on resonant states in physics, not social or fairness issues.",[]
+151,6,0.1,False,"The table describes resonances and states in a physical system, not regulatory capture or machine learning.",[]
+151,7,0.1,False,"The table focuses on resonant states in physics and does not mention segmentation, SAM, or failure.",[]
+151,8,0.0,False,,[]
+151,9,0.1,False,The table appears to be text-based with no visual elements.,[]
+151,10,0.1,False,,[]
+152,1,0.1,False,"The table provides textual data about decay widths, not visual or graph-based information.","['Graph structured', 'visual Question Answering']"
+152,2,0.0,False,Table content is about particle physics and not related to autonomous vehicles or federated learning.,[]
+152,3,0.1,False,,[]
+152,4,0.1,False,,[]
+152,5,0.1,False,"Table content focuses on physics data, not social fairness.",[]
+152,6,0.05,False,"Table content focuses on physics data, not regulatory capture or machine learning.",[]
+152,7,0.1,False,,[]
+152,8,0.05,False,,[]
+152,9,0.1,False,The table is textual and lacks visual information.,[]
+152,10,0.1,False,,[]
+153,1,0.1,False,"The table focuses on image recognition metrics, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+153,2,0.0,False,,[]
+153,3,0.1,False,,[]
+153,4,0.1,False,"The table focuses on image segmentation performance metrics, not applications of visual question answering systems.",[]
+153,5,0.1,False,,[]
+153,6,0.1,False,,[]
+153,7,0.85,True,"The table discusses SAM performance, potentially related to segmentation failures.","['SAM', 'Segmentation']"
+153,8,0.1,False,,[]
+153,9,0.1,False,,[]
+153,10,0.1,False,,[]
+154,1,0.1,False,"The table describes a specific research finding, not a visual question answering system.","['Graph structured', 'visual Question Answering']"
+154,2,0.1,False,,[]
+154,3,0.1,False,,[]
+154,4,0.1,False,"The table focuses on attack transferability in a specific AI model, not visual question answering applications.",[]
+154,5,0.1,False,,[]
+154,6,0.1,False,,[]
+154,7,0.7,True,Table mentions DarkSAM which relates to SAM attacks.,['SAM']
+154,8,0.1,False,,[]
+154,9,0.1,False,,[]
+154,10,0.1,False,"The table focuses on attack transferability in a specific AI model, not decentralized systems or FL.",[]
+155,1,0.1,False,"The table describes a comparison study, not visual data structures.","['Graph structured', 'visual Question Answering']"
+155,2,0.1,False,,[]
+155,3,0.1,False,,[]
+155,4,0.1,False,"The table focuses on a comparison study of ASR (Automatic Speech Recognition) models, not visual question answering.",[]
+155,6,0.1,False,,[]
+155,7,0.1,False,The table does not discuss segmentation or SAM failure.,[]
+155,8,0.1,False,,[]
+155,9,0.1,False,The table appears to be text-based with no visual elements.,[]
+155,10,0.1,False,,[]
+156,2,0.1,False,No clear connection to Autonomous Surface Vehicles or Federated Learning.,[]
+156,3,0.1,False,,[]
+156,4,0.1,False,,[]
+156,5,0.1,False,,[]
+156,6,0.1,False,,[]
+156,8,0.1,False,,[]
+156,10,0.0,False,,[]
+157,1,0.1,False,"The table focuses on text-based ASR performance, not visual question answering.","['Graph structured', 'visual Question Answering']"
+157,2,0.1,False,Table content focuses on audio processing and does not mention Autonomous Surface Vehicles or Federated Learning.,[]
+157,4,0.1,False,"The table focuses on a specific dataset and its performance, not applications of visual question answering.",[]
+157,5,0.1,False,"The table discusses ASR performance on a specific dataset, not fairness or social aspects.",[]
+157,6,0.1,False,,[]
+157,7,0.75,True,Table discusses ASR performance on SAM L.,"['SAM', 'ASR']"
+157,8,0.1,False,,[]
+157,10,0.1,False,,[]
+158,2,0.1,False,,[]
+158,3,0.1,False,"The table focuses on describing an ASR model, not RAG or long-context LLMs.",[]
+158,5,0.1,False,,[]
+158,6,0.1,False,,[]
+158,8,0.1,False,,[]
+158,9,0.85,True,The table describes a visual model with point and box elements.,"['Model', 'POINT', 'BOX']"
+158,10,0.1,False,,[]
+159,2,0.1,False,,[]
+159,3,0.1,False,,[]
+159,4,0.1,False,"Table focuses on node classification metrics, not visual question answering applications.",[]
+159,5,0.1,False,,[]
+159,6,0.1,False,"Table focuses on dataset statistics, not regulatory capture or machine learning in that context.",[]
+159,7,0.1,False,,[]
+159,9,0.1,False,,[]
+160,1,0.1,False,"The table focuses on comparing models for performance in a specific task, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+160,2,0.1,False,"The table focuses on performance comparison of PromptGCN models in relation to other methods, not Autonomous Surface Vehicles or Federated Learning.",[]
+160,3,0.6,True,"The table compares models related to PromptGC, which may be relevant to long-context LLMs.","['PromptGC', 'Performance comparison']"
+160,4,0.7,True,The table compares performance of models in visual question answering.,"['PromptGC', 'Performance comparison']"
+160,5,0.1,False,,[]
+160,6,0.1,False,"The table focuses on model performance comparisons, not regulatory capture or machine learning ethics.",[]
+160,7,0.1,False,,[]
+160,8,0.7,True,Table mentions PromptGCN which is a GCN based model.,['PromptGCN']
+160,9,0.6,True,The table presents a performance comparison of models relevant to visual tasks.,"['Performance comparison', 'PromptGC']"
+160,10,0.1,False,"Table content focuses on model performance comparison in Prompt Generation, not decentralized or FL.",[]
+161,1,0.1,False,"The table focuses on performance comparison of prompting models, not graph-based visual question answering.","['Graph structured', 'visual Question Answering']"
+161,2,0.1,False,,[]
+161,3,0.6,True,The table compares the performance of Promp models.,"['Performance comparison', 'Promp']"
+161,4,0.1,False,,[]
+161,6,0.1,False,,[]
+161,7,0.1,False,,[]
+161,9,0.1,False,,[]
+161,10,0.1,False,,[]
+162,1,0.1,False,"The table focuses on memory consumption in models, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+162,2,0.1,False,,[]
+162,3,0.7,True,"The table discusses memory usage of different model layers, potentially relevant to LLMs.","['Memory consumption', 'Layer Models']"
+162,4,0.1,False,"The table focuses on memory consumption in deep learning models, not visual question answering applications.",[]
+162,5,0.1,False,"The table focuses on memory consumption of models, not fairness or social aspects.",[]
+162,6,0.1,False,,[]
+162,7,0.6,True,"Table discusses memory usage in different models, which could be related to failure analysis.",['memory consumption']
+162,9,0.7,True,"The table compares memory usage of different models, potentially relevant to VQA involving visual understanding.","['Comparison', 'memory consumption']"
+162,10,0.1,False,"Table focuses on memory consumption of different model layers, not decentralized or FL concepts.",[]
+163,1,0.1,False,"The table focuses on attachment modes for text-to-image generation, not visual question answering with graph structures.","['Graph structured', 'visual Question Answering']"
+163,2,0.1,False,"Table focuses on attachment patterns in text for machine learning, not autonomous vehicles or federated learning.",[]
+163,3,0.8,True,Table discusses different attachment methods for LLMs.,"['Attachment modes', 'Prompt Attachment Methods']"
+163,4,0.7,True,The table discusses different attachment methods for VQA models.,"['Attachment modes', 'Prompt methods']"
+163,6,0.1,False,,[]
+163,7,0.6,True,"The table discusses various attachment methods for prompts, which could be relevant to failure analysis in segmentation or SAM tasks.","['attachment modes', 'prompt attachment']"
+163,8,0.1,False,,[]
+163,9,0.75,True,Table discusses attachment methods in a visual context.,"['Attachment patterns', 'Amazon CoBuyPhoto']"
+163,10,0.1,False,,[]
+164,1,0.1,False,"The table focuses on the performance of models on a specific task, not directly related to visual question answering.","['Graph structured', 'visual Question Answering']"
+164,2,0.1,False,,[]
+164,3,0.6,True,The table discusses accuracy of graph-based models.,"['ClusterGCN', 'Clust...', 'subgraphs']"
+164,4,0.1,False,,[]
+164,5,0.1,False,"The table focuses on graph clustering and accuracy metrics, not fairness or social aspects.",[]
+164,6,0.1,False,,[]
+164,7,0.1,False,,[]
+164,8,0.9,True,"Table discusses performance of ClusterGCN, a GCN variant.","['Graph Convolutional Network', 'GCN']"
+164,9,0.7,True,Table discusses model performance in visual question answering.,"['ClusterGCN', 'visual Question Answering']"
+164,10,0.1,False,,[]
+165,1,0.1,False,The table is text-based and lacks visual or graph structure.,"['Graph structured', 'visual Question Answering']"
+165,2,0.1,False,,[]
+165,3,0.6,True,"Table discusses industry influence on policy, which can be relevant to understanding how LLMs are developed and regulated.",[]
+165,4,0.1,False,"The table focuses on industry influence, not visual question answering.",[]
+165,5,0.75,True,"The table discusses industry influence on policymakers, which relates to social fairness.","['Influence', 'Policymakers']"
+165,6,0.85,True,"Table discusses industry influence on policy, potentially related to regulatory capture in the context of AI/ML.",[]
+165,7,0.1,False,"The table focuses on industry influence on policymakers, not segmentation or failure.",[]
+165,8,0.1,False,"The table focuses on industry influence, not graph-related concepts.",[]
+165,9,0.1,False,"The table provides textual information about industry influence, not visual data.",[]
+165,10,0.1,False,"Table focuses on industry influence on policy, not decentralized systems or FL.",[]
+166,1,0.1,False,"The table describes mechanisms of industry influence, not visual data or graphs.","['Graph structured', 'visual Question Answering']"
+166,2,0.1,False,"Table focuses on industry influence mechanisms, not autonomous vehicles or federated learning.",
+166,4,0.1,False,"The table focuses on industry influence mechanisms, not visual question answering applications.",[]
+166,5,0.7,True,Table discusses industry influence which can relate to social fairness.,"['industry influence', 'mitigations']"
+166,6,0.75,True,"Table discusses mechanisms of industry influence, which could be relevant to regulatory capture in the context of AI/ML.",[]
+166,7,0.1,False,"Table focuses on mechanisms of industry influence, not segmentation or failure.",[]
+166,8,0.1,False,,[]
+166,9,0.1,False,Table lacks visual content.,[]
+166,10,0.1,False,,[]
+167,1,0.1,False,"The table focuses on regulatory outcomes and examples, not visual or graph-based information.","['Graph structured', 'visual Question Answering']"
+167,2,0.1,False,,[]
+167,3,0.7,True,,[]
+167,4,0.1,False,,[]
+167,5,0.6,True,Table discusses regulatory outcomes which can have social implications.,[]
+167,6,0.85,True,Table discusses regulatory capture in the context of AI/ML.,['Regulatory Capture']
+167,7,0.1,False,,[]
+167,8,0.1,False,,[]
+167,10,0.1,False,,[]
+168,1,0.1,False,"Table focuses on text descriptions, not visual or graph data.","['Graph structured', 'visual Question Answering']"
+168,2,0.1,False,"The table focuses on industry influence mechanisms, not autonomous vehicles or federated learning.",[]
+168,3,0.7,True,"Table discusses mechanisms of industry influence, potentially related to long-context LLM development.",[]
+168,4,0.1,False,,[]
+168,5,0.7,True,Table discusses mechanisms of industry influence which can impact social dynamics.,"['industry influence', 'social']"
+168,6,0.75,True,"Table discusses mechanisms of industry influence, which may relate to regulatory capture.",[]
+168,7,0.1,False,"The table focuses on mechanisms of industry influence, not market segmentation or failure.",[]
+168,8,0.1,False,,[]
+168,9,0.1,False,The table is textual and lacks visual elements.,[]
+168,10,0.1,False,,[]
+169,1,0.1,False,"The table focuses on textual descriptions of mechanisms, not visual or graph-based data.","['Graph structured', 'visual Question Answering']"
+169,3,0.2,True,"Table describes industry influence mechanisms, not directly related to RAG or LLMs.",[]
+169,4,0.1,False,"The table focuses on industry influence mechanisms, not visual question answering applications.",[]
+169,5,0.7,True,Table discusses industry influence which can touch on social fairness.,[]
+169,6,0.85,True,"Table discusses mechanisms of industry influence, potentially including regulatory capture.","['Regulatory Capture', 'Industry Influence']"
+169,7,0.1,False,,[]
+169,8,0.1,False,"Table focuses on mechanisms of industry influence, not graph structures or visual question answering.",[]
+169,9,0.1,False,,[]
+169,10,0.1,False,,[]
+170,1,0.1,False,The table lacks visual elements and structural relationships required for VQA.,"['Graph structured', 'visual Question Answering']"
+170,2,0.1,False,,[]
+170,3,0.1,False,,[]
+170,4,0.1,False,The table focuses on congressional interviews and lacks keywords related to visual question answering.,[]
+170,5,0.6,True,"Table discusses interviews with government actors and industry participants, touching on social impact.",[]
+170,7,0.1,False,,[]
+170,8,0.1,False,,[]
+170,9,0.1,False,The table is textual and lacks visual elements.,[]
+170,10,0.1,False,Table focuses on government interviews and lacks keywords related to FL or decentralization.,[]
+171,1,0.1,False,"The table provides definitions of actors in a specific field, not related to graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
+171,2,0.1,False,"Table focuses on actors in AI deployment, not specific technologies like federated learning or autonomous vehicles.",[]
+171,3,0.7,True,"Table defines actors involved in AI deployment, potentially relevant to LLMs.",[]
+171,4,0.1,False,,[]
+171,5,0.75,True,"The table discusses actors involved in AI deployment, potentially including social considerations.",[]
+171,6,0.75,True,"Table discusses industry actors involved in AI deployment, potentially touching upon regulatory aspects.",[]
+171,7,0.1,False,,[]
+171,8,0.1,False,,[]
+171,9,0.1,False,,[]
+171,10,0.6,True,"Table discusses actors in AI deployment, potentially including decentralized entities.",[]
+172,1,0.1,False,"Table focuses on keywords for a scoping review, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+172,2,0.1,False,"Table focuses on AI governance keywords and scoping review terms, not autonomous systems or federated learning.",[]
+172,3,0.6,True,"Table discusses search terms for a scoping review, which could relate to long-context LLM research.",[]
+172,4,0.1,False,"The table focuses on AI governance keywords and search terms for a scoping review, not visual question answering applications.",[]
+172,6,0.85,True,Table discusses keywords for scoping review related to AI Governance.,"['AI Governance', 'Capture Keywords']"
+172,7,0.1,False,,[]
+172,8,0.1,False,,[]
+172,9,0.1,False,,[]
+172,10,0.1,False,,[]
+173,1,0.1,False,"Table content focuses on inclusion criteria for a scoping review, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+173,2,0.0,False,,[]
+173,4,0.1,False,"Table focuses on inclusion criteria for a scoping review, not visual question answering applications.",[]
+173,5,0.1,False,"The table focuses on inclusion criteria for a scoping review, not fairness or social aspects.",[]
+173,7,0.1,False,"Table focuses on inclusion criteria for a scoping review, not segmentation or failure.",[]
+173,8,0.1,False,"The table describes inclusion criteria for a scoping review, not related to GCNs.",
+173,9,0.1,False,,[]
+174,1,0.1,False,"Table focuses on exclusion criteria for a scoping review, not visual question answering or graph structures.","['Graph structured', 'visual Question Answering']"
+174,2,0.1,False,"Table focuses on exclusion criteria for a scoping review, unrelated to Autonomous Surface Vehicles or Federated Learning.",[]
+174,3,0.1,False,,[]
+174,4,0.1,False,"Table describes exclusion criteria for a scoping review, not related to visual question answering.",[]
+174,5,0.1,False,,[]
+174,6,0.1,False,"Table focuses on exclusion criteria for a scoping review, not regulatory capture or machine learning.",[]
+174,7,0.1,False,"Table focuses on exclusion criteria for a scoping review, not related to segmentation or SAM failure.",[]
+174,8,0.1,False,,[]
+174,9,0.1,False,,[]
+174,10,0.1,False,"Table focuses on exclusion criteria for a scoping review, not related to FL or decentralized systems.",[]
+175,1,0.1,False,"The table focuses on listed articles, not visual or graph data.","['Graph structured', 'visual Question Answering']"
+175,2,0.0,False,,[]
+175,3,0.1,False,,[]
+175,4,0.1,False,,[]
+175,5,0.1,False,,[]
+175,6,0.1,False,,[]
+175,8,0.1,False,,[]
+175,9,0.1,False,,[]
+175,10,0.1,False,,[]
