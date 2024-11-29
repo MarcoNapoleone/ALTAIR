@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
     altair:
-        image: marconapo/altair:latest
+        image: altair:latest
+        restart: always
         ports:
             - "8080:8080"
         volumes:
