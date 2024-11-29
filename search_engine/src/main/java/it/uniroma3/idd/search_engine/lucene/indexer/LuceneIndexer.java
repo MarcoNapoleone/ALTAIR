@@ -133,6 +133,7 @@ public class LuceneIndexer {
             doc.add(new TextField("body", table.getBody(), TextField.Store.YES));
             doc.add(new TextField("footnotes", table.getFootnotesString(), TextField.Store.YES));
             doc.add(new TextField("references", table.getReferencesString(), TextField.Store.YES));
+            doc.add(new StringField("fileName", table.getFileName(), TextField.Store.YES));
 
             String combinedText = table.getCaption() + " "
                     + String.join(" ", table.getFootnotes()) + " "

@@ -22,6 +22,10 @@ public class OpenAPIConfiguration {
         productionServer.setUrl("https://altair.marconapoleone.me");
         productionServer.setDescription("production");
 
+        Server ailabServer = new Server();
+        ailabServer.setUrl("http://192.168.127.11:8080");
+        ailabServer.setDescription("ailabServer");
+
         Contact myContact = new Contact();
         myContact.setName("Giorgio Biancini, Marco Napoleone");
         myContact.setEmail("mar.napoleone3@stud.uniroma3.it");
@@ -33,6 +37,6 @@ public class OpenAPIConfiguration {
                 .contact(myContact);
 
 
-        return new OpenAPI().info(information).servers(List.of(devServer, productionServer));
+        return new OpenAPI().info(information).servers(List.of(devServer, productionServer, ailabServer));
     }
 }

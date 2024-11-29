@@ -14,6 +14,7 @@ public class GetTableResponse {
     private String body;
     private String footnotes;
     private String references;
+    private String fileName;
 
 
     public GetTableResponse tableToGetTableResponse(Document document) {
@@ -23,7 +24,8 @@ public class GetTableResponse {
                 document.get("caption"),
                 document.get("body"),
                 document.get("footnotes"),
-                document.get("references")
+                document.get("references"),
+                document.get("fileName")
         );
 
     }

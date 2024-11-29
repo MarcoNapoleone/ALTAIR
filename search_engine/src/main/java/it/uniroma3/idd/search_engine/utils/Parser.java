@@ -62,10 +62,13 @@ public class Parser {
                     ObjectMapper objectMapper = new ObjectMapper();
                     JsonNode jsonNode = objectMapper.readTree(file);
 
+                    //save the name of the file
+                    String fileName = file.getName();
+
                     jsonNode.fields().forEachRemaining(entry -> {
                         String id = entry.getKey();
                         JsonNode tableNode = entry.getValue().get("table");
-                        String tableHtml = removeHtmlTags(tableNode != null ? tableNode.asText("") : "");
+                        String tableHtml = tableNode != null ? tableNode.asText("") : "";
 
                         // Controlla che il nodo "caption" esista prima di chiamare asText
                         String caption = entry.getValue().has("caption")
@@ -84,7 +87,7 @@ public class Parser {
                             entry.getValue().get("references").forEach(reference -> references.add(reference.asText()));
                         }
 
-                        Table table = new Table(id, caption, tableHtml, footnotes, references);
+                        Table table = new Table(id, caption, tableHtml, footnotes, references, fileName);
                         tables.add(table);
                     });
 
@@ -97,12 +100,6 @@ public class Parser {
         }
 
         return tables;
-    }
-
-
-    public static String removeHtmlTags(String html) {
-        // Usa JSoup per rimuovere i tag HTML
-        return Jsoup.parse(html).text();
     }
 
 }

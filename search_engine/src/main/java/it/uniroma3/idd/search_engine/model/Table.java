@@ -20,12 +20,15 @@ public class Table {
 
     private List<String> references;   // The references of the table
 
-    public Table(String id, String caption, String body, List<String> footnotes, List<String> references) {
+    private String fileName;           // The name of the file
+
+    public Table(String id, String caption, String body, List<String> footnotes, List<String> references, String fileName) {
         this.id = id;
         this.caption = caption;
         this.body = body;
         this.footnotes = footnotes;
         this.references = references;
+        this.fileName = fileName;
     }
 
     public @NotNull String getId() {
@@ -66,6 +69,14 @@ public class Table {
 
     public void setReferences(List<String> references) {
         this.references = references;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     //if footnotes is null, return empty string
