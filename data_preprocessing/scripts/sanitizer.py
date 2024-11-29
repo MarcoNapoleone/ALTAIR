@@ -28,92 +28,74 @@ import sys
 
 from logger import logger
 
-global logfile
+def get_file_name(name):
+    if '_' in name:
+        name = name.split('_')[1]
+    if 'arXiv' in name:
+        name = name.replace('arXiv', '')
 
+    return name
 
 def sanitize_json(file):
-    # some files are not in the correct format, so we need to check if the file is in the correct format
-    # one easy flag to check is if "global_footnotes" is in the file, if it is, then the file is not in the correct format
+    if len(file) == 0:
+        raise ValueError('Skipping empty file')
+
     if 'global_footnotes' in file:
         raise Exception("File is not in the correct format.")
 
-    # iterate through the tables in the file
+    new_file = {}
     for table_name, table_data in file.items():
 
-        # Check if the table data is a dictionary
         if not isinstance(table_data, dict):
-            logger(f"└──Skipping non-table data for table [{table_name}].", log_type='warning', file=logfile)
+           logger(f"Skipping non-table data for field [{table_name}].", log_type='warning')
+           continue
+
+        required_keys = {'caption', 'table', 'footnotes', 'references'}
+        if not required_keys.issubset(table_data.keys()):
+            logger(f"Skipping table with missing fields [{table_name}].", log_type='warning')
             continue
 
-        # Ensure all required fields are present
-        if 'caption' not in table_data:
-            table_data['caption'] = ''
-        if 'table' not in table_data:
-            table_data['table'] = ''
-        if 'footnotes' not in table_data:
-            table_data['footnotes'] = []
-        if 'references' not in table_data:
-            table_data['references'] = []
-
-        # Ensure fields have the correct data types
-        if not isinstance(table_data['footnotes'], list):
-            table_data['footnotes'] = []
-        if not isinstance(table_data['references'], list):
-            table_data['references'] = []
-        if not isinstance(table_data['caption'], str):
-            table_data['caption'] = ''
-        if not isinstance(table_data['table'], str):
-            table_data['table'] = ''
-
-        # Filter out non-string items from lists
+        table_data = {k: table_data.get(k, '' if k in ['caption', 'table'] else []) for k in required_keys}
         table_data['footnotes'] = [f for f in table_data['footnotes'] if isinstance(f, str)]
         table_data['references'] = [r for r in table_data['references'] if isinstance(r, str)]
 
-        # Update the file with sanitized data
-        file[table_name] = table_data
+        new_file[table_name] = {key: table_data[key] for key in required_keys}
 
-    return file
-
+    return new_file
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         print("Usage: python sanitizer.py <directory> <output_directory>")
         sys.exit(1)
 
-    source_directory = sys.argv[1]
-    output_directory = sys.argv[2]
-
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
-
+    source_directory, output_directory = sys.argv[1], sys.argv[2]
+    os.makedirs(output_directory, exist_ok=True)
     logfile = os.path.join(output_directory, 'log.txt')
 
     for filename in sorted(os.listdir(source_directory)):
         if filename.endswith('.json'):
             try:
-                file_path = os.path.join(source_directory, filename)
-                with open(file_path, 'r') as f:
+                with open(os.path.join(source_directory, filename), 'r') as f:
                     data = json.load(f)
 
-                sanitize_json(data)
-                output_path = os.path.join(output_directory, filename)
-                with open(output_path, 'w') as f:
+                filename = get_file_name(filename)
+                data = sanitize_json(data)
+
+                if len(data) == 0:
+                    raise ValueError('Skipping file with no valid tables.')
+
+                with open(os.path.join(output_directory, filename), 'w') as f:
                     json.dump(data, f, indent=4)
             except json.JSONDecodeError:
-                logger(f"File {filename} is not in JSON format. Skipping...", log_type='error', file=logfile)
-                continue
+                logger(f"File {filename} is not in JSON format. Skipping...", log_type='error')
             except Exception as e:
-                logger(f"Error: {e} in file {filename}.", log_type='error', file=logfile)
-                continue
+                logger(f"Error: {e} in file {filename}.", log_type='error')
 
-    logger("All files sanitized.", file=logfile)
-
-    # Log the output directory
-    logger(f"Sanitized files saved in {output_directory}", file=logfile)
-
-    # calculate the number of files sanitized vs the number of files in the directory
+    logger("All files sanitized.")
+    logger(f"Sanitized files saved in {output_directory}")
     total_files = len(os.listdir(source_directory))
     sanitized_files = len(os.listdir(output_directory))
-    logger(f"Sanitized {sanitized_files} out of {total_files} files.", file=logfile)
+    logger(f"Sanitized {sanitized_files} out of {total_files} files.")
+
 
 # Usage: python sanitizer.py <directory> <output_directory>

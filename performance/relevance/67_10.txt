@@ -1,3 +1,0 @@
-[0.0|false] 
-
-The table describes a technical measurement related to optics (likely resolving power of a spectrograph). Federated learning deals with distributed machine learning algorithms and data privacy, making this table completely irrelevant. 

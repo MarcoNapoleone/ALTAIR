@@ -1,3 +1,0 @@
-0.6|true 
-
-The table mentions "linear regress lasso regress logist regress" which could relate to approaches used in handwritten text recognition. However, it lacks specifics about  handwritten text recognition techniques and focuses more on performance comparisons of various regression models.  
