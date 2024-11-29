@@ -1,8 +1,5 @@
 package it.uniroma3.idd.search_engine.utils;
 
-import ai.djl.Application;
-import ai.djl.translate.*;
-import ai.djl.util.Utils;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -74,43 +71,5 @@ public class BertTokenizer {
      */
     private long getTokenId(String token) {
         return vocab.getOrDefault(token, vocab.getOrDefault(TOKEN_UNK, -1));
-    }
-
-    /**
-     * Translator personalizzato per gestire la tokenizzazione.
-     */
-    static class TokenizerTranslator implements Translator<String, long[]> {
-
-        private final BertTokenizer tokenizer;
-
-        public TokenizerTranslator(BertTokenizer tokenizer) {
-            this.tokenizer = tokenizer;
-        }
-
-        @Override
-        public Batchifier getBatchifier() {
-            return null; // Non gestisce batch di dati
-        }
-
-        @Override
-        public long[] processOutput(TranslatorContext ctx, ai.djl.ndarray.NDList list) {
-            return list.singletonOrThrow().toLongArray();
-        }
-
-        @Override
-        public ai.djl.ndarray.NDList processInput(TranslatorContext ctx, String input) throws IOException {
-            Map<String, long[]> tokenizedInput = tokenizer.tokenize(input);
-            return new ai.djl.ndarray.NDList(
-                    ctx.getNDManager().create(tokenizedInput.get("input_ids"))
-            );
-        }
-    }
-
-    /**
-     * Metodo che utilizza il Translator per la tokenizzazione.
-     */
-    public long[] tokenizeWithTranslator(String text) throws IOException {
-        TokenizerTranslator translator = new TokenizerTranslator(this);
-        return translator.processInput(null, text).singletonOrThrow().toLongArray();
     }
 }

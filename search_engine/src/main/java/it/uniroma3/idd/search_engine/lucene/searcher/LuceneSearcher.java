@@ -172,7 +172,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         return documents;
     }
 
-    public Set<Document> runQueryTables(String query, Integer limit) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public Set<Document> runQueryTables(String query, Integer limit, Boolean useEmbedding) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (searcher == null) {
             throw new IllegalStateException("Searcher not initialized");
         }
@@ -198,10 +198,11 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         // Imposta il limite di risultati
         limit = limit != null ? limit : 10;
 
-        // Query vettoriale per il campo "embedding"
-        Query vectorQuery = new KnnFloatVectorQuery("embedding", queryEmbedding, limit);
-        booleanQuery.add(vectorQuery, BooleanClause.Occur.SHOULD);
-
+        if (useEmbedding) {
+            // Query vettoriale per il campo "embedding"
+            Query vectorQuery = new KnnFloatVectorQuery("embedding", queryEmbedding, limit);
+            booleanQuery.add(vectorQuery, BooleanClause.Occur.SHOULD);
+        }
 
         TopDocs topDocs;
         try {

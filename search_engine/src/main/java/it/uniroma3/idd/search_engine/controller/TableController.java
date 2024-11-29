@@ -56,7 +56,36 @@ public class TableController {
             NLP = false;
         }
 
-        Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit);
+        Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit, false);
+
+        Collection<GetTableResponse> tableResponses =
+                documents
+                        .stream()
+                        .map(t -> new GetTableResponse().tableToGetTableResponse(t))
+                        .collect(Collectors.toList());
+
+        return new GetTablesResponse(tableResponses);
+
+    }
+
+
+    @GetMapping("/searchEmbedding")
+    @Operation(summary = "Search Tables with Embedding", description = "Search for tables by query with optional field filters.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Documents retrieved successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid search parameters")
+    })
+    public GetTablesResponse searchDocumentsTablesEmbedding(
+            @RequestParam(required = true) @Parameter(description = "Search all the indexes") String query,
+            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
+    ) throws IOException, ParseException, InvalidTokenOffsetsException {
+
+        // if all the fields are null, return error
+        if (query == null) {
+            throw new IllegalArgumentException("Query field must not be null");
+        }
+
+        Collection<Document> documents = tableService.getTablesQuery(query, false, limit, true);
 
         Collection<GetTableResponse> tableResponses =
                 documents
