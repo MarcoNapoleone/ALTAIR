@@ -59,7 +59,7 @@ public class EmbedderController {
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
     public double getcosineSimilarity(@RequestParam String text1, @RequestParam String text2) throws Exception {
-        return embedderService.getcosineSimilarity(text1, text2);
+        return embedderService.getCosineSimilarity(text1, text2);
     }
 
     /**

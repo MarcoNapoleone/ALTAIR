@@ -11,29 +11,41 @@ public class EmbedderService {
 
     private final BertEmbedder bertEmbedder;
 
-    // Costruttore che inietta la dipendenza di BertEmbedder
+    // Constructor injecting the BertEmbedder dependency
     @Autowired
     public EmbedderService(BertConfig bertConfig, BertTokenizer bertTokenizer) throws Exception {
         this.bertEmbedder = new BertEmbedder(bertConfig, bertTokenizer);
     }
 
     /**
-     * Metodo che restituisce gli embeddings per il testo fornito
-     * @param text Il testo da cui generare gli embeddings
-     * @return Gli embeddings come array di float
-     * @throws Exception Se si verificano errori durante il calcolo degli embeddings
+     * Method to retrieve embeddings for the given text
+     * @param text The text for which embeddings are generated
+     * @return The embeddings as a float array
+     * @throws Exception If an error occurs during the embedding calculation
      */
     public float[] getEmbeddings(String text) throws Exception {
         return bertEmbedder.getEmbeddings(text);
     }
 
-    // metodo che calcola la cosine similarity tra due vettori di embeddings a partire di due testi
-    public double getcosineSimilarity(String text1, String text2) throws Exception {
+    /**
+     * Method to calculate cosine similarity between embeddings of two texts
+     * @param text1 First text
+     * @param text2 Second text
+     * @return The cosine similarity score
+     * @throws Exception If an error occurs during embedding computation
+     */
+    public double getCosineSimilarity(String text1, String text2) throws Exception {
         float[] embeddings1 = getEmbeddings(text1);
         float[] embeddings2 = getEmbeddings(text2);
         return cosineSimilarity(embeddings1, embeddings2);
     }
 
+    /**
+     * Method to calculate cosine similarity between two embedding vectors
+     * @param vectorA First embedding vector
+     * @param vectorB Second embedding vector
+     * @return The cosine similarity score
+     */
     public double cosineSimilarity(float[] vectorA, float[] vectorB) {
         double dotProduct = 0.0;
         double normA = 0.0;
@@ -48,13 +60,9 @@ public class EmbedderService {
         return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
     }
 
-
-
-
-
     /**
-     * Metodo per chiudere correttamente la sessione e l'ambiente di ONNX
-     * @throws Exception Se si verificano errori nella chiusura della sessione
+     * Method to properly close the ONNX session and environment
+     * @throws Exception If an error occurs during session closure
      */
     public void close() throws Exception {
         bertEmbedder.close();

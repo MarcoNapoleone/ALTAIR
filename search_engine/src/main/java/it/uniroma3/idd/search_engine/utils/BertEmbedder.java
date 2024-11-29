@@ -15,22 +15,20 @@ public class BertEmbedder implements AutoCloseable {
     private final OrtSession session;
     private final BertTokenizer tokenizer;
 
-
     public BertEmbedder(BertConfig bertConfig, BertTokenizer tokenizer) throws Exception {
         this.tokenizer = Objects.requireNonNull(tokenizer, "Tokenizer cannot be null");
 
-        // Inizializza l'ambiente ONNX
+        // Initialize ONNX environment
         this.env = OrtEnvironment.getEnvironment();
 
-        // Ottieni il percorso del modello e verifica se esiste
+        // Get the model file path and check if it exists
         Path modelFilePath = Paths.get(Objects.requireNonNull(bertConfig.getModelPath(), "Model path cannot be null"));
         if (!Files.exists(modelFilePath)) {
             throw new IllegalArgumentException("Model file does not exist at: " + modelFilePath);
         }
 
-        // Creazione della sessione ONNX
+        // Create the ONNX session
         this.session = env.createSession(modelFilePath.toString(), new OrtSession.SessionOptions());
-
     }
 
     public float[] getEmbeddings(String text) throws Exception {
@@ -38,23 +36,23 @@ public class BertEmbedder implements AutoCloseable {
             throw new IllegalArgumentException("Input text cannot be null or empty");
         }
 
-        // Tokenizza il testo
+        // Tokenize the text
         Map<String, long[]> tokenized = tokenizer.tokenize(text);
         long[] inputIds = padOrTruncate(tokenized.get("input_ids"), 6); // Target length
         long[] attentionMask = padOrTruncate(new long[inputIds.length], inputIds.length, 1L); // All 1s
         long[] tokenTypeIds = padOrTruncate(new long[inputIds.length], inputIds.length, 0L); // All 0s
 
-        // Prepara il batch
+        // Prepare the batch
         Map<String, OnnxTensor> inputs = new HashMap<>();
         inputs.put("input_ids", OnnxTensor.createTensor(env, new long[][]{inputIds}));
         inputs.put("attention_mask", OnnxTensor.createTensor(env, new long[][]{attentionMask}));
         inputs.put("input.3", OnnxTensor.createTensor(env, new long[][]{tokenTypeIds}));
 
-        // Esegui inferenza
+        // Perform inference
         try (OrtSession.Result result = session.run(inputs)) {
             Object output = result.get(0).getValue();
 
-            // Gestione del tipo di output
+            // Handle output type
             if (output instanceof float[][]) {
                 return normalizeEmbedding(((float[][]) output)[0]);
             } else if (output instanceof float[][][]) {
@@ -89,13 +87,12 @@ public class BertEmbedder implements AutoCloseable {
         }
         norm = Math.sqrt(norm);
 
-        // Normalizza ogni valore
+        // Normalize each value
         for (int i = 0; i < embedding.length; i++) {
             embedding[i] = (float) (embedding[i] / norm);
         }
         return embedding;
     }
-
 
     @Override
     public void close() {

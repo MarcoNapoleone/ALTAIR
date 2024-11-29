@@ -203,7 +203,6 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
             Query vectorQuery = new KnnFloatVectorQuery("embedding", queryEmbedding, limit);
             booleanQuery.add(vectorQuery, BooleanClause.Occur.SHOULD);
         }
-
         TopDocs topDocs;
         try {
             topDocs = searcher.search(booleanQuery.build(), limit);

@@ -113,7 +113,7 @@ public class LuceneIndexer {
         // Configure analyzers for fields
         Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
         perFieldAnalyzers.put("caption", SIMPLE_ANALYZER);
-        perFieldAnalyzers.put("body", STANDARD_ANALYZER);
+        perFieldAnalyzers.put("body", WHITESPACE_ANALYZER);
         perFieldAnalyzers.put("footnotes", STANDARD_ANALYZER);
         perFieldAnalyzers.put("references", STANDARD_ANALYZER);
         Analyzer perFieldAnalyzer = new PerFieldAnalyzerWrapper(luceneConfig.customAnalyzer(), perFieldAnalyzers);

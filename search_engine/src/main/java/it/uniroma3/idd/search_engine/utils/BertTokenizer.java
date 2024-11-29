@@ -17,7 +17,7 @@ public class BertTokenizer {
     private Map<String, Integer> vocab;
 
     /**
-     * Carica il vocabolario da un file solo se necessario.
+     * Loads the vocabulary from a file only if necessary.
      */
     private synchronized Map<String, Integer> loadVocab() throws IOException {
         if (vocab == null) {
@@ -31,7 +31,7 @@ public class BertTokenizer {
     }
 
     /**
-     * Tokenizza il testo e genera input per il modello BERT.
+     * Tokenizes the input text and generates inputs for the BERT model.
      */
     public Map<String, long[]> tokenize(String text) throws IOException {
         loadVocab();
@@ -40,12 +40,12 @@ public class BertTokenizer {
         List<Long> attentionMask = new ArrayList<>();
         List<Long> tokenTypeIds = new ArrayList<>();
 
-        // Aggiungi token speciale [CLS]
+        // Add special token [CLS]
         inputIds.add(getTokenId(TOKEN_CLS));
         attentionMask.add(1L);
         tokenTypeIds.add(0L);
 
-        // Tokenizza parole
+        // Tokenize words
         String[] words = text.split("\\s+");
         for (String word : words) {
             inputIds.add(getTokenId(word));
@@ -53,12 +53,12 @@ public class BertTokenizer {
             tokenTypeIds.add(0L);
         }
 
-        // Aggiungi token speciale [SEP]
+        // Add special token [SEP]
         inputIds.add(getTokenId(TOKEN_SEP));
         attentionMask.add(1L);
         tokenTypeIds.add(0L);
 
-        // Costruisci la mappa del risultato
+        // Build the result map
         Map<String, long[]> result = new HashMap<>();
         result.put("input_ids", inputIds.stream().mapToLong(Long::longValue).toArray());
         result.put("attention_mask", attentionMask.stream().mapToLong(Long::longValue).toArray());
@@ -67,7 +67,7 @@ public class BertTokenizer {
     }
 
     /**
-     * Restituisce l'ID di un token, o un valore predefinito per token sconosciuti.
+     * Returns the ID of a token or a default value for unknown tokens.
      */
     private long getTokenId(String token) {
         return vocab.getOrDefault(token, vocab.getOrDefault(TOKEN_UNK, -1));
