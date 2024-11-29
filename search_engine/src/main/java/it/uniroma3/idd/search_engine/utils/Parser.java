@@ -63,7 +63,7 @@ public class Parser {
                     JsonNode jsonNode = objectMapper.readTree(file);
 
                     //save the name of the file
-                    String fileName = file.getName();
+                    String fileName = file.getName().replaceFirst("\\.json$", "");
 
                     jsonNode.fields().forEachRemaining(entry -> {
                         String id = entry.getKey();
