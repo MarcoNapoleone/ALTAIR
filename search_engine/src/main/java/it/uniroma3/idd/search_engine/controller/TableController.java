@@ -5,12 +5,9 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import it.uniroma3.idd.search_engine.dto.GetDocumentResponse;
-import it.uniroma3.idd.search_engine.dto.GetDocumentsResponse;
 import it.uniroma3.idd.search_engine.dto.GetTableResponse;
 import it.uniroma3.idd.search_engine.dto.GetTablesResponse;
 import it.uniroma3.idd.search_engine.service.TableService;
-import jakarta.validation.constraints.Null;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
@@ -44,7 +41,8 @@ public class TableController {
     public GetTablesResponse searchDocumentsTables(
             @RequestParam(required = true) @Parameter(description = "Search all the indexes") String query,
             @RequestParam(required = false) @Parameter(description = "Use NLP search") Boolean NLP,
-            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
+            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit,
+            @RequestParam(required = false) @Parameter(description = "Edit Threshold Multiplier") Float tresholdMultiplier
     ) throws IOException, ParseException, InvalidTokenOffsetsException {
 
         // if all the fields are null, return error
@@ -56,7 +54,7 @@ public class TableController {
             NLP = false;
         }
 
-        Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit, false);
+        Collection<Document> documents = tableService.getTablesQuery(query, NLP, limit, false, tresholdMultiplier);
 
         Collection<GetTableResponse> tableResponses =
                 documents
@@ -77,7 +75,8 @@ public class TableController {
     })
     public GetTablesResponse searchDocumentsTablesEmbedding(
             @RequestParam(required = true) @Parameter(description = "Search all the indexes") String query,
-            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit
+            @RequestParam(required = false) @Parameter(description = "Number of tables to retrieve") Integer limit,
+            @RequestParam(required = false) @Parameter(description = "Edit Threshold Multiplier") Float tresholdMultiplier
     ) throws IOException, ParseException, InvalidTokenOffsetsException {
 
         // if all the fields are null, return error
@@ -85,7 +84,7 @@ public class TableController {
             throw new IllegalArgumentException("Query field must not be null");
         }
 
-        Collection<Document> documents = tableService.getTablesQuery(query, false, limit, true);
+        Collection<Document> documents = tableService.getTablesQuery(query, false, limit, true, tresholdMultiplier);
 
         Collection<GetTableResponse> tableResponses =
                 documents

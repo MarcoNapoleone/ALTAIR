@@ -56,7 +56,8 @@ public class DocumentController {
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String title,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String authors,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String articleAbstract,
-            @RequestParam(required = false) @Parameter(description = "Number of articles to retrieve") Integer limit
+            @RequestParam(required = false) @Parameter(description = "Number of articles to retrieve") Integer limit,
+            @RequestParam(required = false) @Parameter(description = "Edit Threshold Multiplier") Float tresholdMultiplier
     ) throws IOException, InvalidTokenOffsetsException, ParseException {
 
         // if all the fields are null, return error
@@ -72,7 +73,7 @@ public class DocumentController {
         if (limit != null) filters.put("limit", String.valueOf(limit));
 
 
-        Collection<Document> documents = documentService.getDocumentsQuery(filters);
+        Collection<Document> documents = documentService.getDocumentsQuery(filters, tresholdMultiplier);
 
         //print len of documents
         System.out.println("len of documents: " + documents.size());
