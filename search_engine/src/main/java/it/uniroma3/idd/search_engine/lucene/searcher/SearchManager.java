@@ -51,6 +51,11 @@ public class SearchManager {
 
     public List<Document> retrieveDocuments(TopDocs topDocs, Query query) {
         List<Document> documents = new ArrayList<>();
+
+        if (topDocs.scoreDocs.length == 0) {
+            return documents;
+        }
+
         float maxScore = topDocs.scoreDocs[0].score;
         float threshold = maxScore * luceneConfig.getTreasholdMultiplier();
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
@@ -71,5 +76,6 @@ public class SearchManager {
 
         return documents;
     }
+
 
 }
