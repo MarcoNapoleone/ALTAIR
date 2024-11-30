@@ -16,16 +16,20 @@ public class Table {
     @NotNull
     private String body;               // The body of the table
 
+    @NotNull
+    private String bodyCleaned;        // The body of the table cleaned
+
     private List<String> footnotes;    // The footnotes of the table
 
     private List<String> references;   // The references of the table
 
     private String fileName;           // The name of the file
 
-    public Table(String id, String caption, String body, List<String> footnotes, List<String> references, String fileName) {
+    public Table(String id, String caption, String body, String bodyCleaned, List<String> footnotes, List<String> references, String fileName) {
         this.id = id;
         this.caption = caption;
         this.body = body;
+        this.bodyCleaned = bodyCleaned;
         this.footnotes = footnotes;
         this.references = references;
         this.fileName = fileName;
@@ -53,6 +57,14 @@ public class Table {
 
     public void setBody(@NotNull String body) {
         this.body = body;
+    }
+
+    public @NotNull String getBodyCleaned() {
+        return bodyCleaned;
+    }
+
+    public void setBodyCleaned(@NotNull String bodyCleaned) {
+        this.bodyCleaned = bodyCleaned;
     }
 
     public List<String> getFootnotes() {

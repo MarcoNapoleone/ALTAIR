@@ -22,7 +22,7 @@ public class GetTableResponse {
         return new GetTableResponse(
                 document.get("id"),
                 document.get("caption"),
-                document.get("body"),
+                document.get("html_table"),
                 document.get("footnotes"),
                 document.get("references"),
                 document.get("fileName")

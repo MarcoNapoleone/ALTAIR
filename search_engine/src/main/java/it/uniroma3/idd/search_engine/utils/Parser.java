@@ -87,7 +87,7 @@ public class Parser {
                             entry.getValue().get("references").forEach(reference -> references.add(reference.asText()));
                         }
 
-                        Table table = new Table(id, caption, tableHtml, footnotes, references, fileName);
+                        Table table = new Table(id, caption, tableHtml, cleanHtml(tableHtml), footnotes, references, fileName);
                         tables.add(table);
                     });
 
@@ -100,6 +100,11 @@ public class Parser {
         }
 
         return tables;
+    }
+
+    public static String cleanHtml(String htmlContent) {
+        Document doc = Jsoup.parse(htmlContent);
+        return doc.text();
     }
 
 }
