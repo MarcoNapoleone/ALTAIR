@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,17 +39,17 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         searchManager.initializeSearcher(luceneConfig.getIndexDirectory());
     }
 
-    public Set<Document> searchArticles(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public List<Document> searchArticles(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
         Query query = queryBuilder.buildArticleQuery(filters);
         TopDocs topDocs = searchManager.executeQuery(query, Integer.parseInt(filters.getOrDefault("limit", "10")));
-        Set<Document> documents = searchManager.retrieveDocuments(topDocs);
+        List<Document> documents = searchManager.retrieveDocuments(topDocs, query);
         snippetGenerator.addSnippets(documents, query);
         return documents;
     }
 
-    public Set<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding) throws ParseException, IOException {
+    public List<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding) throws ParseException, IOException {
         Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10);
         TopDocs topDocs = searchManager.executeQuery(query, limit != null ? limit : 10);
-        return searchManager.retrieveDocuments(topDocs);
+        return searchManager.retrieveDocuments(topDocs, query);
     }
 }

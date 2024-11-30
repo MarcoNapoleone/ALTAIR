@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -22,7 +23,7 @@ public class TableService {
     public TableService(LuceneSearcher luceneSearcher) {
         this.luceneSearcher = luceneSearcher;
     }
-    public Set<Document> getTablesQuery(String query, Boolean useNLP,  Integer limit, Boolean useEmbedding) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public List<Document> getTablesQuery(String query, Boolean useNLP, Integer limit, Boolean useEmbedding) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (useNLP){
             // @TODO NLP search
             return luceneSearcher.searchTables(query, limit, useEmbedding);

@@ -14,7 +14,9 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -47,19 +49,25 @@ public class SearchManager {
         }
     }
 
-    public Set<Document> retrieveDocuments(TopDocs topDocs) {
-        Set<Document> documents = new HashSet<>();
+    public List<Document> retrieveDocuments(TopDocs topDocs, Query query) {
+        List<Document> documents = new ArrayList<>();
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
             try {
                 Document doc = searcher.storedFields().document(scoreDoc.doc);
                 doc.add(new FloatField("score", scoreDoc.score, StoredField.Store.YES));
-                // add document to the set with the score > 0.5
-                if (scoreDoc.score > luceneConfig.getTreashold())
+                if (scoreDoc.score > luceneConfig.getTreashold()) {
+                    if (luceneConfig.isQueryExplain()) {
+                        Explanation explanation = searcher.explain(query, scoreDoc.doc);
+                        System.out.println(explanation);
+                    }
                     documents.add(doc);
+                }
             } catch (IOException e) {
                 throw new RuntimeException("Error retrieving document", e);
             }
         }
+
         return documents;
     }
+
 }

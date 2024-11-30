@@ -11,6 +11,7 @@ import org.apache.lucene.search.highlight.SimpleFragmenter;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 
@@ -21,7 +22,7 @@ public class SnippetGenerator {
 
     private static final StandardAnalyzer STANDARD_ANALYZER = new StandardAnalyzer();
 
-    public void addSnippets(Set<Document> documents, Query query) {
+    public void addSnippets(List<Document> documents, Query query) {
         Highlighter highlighter = new Highlighter(new QueryScorer(query));
         highlighter.setTextFragmenter(new SimpleFragmenter(150));
 
