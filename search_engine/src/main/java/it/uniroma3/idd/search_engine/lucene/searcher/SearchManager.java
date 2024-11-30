@@ -49,7 +49,7 @@ public class SearchManager {
         }
     }
 
-    public List<Document> retrieveDocuments(TopDocs topDocs, Query query) {
+    public List<Document> retrieveDocuments(TopDocs topDocs, Query query, Float tresholdMultiplier) {
         List<Document> documents = new ArrayList<>();
 
         if (topDocs.scoreDocs.length == 0) {
@@ -57,7 +57,12 @@ public class SearchManager {
         }
 
         float maxScore = topDocs.scoreDocs[0].score;
-        float threshold = maxScore * luceneConfig.getTreasholdMultiplier();
+
+        if(tresholdMultiplier == null) {
+            tresholdMultiplier = luceneConfig.getTreasholdMultiplier();
+        }
+
+        float threshold = maxScore * tresholdMultiplier;
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
             try {
                 Document doc = searcher.storedFields().document(scoreDoc.doc);

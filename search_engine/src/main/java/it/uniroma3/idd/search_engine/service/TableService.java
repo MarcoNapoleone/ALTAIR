@@ -23,12 +23,12 @@ public class TableService {
     public TableService(LuceneSearcher luceneSearcher) {
         this.luceneSearcher = luceneSearcher;
     }
-    public List<Document> getTablesQuery(String query, Boolean useNLP, Integer limit, Boolean useEmbedding) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public List<Document> getTablesQuery(String query, Boolean useNLP, Integer limit, Boolean useEmbedding, Float tresholdMultiplier) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (useNLP){
             // @TODO NLP search
-            return luceneSearcher.searchTables(query, limit, useEmbedding);
+            return luceneSearcher.searchTables(query, limit, useEmbedding, tresholdMultiplier);
         } else {
-            return luceneSearcher.searchTables(query, limit, useEmbedding);
+            return luceneSearcher.searchTables(query, limit, useEmbedding, tresholdMultiplier);
         }
     }
 }

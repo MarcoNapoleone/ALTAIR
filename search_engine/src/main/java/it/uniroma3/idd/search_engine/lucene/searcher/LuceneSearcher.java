@@ -39,17 +39,17 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         searchManager.initializeSearcher(luceneConfig.getIndexDirectory());
     }
 
-    public List<Document> searchArticles(Map<String, String> filters) throws ParseException, InvalidTokenOffsetsException, IOException {
+    public List<Document> searchArticles(Map<String, String> filters, Float tresholdMultiplier) throws ParseException, InvalidTokenOffsetsException, IOException {
         Query query = queryBuilder.buildArticleQuery(filters);
         TopDocs topDocs = searchManager.executeQuery(query, Integer.parseInt(filters.getOrDefault("limit", "10")));
-        List<Document> documents = searchManager.retrieveDocuments(topDocs, query);
+        List<Document> documents = searchManager.retrieveDocuments(topDocs, query, tresholdMultiplier);
         snippetGenerator.addSnippets(documents, query);
         return documents;
     }
 
-    public List<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding) throws ParseException, IOException {
+    public List<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding, Float tresholdMultiplier) {
         Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10);
         TopDocs topDocs = searchManager.executeQuery(query, limit != null ? limit : 10);
-        return searchManager.retrieveDocuments(topDocs, query);
+        return searchManager.retrieveDocuments(topDocs, query, tresholdMultiplier);
     }
 }
