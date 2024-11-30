@@ -1,8 +1,8 @@
 package it.uniroma3.idd.search_engine.service;
 
-import it.uniroma3.idd.search_engine.utils.BertEmbedder;
-import it.uniroma3.idd.search_engine.utils.BertTokenizer;
-import it.uniroma3.idd.search_engine.utils.BertConfig;
+import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
+import it.uniroma3.idd.search_engine.utils.bert.BertTokenizer;
+import it.uniroma3.idd.search_engine.utils.bert.BertConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

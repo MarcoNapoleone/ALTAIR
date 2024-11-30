@@ -3,7 +3,7 @@ package it.uniroma3.idd.search_engine.lucene.indexer;
 import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.model.Article;
 import it.uniroma3.idd.search_engine.model.Table;
-import it.uniroma3.idd.search_engine.utils.BertEmbedder;
+import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
 import it.uniroma3.idd.search_engine.utils.Parser;
 import jakarta.annotation.PostConstruct;
 import org.apache.lucene.analysis.Analyzer;
@@ -22,7 +22,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-import javax.print.Doc;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;

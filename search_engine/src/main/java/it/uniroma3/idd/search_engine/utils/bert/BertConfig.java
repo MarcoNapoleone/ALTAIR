@@ -1,4 +1,4 @@
-package it.uniroma3.idd.search_engine.utils;
+package it.uniroma3.idd.search_engine.utils.bert;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

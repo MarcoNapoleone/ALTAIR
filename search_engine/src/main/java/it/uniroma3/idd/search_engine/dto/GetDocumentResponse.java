@@ -16,14 +16,17 @@ public class GetDocumentResponse {
 
     public GetDocumentResponse documentToGetDocumentResponse(Document document) {
 
+        String snippet = document.get("snippet") != null ? document.get("snippet") : "N/A";
+        String snippetField = document.get("snippetField") != null ? document.get("snippetField") : "N/A";
+
         return new GetDocumentResponse(
                 document.get("id"),
                 document.get("title"),
                 document.get("authors"),
-                Map.of("snippet", document.get("snippet"), "snippetField", document.get("snippetField"))
+                Map.of("snippet", snippet, "snippetField", snippetField)
         );
-
     }
+
 
 
 }

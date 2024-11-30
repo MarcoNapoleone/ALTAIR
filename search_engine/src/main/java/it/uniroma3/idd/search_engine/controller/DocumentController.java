@@ -57,7 +57,7 @@ public class DocumentController {
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String authors,
             @RequestParam(required = false) @Null @Parameter(description = "Query string to search for") String articleAbstract,
             @RequestParam(required = false) @Parameter(description = "Number of articles to retrieve") Integer limit
-    ) throws IOException, ParseException, InvalidTokenOffsetsException {
+    ) throws IOException, InvalidTokenOffsetsException, ParseException {
 
         // if all the fields are null, return error
         if (query == null && title == null && authors == null && articleAbstract == null) {
@@ -73,6 +73,9 @@ public class DocumentController {
 
 
         Collection<Document> documents = documentService.getDocumentsQuery(filters);
+
+        //print len of documents
+        System.out.println("len of documents: " + documents.size());
 
         Collection<GetDocumentResponse> documentResponses =
                 documents

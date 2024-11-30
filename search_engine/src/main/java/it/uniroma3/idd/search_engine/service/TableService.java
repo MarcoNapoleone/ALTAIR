@@ -25,9 +25,9 @@ public class TableService {
     public Set<Document> getTablesQuery(String query, Boolean useNLP,  Integer limit, Boolean useEmbedding) throws ParseException, InvalidTokenOffsetsException, IOException {
         if (useNLP){
             // @TODO NLP search
-            return luceneSearcher.runQueryTables(query, limit, useEmbedding);
+            return luceneSearcher.searchTables(query, limit, useEmbedding);
         } else {
-            return luceneSearcher.runQueryTables(query, limit, useEmbedding);
+            return luceneSearcher.searchTables(query, limit, useEmbedding);
         }
     }
 }

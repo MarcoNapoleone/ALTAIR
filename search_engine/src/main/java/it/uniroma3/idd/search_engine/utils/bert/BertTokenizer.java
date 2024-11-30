@@ -1,4 +1,4 @@
-package it.uniroma3.idd.search_engine.utils;
+package it.uniroma3.idd.search_engine.utils.bert;
 
 import org.springframework.stereotype.Component;
 
