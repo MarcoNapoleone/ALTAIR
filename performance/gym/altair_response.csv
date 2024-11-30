@@ -1,0 +1,251 @@
+query_id,query,table,id
+1,(Graph structured) AND (visual Question Answering),2406.15319,S3.T5.2
+1,(Graph structured) AND (visual Question Answering),2301.10799v2,S3.T2
+1,(Graph structured) AND (visual Question Answering),2404.18961v1,S2.SS1.89
+1,(Graph structured) AND (visual Question Answering),2408.01931v2,S5.T5
+1,(Graph structured) AND (visual Question Answering),1609.05600v2,S5.T1
+1,(Graph structured) AND (visual Question Answering),2409.08498v1,S1.T1
+1,(Graph structured) AND (visual Question Answering),2302.12156,S5.T1
+1,(Graph structured) AND (visual Question Answering),2211.15217,S6.T5
+1,(Graph structured) AND (visual Question Answering),2404.18961v1,S2.T2
+1,(Graph structured) AND (visual Question Answering),2405.13018,Sx5.T3
+1,(Graph structured) AND (visual Question Answering),2409.17874,A4.T3.2.2
+1,(Graph structured) AND (visual Question Answering),2303.12317,S3.T1
+1,(Graph structured) AND (visual Question Answering),2409.08933v1,S5.T6
+1,(Graph structured) AND (visual Question Answering),2208.07900,A5.T5.4
+1,(Graph structured) AND (visual Question Answering),2409.08498v1,S4.T4
+1,(Graph structured) AND (visual Question Answering),2208.07900,S4.T1.2
+1,(Graph structured) AND (visual Question Answering),2404.18961v1,S2.T5
+1,(Graph structured) AND (visual Question Answering),2007.12004,S6.T1
+1,(Graph structured) AND (visual Question Answering),2408.01931v2,S5.T6
+1,(Graph structured) AND (visual Question Answering),2404.18961v1,S2.T6
+1,(Graph structured) AND (visual Question Answering),2303.12317,S4.T2
+1,(Graph structured) AND (visual Question Answering),2303.12317,A4.T6
+1,(Graph structured) AND (visual Question Answering),2208.07900,A7.T9.4
+1,(Graph structured) AND (visual Question Answering),2006.05148,S4.T3
+1,(Graph structured) AND (visual Question Answering),2406.06679,S4.T4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2407.05154,S3.T3.1
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2304.00570,S5.T3
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2303.12317,S4.T2
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2408.01931v2,S5.T6
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2211.15217,S6.T4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.08933v1,S5.T5
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.17874,A4.T3.2.2
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2208.07900,S4.T1.2
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2303.12317,S3.T1
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.08498v1,A2.T13
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.08498v1,S4.T2
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.08498v1,S4.T4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2406.06679,S4.T4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2301.10799v2,S3.T2
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2303.12317,A4.T6
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2007.12004,S6.T1
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2208.07900,A7.T9.4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2408.01931v2,S5.T5
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2301.10799v2,A2.T4
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2211.15217,S6.T5
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2405.13018,Sx5.T3
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2006.05148,S4.T3
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2409.08933v1,S5.T6
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2408.01931v2,S5.T7
+2,"""Autonomous Surface Vehicles"" AND ""Federated Learning""",2208.07900,A5.T5.4
+3,RAG AND (Long-context LLM) OR (long context language model),2408.01931v2,S5.T5
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,S3.T2.1.1
+3,RAG AND (Long-context LLM) OR (long context language model),2006.05148,S3.T1
+3,RAG AND (Long-context LLM) OR (long context language model),2211.15217,S6.T5
+3,RAG AND (Long-context LLM) OR (long context language model),2408.01931v2,S5.T6
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08498v1,S5.T5
+3,RAG AND (Long-context LLM) OR (long context language model),2301.10799v2,A2.T4
+3,RAG AND (Long-context LLM) OR (long context language model),2303.12317,S4.T2
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08498v1,S5.T6
+3,RAG AND (Long-context LLM) OR (long context language model),2007.12004,S6.T1
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08498v1,S5.T7
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08933v1,S5.T6
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08498v1,S5.T8
+3,RAG AND (Long-context LLM) OR (long context language model),2208.07900,A5.T5.4
+3,RAG AND (Long-context LLM) OR (long context language model),2409.17874,A4.T3.2.2
+3,RAG AND (Long-context LLM) OR (long context language model),2006.05148,S4.T3
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,S3.T5.2
+3,RAG AND (Long-context LLM) OR (long context language model),2409.08498v1,S4.T4
+3,RAG AND (Long-context LLM) OR (long context language model),2208.07900,S4.T1.2
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,S3.T3.1.1
+3,RAG AND (Long-context LLM) OR (long context language model),2406.06679,S4.T4
+3,RAG AND (Long-context LLM) OR (long context language model),2211.15217,S6.T4
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,A1.T8.1.1
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,S3.T6.1.1
+3,RAG AND (Long-context LLM) OR (long context language model),2406.15319,S3.T5.1
+4,Applications of visual question answering systems,2404.18961v1,S2.T5
+4,Applications of visual question answering systems,2408.02575v1,S2.T2
+4,Applications of visual question answering systems,2410.13042v1,S2.T1
+4,Applications of visual question answering systems,2406.15319,S3.T5.1
+4,Applications of visual question answering systems,2406.15319,A1.T8.1.1
+4,Applications of visual question answering systems,2407.05154,S2.T1.4
+4,Applications of visual question answering systems,2301.10799v2,S3.T1
+4,Applications of visual question answering systems,2406.15319,S3.T1.1.1.1.1.3.1
+4,Applications of visual question answering systems,2406.15319,S3.T1.1.1
+4,Applications of visual question answering systems,2405.13018,Sx4.T2
+4,Applications of visual question answering systems,2410.13042v1,S2.T2
+4,Applications of visual question answering systems,2406.15319,S3.T5.2
+4,Applications of visual question answering systems,2409.17874,S3.T1.5.1
+4,Applications of visual question answering systems,1609.05600v2,S5.T1
+4,Applications of visual question answering systems,2301.10799v2,A6.T9
+4,Applications of visual question answering systems,2404.18961v1,S2.SS1.89
+4,Applications of visual question answering systems,2408.02575v1,S2.T1
+4,Applications of visual question answering systems,2407.05154,S2.T1.3
+4,Applications of visual question answering systems,2406.15319,A1.T7.1
+4,Applications of visual question answering systems,2301.10799v2,A2.T4
+4,Applications of visual question answering systems,2406.15319,A1.T9.1
+4,Applications of visual question answering systems,2409.17874,A4.T3.2.2
+4,Applications of visual question answering systems,2303.12317,S6.T3
+4,Applications of visual question answering systems,2303.05977v2,S5.T3
+4,Applications of visual question answering systems,2303.05977v2,S5.T4
+5,Fairness AND socials,2406.15319,S3.T5.1
+5,Fairness AND socials,2301.10799v2,A6.T8
+5,Fairness AND socials,2410.13042v1,Sx1.T0
+5,Fairness AND socials,2408.01931v2,S5.T4
+5,Fairness AND socials,2301.10799v2,A3.T5
+5,Fairness AND socials,1609.05600v2,S5.T1
+5,Fairness AND socials,2407.05154,S3.T4.1.1
+5,Fairness AND socials,2407.05154,S5.T12.1
+5,Fairness AND socials,2404.18961v1,S2.T7
+5,Fairness AND socials,2301.10799v2,S5.T3
+5,Fairness AND socials,2410.13042v1,Sx1.T0a
+5,Fairness AND socials,2407.05154,S4.T7.11
+5,Fairness AND socials,2303.05977v2,S4.T1
+5,Fairness AND socials,2410.13042v1,S2.T2
+5,Fairness AND socials,2410.10089v1,S4.T1
+5,Fairness AND socials,2407.05154,S3.T5.1.1
+5,Fairness AND socials,2407.05154,S3.T6.1.1
+5,Fairness AND socials,2408.01931v2,S5.T3
+5,Fairness AND socials,2208.07900,S3.E8
+5,Fairness AND socials,2406.15319,S3.T5.2
+5,Fairness AND socials,2407.05154,S4.T8.3
+5,Fairness AND socials,2305.00873,S6.T4
+5,Fairness AND socials,1609.05600v2,S5.T2
+5,Fairness AND socials,2301.10799v2,A3.T6
+5,Fairness AND socials,2406.15319,A1.T9.1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,S2.T2a
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2407.05154,S4.T10.19.19
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,S3.T3
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2404.18961v1,S4.T9
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2304.00570,S4.T2
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2404.18961v1,S2.T5
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2211.15217,S6.T4
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,A2.T7
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2404.18961v1,S1.T1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2404.18961v1,S2.T6
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2407.05154,S2.T1.3
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,Sx1.T0
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2404.18961v1,S2.SS1.89
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2407.05154,S3.T4.1.1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2407.05154,S2.T1.4
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2407.05154,S4.T11.3.3
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2408.02575v1,S2.T2
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,S2.T1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,A2.T5
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2406.15319,S3.T5.2
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2303.05977v2,S5.T2
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2406.15319,S3.T5.1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2408.02575v1,S2.T1
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,Sx1.T0a
+6,(Regulatory Capture AND IA OR ML) OR (Regulatory Capture OR Machine Learning),2410.13042v1,S2.T2
+7,(Segmentation OR SAM) AND failure,2409.08498v1,S4.T2
+7,(Segmentation OR SAM) AND failure,2404.18961v1,S2.T2
+7,(Segmentation OR SAM) AND failure,2406.06679,S4.T3
+7,(Segmentation OR SAM) AND failure,2208.07900,S4.T1.2
+7,(Segmentation OR SAM) AND failure,2404.18961v1,S2.SS1.89
+7,(Segmentation OR SAM) AND failure,2404.18961v1,S2.T5
+7,(Segmentation OR SAM) AND failure,2409.17874,A4.T3.2.2
+7,(Segmentation OR SAM) AND failure,2408.01931v2,S5.T5
+7,(Segmentation OR SAM) AND failure,2406.06679,S4.T4
+7,(Segmentation OR SAM) AND failure,2303.12317,A4.T6
+7,(Segmentation OR SAM) AND failure,2301.10799v2,A2.T4
+7,(Segmentation OR SAM) AND failure,2208.07900,A5.T5.4
+7,(Segmentation OR SAM) AND failure,2303.12317,S4.T2
+7,(Segmentation OR SAM) AND failure,2208.07900,A7.T9.4
+7,(Segmentation OR SAM) AND failure,2211.15217,S6.T4
+7,(Segmentation OR SAM) AND failure,2304.00570,S5.T3
+7,(Segmentation OR SAM) AND failure,2007.12004,S6.T1
+7,(Segmentation OR SAM) AND failure,2006.05148,S4.T3
+7,(Segmentation OR SAM) AND failure,2408.01931v2,S5.T6
+7,(Segmentation OR SAM) AND failure,2409.08933v1,S5.T6
+7,(Segmentation OR SAM) AND failure,2211.15217,S6.T5
+7,(Segmentation OR SAM) AND failure,2409.08498v1,S4.T4
+7,(Segmentation OR SAM) AND failure,2409.08933v1,S5.T5
+7,(Segmentation OR SAM) AND failure,2303.12317,S3.T1
+7,(Segmentation OR SAM) AND failure,2408.01931v2,S5.T7
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.08498v1,S5.T10
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2208.07900,A5.T5.4
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2407.05154,S3.T3.1
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2211.15217,S6.T5
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.08933v1,S5.T6
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2404.18961v1,S2.T5
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2006.05148,S4.T3
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2406.06679,S4.T4
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2007.12004,S6.T1
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2208.07900,A7.T9.4
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.17874,A4.T3.2.2
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2408.01931v2,S5.T6
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2405.13018,Sx5.T3
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2404.18961v1,S1.T1
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2410.10089v1,S4.T3
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2408.01931v2,S5.T5
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2410.10089v1,S4.T2
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2006.05148,S3.T1
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.08498v1,S1.T1
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2404.18961v1,S2.SS1.89
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.08498v1,A2.T13
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2303.12317,S4.T2
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2208.07900,S4.T1.2
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2409.08498v1,S4.T4
+8,(Graph Convolutional Network) OR (GCN) AND (node classification),2301.10799v2,S3.T2
+9,((Question Answering) AND (visual)) OR (VQA),2303.12317,S4.T2
+9,((Question Answering) AND (visual)) OR (VQA),2404.18961v1,S1.T1
+9,((Question Answering) AND (visual)) OR (VQA),2406.06679,S4.T4
+9,((Question Answering) AND (visual)) OR (VQA),2211.15217,S6.T5
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A6.T7
+9,((Question Answering) AND (visual)) OR (VQA),2404.18961v1,S2.SS1.89
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,S3.T1
+9,((Question Answering) AND (visual)) OR (VQA),2303.05977v2,S4.T1
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A3.T6
+9,((Question Answering) AND (visual)) OR (VQA),2408.01931v2,S5.T6
+9,((Question Answering) AND (visual)) OR (VQA),2006.05148,S4.T3
+9,((Question Answering) AND (visual)) OR (VQA),1609.05600v2,S5.T1
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,S3.T2
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A2.T4
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A6.T9
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A6.T8
+9,((Question Answering) AND (visual)) OR (VQA),2301.10799v2,A3.T5
+9,((Question Answering) AND (visual)) OR (VQA),2405.13018,Sx5.T3
+9,((Question Answering) AND (visual)) OR (VQA),2303.05977v2,S5.T3
+9,((Question Answering) AND (visual)) OR (VQA),2407.05154,S3.T3.1
+9,((Question Answering) AND (visual)) OR (VQA),2303.05977v2,S5.T4
+9,((Question Answering) AND (visual)) OR (VQA),2303.05977v2,S5.T2
+9,((Question Answering) AND (visual)) OR (VQA),1609.05600v2,S5.T2
+9,((Question Answering) AND (visual)) OR (VQA),2408.01931v2,S5.T5
+9,((Question Answering) AND (visual)) OR (VQA),2409.08498v1,A2.T13
+10,FL AND decentralised,2406.15319,A1.T9.1
+10,FL AND decentralised,1609.05600v2,S5.T2
+10,FL AND decentralised,2404.18961v1,S2.T7
+10,FL AND decentralised,2301.10799v2,A3.T5
+10,FL AND decentralised,2406.15319,S3.T5.1
+10,FL AND decentralised,2408.01931v2,S5.T4
+10,FL AND decentralised,2305.00873,S6.T4
+10,FL AND decentralised,2406.15319,S3.T5.2
+10,FL AND decentralised,2407.05154,S3.T5.1.1
+10,FL AND decentralised,2301.10799v2,A6.T7
+10,FL AND decentralised,2407.05154,S4.T8.3
+10,FL AND decentralised,2407.05154,S3.T4.1.1
+10,FL AND decentralised,2303.12317,A4.T7
+10,FL AND decentralised,2407.05154,S5.T12.1
+10,FL AND decentralised,1609.05600v2,S5.T1
+10,FL AND decentralised,2303.05977v2,S4.T1
+10,FL AND decentralised,2301.10799v2,A6.T8
+10,FL AND decentralised,2410.10089v1,S4.T1
+10,FL AND decentralised,2301.10799v2,A3.T6
+10,FL AND decentralised,2407.05154,S4.T7.11
+10,FL AND decentralised,2301.10799v2,S5.T3
+10,FL AND decentralised,2208.07900,S3.E8
+10,FL AND decentralised,2407.05154,S3.T6.1.1
+10,FL AND decentralised,2303.12317,A5.T8
+10,FL AND decentralised,2408.01931v2,S5.T3
