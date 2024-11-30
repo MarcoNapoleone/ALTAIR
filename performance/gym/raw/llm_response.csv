@@ -1,4 +1,4 @@
-index,query,score,relevant,explanation,keywords
+index,query_id,score,relevant,explanation,keywords
 0,1,0.1,False,"The table focuses on evaluation metrics of a method, not graph structures or visual question answering.","['Graph structured', 'visual Question Answering']"
 0,2,0.1,False,,[]
 0,3,0.1,False,,[]
