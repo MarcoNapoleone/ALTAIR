@@ -25,8 +25,8 @@ public class LuceneConfig {
     private boolean shouldInitializeIndex;
 
     @Getter
-    @Value("${lucene.searcher.treashold}")
-    private float treashold;
+    @Value("${lucene.searcher.tresholdMultiplier}")
+    private float treasholdMultiplier;
 
 
     @Bean

@@ -51,11 +51,13 @@ public class SearchManager {
 
     public List<Document> retrieveDocuments(TopDocs topDocs, Query query) {
         List<Document> documents = new ArrayList<>();
+        float maxScore = topDocs.scoreDocs[0].score;
+        float threshold = maxScore * luceneConfig.getTreasholdMultiplier();
         for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
             try {
                 Document doc = searcher.storedFields().document(scoreDoc.doc);
                 doc.add(new FloatField("score", scoreDoc.score, StoredField.Store.YES));
-                if (scoreDoc.score > luceneConfig.getTreashold()) {
+                if (scoreDoc.score > threshold) {
                     if (luceneConfig.isQueryExplain()) {
                         Explanation explanation = searcher.explain(query, scoreDoc.doc);
                         System.out.println(explanation);
