@@ -24,6 +24,10 @@ public class LuceneConfig {
     @Value("${lucene.index.initialize}")
     private boolean shouldInitializeIndex;
 
+    @Getter
+    @Value("${lucene.searcher.treashold}")
+    private float treashold;
+
 
     @Bean
     public Analyzer customAnalyzer() {

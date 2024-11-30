@@ -1,5 +1,6 @@
 package it.uniroma3.idd.search_engine.lucene.searcher;
 
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.FloatField;
 import org.apache.lucene.document.StoredField;
@@ -21,6 +22,11 @@ import java.util.Set;
 public class SearchManager {
 
     private IndexSearcher searcher;
+    private static LuceneConfig luceneConfig;
+
+    public SearchManager(LuceneConfig luceneConfig) {
+        this.luceneConfig = luceneConfig;
+    }
 
     public void initializeSearcher(String indexDirectory) {
         try {
@@ -47,7 +53,9 @@ public class SearchManager {
             try {
                 Document doc = searcher.storedFields().document(scoreDoc.doc);
                 doc.add(new FloatField("score", scoreDoc.score, StoredField.Store.YES));
-                documents.add(doc);
+                // add document to the set with the score > 0.5
+                if (scoreDoc.score > luceneConfig.getTreashold())
+                    documents.add(doc);
             } catch (IOException e) {
                 throw new RuntimeException("Error retrieving document", e);
             }
