@@ -31,18 +31,29 @@ public class EmbedderController {
     /**
      * Endpoint per ottenere gli embeddings di un testo
      * @param text Il testo da elaborare
+     * @param model Il modello da utilizzare per gli embeddings ("bert" o "allmini")
      * @return Gli embeddings in formato JSON
      * @throws Exception Se si verificano errori durante l'elaborazione
      */
     @PostMapping("/embeddings")
-    @Operation(summary = "test Embedding", description = "Returns the embeddings of the input text.")
+    @Operation(summary = "test Embedding", description = "Returns the embeddings of the input text using the specified model.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Articles retrieved successfully"),
-            @ApiResponse(responseCode = "400", description = "Invalid search parameters")
+            @ApiResponse(responseCode = "200", description = "Embeddings retrieved successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid parameters")
     })
-    public float[] getEmbeddings(@RequestParam String text) throws Exception {
-        return embedderService.getEmbeddings(text);
+    public float[] getEmbeddings(
+            @RequestParam String text,
+            @RequestParam(defaultValue = "bert", required = false) String model
+    ) throws Exception {
+        if ("allmini".equalsIgnoreCase(model)) {
+            return embedderService.getEmbeddingsAllMini(text);
+        } else if ("bert".equalsIgnoreCase(model)) {
+            return embedderService.getEmbeddingsBert(text);
+        } else {
+            throw new IllegalArgumentException("Invalid model selection. Choose 'bert' or 'allmini'.");
+        }
     }
+
 
 
     /**
@@ -58,8 +69,11 @@ public class EmbedderController {
             @ApiResponse(responseCode = "200", description = "Articles retrieved successfully"),
             @ApiResponse(responseCode = "400", description = "Invalid search parameters")
     })
-    public double getcosineSimilarity(@RequestParam String text1, @RequestParam String text2) throws Exception {
-        return embedderService.getCosineSimilarity(text1, text2);
+    public double getcosineSimilarity(@RequestParam String text1, @RequestParam String text2, @RequestParam Boolean useBert) throws Exception {
+        if(useBert){
+            return embedderService.getCosineSimilarity(text1, text2, useBert);
+        }
+        else return embedderService.getCosineSimilarity(text1, text2, useBert);
     }
 
     /**

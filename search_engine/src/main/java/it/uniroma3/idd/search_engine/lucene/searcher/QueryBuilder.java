@@ -1,6 +1,8 @@
 package it.uniroma3.idd.search_engine.lucene.searcher;
 
 
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
 import it.uniroma3.idd.search_engine.lucene.AcronymManager;
 import it.uniroma3.idd.search_engine.utils.QueryParsingException;
 import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
@@ -14,6 +16,7 @@ import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
 import org.springframework.stereotype.Component;
+
 
 import java.io.IOException;
 import java.util.Map;
@@ -125,7 +128,7 @@ public class QueryBuilder {
         }
     }
 
-    public Query buildTableQuery(String queryText, boolean useEmbedding, int limit) {
+    public Query buildTableQuery(String queryText, boolean useEmbedding, int limit, String model) {
         BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
         String[] fields = {"caption", "body", "footnotes", "references"};
         try{
@@ -138,8 +141,51 @@ public class QueryBuilder {
         if (useEmbedding) {
             float[] queryEmbedding;
 
+            if(!model.equals("allmini")) {
+
+                try {
+                    queryEmbedding = bertEmbedder.getEmbeddings(queryText.trim().toLowerCase());
+                } catch (Exception e) {
+                    throw new RuntimeException("Error generating query embeddings", e);
+                }
+            }
+
+            else{
+                EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
+                try {
+                    queryEmbedding = embeddingModel.embed(queryText.trim().toLowerCase()).content().vector();
+                } catch (Exception e) {
+                    throw new RuntimeException("Error generating query embeddings", e);
+                }
+            }
+
+            try{
+                Query vectorQuery = new KnnFloatVectorQuery("embedding", queryEmbedding, limit);
+                booleanQuery.add(vectorQuery, BooleanClause.Occur.SHOULD);
+            } catch (Exception e){
+                throw new QueryParsingException("Error parsing query:" + queryText);
+            }
+        }
+
+        return booleanQuery.build();
+    }
+
+    public Query buildTableQuery2(String queryText, boolean useEmbedding, int limit) {
+        BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
+        String[] fields = {"caption", "body", "footnotes", "references"};
+        try{
+            MultiFieldQueryParser queryParser = new MultiFieldQueryParser(fields, STANDARD_ANALYZER);
+            booleanQuery.add(queryParser.parse(queryText), BooleanClause.Occur.SHOULD);
+        } catch (ParseException e){
+            throw new QueryParsingException("Error parsing query:" + queryText);
+        }
+
+        if (useEmbedding) {
+            EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
+            float[] queryEmbedding;
+
             try {
-                queryEmbedding = bertEmbedder.getEmbeddings(queryText.trim().toLowerCase());
+                queryEmbedding = embeddingModel.embed(queryText.trim().toLowerCase()).content().vector();
             } catch (Exception e) {
                 throw new RuntimeException("Error generating query embeddings", e);
             }

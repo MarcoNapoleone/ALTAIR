@@ -1,8 +1,11 @@
 package it.uniroma3.idd.search_engine.service;
 
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
 import it.uniroma3.idd.search_engine.utils.bert.BertTokenizer;
 import it.uniroma3.idd.search_engine.utils.bert.BertConfig;
+import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,11 +13,15 @@ import org.springframework.stereotype.Service;
 public class EmbedderService {
 
     private final BertEmbedder bertEmbedder;
+    private LuceneConfig luceneConfig;
+
+
 
     // Constructor injecting the BertEmbedder dependency
     @Autowired
-    public EmbedderService(BertConfig bertConfig, BertTokenizer bertTokenizer) throws Exception {
+    public EmbedderService(BertConfig bertConfig, BertTokenizer bertTokenizer,LuceneConfig luceneConfig) throws Exception {
         this.bertEmbedder = new BertEmbedder(bertConfig, bertTokenizer);
+        this.luceneConfig = luceneConfig;
     }
 
     /**
@@ -23,8 +30,13 @@ public class EmbedderService {
      * @return The embeddings as a float array
      * @throws Exception If an error occurs during the embedding calculation
      */
-    public float[] getEmbeddings(String text) throws Exception {
+    public float[] getEmbeddingsBert(String text) throws Exception {
         return bertEmbedder.getEmbeddings(text);
+    }
+
+    public float[] getEmbeddingsAllMini(String text) {
+        EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
+        return embeddingModel.embed(text.trim().toLowerCase()).content().vector();
     }
 
     /**
@@ -34,10 +46,13 @@ public class EmbedderService {
      * @return The cosine similarity score
      * @throws Exception If an error occurs during embedding computation
      */
-    public double getCosineSimilarity(String text1, String text2) throws Exception {
-        float[] embeddings1 = getEmbeddings(text1);
-        float[] embeddings2 = getEmbeddings(text2);
-        return cosineSimilarity(embeddings1, embeddings2);
+    public double getCosineSimilarity(String text1, String text2, Boolean useBert) throws Exception {
+        if(useBert) {
+            return cosineSimilarity(getEmbeddingsBert(text1), getEmbeddingsBert(text2));
+        }
+        else {
+            return cosineSimilarity(getEmbeddingsAllMini(text1), getEmbeddingsAllMini(text2));
+        }
     }
 
     /**

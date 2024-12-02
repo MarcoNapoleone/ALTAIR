@@ -48,7 +48,7 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
     }
 
     public List<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding, Float tresholdMultiplier) {
-        Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10);
+        Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10, luceneConfig.getEmbeddingModel());
         TopDocs topDocs = searchManager.executeQuery(query, limit != null ? limit : 10);
         return searchManager.retrieveDocuments(topDocs, query, tresholdMultiplier);
     }
