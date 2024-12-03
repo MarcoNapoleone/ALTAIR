@@ -10,6 +10,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("*").allowedMethods("*").allowedHeaders("*");
+        registry.addMapping("/**") // Applica CORS a tutti gli endpoint
+                               .allowedOrigins("http://localhost", "https://altair.marconapoleone.me", "https://altair-search.web.app") // Domini consentiti
+                               .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Metodi consentiti
+                               .allowedHeaders("*"); // Intestazioni consentite
     }
 }
