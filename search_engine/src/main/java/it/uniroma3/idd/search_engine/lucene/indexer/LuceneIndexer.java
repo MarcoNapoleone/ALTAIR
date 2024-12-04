@@ -148,12 +148,11 @@ public class LuceneIndexer {
             doc.add(new TextField("references", table.getReferencesString(), TextField.Store.YES));
             doc.add(new StringField("fileName", table.getFileName(), TextField.Store.YES));
 
-            String combinedText = (table.getCaption() != null ? table.getCaption() : "") + " " +
-                    String.join(" ", table.getFootnotes() != null ? table.getFootnotes() : new ArrayList<>()) + " " +
-                    String.join(" ", table.getReferences() != null ? table.getReferences() : new ArrayList<>());
+            String combinedText = table.getCaption() + " "
+                    + String.join(" ", table.getFootnotesString()) + " "
+                    + String.join(" ", table.getReferencesString());
 
             if (combinedText.trim().isEmpty()) {
-                System.out.printf("Skipping table with blank combinedText: {} " + table.getId());
                 continue;
             }
 
