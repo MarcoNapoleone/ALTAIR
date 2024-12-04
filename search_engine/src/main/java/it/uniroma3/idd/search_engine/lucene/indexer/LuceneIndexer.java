@@ -45,14 +45,27 @@ public class LuceneIndexer {
     private static final Analyzer SIMPLE_ANALYZER = new SimpleAnalyzer();
 
     private final ApplicationEventPublisher eventPublisher;
-    private static BertEmbedder bertEmbedder;
+    private final BertEmbedder bertEmbedder;
+    private final AllMiniLmL6V2EmbeddingModel allMiniLmEmbedder;
 
     @Autowired
-    public LuceneIndexer(LuceneConfig luceneConfig, ApplicationEventPublisher eventPublisher, BertEmbedder bertEmbedder) {
+    public LuceneIndexer(LuceneConfig luceneConfig, ApplicationEventPublisher eventPublisher, BertEmbedder bertEmbedder) throws Exception {
         this.luceneConfig = luceneConfig;
         this.eventPublisher = eventPublisher;
-        this.bertEmbedder = bertEmbedder;
+
+        if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("bert")) {
+            this.bertEmbedder = bertEmbedder;
+            this.allMiniLmEmbedder = null;
+        } else if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("allmini")) {
+            this.bertEmbedder = null;
+            this.allMiniLmEmbedder = new AllMiniLmL6V2EmbeddingModel();
+        } else {
+            this.bertEmbedder = null;
+            this.allMiniLmEmbedder = null;
+            throw new IllegalArgumentException("Unsupported embedding model: " + luceneConfig.getEmbeddingModel());
+        }
     }
+
 
     @PostConstruct
     public void init() {
@@ -139,26 +152,27 @@ public class LuceneIndexer {
                     String.join(" ", table.getFootnotes() != null ? table.getFootnotes() : new ArrayList<>()) + " " +
                     String.join(" ", table.getReferences() != null ? table.getReferences() : new ArrayList<>());
 
-            if (combinedText == null || combinedText.trim().isEmpty()) {
+            if (combinedText.trim().isEmpty()) {
                 System.out.printf("Skipping table with blank combinedText: {} " + table.getId());
                 continue;
             }
 
-            if (!luceneConfig.getEmbeddingModel().equals("allmini")) {
-                if (!combinedText.trim().isEmpty()) {
-                    float[] embeddings = bertEmbedder.getEmbeddings(combinedText.trim().toLowerCase());
-                    doc.add(new KnnFloatVectorField("embedding", embeddings));
-                }
-            } else {
-                EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
+            if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("bert")) {
+                float[] embeddings = bertEmbedder.getEmbeddings(combinedText.trim().toLowerCase());
+                doc.add(new KnnFloatVectorField("embedding", embeddings));
+            } else if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("allmini")) {
                 try {
                     TextSegment textSegment = TextSegment.from(combinedText);
-                    Embedding embedding = embeddingModel.embed(textSegment).content();
+                    Embedding embedding = allMiniLmEmbedder.embed(textSegment).content();
                     doc.add(new KnnFloatVectorField("embedding", embedding.vector()));
                 } catch (IllegalArgumentException e) {
                     System.out.println("Error embedding table: " + table.getId());
                     continue;
                 }
+            }
+
+            else {
+                throw new RuntimeException("Invalid model: " + luceneConfig.getEmbeddingModel());
             }
 
             writer.addDocument(doc);

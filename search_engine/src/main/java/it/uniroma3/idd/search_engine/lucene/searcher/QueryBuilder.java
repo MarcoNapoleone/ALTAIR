@@ -4,6 +4,7 @@ package it.uniroma3.idd.search_engine.lucene.searcher;
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
 import it.uniroma3.idd.search_engine.lucene.AcronymManager;
+import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.utils.QueryParsingException;
 import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
 import org.apache.lucene.analysis.TokenStream;
@@ -27,10 +28,23 @@ public class QueryBuilder {
 
     private static final StandardAnalyzer STANDARD_ANALYZER = new StandardAnalyzer();
     private static final SimpleAnalyzer SIMPLE_ANALYZER = new SimpleAnalyzer();
-    private final BertEmbedder bertEmbedder;
+    private static BertEmbedder bertEmbedder;
+    private static AllMiniLmL6V2EmbeddingModel allMiniLmL6V2EmbeddingModel;
 
-    public QueryBuilder(BertEmbedder bertEmbedder) {
-        this.bertEmbedder = bertEmbedder;
+    public QueryBuilder(LuceneConfig luceneconfig, BertEmbedder bertEmbedder) {
+        if(luceneconfig.getEmbeddingModel().equalsIgnoreCase("bert")) {
+            this.bertEmbedder = bertEmbedder;
+            allMiniLmL6V2EmbeddingModel = null;
+
+        } else if (luceneconfig.getEmbeddingModel().equalsIgnoreCase("allmini")) {
+            allMiniLmL6V2EmbeddingModel = new AllMiniLmL6V2EmbeddingModel();
+            this.bertEmbedder = null;
+        }
+
+        else{
+            throw new RuntimeException("Invalid model: " + luceneconfig.getEmbeddingModel());
+        }
+
     }
 
     public Query buildArticleQuery(Map<String, String> filters) throws ParseException {
@@ -141,7 +155,7 @@ public class QueryBuilder {
         if (useEmbedding) {
             float[] queryEmbedding;
 
-            if(!model.equals("allmini")) {
+            if(model.equalsIgnoreCase("bert")) {
 
                 try {
                     queryEmbedding = bertEmbedder.getEmbeddings(queryText.trim().toLowerCase());
@@ -150,13 +164,16 @@ public class QueryBuilder {
                 }
             }
 
-            else{
-                EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
+            else if (model.equalsIgnoreCase("allmini")) {
                 try {
-                    queryEmbedding = embeddingModel.embed(queryText.trim().toLowerCase()).content().vector();
+                    queryEmbedding = allMiniLmL6V2EmbeddingModel.embed(queryText.trim().toLowerCase()).content().vector();
                 } catch (Exception e) {
                     throw new RuntimeException("Error generating query embeddings", e);
                 }
+            }
+
+            else {
+                throw new RuntimeException("Invalid model: " + model);
             }
 
             try{
