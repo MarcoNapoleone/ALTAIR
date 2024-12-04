@@ -18,6 +18,7 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -30,6 +31,7 @@ import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2Embedding
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -105,12 +107,10 @@ public class LuceneIndexer {
         writer.close();
     }
 
-
     public void indexTablesBert(String Pathdir, Codec codec) throws Exception {
         Path path = Paths.get(Pathdir);
         Directory dir = FSDirectory.open(path);
 
-        // Configure analyzers for fields
         Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
         perFieldAnalyzers.put("caption", SIMPLE_ANALYZER);
         perFieldAnalyzers.put("body", WHITESPACE_ANALYZER);
@@ -119,14 +119,13 @@ public class LuceneIndexer {
         Analyzer perFieldAnalyzer = new PerFieldAnalyzerWrapper(luceneConfig.customAnalyzer(), perFieldAnalyzers);
         IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
 
-        // Set the codec
         config.setCodec(codec);
 
         IndexWriter writer = new IndexWriter(dir, config);
 
         List<Table> tables = Parser.tableParser();
 
-        for (Table table: tables){
+        for (Table table : tables) {
             Document doc = new Document();
             doc.add(new StringField("id", table.getId(), TextField.Store.YES));
             doc.add(new TextField("caption", table.getCaption(), TextField.Store.YES));
@@ -136,22 +135,30 @@ public class LuceneIndexer {
             doc.add(new TextField("references", table.getReferencesString(), TextField.Store.YES));
             doc.add(new StringField("fileName", table.getFileName(), TextField.Store.YES));
 
-            String combinedText = table.getCaption() + " "
-                    + String.join(" ", table.getFootnotes()) + " "
-                    + String.join(" ", table.getReferences());
+            String combinedText = (table.getCaption() != null ? table.getCaption() : "") + " " +
+                    String.join(" ", table.getFootnotes() != null ? table.getFootnotes() : new ArrayList<>()) + " " +
+                    String.join(" ", table.getReferences() != null ? table.getReferences() : new ArrayList<>());
 
+            if (combinedText == null || combinedText.trim().isEmpty()) {
+                System.out.printf("Skipping table with blank combinedText: {} " + table.getId());
+                continue;
+            }
 
-            if(!luceneConfig.getEmbeddingModel().equals("allmini")){
+            if (!luceneConfig.getEmbeddingModel().equals("allmini")) {
                 if (!combinedText.trim().isEmpty()) {
                     float[] embeddings = bertEmbedder.getEmbeddings(combinedText.trim().toLowerCase());
                     doc.add(new KnnFloatVectorField("embedding", embeddings));
                 }
-            }
-            else {
+            } else {
                 EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
-                TextSegment textSegment = TextSegment.from(combinedText);
-                Embedding embedding = embeddingModel.embed(textSegment).content();
-                doc.add(new KnnFloatVectorField("embedding", embedding.vector()));
+                try {
+                    TextSegment textSegment = TextSegment.from(combinedText);
+                    Embedding embedding = embeddingModel.embed(textSegment).content();
+                    doc.add(new KnnFloatVectorField("embedding", embedding.vector()));
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error embedding table: " + table.getId());
+                    continue;
+                }
             }
 
             writer.addDocument(doc);
@@ -160,7 +167,6 @@ public class LuceneIndexer {
         writer.commit();
         writer.close();
     }
-
 
     public void indexTablesAllmini(String Pathdir, Codec codec) throws Exception {
 
