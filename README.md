@@ -2,7 +2,18 @@
 
 ## Description
 Advanced Literature's Table Access Information Retrieval engine
-This project implements a focused scientific paper search engine using Java and Python. The search engine is built using Apache Lucene, a high-performance, full-featured text search engine library. The Java application is built using Spring Boot, a Java-based framework for creating stand-alone, production-grade Spring-based applications. The Python scripts are used for data processing tasks.
+This project implements a scientific paper search engine. 
+The search engine is built using Apache Lucene, a high-performance, full-featured text search engine library.
+The REST backend is built using Spring Boot. The Python scripts are used for data processing tasks.
+
+## Usage
+- **Java Application**: The main application logic is implemented in Java using Spring Boot. It can be accessed via the configured endpoints.
+- **Python Scripts**: The Python scripts can be used for various data processing tasks.
+
+To test the search engine, you can use the following URL:
+[altair-search.web.app](http://altair-search.web.app)
+
+![alt text](./images/example_usage.png)
 
 ## Setup Instructions
 
@@ -10,6 +21,7 @@ This project implements a focused scientific paper search engine using Java and 
 1. **Install Maven**: Make sure Maven is installed on your system.
 2. **Build the Project**: Navigate to the project directory and run:
     ```sh
+   cd search_engine
     mvn clean install
     ```
 3. **Run the Application**: Use the following command to run the Spring Boot application:
@@ -21,18 +33,8 @@ This project implements a focused scientific paper search engine using Java and 
 1. **Install pip**: Ensure pip is installed on your system.
 2. **Run Python Scripts**: Execute the desired Python scripts using:
     ```sh
-    .data_scraping_cleaning/run.sh
+    .data_preprocessing/run.sh
     ```
-
-## Usage
-- **Java Application**: The main application logic is implemented in Java using Spring Boot. It can be accessed via the configured endpoints.
-- **Python Scripts**: The Python scripts can be used for various data processing tasks.
-
-To test the search engine, you can use the following URL:
-[https://lucene-search.web.app/](https://lucene-search.web.app/)
-![alt text](./images/example_usage.png)
-
-This demo can be accessed from localhost or within the Roma Tre University local network.
 
 ## Technologies Used
 - **Python**: Used for scripting and data processing.
