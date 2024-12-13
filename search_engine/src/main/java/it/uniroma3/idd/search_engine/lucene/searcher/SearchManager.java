@@ -9,6 +9,7 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -24,11 +25,9 @@ import java.util.Set;
 public class SearchManager {
 
     private IndexSearcher searcher;
-    private static LuceneConfig luceneConfig;
 
-    public SearchManager(LuceneConfig luceneConfig) {
-        this.luceneConfig = luceneConfig;
-    }
+    @Autowired
+    private LuceneConfig luceneConfig;
 
     public void initializeSearcher(String indexDirectory) {
         try {

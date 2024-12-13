@@ -40,7 +40,7 @@ public class DocumentController {
     public Document getDocument(
             @Parameter(description = "ID of the article to retrieve", required = true)
             @PathVariable Long id
-    ) {
+    ) throws ParseException {
         return documentService.getDocument(id);
     }
 
@@ -74,9 +74,6 @@ public class DocumentController {
 
 
         Collection<Document> documents = documentService.getDocumentsQuery(filters, tresholdMultiplier);
-
-        //print len of documents
-        System.out.println("len of documents: " + documents.size());
 
         Collection<GetDocumentResponse> documentResponses =
                 documents

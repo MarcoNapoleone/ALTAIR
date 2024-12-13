@@ -21,18 +21,18 @@ import java.util.Set;
 @Component
 public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent> {
 
-    private final LuceneConfig luceneConfig;
-    private final SearchManager searchManager;
-    private final QueryBuilder queryBuilder;
-    private final SnippetGenerator snippetGenerator;
+    @Autowired
+    private LuceneConfig luceneConfig;
 
     @Autowired
-    public LuceneSearcher(LuceneConfig luceneConfig, SearchManager searchManager, QueryBuilder queryBuilder, SnippetGenerator snippetGenerator) {
-        this.luceneConfig = luceneConfig;
-        this.searchManager = searchManager;
-        this.queryBuilder = queryBuilder;
-        this.snippetGenerator = snippetGenerator;
-    }
+    private SearchManager searchManager;
+
+    @Autowired
+    private QueryBuilder queryBuilder;
+
+    @Autowired
+    private SnippetGenerator snippetGenerator;
+
 
     @Override
     public void onApplicationEvent(@NotNull IndexingCompleteEvent event) {
@@ -47,9 +47,23 @@ public class LuceneSearcher implements ApplicationListener<IndexingCompleteEvent
         return documents;
     }
 
+    public Document searchArticleById(Long id) throws ParseException {
+        Query query = queryBuilder.buildArticleQuery(Map.of("id", id.toString()));
+        TopDocs topDocs = searchManager.executeQuery(query, 1);
+        List<Document> documents = searchManager.retrieveDocuments(topDocs, query, null);
+        return documents.isEmpty() ? null : documents.get(0);
+    }
+
     public List<Document> searchTables(String queryText, Integer limit, Boolean useEmbedding, Float tresholdMultiplier) {
-        Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10, luceneConfig.getEmbeddingModel());
+        Query query = queryBuilder.buildTableQuery(queryText, useEmbedding, limit != null ? limit : 10, new String[]{"caption", "body", "footnotes", "references"});
         TopDocs topDocs = searchManager.executeQuery(query, limit != null ? limit : 10);
         return searchManager.retrieveDocuments(topDocs, query, tresholdMultiplier);
+    }
+
+    public Document searchTableById(Long id) {
+        Query query = queryBuilder.buildTableQuery(id.toString(), false, 1, new String[]{"id"});
+        TopDocs topDocs = searchManager.executeQuery(query, 1);
+        List<Document> documents = searchManager.retrieveDocuments(topDocs, query, null);
+        return documents.isEmpty() ? null : documents.getFirst();
     }
 }

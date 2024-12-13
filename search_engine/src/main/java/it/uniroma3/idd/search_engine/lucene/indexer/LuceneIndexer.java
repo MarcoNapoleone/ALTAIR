@@ -3,11 +3,9 @@ package it.uniroma3.idd.search_engine.lucene.indexer;
 import it.uniroma3.idd.search_engine.lucene.LuceneConfig;
 import it.uniroma3.idd.search_engine.model.Article;
 import it.uniroma3.idd.search_engine.model.Table;
-import it.uniroma3.idd.search_engine.utils.bert.BertEmbedder;
 import it.uniroma3.idd.search_engine.utils.Parser;
 import jakarta.annotation.PostConstruct;
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.core.KeywordAnalyzer;
 import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper;
@@ -18,20 +16,17 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.data.segment.TextSegment;
-import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
 
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,32 +34,17 @@ import java.util.Map;
 @Component
 public class LuceneIndexer {
 
-    private final LuceneConfig luceneConfig;
+    @Autowired
+    private LuceneConfig luceneConfig;
+
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
+
+    private AllMiniLmL6V2EmbeddingModel allMiniLmEmbedder;
+
     private static final Analyzer STANDARD_ANALYZER = new StandardAnalyzer();
     private static final Analyzer WHITESPACE_ANALYZER = new WhitespaceAnalyzer();
     private static final Analyzer SIMPLE_ANALYZER = new SimpleAnalyzer();
-
-    private final ApplicationEventPublisher eventPublisher;
-    private final BertEmbedder bertEmbedder;
-    private final AllMiniLmL6V2EmbeddingModel allMiniLmEmbedder;
-
-    @Autowired
-    public LuceneIndexer(LuceneConfig luceneConfig, ApplicationEventPublisher eventPublisher, BertEmbedder bertEmbedder) throws Exception {
-        this.luceneConfig = luceneConfig;
-        this.eventPublisher = eventPublisher;
-
-        if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("bert")) {
-            this.bertEmbedder = bertEmbedder;
-            this.allMiniLmEmbedder = null;
-        } else if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("allmini")) {
-            this.bertEmbedder = null;
-            this.allMiniLmEmbedder = new AllMiniLmL6V2EmbeddingModel();
-        } else {
-            this.bertEmbedder = null;
-            this.allMiniLmEmbedder = null;
-            throw new IllegalArgumentException("Unsupported embedding model: " + luceneConfig.getEmbeddingModel());
-        }
-    }
 
 
     @PostConstruct
@@ -73,10 +53,11 @@ public class LuceneIndexer {
             // Log to monitor the flow
             System.out.println("Index initialization in progress...");
             if (luceneConfig.isShouldInitializeIndex()) {
+                this.allMiniLmEmbedder = new AllMiniLmL6V2EmbeddingModel();
                 System.out.println("Deleting the index directory...");
                 deleteNonEmptyDirectory(Paths.get(luceneConfig.getIndexDirectory())); // Delete the index directory
                 indexArticles(luceneConfig.getIndexDirectory(), Codec.getDefault()); // Initialize the index
-                indexTablesBert(luceneConfig.getIndexDirectory(), Codec.getDefault());
+                indexTables(luceneConfig.getIndexDirectory(), Codec.getDefault());
             }
             System.out.println("Table Index initialized, publishing event.");
             eventPublisher.publishEvent(new IndexingCompleteEvent(this)); // Publish the event upon completion
@@ -84,6 +65,7 @@ public class LuceneIndexer {
         } catch (Exception e) {
             throw new RuntimeException("Error initializing the index", e);
         }
+
     }
 
     public void indexArticles(String Pathdir, Codec codec) throws IOException {
@@ -120,7 +102,7 @@ public class LuceneIndexer {
         writer.close();
     }
 
-    public void indexTablesBert(String Pathdir, Codec codec) throws Exception {
+    public void indexTables(String Pathdir, Codec codec) throws Exception {
         Path path = Paths.get(Pathdir);
         Directory dir = FSDirectory.open(path);
 
@@ -156,73 +138,13 @@ public class LuceneIndexer {
                 continue;
             }
 
-            if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("bert")) {
-                float[] embeddings = bertEmbedder.getEmbeddings(combinedText.trim().toLowerCase());
-                doc.add(new KnnFloatVectorField("embedding", embeddings));
-            } else if (luceneConfig.getEmbeddingModel().equalsIgnoreCase("allmini")) {
-                try {
-                    TextSegment textSegment = TextSegment.from(combinedText);
-                    Embedding embedding = allMiniLmEmbedder.embed(textSegment).content();
-                    doc.add(new KnnFloatVectorField("embedding", embedding.vector()));
-                } catch (IllegalArgumentException e) {
-                    System.out.println("Error embedding table: " + table.getId());
-                    continue;
-                }
-            }
-
-            else {
-                throw new RuntimeException("Invalid model: " + luceneConfig.getEmbeddingModel());
-            }
-
-            writer.addDocument(doc);
-        }
-
-        writer.commit();
-        writer.close();
-    }
-
-    public void indexTablesAllmini(String Pathdir, Codec codec) throws Exception {
-
-        EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
-
-        Path path = Paths.get(Pathdir);
-        Directory dir = FSDirectory.open(path);
-
-        // Configure analyzers for fields
-        Map<String, Analyzer> perFieldAnalyzers = new HashMap<>();
-        perFieldAnalyzers.put("caption", SIMPLE_ANALYZER);
-        perFieldAnalyzers.put("body", WHITESPACE_ANALYZER);
-        perFieldAnalyzers.put("footnotes", STANDARD_ANALYZER);
-        perFieldAnalyzers.put("references", STANDARD_ANALYZER);
-        Analyzer perFieldAnalyzer = new PerFieldAnalyzerWrapper(luceneConfig.customAnalyzer(), perFieldAnalyzers);
-        IndexWriterConfig config = new IndexWriterConfig(perFieldAnalyzer);
-
-        // Set the codec
-        config.setCodec(codec);
-
-        IndexWriter writer = new IndexWriter(dir, config);
-
-        List<Table> tables = Parser.tableParser();
-
-        for (Table table: tables){
-            Document doc = new Document();
-            doc.add(new StringField("id", table.getId(), TextField.Store.YES));
-            doc.add(new TextField("caption", table.getCaption(), TextField.Store.YES));
-            doc.add(new StoredField("html_table", table.getBody()));
-            doc.add(new TextField("body", table.getBodyCleaned(), Field.Store.NO));
-            doc.add(new TextField("footnotes", table.getFootnotesString(), TextField.Store.YES));
-            doc.add(new TextField("references", table.getReferencesString(), TextField.Store.YES));
-            doc.add(new StringField("fileName", table.getFileName(), TextField.Store.YES));
-
-            String combinedText = table.getCaption() + " "
-                    + String.join(" ", table.getFootnotes()) + " "
-                    + String.join(" ", table.getReferences());
-
-            // Add the embedding field if combinedText is not empty
-            if (!combinedText.trim().isEmpty()) {
+            try {
                 TextSegment textSegment = TextSegment.from(combinedText);
-                Embedding embedding = embeddingModel.embed(textSegment).content();
+                Embedding embedding = allMiniLmEmbedder.embed(textSegment).content();
                 doc.add(new KnnFloatVectorField("embedding", embedding.vector()));
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error embedding table: " + table.getId());
+                continue;
             }
 
             writer.addDocument(doc);

@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-@Component
+
 public class BertEmbedder implements AutoCloseable {
 
     private final OrtEnvironment env;

@@ -24,10 +24,6 @@ public class DocumentService {
         this.luceneSearcher = luceneSearcher;
     }
 
-    public Document getDocument(Long id) {
-        //TODO LUCENE
-        return null;
-    }
 
     public List<Document> getDocumentsQuery(Map<String,String> filters, Float tresholdMultiplier) throws ParseException, InvalidTokenOffsetsException, IOException {
         return luceneSearcher.searchArticles(filters, tresholdMultiplier);
@@ -38,4 +34,7 @@ public class DocumentService {
         return null;
     }
 
+    public Document getDocument(Long id) throws ParseException {
+        return luceneSearcher.searchArticleById(id);
+    }
 }

@@ -28,10 +28,6 @@ public class LuceneConfig {
     @Value("${lucene.searcher.tresholdMultiplier}")
     private float treasholdMultiplier;
 
-    @Getter
-    @Value("${altair.embedding.model}")
-    private String embeddingModel;
-
 
     @Bean
     public Analyzer customAnalyzer() {

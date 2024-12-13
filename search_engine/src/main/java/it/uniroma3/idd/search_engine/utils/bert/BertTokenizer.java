@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-@Component
+
 public class BertTokenizer {
 
     private static final String VOCAB_FILE_PATH = "model/vocab.txt";

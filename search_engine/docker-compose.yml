@@ -1,6 +1,6 @@
 services:
     altair:
-        image: altair:latest
+        image: altaircontainerregistry.azurecr.io/altair_search_engine
         restart: always
         ports:
             - "8080:8080"
